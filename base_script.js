@@ -55,9 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-  //cy.remove('#n0');
-
   cy.$('#n1').qtip({
   content: 'Hello!',
   position: {
@@ -147,41 +144,5 @@ cy.edges().forEach(function(e){
 
 
 
-// cy.on('tap', 'node', { foo: 'bar' }, function(evt){
-//
-//     var n = evt.cyTarget;
-//     var g = n.data('molecule');
-//
-//     n.qtip({
-//       content: [
-//         {
-//           name: 'GeneCard',
-//           url: 'http://www.genecards.org/cgi-bin/carddisp.pl?gene=' + g
-//         },
-//         {
-//           name: 'UniProt search',
-//           url: 'http://www.uniprot.org/uniprot/?query='+ g +'&fil=organism%3A%22Homo+sapiens+%28Human%29+%5B9606%5D%22&sort=score'
-//         },
-//         {
-//           name: 'GeneMANIA',
-//           url: 'http://genemania.org/search/human/' + g
-//         }
-//       ].map(function( link ){
-//         return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
-//       }).join('<br />\n'),
-//       position: {
-//         my: 'top center',
-//         at: 'bottom center'
-//       },
-//       style: {
-//         classes: 'qtip-bootstrap',
-//         tip: {
-//           width: 16,
-//           height: 8
-//         }
-//       }
-//     });
-//
-// });
-//
+
 });
