@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
       {
         selector: 'node',
         style: {
-          'label': 'data(molecule)',
+          'label': 'data(name)',
           'width': '200px',
           'height': '200px',
           'background-color': colorbrewer[0],
@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 cy.nodes().forEach(function(n){
-  var g = n.data('molecule');
-  console.log(n.data('molecule'));
+  var g = n.data('name');
+  console.log(n.data('name'));
 
 
 
@@ -115,32 +115,32 @@ cy.nodes().forEach(function(n){
 
 
 
-
-cy.edges().forEach(function(e){
-  var g = e.data('evidence');
-
-  e.qtip({
-    content: [
-      {
-        name: 'Evidence',
-        url:  g
-      }
-    ].map(function( link ){
-      return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
-    }).join('<br />\n'),
-    position: {
-      my: 'top center',
-      at: 'bottom center'
-    },
-    style: {
-      classes: 'qtip-bootstrap',
-      tip: {
-        width: 16,
-        height: 8
-      }
-    }
-  });
-});
+//
+// cy.edges().forEach(function(e){
+//   var g = e.data('evidence');
+//
+//   e.qtip({
+//     content: [
+//       {
+//         name: 'Evidence',
+//         url:  g
+//       }
+//     ].map(function( link ){
+//       return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
+//     }).join('<br />\n'),
+//     position: {
+//       my: 'top center',
+//       at: 'bottom center'
+//     },
+//     style: {
+//       classes: 'qtip-bootstrap',
+//       tip: {
+//         width: 16,
+//         height: 8
+//       }
+//     }
+//   });
+// });
 
 
 
