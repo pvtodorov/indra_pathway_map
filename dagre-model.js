@@ -1,2790 +1,2489 @@
 var modelElements = {
- "nodes": [
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q8IVT5"
-    }, 
-    "id": 0, 
-    "parent": "", 
-    "name": "KSR1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P10398"
-    }, 
-    "id": 1, 
-    "parent": 238, 
-    "name": "ARAF"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P15056"
-    }, 
-    "id": 3, 
-    "parent": 238, 
-    "name": "BRAF"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P04049"
-    }, 
-    "id": 5, 
-    "parent": 238, 
-    "name": "RAF1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q02750"
-    }, 
-    "id": 7, 
-    "parent": 235, 
-    "name": "MAP2K1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P36507"
-    }, 
-    "id": 9, 
-    "parent": 235, 
-    "name": "MAP2K2"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P28482"
-    }, 
-    "id": 11, 
-    "parent": 229, 
-    "name": "MAPK1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P27361"
-    }, 
-    "id": 13, 
-    "parent": 229, 
-    "name": "MAPK3"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P93004"
-    }, 
-    "id": 16, 
-    "parent": "", 
-    "name": "PIP2_7"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/O15530"
-    }, 
-    "id": 17, 
-    "parent": "", 
-    "name": "PDPK1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P54644"
-    }, 
-    "id": 19, 
-    "parent": "", 
-    "name": "pkbA"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 21, 
-    "parent": "", 
-    "name": "TIAM"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P31749"
-    }, 
-    "id": 23, 
-    "parent": "", 
-    "name": "AKT1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P01112"
-    }, 
-    "id": 25, 
-    "parent": 236, 
-    "name": "HRAS"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q12967"
-    }, 
-    "id": 26, 
-    "parent": "", 
-    "name": "RALGDS"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P01111"
-    }, 
-    "id": 28, 
-    "parent": 236, 
-    "name": "NRAS"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P01116"
-    }, 
-    "id": 30, 
-    "parent": 236, 
-    "name": "KRAS"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 32, 
-    "parent": 233, 
-    "name": "PIK3C"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 34, 
-    "parent": 233, 
-    "name": "PIK3R"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 42, 
-    "parent": "", 
-    "name": "Growth_factor_proteins"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P08581"
-    }, 
-    "id": 43, 
-    "parent": 231, 
-    "name": "MET"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P08922"
-    }, 
-    "id": 45, 
-    "parent": 231, 
-    "name": "ROS1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q9UM73"
-    }, 
-    "id": 47, 
-    "parent": 231, 
-    "name": "ALK"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P61586"
-    }, 
-    "id": 49, 
-    "parent": 232, 
-    "name": "RHOA"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q13464"
-    }, 
-    "id": 50, 
-    "parent": 242, 
-    "name": "ROCK1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/O75116"
-    }, 
-    "id": 52, 
-    "parent": 242, 
-    "name": "ROCK2"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P62745"
-    }, 
-    "id": 54, 
-    "parent": 232, 
-    "name": "RHOB"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 4, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P08134"
-    }, 
-    "id": 57, 
-    "parent": 232, 
-    "name": "RHOC"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P24385"
-    }, 
-    "id": 60, 
-    "parent": "", 
-    "name": "CCND1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 4, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P11802"
-    }, 
-    "id": 61, 
-    "parent": 237, 
-    "name": "CDK4"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q00534"
-    }, 
-    "id": 63, 
-    "parent": 237, 
-    "name": "CDK6"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 65, 
-    "parent": "", 
-    "name": "MTOR_RPTOR_MLST8"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P10665"
-    }, 
-    "id": 66, 
-    "parent": "", 
-    "name": "rps6ka"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q9FZ06"
-    }, 
-    "id": 77, 
-    "parent": "", 
-    "name": "ARK3"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P21359"
-    }, 
-    "id": 79, 
-    "parent": 230, 
-    "name": "NF1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 83, 
-    "parent": 230, 
-    "name": "SPRED"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q00987"
-    }, 
-    "id": 87, 
-    "parent": "", 
-    "name": "MDM2"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P04637"
-    }, 
-    "id": 88, 
-    "parent": "", 
-    "name": "TP53"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P09619"
-    }, 
-    "id": 90, 
-    "parent": 231, 
-    "name": "PDGFRB"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q15382"
-    }, 
-    "id": 96, 
-    "parent": "", 
-    "name": "RHEB"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q15831"
-    }, 
-    "id": 98, 
-    "parent": "", 
-    "name": "STK11"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q54YF2"
-    }, 
-    "id": 99, 
-    "parent": 239, 
-    "name": "snfA"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 101, 
-    "parent": 239, 
-    "name": "PRKAB"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q8T277"
-    }, 
-    "id": 103, 
-    "parent": 239, 
-    "name": "prkag"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/O95294"
-    }, 
-    "id": 111, 
-    "parent": 230, 
-    "name": "RASAL1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 118, 
-    "parent": 241, 
-    "name": "SOS_GRB2_SHC"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/O14827"
-    }, 
-    "id": 122, 
-    "parent": 241, 
-    "name": "RASGRF2"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/O44783"
-    }, 
-    "id": 126, 
-    "parent": "", 
-    "name": "sty"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P11233"
-    }, 
-    "id": 130, 
-    "parent": 243, 
-    "name": "RALA"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P11234"
-    }, 
-    "id": 132, 
-    "parent": 243, 
-    "name": "RALB"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 0, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/O95267"
-    }, 
-    "id": 134, 
-    "parent": "", 
-    "name": "RASGRP1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P00533"
-    }, 
-    "id": 144, 
-    "parent": 234, 
-    "name": "EGFR"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P04626"
-    }, 
-    "id": 146, 
-    "parent": 234, 
-    "name": "ERBB2"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "InterPro": "http://identifiers.org/interpro/IPR016248"
-    }, 
-    "id": 148, 
-    "parent": 234, 
-    "name": "FGFR"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 4, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q13541"
-    }, 
-    "id": 150, 
-    "parent": "", 
-    "name": "EIF4EBP1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q92574"
-    }, 
-    "id": 152, 
-    "parent": 240, 
-    "name": "TSC1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P49815"
-    }, 
-    "id": 154, 
-    "parent": 240, 
-    "name": "TSC2"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P60484"
-    }, 
-    "id": 179, 
-    "parent": "", 
-    "name": "PTEN"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {
-     "HMDB": "http://identifiers.org/hmdb/HMDB33370"
-    }, 
-    "id": 181, 
-    "parent": 244, 
-    "name": "ETS"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P05412"
-    }, 
-    "id": 183, 
-    "parent": 244, 
-    "name": "JUN"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 2, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P01100"
-    }, 
-    "id": 185, 
-    "parent": 244, 
-    "name": "FOS"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "db_refs": {}, 
-    "id": 192, 
-    "parent": "", 
-    "name": "DUSP"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 3, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P20936"
-    }, 
-    "id": 200, 
-    "parent": 230, 
-    "name": "RASA1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/Q9NRY4"
-    }, 
-    "id": 204, 
-    "parent": 230, 
-    "name": "ARHGAP35"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 1, 
-    "db_refs": {
-     "UniProt": "http://identifiers.org/uniprot/P06400"
-    }, 
-    "id": 225, 
-    "parent": "", 
-    "name": "RB1"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 229, 
-    "parent": "", 
-    "name": "Group[11, 13]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 230, 
-    "parent": "", 
-    "name": "Group[200, 204, 79, 83, 111]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 231, 
-    "parent": "", 
-    "name": "Group[43, 45, 47, 90]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 232, 
-    "parent": "", 
-    "name": "Group[49, 54, 57]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 233, 
-    "parent": "", 
-    "name": "Group[32, 34]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 234, 
-    "parent": "", 
-    "name": "Group[146, 148, 144]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 235, 
-    "parent": "", 
-    "name": "Group[7, 9]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 236, 
-    "parent": "", 
-    "name": "Group[25, 28, 30]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 237, 
-    "parent": "", 
-    "name": "Group[61, 63]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 238, 
-    "parent": "", 
-    "name": "Group[1, 3, 5]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 239, 
-    "parent": "", 
-    "name": "Group[99, 101, 103]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 240, 
-    "parent": "", 
-    "name": "Group[152, 154]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 241, 
-    "parent": "", 
-    "name": "Group[118, 122]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 242, 
-    "parent": "", 
-    "name": "Group[50, 52]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 243, 
-    "parent": "", 
-    "name": "Group[130, 132]"
-   }
-  }, 
-  {
-   "data": {
-    "expression": 5, 
-    "id": 244, 
-    "parent": "", 
-    "name": "Group[181, 183, 185]"
-   }
-  }
- ], 
  "edges": [
   {
    "data": {
-    "polarity": "none", 
-    "target": 1, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 2
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 3, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 4
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 5, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 6
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 7, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 8
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 9, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 10
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 11, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 12
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 13, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 0, 
-    "id": 14
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 17, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 16, 
-    "id": 15
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 19, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 16, 
-    "id": 18
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 21, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 16, 
-    "id": 20
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 23, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 21, 
-    "id": 22
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 26, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 25, 
-    "id": 24
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 26, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 28, 
-    "id": 27
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 26, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 30, 
-    "id": 29
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 16, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 32, 
-    "id": 31
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 16, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 34, 
-    "id": 33
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 7, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 1, 
-    "id": 35
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 9, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 1, 
-    "id": 36
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 7, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 3, 
-    "id": 37
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 9, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 3, 
-    "id": 38
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 7, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 5, 
-    "id": 39
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 9, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 5, 
-    "id": 40
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 43, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 41
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 45, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 44
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 47, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 46
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 50, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 49, 
-    "id": 48
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 52, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 49, 
-    "id": 51
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 50, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 54, 
-    "id": 53
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 52, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 54, 
-    "id": 55
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 50, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 57, 
-    "id": 56
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 52, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 57, 
-    "id": 58
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 61, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 60, 
-    "id": 59
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 63, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 60, 
-    "id": 62
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 66, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 65, 
-    "id": 64
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 1, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 25, 
-    "id": 67
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 3, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 25, 
-    "id": 68
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 5, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 25, 
-    "id": 69
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 1, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 28, 
-    "id": 70
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 3, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 28, 
-    "id": 71
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 5, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 28, 
-    "id": 72
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 1, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 30, 
-    "id": 73
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 3, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 30, 
-    "id": 74
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 5, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 30, 
-    "id": 75
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 77, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 23, 
-    "id": 76
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 79, 
-    "id": 78
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 79, 
-    "id": 80
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 79, 
-    "id": 81
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 83, 
-    "id": 82
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 83, 
-    "id": 84
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 83, 
-    "id": 85
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 88, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 87, 
-    "id": 86
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 90, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 89
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 11, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 7, 
-    "id": 91
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 13, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 7, 
-    "id": 92
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 11, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 9, 
-    "id": 93
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 13, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 9, 
-    "id": 94
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 65, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 96, 
-    "id": 95
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 99, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 98, 
-    "id": 97
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 101, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 98, 
-    "id": 100
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 103, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 98, 
-    "id": 102
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 32, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 25, 
-    "id": 104
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 34, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 25, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 106,
+    "polarity": "negative",
+    "source": 54,
     "id": 105
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 32, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 28, 
-    "id": 106
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 34, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 28, 
-    "id": 107
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 32, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 30, 
-    "id": 108
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 34, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 30, 
-    "id": 109
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 111, 
-    "id": 110
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 111, 
-    "id": 112
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 111, 
-    "id": 113
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 65, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 99, 
-    "id": 114
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 65, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 101, 
-    "id": 115
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 65, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 103, 
-    "id": 116
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 118, 
-    "id": 117
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 118, 
-    "id": 119
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 118, 
-    "id": 120
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 122, 
-    "id": 121
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 122, 
-    "id": 123
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 122, 
-    "id": 124
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 126, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 1,
+    "polarity": "positive",
+    "source": 123,
     "id": 125
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 126, 
-    "id": 127
+    "weight": 1,
+    "i": "Activation",
+    "target": 127,
+    "polarity": "positive",
+    "source": 123,
+    "id": 126
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 126, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 129,
+    "polarity": "positive",
+    "source": 123,
     "id": 128
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 130, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 26, 
-    "id": 129
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 132, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 26, 
-    "id": 131
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 134, 
-    "id": 133
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 134, 
-    "id": 135
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 134, 
-    "id": 136
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 118, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 123,
+    "polarity": "negative",
+    "source": 138,
     "id": 137
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 118, 
-    "id": 138
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 118, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 1,
+    "polarity": "positive",
+    "source": 127,
     "id": 139
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 122, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 142,
+    "polarity": "positive",
+    "source": 141,
     "id": 140
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 122, 
-    "id": 141
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 122, 
-    "id": 142
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 144, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 143
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 146, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 145
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 148, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 42, 
-    "id": 147
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 150, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 65, 
-    "id": 149
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 152, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 19, 
-    "id": 151
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 154, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 19, 
-    "id": 153
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 43, 
-    "id": 155
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 43, 
-    "id": 156
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 45, 
-    "id": 157
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 45, 
-    "id": 158
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 47, 
-    "id": 159
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 47, 
-    "id": 160
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 111, 
-    "id": 161
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 111, 
-    "id": 162
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 111, 
-    "id": 163
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 144, 
-    "id": 164
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 144, 
-    "id": 165
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 146, 
-    "id": 166
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 146, 
-    "id": 167
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 90, 
-    "id": 168
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 90, 
-    "id": 169
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 43, 
-    "id": 170
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 43, 
-    "id": 171
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 45, 
-    "id": 172
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 45, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 132,
+    "polarity": "positive",
+    "source": 174,
     "id": 173
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 47, 
-    "id": 174
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 47, 
-    "id": 175
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 148, 
-    "id": 176
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 148, 
-    "id": 177
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 16, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 179, 
-    "id": 178
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 181, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 11, 
-    "id": 180
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 183, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 11, 
-    "id": 182
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 185, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 11, 
-    "id": 184
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 181, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 13, 
-    "id": 186
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 183, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 13, 
-    "id": 187
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 185, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 13, 
-    "id": 188
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 87, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 181, 
-    "id": 189
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 60, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 181, 
-    "id": 190
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 192, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 181, 
-    "id": 191
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 87, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 185, 
-    "id": 193
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 60, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 185, 
-    "id": 194
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 192, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 185, 
-    "id": 195
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 87, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 183, 
-    "id": 196
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 60, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 183, 
-    "id": 197
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 192, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 183, 
-    "id": 198
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 200, 
-    "id": 199
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 200, 
-    "id": 201
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 200, 
-    "id": 202
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 49, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 204, 
-    "id": 203
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 54, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 204, 
-    "id": 205
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 57, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 204, 
-    "id": 206
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 200, 
-    "id": 207
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 200, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 141,
+    "polarity": "positive",
+    "source": 129,
     "id": 208
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 200, 
-    "id": 209
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 204, 
-    "id": 210
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 204, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 212,
+    "polarity": "negative",
+    "source": 132,
     "id": 211
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 204, 
-    "id": 212
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 11, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 192, 
+    "weight": 1,
+    "i": "Activation",
+    "target": 214,
+    "polarity": "positive",
+    "source": 132,
     "id": 213
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 13, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 192, 
-    "id": 214
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "positive", 
-    "target": 19, 
-    "weight": 1, 
-    "i": "Activation", 
-    "source": 17, 
-    "id": 215
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 79, 
-    "id": 216
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 79, 
-    "id": 217
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 79, 
+    "weight": 1,
+    "i": "Complex",
+    "target": 9,
+    "polarity": "none",
+    "source": 7,
     "id": 218
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 25, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 83, 
-    "id": 219
+    "weight": 2,
+    "i": "Activation",
+    "target": 238,
+    "polarity": "negative",
+    "source": 1,
+    "id": 239
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 28, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 83, 
-    "id": 220
+    "weight": 6,
+    "i": "Activation",
+    "target": 7,
+    "polarity": "positive",
+    "source": 224,
+    "id": 240
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 30, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 83, 
-    "id": 221
+    "weight": 6,
+    "i": "Activation",
+    "target": 9,
+    "polarity": "positive",
+    "source": 224,
+    "id": 241
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 118, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 90, 
-    "id": 222
+    "weight": 3,
+    "i": "Activation",
+    "target": 232,
+    "polarity": "positive",
+    "source": 235,
+    "id": 242
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 122, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 90, 
-    "id": 223
+    "weight": 5,
+    "i": "Activation",
+    "target": 236,
+    "polarity": "negative",
+    "source": 234,
+    "id": 243
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 225, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 61, 
-    "id": 224
+    "weight": 5,
+    "i": "Activation",
+    "target": 226,
+    "polarity": "negative",
+    "source": 234,
+    "id": 244
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 225, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 63, 
-    "id": 226
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 96, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 152, 
-    "id": 227
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "negative", 
-    "target": 96, 
-    "weight": 1, 
-    "i": "Virtual", 
-    "source": 154, 
-    "id": 228
-   }
-  }, 
-  {
-   "data": {
-    "polarity": "none", 
-    "target": 238, 
-    "weight": 3, 
-    "i": "Complex", 
-    "source": 0, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 237,
+    "polarity": "positive",
+    "source": 32,
     "id": 245
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "none", 
-    "target": 235, 
-    "weight": 2, 
-    "i": "Complex", 
-    "source": 0, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 37,
+    "polarity": "negative",
+    "source": 237,
     "id": 246
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "none", 
-    "target": 229, 
-    "weight": 2, 
-    "i": "Complex", 
-    "source": 0, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 230,
+    "polarity": "negative",
+    "source": 40,
     "id": 247
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 26, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 236, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 32,
+    "polarity": "positive",
+    "source": 228,
     "id": 248
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 16, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 233, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 40,
+    "polarity": "positive",
+    "source": 228,
     "id": 249
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 235, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 238, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 54,
+    "polarity": "positive",
+    "source": 228,
     "id": 250
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 231, 
-    "weight": 4, 
-    "i": "Activation", 
-    "source": 42, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 225,
+    "polarity": "positive",
+    "source": 7,
     "id": 251
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 242, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 232, 
+    "weight": 6,
+    "i": "Activation",
+    "target": 224,
+    "polarity": "positive",
+    "source": 67,
     "id": 252
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 237, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 60, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 235,
+    "polarity": "positive",
+    "source": 236,
     "id": 253
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 238, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 236, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 227,
+    "polarity": "positive",
+    "source": 236,
     "id": 254
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 232, 
-    "weight": 5, 
-    "i": "Activation", 
-    "source": 230, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 84,
+    "polarity": "positive",
+    "source": 236,
     "id": 255
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 229, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 235, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 230,
+    "polarity": "positive",
+    "source": 232,
     "id": 256
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 239, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 98, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 228,
+    "polarity": "positive",
+    "source": 230,
     "id": 257
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 233, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 236, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 123,
+    "polarity": "positive",
+    "source": 227,
     "id": 258
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 65, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 239, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 132,
+    "polarity": "negative",
+    "source": 231,
     "id": 259
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 232, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 241, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 229,
+    "polarity": "positive",
+    "source": 84,
     "id": 260
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 236, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 126, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 236,
+    "polarity": "positive",
+    "source": 225,
     "id": 261
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 243, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 26, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 226,
+    "polarity": "positive",
+    "source": 225,
     "id": 262
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 236, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 134, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 236,
+    "polarity": "positive",
+    "source": 170,
     "id": 263
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 236, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 241, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 233,
+    "polarity": "positive",
+    "source": 226,
     "id": 264
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 234, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 42, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 225,
+    "polarity": "positive",
+    "source": 9,
     "id": 265
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 240, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 19, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 236,
+    "polarity": "negative",
+    "source": 201,
     "id": 266
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 241, 
-    "weight": 4, 
-    "i": "Activation", 
-    "source": 231, 
+    "weight": 3,
+    "i": "Activation",
+    "target": 231,
+    "polarity": "positive",
+    "source": 205,
     "id": 267
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 236, 
-    "weight": 5, 
-    "i": "Activation", 
-    "source": 230, 
+    "weight": 2,
+    "i": "Activation",
+    "target": 174,
+    "polarity": "negative",
+    "source": 238,
     "id": 268
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 241, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 234, 
+    "weight": 3,
+    "i": "Complex",
+    "target": 235,
+    "polarity": "none",
+    "source": 215,
     "id": 269
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 244, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 229, 
+    "weight": 2,
+    "i": "Complex",
+    "target": 232,
+    "polarity": "none",
+    "source": 215,
     "id": 270
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 87, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 244, 
+    "weight": 2,
+    "i": "Complex",
+    "target": 230,
+    "polarity": "none",
+    "source": 215,
     "id": 271
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 60, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 244, 
+    "weight": 2,
+    "i": "Attractor",
+    "target": 2,
+    "polarity": "negative",
+    "source": 1,
     "id": 272
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "positive", 
-    "target": 192, 
-    "weight": 3, 
-    "i": "Activation", 
-    "source": 244, 
+    "weight": 6,
+    "i": "Attractor",
+    "target": 7,
+    "polarity": "positive",
+    "source": 48,
     "id": 273
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 229, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 192, 
+    "weight": 6,
+    "i": "Attractor",
+    "target": 9,
+    "polarity": "positive",
+    "source": 48,
     "id": 274
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 225, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 237, 
+    "weight": 3,
+    "i": "Attractor",
+    "target": 12,
+    "polarity": "positive",
+    "source": 29,
     "id": 275
    }
-  }, 
+  },
   {
    "data": {
-    "polarity": "negative", 
-    "target": 96, 
-    "weight": 2, 
-    "i": "Activation", 
-    "source": 240, 
+    "weight": 5,
+    "i": "Attractor",
+    "target": 19,
+    "polarity": "negative",
+    "source": 150,
     "id": 276
+   }
+  },
+  {
+   "data": {
+    "weight": 5,
+    "i": "Attractor",
+    "target": 25,
+    "polarity": "negative",
+    "source": 150,
+    "id": 277
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 33,
+    "polarity": "positive",
+    "source": 32,
+    "id": 278
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 37,
+    "polarity": "negative",
+    "source": 33,
+    "id": 279
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 41,
+    "polarity": "negative",
+    "source": 40,
+    "id": 280
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 32,
+    "polarity": "positive",
+    "source": 59,
+    "id": 281
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 40,
+    "polarity": "positive",
+    "source": 59,
+    "id": 282
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 54,
+    "polarity": "positive",
+    "source": 59,
+    "id": 283
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 63,
+    "polarity": "positive",
+    "source": 7,
+    "id": 284
+   }
+  },
+  {
+   "data": {
+    "weight": 6,
+    "i": "Attractor",
+    "target": 48,
+    "polarity": "positive",
+    "source": 67,
+    "id": 285
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 29,
+    "polarity": "positive",
+    "source": 19,
+    "id": 286
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 78,
+    "polarity": "positive",
+    "source": 19,
+    "id": 287
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 84,
+    "polarity": "positive",
+    "source": 19,
+    "id": 288
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 41,
+    "polarity": "positive",
+    "source": 12,
+    "id": 289
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 59,
+    "polarity": "positive",
+    "source": 41,
+    "id": 290
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 123,
+    "polarity": "positive",
+    "source": 78,
+    "id": 291
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 132,
+    "polarity": "negative",
+    "source": 134,
+    "id": 292
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 146,
+    "polarity": "positive",
+    "source": 84,
+    "id": 293
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 19,
+    "polarity": "positive",
+    "source": 63,
+    "id": 294
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 25,
+    "polarity": "positive",
+    "source": 63,
+    "id": 295
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 19,
+    "polarity": "positive",
+    "source": 170,
+    "id": 296
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 176,
+    "polarity": "positive",
+    "source": 25,
+    "id": 297
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 63,
+    "polarity": "positive",
+    "source": 9,
+    "id": 298
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 19,
+    "polarity": "negative",
+    "source": 201,
+    "id": 299
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 134,
+    "polarity": "positive",
+    "source": 205,
+    "id": 300
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 174,
+    "polarity": "negative",
+    "source": 2,
+    "id": 301
+   }
+  },
+  {
+   "data": {
+    "weight": 3,
+    "i": "Attractor",
+    "target": 29,
+    "polarity": "none",
+    "source": 215,
+    "id": 302
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 12,
+    "polarity": "none",
+    "source": 215,
+    "id": 303
+   }
+  },
+  {
+   "data": {
+    "weight": 2,
+    "i": "Attractor",
+    "target": 41,
+    "polarity": "none",
+    "source": 215,
+    "id": 304
+   }
+  }
+ ],
+ "nodes": [
+  {
+   "data": {
+    "db_refs": {
+     "BE": "AKT"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "AKT",
+    "id": 1,
+    "members": {
+     "HGNC": {
+      "AKT2": {
+       "mutation": 0,
+       "expression": 3311,
+       "bin_expression": 1
+      },
+      "AKT1": {
+       "mutation": 0,
+       "expression": 23737,
+       "bin_expression": 1
+      },
+      "AKT3": {
+       "mutation": 0,
+       "expression": 11950,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:12362",
+     "UniProt": "http://identifiers.org/uniprot/Q92574"
+    },
+    "mutation": 0,
+    "parent": 238,
+    "name": "TSC1",
+    "id": 2,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 10035,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:12363",
+     "UniProt": "http://identifiers.org/uniprot/P49815"
+    },
+    "mutation": 1,
+    "parent": 238,
+    "name": "TSC2",
+    "id": 4,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 12736,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:427",
+     "UniProt": "http://identifiers.org/uniprot/Q9UM73"
+    },
+    "mutation": 0,
+    "parent": 224,
+    "name": "ALK",
+    "id": 6,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 842,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:4566",
+     "UniProt": "http://identifiers.org/uniprot/P62993"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "GRB2",
+    "id": 7,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 34956,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "SHC"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "SHC",
+    "id": 9,
+    "members": {
+     "HGNC": {
+      "SHC1": {
+       "mutation": 0,
+       "expression": 39378,
+       "bin_expression": 2
+      },
+      "SHC3": {
+       "mutation": 0,
+       "expression": 1168,
+       "bin_expression": 1
+      },
+      "SHC4": {
+       "mutation": 0,
+       "expression": 277,
+       "bin_expression": 1
+      },
+      "SHC2": {
+       "mutation": 0,
+       "expression": 1967,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:646",
+     "UniProt": "http://identifiers.org/uniprot/P10398"
+    },
+    "mutation": 0,
+    "parent": 235,
+    "name": "ARAF",
+    "id": 11,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 8685,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:6840",
+     "UniProt": "http://identifiers.org/uniprot/Q02750"
+    },
+    "mutation": 0,
+    "parent": 232,
+    "name": "MAP2K1",
+    "id": 12,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 46451,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:6842",
+     "UniProt": "http://identifiers.org/uniprot/P36507"
+    },
+    "mutation": 0,
+    "parent": 232,
+    "name": "MAP2K2",
+    "id": 14,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 28401,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:4591",
+     "UniProt": "http://identifiers.org/uniprot/Q9NRY4"
+    },
+    "mutation": 0,
+    "parent": 234,
+    "name": "ARHGAP35",
+    "id": 16,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 5011,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:5173",
+     "UniProt": "http://identifiers.org/uniprot/P01112"
+    },
+    "mutation": 0,
+    "parent": 236,
+    "name": "HRAS",
+    "id": 17,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 40003,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:6407",
+     "UniProt": "http://identifiers.org/uniprot/P01116"
+    },
+    "mutation": 0,
+    "parent": 236,
+    "name": "KRAS",
+    "id": 19,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 47557,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:7989",
+     "UniProt": "http://identifiers.org/uniprot/P01111"
+    },
+    "mutation": 0,
+    "parent": 236,
+    "name": "NRAS",
+    "id": 21,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 37025,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:667",
+     "UniProt": "http://identifiers.org/uniprot/P61586"
+    },
+    "mutation": 0,
+    "parent": 226,
+    "name": "RHOA",
+    "id": 23,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 129458,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:668",
+     "UniProt": "http://identifiers.org/uniprot/P62745"
+    },
+    "mutation": 0,
+    "parent": 226,
+    "name": "RHOB",
+    "id": 25,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 2807,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:669",
+     "UniProt": "http://identifiers.org/uniprot/P08134"
+    },
+    "mutation": 0,
+    "parent": 226,
+    "name": "RHOC",
+    "id": 27,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 101586,
+    "bin_expression": 4
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:1097",
+     "UniProt": "http://identifiers.org/uniprot/P15056"
+    },
+    "mutation": 1,
+    "parent": 235,
+    "name": "BRAF",
+    "id": 29,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 4765,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:1582",
+     "UniProt": "http://identifiers.org/uniprot/P24385"
+    },
+    "mutation": 1,
+    "parent": "",
+    "name": "CCND1",
+    "id": 32,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 37698,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:1773",
+     "UniProt": "http://identifiers.org/uniprot/P11802"
+    },
+    "mutation": 0,
+    "parent": 237,
+    "name": "CDK4",
+    "id": 33,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 100678,
+    "bin_expression": 4
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:1777",
+     "UniProt": "http://identifiers.org/uniprot/Q00534"
+    },
+    "mutation": 0,
+    "parent": 237,
+    "name": "CDK6",
+    "id": 35,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 16647,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:9884",
+     "UniProt": "http://identifiers.org/uniprot/P06400"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "RB1",
+    "id": 37,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 10686,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "DUSP"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "DUSP",
+    "id": 40,
+    "members": {
+     "HGNC": {
+      "DUSP5": {
+       "mutation": 0,
+       "expression": 23483,
+       "bin_expression": 1
+      },
+      "DUSP4": {
+       "mutation": 0,
+       "expression": 533,
+       "bin_expression": 1
+      },
+      "DUSP3": {
+       "mutation": 0,
+       "expression": 27847,
+       "bin_expression": 1
+      },
+      "DUSP1": {
+       "mutation": 0,
+       "expression": 28635,
+       "bin_expression": 1
+      },
+      "DUSP6": {
+       "mutation": 0,
+       "expression": 70062,
+       "bin_expression": 3
+      },
+      "DUSP2": {
+       "mutation": 0,
+       "expression": 462,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:6871",
+     "UniProt": "http://identifiers.org/uniprot/P28482"
+    },
+    "mutation": 0,
+    "parent": 230,
+    "name": "MAPK1",
+    "id": 41,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 20997,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:6877",
+     "UniProt": "http://identifiers.org/uniprot/P27361"
+    },
+    "mutation": 0,
+    "parent": 230,
+    "name": "MAPK3",
+    "id": 43,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 8998,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:3236",
+     "UniProt": "http://identifiers.org/uniprot/P00533"
+    },
+    "mutation": 0,
+    "parent": 224,
+    "name": "EGFR",
+    "id": 45,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 7847,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:3430",
+     "UniProt": "http://identifiers.org/uniprot/P04626"
+    },
+    "mutation": 0,
+    "parent": 224,
+    "name": "ERBB2",
+    "id": 48,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 2811,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "ETS"
+    },
+    "mutation": 0,
+    "parent": 228,
+    "name": "ETS",
+    "id": 51,
+    "members": {
+     "HGNC": {
+      "ETS1": {
+       "mutation": 0,
+       "expression": 28450,
+       "bin_expression": 1
+      },
+      "ETS2": {
+       "mutation": 0,
+       "expression": 8614,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:6973",
+     "UniProt": "http://identifiers.org/uniprot/Q00987"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "MDM2",
+    "id": 54,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 4329,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "FGFR",
+     "InterPro": "http://identifiers.org/interpro/IPR016248"
+    },
+    "mutation": 0,
+    "parent": 224,
+    "name": "FGFR",
+    "id": 56,
+    "members": {
+     "HGNC": {
+      "FGFRL1": {
+       "mutation": 0,
+       "expression": 3938,
+       "bin_expression": 1
+      },
+      "FGFR3": {
+       "mutation": 0,
+       "expression": 1193,
+       "bin_expression": 1
+      },
+      "FGFR2": {
+       "mutation": 0,
+       "expression": 522,
+       "bin_expression": 1
+      },
+      "FGFR4": {
+       "mutation": 0,
+       "expression": 994,
+       "bin_expression": 1
+      },
+      "FGFR1": {
+       "mutation": 0,
+       "expression": 29488,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "FOS_family"
+    },
+    "mutation": 0,
+    "parent": 228,
+    "name": "FOS_family",
+    "id": 59,
+    "members": {
+     "HGNC": {
+      "FOSL2": {
+       "mutation": 0,
+       "expression": 6253,
+       "bin_expression": 1
+      },
+      "FOSL1": {
+       "mutation": 0,
+       "expression": 157634,
+       "bin_expression": 5
+      },
+      "FOS": {
+       "mutation": 0,
+       "expression": 28690,
+       "bin_expression": 1
+      },
+      "FOSB": {
+       "mutation": 0,
+       "expression": 6342,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "RASGRF"
+    },
+    "mutation": 0,
+    "parent": 225,
+    "name": "RASGRF",
+    "id": 63,
+    "members": {
+     "HGNC": {
+      "RASGRF2": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      },
+      "RASGRF1": {
+       "mutation": 0,
+       "expression": 493,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "SOS"
+    },
+    "mutation": 0,
+    "parent": 225,
+    "name": "SOS",
+    "id": 65,
+    "members": {
+     "HGNC": {
+      "SOS2": {
+       "mutation": 0,
+       "expression": 6214,
+       "bin_expression": 1
+      },
+      "SOS1": {
+       "mutation": 0,
+       "expression": 11840,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {},
+    "mutation": 0,
+    "parent": "",
+    "name": "Growth_factor_proteins",
+    "id": 67,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "PDGFR"
+    },
+    "mutation": 0,
+    "parent": 224,
+    "name": "PDGFR",
+    "id": 72,
+    "members": {
+     "HGNC": {
+      "PDGFRA": {
+       "mutation": 0,
+       "expression": 948,
+       "bin_expression": 1
+      },
+      "PDGFRB": {
+       "mutation": 0,
+       "expression": 1143,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:10261",
+     "UniProt": "http://identifiers.org/uniprot/P08922"
+    },
+    "mutation": 0,
+    "parent": 224,
+    "name": "ROS1",
+    "id": 74,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 391,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "PI3K_p110"
+    },
+    "mutation": 0,
+    "parent": 227,
+    "name": "PI3K_p110",
+    "id": 78,
+    "members": {
+     "HGNC": {
+      "PIK3CB": {
+       "mutation": 0,
+       "expression": 3968,
+       "bin_expression": 1
+      },
+      "PIK3CA": {
+       "mutation": 0,
+       "expression": 15219,
+       "bin_expression": 1
+      },
+      "PIK3CD": {
+       "mutation": 0,
+       "expression": 4342,
+       "bin_expression": 1
+      },
+      "PIK3CG": {
+       "mutation": 0,
+       "expression": 834,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "PIK3R_I"
+    },
+    "mutation": 0,
+    "parent": 227,
+    "name": "PIK3R_I",
+    "id": 80,
+    "members": {
+     "HGNC": {
+      "PIK3R5": {
+       "mutation": 0,
+       "expression": 747,
+       "bin_expression": 1
+      },
+      "PIK3R4": {
+       "mutation": 0,
+       "expression": 26178,
+       "bin_expression": 1
+      },
+      "PIK3R2": {
+       "mutation": 1,
+       "expression": 4921,
+       "bin_expression": 1
+      },
+      "PIK3R3": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      },
+      "PIK3R6": {
+       "mutation": 0,
+       "expression": 315,
+       "bin_expression": 1
+      },
+      "PIK3R1": {
+       "mutation": 0,
+       "expression": 8230,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:9829",
+     "UniProt": "http://identifiers.org/uniprot/P04049"
+    },
+    "mutation": 0,
+    "parent": 235,
+    "name": "RAF1",
+    "id": 82,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 34017,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:9842",
+     "UniProt": "http://identifiers.org/uniprot/Q12967"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "RALGDS",
+    "id": 84,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 6440,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "JUN_family"
+    },
+    "mutation": 0,
+    "parent": 228,
+    "name": "JUN_family",
+    "id": 86,
+    "members": {
+     "HGNC": {
+      "JUNB": {
+       "mutation": 0,
+       "expression": 15043,
+       "bin_expression": 1
+      },
+      "JUN": {
+       "mutation": 0,
+       "expression": 51581,
+       "bin_expression": 2
+      },
+      "JUND": {
+       "mutation": 0,
+       "expression": 7220,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:11998",
+     "UniProt": "http://identifiers.org/uniprot/P04637"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "TP53",
+    "id": 106,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 11890,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:7765",
+     "UniProt": "http://identifiers.org/uniprot/P21359"
+    },
+    "mutation": 1,
+    "parent": 234,
+    "name": "NF1",
+    "id": 108,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 6813,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "MESH": "http://identifiers.org/mesh/C060974",
+     "PubChem": "http://identifiers.org/pubchem.compound/101362114"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "PIP3",
+    "id": 123,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:8816",
+     "UniProt": "http://identifiers.org/uniprot/O15530"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "PDPK1",
+    "id": 127,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 23300,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "TIAM"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "TIAM",
+    "id": 129,
+    "members": {
+     "HGNC": {
+      "TIAM1": {
+       "mutation": 0,
+       "expression": 2795,
+       "bin_expression": 1
+      },
+      "TIAM2": {
+       "mutation": 0,
+       "expression": 792,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "AMPK_alpha"
+    },
+    "mutation": 0,
+    "parent": 231,
+    "name": "AMPK_alpha",
+    "id": 131,
+    "members": {
+     "HGNC": {
+      "PRKAA2": {
+       "mutation": 0,
+       "expression": 438,
+       "bin_expression": 1
+      },
+      "PRKAA1": {
+       "mutation": 0,
+       "expression": 12099,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "mTORC2"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "mTORC2",
+    "id": 132,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "AMPK_beta"
+    },
+    "mutation": 0,
+    "parent": 231,
+    "name": "AMPK_beta",
+    "id": 134,
+    "members": {
+     "HGNC": {
+      "PRKAB1": {
+       "mutation": 0,
+       "expression": 9877,
+       "bin_expression": 1
+      },
+      "PRKAB2": {
+       "mutation": 0,
+       "expression": 14137,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "AMPK_gamma"
+    },
+    "mutation": 0,
+    "parent": 231,
+    "name": "AMPK_gamma",
+    "id": 136,
+    "members": {
+     "HGNC": {
+      "PRKAG1": {
+       "mutation": 0,
+       "expression": 50444,
+       "bin_expression": 2
+      },
+      "PRKAG2": {
+       "mutation": 0,
+       "expression": 13648,
+       "bin_expression": 1
+      },
+      "PRKAG3": {
+       "mutation": 0,
+       "expression": 446,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:9588",
+     "UniProt": "http://identifiers.org/uniprot/P60484"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "PTEN",
+    "id": 138,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 15042,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "RAC"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "RAC",
+    "id": 141,
+    "members": {
+     "HGNC": {
+      "RAC1": {
+       "mutation": 0,
+       "expression": 141370,
+       "bin_expression": 5
+      },
+      "RHOG": {
+       "mutation": 0,
+       "expression": 40666,
+       "bin_expression": 2
+      },
+      "RAC3": {
+       "mutation": 0,
+       "expression": 12666,
+       "bin_expression": 1
+      },
+      "RAC2": {
+       "mutation": 0,
+       "expression": 48271,
+       "bin_expression": 2
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "PAK"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "PAK",
+    "id": 142,
+    "members": {
+     "HGNC": {
+      "PAK7": {
+       "mutation": 0,
+       "expression": 220,
+       "bin_expression": 1
+      },
+      "PAK1": {
+       "mutation": 0,
+       "expression": 13167,
+       "bin_expression": 1
+      },
+      "PAK2": {
+       "mutation": 0,
+       "expression": 24962,
+       "bin_expression": 1
+      },
+      "PAK6": {
+       "mutation": 0,
+       "expression": 665,
+       "bin_expression": 1
+      },
+      "PAK3": {
+       "mutation": 0,
+       "expression": 403,
+       "bin_expression": 1
+      },
+      "PAK4": {
+       "mutation": 0,
+       "expression": 24420,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:9839",
+     "UniProt": "http://identifiers.org/uniprot/P11233"
+    },
+    "mutation": 0,
+    "parent": 229,
+    "name": "RALA",
+    "id": 146,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 51209,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:9840",
+     "UniProt": "http://identifiers.org/uniprot/P11234"
+    },
+    "mutation": 0,
+    "parent": 229,
+    "name": "RALB",
+    "id": 148,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 38775,
+    "bin_expression": 2
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "RASA"
+    },
+    "mutation": 0,
+    "parent": 234,
+    "name": "RASA",
+    "id": 150,
+    "members": {
+     "HGNC": {
+      "RASA2": {
+       "mutation": 0,
+       "expression": 8975,
+       "bin_expression": 1
+      },
+      "RASA3": {
+       "mutation": 0,
+       "expression": 2469,
+       "bin_expression": 1
+      },
+      "RASA1": {
+       "mutation": 0,
+       "expression": 75222,
+       "bin_expression": 3
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "RASAL"
+    },
+    "mutation": 0,
+    "parent": 234,
+    "name": "RASAL",
+    "id": 157,
+    "members": {
+     "HGNC": {
+      "RASAL2": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      },
+      "RASAL3": {
+       "mutation": 0,
+       "expression": 1306,
+       "bin_expression": 1
+      },
+      "RASAL1": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "RASGRP"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "RASGRP",
+    "id": 170,
+    "members": {
+     "HGNC": {
+      "RASGRP3": {
+       "mutation": 0,
+       "expression": 287,
+       "bin_expression": 1
+      },
+      "RASGRP1": {
+       "mutation": 0,
+       "expression": 181,
+       "bin_expression": 0
+      },
+      "RASGRP2": {
+       "mutation": 0,
+       "expression": 310,
+       "bin_expression": 1
+      },
+      "RASGRP4": {
+       "mutation": 0,
+       "expression": 332,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:10011",
+     "UniProt": "http://identifiers.org/uniprot/Q15382"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "RHEB",
+    "id": 174,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 11615,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:10251",
+     "UniProt": "http://identifiers.org/uniprot/Q13464"
+    },
+    "mutation": 0,
+    "parent": 233,
+    "name": "ROCK1",
+    "id": 176,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 3669,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:10252",
+     "UniProt": "http://identifiers.org/uniprot/O75116"
+    },
+    "mutation": 0,
+    "parent": 233,
+    "name": "ROCK2",
+    "id": 178,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "SPRED"
+    },
+    "mutation": 0,
+    "parent": 234,
+    "name": "SPRED",
+    "id": 194,
+    "members": {
+     "HGNC": {
+      "SPRED3": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      },
+      "SPRED2": {
+       "mutation": 0,
+       "expression": 12420,
+       "bin_expression": 1
+      },
+      "SPRED1": {
+       "mutation": 0,
+       "expression": 11015,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "SPRY"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "SPRY",
+    "id": 201,
+    "members": {
+     "HGNC": {
+      "SPRY1": {
+       "mutation": 0,
+       "expression": 1069,
+       "bin_expression": 1
+      },
+      "SPRY2": {
+       "mutation": 0,
+       "expression": 31960,
+       "bin_expression": 2
+      },
+      "SPRY4": {
+       "mutation": 0,
+       "expression": 9007,
+       "bin_expression": 1
+      },
+      "SPRY3": {
+       "mutation": 0,
+       "expression": 209,
+       "bin_expression": 1
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:11389",
+     "UniProt": "http://identifiers.org/uniprot/Q15831"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "STK11",
+    "id": 205,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 6326,
+    "bin_expression": 1
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "HGNC": "http://identifiers.org/hgnc/HGNC:3288",
+     "UniProt": "http://identifiers.org/uniprot/Q13541"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "EIF4EBP1",
+    "id": 212,
+    "members": {
+     "HGNC": {}
+    },
+    "expression": 94526,
+    "bin_expression": 3
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "P90RSK"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "P90RSK",
+    "id": 214,
+    "members": {
+     "HGNC": {
+      "RPS6KA3": {
+       "mutation": 0,
+       "expression": 19417,
+       "bin_expression": 1
+      },
+      "RPS6KA5": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      },
+      "RPS6KA6": {
+       "mutation": 0,
+       "expression": 317,
+       "bin_expression": 1
+      },
+      "RPS6KA1": {
+       "mutation": 0,
+       "expression": 1459,
+       "bin_expression": 1
+      },
+      "RPS6KA2": {
+       "mutation": 0,
+       "expression": 666,
+       "bin_expression": 1
+      },
+      "RPS6KA4": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "db_refs": {
+     "BE": "KSR"
+    },
+    "mutation": 0,
+    "parent": "",
+    "name": "KSR",
+    "id": 215,
+    "members": {
+     "HGNC": {
+      "KSR2": {
+       "mutation": 0,
+       "expression": 437,
+       "bin_expression": 1
+      },
+      "KSR1": {
+       "mutation": 0,
+       "expression": null,
+       "bin_expression": 5
+      }
+     }
+    },
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[6, 45, 48, 56, 72, 74]",
+    "id": 224,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[63, 65]",
+    "id": 225,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[23, 25, 27]",
+    "id": 226,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[78, 80]",
+    "id": 227,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[51, 59, 86]",
+    "id": 228,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[146, 148]",
+    "id": 229,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[41, 43]",
+    "id": 230,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[131, 136, 134]",
+    "id": 231,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[12, 14]",
+    "id": 232,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[178, 176]",
+    "id": 233,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[16, 150, 157, 194, 108]",
+    "id": 234,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[11, 29, 82]",
+    "id": 235,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[17, 19, 21]",
+    "id": 236,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[33, 35]",
+    "id": 237,
+    "expression": null,
+    "bin_expression": 5
+   }
+  },
+  {
+   "data": {
+    "mutation": 0,
+    "parent": "",
+    "name": "Group[2, 4]",
+    "id": 238,
+    "expression": null,
+    "bin_expression": 5
    }
   }
  ]
