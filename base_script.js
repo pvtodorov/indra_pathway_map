@@ -35,13 +35,13 @@ $(function(){
             return current_colorscale[bin_expression]},
           //'background-color': exp_colorscale[5],
           'background-opacity': 1,
-          'font-size': '35px',
+          'font-size': '40px',
           'text-halign': 'above',
           'text-valign': 'center',
           'z-index': 2,
           'color': '#FFFFFF',
           'text-outline-color': '#000000',
-          'text-outline-width': 3,
+          'text-outline-width': 5,
           'font-weight': 700,
           'text-wrap': 'wrap',
           'text-max-width': '200px'
@@ -319,8 +319,8 @@ $(function(){
 
         var list_lines = content.map(function( link ){
         var line = '<b style="font-size:13px">' + String(link[0].id) + '</b>' + ' ' +
-                   '<a  style="font-size:11px" target="_blank" href="' + link[0].url + '">' + '(' + link[0].name + ')' + '</a>' + '   ' +
-                   '<a style="font-size:11px" target="_blank" href="' + link[1].url + '">' + '(' + link[1].name + ')' + '</a>';
+                   '<a  style="font-size:11px" target="_blank" href="' + link[0].url + '">' + link[0].name + '</a>&nbsp;' + 
+                   '<a style="font-size:11px" target="_blank" href="' + link[1].url + '">' + link[1].name  + '</a>';
         return line;
         });
 
