@@ -42,7 +42,9 @@ $(function(){
           'color': '#FFFFFF',
           'text-outline-color': '#000000',
           'text-outline-width': 3,
-          'font-weight': 700
+          'font-weight': 700,
+          'text-wrap': 'wrap',
+          'text-max-width': '200px'
         }
       },
 
@@ -306,7 +308,7 @@ $(function(){
                 });
               }
             } // for (var namespace ...)
-            
+
 
             content.push(db_links);
             current_slice += 1;
