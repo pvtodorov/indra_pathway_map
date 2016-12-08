@@ -35,7 +35,7 @@ $(function(){
             return current_colorscale[bin_expression]},
           //'background-color': exp_colorscale[5],
           'background-opacity': 1,
-          'font-size': '26px',
+          'font-size': '35px',
           'text-halign': 'above',
           'text-valign': 'center',
           'z-index': 2,
@@ -235,15 +235,23 @@ $(function(){
   layout.run();
   cy.fit();
 
-
+  var dragged = false;
   cy.on(('mousedown'),function(){
     //console.log( 'mousedown' );
     layout.stop();
+    cy.nodes().on(('drag'), function(){
+      dragged = true;
+    })
     });
   cy.on(('mouseup'),function(){
     //console.log( 'mouseup' );
-    layout.run();
+    if (dragged === true){
+      layout.run();
+      dragged = false;
+    }
+
     });
+
 
 
   cy.edges().forEach(function(e){
@@ -271,40 +279,43 @@ $(function(){
     // if the node has members, build pie chart background arrays, qtips
     if (data.hasOwnProperty("members")){
       members = data.members;
-      if (members.hasOwnProperty("HGNC")){
-        HGNC = members.HGNC;
-        if (Object.keys(HGNC).length > 0){
-          fam_length = Object.keys(HGNC).length
+
+
+        if (Object.keys(members).length > 0){
+          fam_length = Object.keys(members).length
           var pie_sizes = new Array(16).fill(0);
           var pie_colors = new Array(16).fill(exp_colorscale[exp_colorscale.length -1]);
           var pie_mutations = new Array(16).fill(0);
           var current_slice = 0;
           var content = []; // stores the
-          for (var gene in HGNC) {
+          for (var gene in members) {
             pie_sizes[current_slice] = (100*(1/fam_length));
-            if ((HGNC[gene].mutation) === 0){
-              pie_colors[current_slice] = exp_colorscale[(HGNC[gene].bin_expression)]
+            if ((members[gene].mutation) === 0){
+              pie_colors[current_slice] = exp_colorscale[(members[gene].bin_expression)]
             }
-            if ((HGNC[gene].mutation) !== 0){
-              pie_colors[current_slice] = mut_colorscale[(HGNC[gene].bin_expression)]
+            if ((members[gene].mutation) !== 0){
+              pie_colors[current_slice] = mut_colorscale[(members[gene].bin_expression)]
             }
-          console.log(pie_colors);
+          //console.log(pie_colors);
 
-            pie_mutations[current_slice] = (HGNC[gene].mutation);
-            content.push(
-              [
-                {
-                  id: gene,
-                  name: 'GeneCard',
-                  url: 'http://www.genecards.org/cgi-bin/carddisp.pl?gene=' + gene
-                },
-                {
-                  id: gene,
-                  name: 'UniProt',
-                  url: 'http://www.uniprot.org/uniprot/?query='+ gene +'&fil=organism%3A%22Homo+sapiens+%28Human%29+%5B9606%5D%22&sort=score'
-                }
-              ]
-            );
+            pie_mutations[current_slice] = (members[gene].mutation);
+            var db_links = [];
+            if (members[gene]['db_refs'].hasOwnProperty("HGNC")){
+              db_links.push({
+                id: gene,
+                name: 'HGNC',
+                url: members[gene]['db_refs']['HGNC']
+              });
+            };
+            if (members[gene]['db_refs'].hasOwnProperty("UniProt")){
+              db_links.push({
+                id: gene,
+                name: 'UniProt',
+                url: members[gene]['db_refs']['UniProt']
+              });
+            };
+
+            content.push(db_links);
             current_slice += 1;
         }
         n.data('pie_sizes', pie_sizes);
@@ -347,8 +358,8 @@ $(function(){
         n.data('qtip', qtip_api_call)
 
         n.addClass('hasMembers');
-        console.log(n.data().qtip);
-      }
+        //console.log(n.data().qtip);
+
     }}
     // if a node is an attractor, tag it with nAttractor class
     if (n.data('name') === 'Attractor'){
