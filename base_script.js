@@ -222,18 +222,17 @@ $(function(){
     flow: { axis: 'y', },
     animate: true,
     randomize: false,
-    maxSimulationTime: 10000,
-    fit: true,
+    maxSimulationTime: 2000,
+    fit: false,
     infinite: false,
     ungrabifyWhileSimulating: false,
     edgeLength: function( edge ){ return edge.data('weight'); },
     // layout event callbacks
-    ready: function(){}, // on layoutready
+    ready: function(){cy.fit();}, // on layoutready
     stop: function(){}, // on layoutstop
   };
   var layout = cy.makeLayout( params );
   layout.run();
-  cy.fit();
 
   var dragged = false;
   cy.on(('mousedown'),function(){
