@@ -1588,7 +1588,7 @@ var model_elements = {
     "id": 239,
     "polarity": "negative",
     "source": 1,
-    "target": 234,
+    "target": 230,
     "weight": 2
    }
   },
@@ -1597,7 +1597,7 @@ var model_elements = {
     "i": "Activation",
     "id": 240,
     "polarity": "positive",
-    "source": 232,
+    "source": 227,
     "target": 7,
     "weight": 6
    }
@@ -1607,7 +1607,7 @@ var model_elements = {
     "i": "Activation",
     "id": 241,
     "polarity": "positive",
-    "source": 232,
+    "source": 227,
     "target": 9,
     "weight": 6
    }
@@ -1618,7 +1618,7 @@ var model_elements = {
     "id": 242,
     "polarity": "positive",
     "source": 228,
-    "target": 231,
+    "target": 224,
     "weight": 3
    }
   },
@@ -1627,8 +1627,8 @@ var model_elements = {
     "i": "Activation",
     "id": 243,
     "polarity": "negative",
-    "source": 229,
-    "target": 227,
+    "source": 226,
+    "target": 232,
     "weight": 5
    }
   },
@@ -1637,8 +1637,8 @@ var model_elements = {
     "i": "Activation",
     "id": 244,
     "polarity": "negative",
-    "source": 229,
-    "target": 225,
+    "source": 226,
+    "target": 234,
     "weight": 5
    }
   },
@@ -1648,7 +1648,7 @@ var model_elements = {
     "id": 245,
     "polarity": "positive",
     "source": 32,
-    "target": 235,
+    "target": 237,
     "weight": 2
    }
   },
@@ -1657,7 +1657,7 @@ var model_elements = {
     "i": "Activation",
     "id": 246,
     "polarity": "negative",
-    "source": 235,
+    "source": 237,
     "target": 37,
     "weight": 2
    }
@@ -1668,7 +1668,7 @@ var model_elements = {
     "id": 247,
     "polarity": "negative",
     "source": 40,
-    "target": 238,
+    "target": 235,
     "weight": 2
    }
   },
@@ -1677,7 +1677,7 @@ var model_elements = {
     "i": "Activation",
     "id": 248,
     "polarity": "positive",
-    "source": 226,
+    "source": 236,
     "target": 32,
     "weight": 3
    }
@@ -1687,7 +1687,7 @@ var model_elements = {
     "i": "Activation",
     "id": 249,
     "polarity": "positive",
-    "source": 226,
+    "source": 236,
     "target": 40,
     "weight": 3
    }
@@ -1697,7 +1697,7 @@ var model_elements = {
     "i": "Activation",
     "id": 250,
     "polarity": "positive",
-    "source": 226,
+    "source": 236,
     "target": 54,
     "weight": 3
    }
@@ -1708,7 +1708,7 @@ var model_elements = {
     "id": 251,
     "polarity": "positive",
     "source": 7,
-    "target": 230,
+    "target": 229,
     "weight": 2
    }
   },
@@ -1718,7 +1718,7 @@ var model_elements = {
     "id": 252,
     "polarity": "positive",
     "source": 67,
-    "target": 232,
+    "target": 227,
     "weight": 6
    }
   },
@@ -1727,7 +1727,7 @@ var model_elements = {
     "i": "Activation",
     "id": 253,
     "polarity": "positive",
-    "source": 227,
+    "source": 232,
     "target": 228,
     "weight": 3
    }
@@ -1737,8 +1737,8 @@ var model_elements = {
     "i": "Activation",
     "id": 254,
     "polarity": "positive",
-    "source": 227,
-    "target": 224,
+    "source": 232,
+    "target": 238,
     "weight": 3
    }
   },
@@ -1747,7 +1747,7 @@ var model_elements = {
     "i": "Activation",
     "id": 255,
     "polarity": "positive",
-    "source": 227,
+    "source": 232,
     "target": 84,
     "weight": 3
    }
@@ -1757,8 +1757,8 @@ var model_elements = {
     "i": "Activation",
     "id": 256,
     "polarity": "positive",
-    "source": 231,
-    "target": 238,
+    "source": 224,
+    "target": 235,
     "weight": 2
    }
   },
@@ -1767,8 +1767,8 @@ var model_elements = {
     "i": "Activation",
     "id": 257,
     "polarity": "positive",
-    "source": 238,
-    "target": 226,
+    "source": 235,
+    "target": 236,
     "weight": 3
    }
   },
@@ -1777,7 +1777,7 @@ var model_elements = {
     "i": "Activation",
     "id": 258,
     "polarity": "positive",
-    "source": 224,
+    "source": 238,
     "target": 123,
     "weight": 2
    }
@@ -1787,7 +1787,7 @@ var model_elements = {
     "i": "Activation",
     "id": 259,
     "polarity": "negative",
-    "source": 236,
+    "source": 225,
     "target": 132,
     "weight": 3
    }
@@ -1807,8 +1807,8 @@ var model_elements = {
     "i": "Activation",
     "id": 261,
     "polarity": "positive",
-    "source": 230,
-    "target": 227,
+    "source": 229,
+    "target": 232,
     "weight": 3
    }
   },
@@ -1817,8 +1817,8 @@ var model_elements = {
     "i": "Activation",
     "id": 262,
     "polarity": "positive",
-    "source": 230,
-    "target": 225,
+    "source": 229,
+    "target": 234,
     "weight": 3
    }
   },
@@ -1828,7 +1828,7 @@ var model_elements = {
     "id": 263,
     "polarity": "positive",
     "source": 170,
-    "target": 227,
+    "target": 232,
     "weight": 3
    }
   },
@@ -1837,8 +1837,8 @@ var model_elements = {
     "i": "Activation",
     "id": 264,
     "polarity": "positive",
-    "source": 225,
-    "target": 237,
+    "source": 234,
+    "target": 231,
     "weight": 3
    }
   },
@@ -1848,7 +1848,7 @@ var model_elements = {
     "id": 265,
     "polarity": "positive",
     "source": 9,
-    "target": 230,
+    "target": 229,
     "weight": 2
    }
   },
@@ -1858,7 +1858,7 @@ var model_elements = {
     "id": 266,
     "polarity": "negative",
     "source": 201,
-    "target": 227,
+    "target": 232,
     "weight": 3
    }
   },
@@ -1868,7 +1868,7 @@ var model_elements = {
     "id": 267,
     "polarity": "positive",
     "source": 205,
-    "target": 236,
+    "target": 225,
     "weight": 3
    }
   },
@@ -1877,7 +1877,7 @@ var model_elements = {
     "i": "Activation",
     "id": 268,
     "polarity": "negative",
-    "source": 234,
+    "source": 230,
     "target": 174,
     "weight": 2
    }
@@ -1898,7 +1898,7 @@ var model_elements = {
     "id": 270,
     "polarity": "none",
     "source": 215,
-    "target": 231,
+    "target": 224,
     "weight": 2
    }
   },
@@ -1908,7 +1908,7 @@ var model_elements = {
     "id": 271,
     "polarity": "none",
     "source": 215,
-    "target": 238,
+    "target": 235,
     "weight": 2
    }
   }
@@ -1923,22 +1923,32 @@ var model_elements = {
     "expression": null,
     "id": 1,
     "members": {
-     "HGNC": {
-      "AKT1": {
-       "bin_expression": 6,
-       "expression": 4.375425829792342,
-       "mutation": 0
+     "AKT1": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:391",
+       "UniProt": "http://identifiers.org/uniprot/P31749"
       },
-      "AKT2": {
-       "bin_expression": 3,
-       "expression": 3.519959180752068,
-       "mutation": 0
+      "expression": 4.375425829792342,
+      "mutation": 0
+     },
+     "AKT2": {
+      "bin_expression": 3,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:392",
+       "UniProt": "http://identifiers.org/uniprot/P31751"
       },
-      "AKT3": {
-       "bin_expression": 5,
-       "expression": 4.077367905284157,
-       "mutation": 0
-      }
+      "expression": 3.519959180752068,
+      "mutation": 0
+     },
+     "AKT3": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:393",
+       "UniProt": "http://identifiers.org/uniprot/Q9Y243"
+      },
+      "expression": 4.077367905284157,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -1955,12 +1965,10 @@ var model_elements = {
     },
     "expression": 4.001517376823504,
     "id": 2,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "TSC1",
-    "parent": 234
+    "parent": 230
    }
   },
   {
@@ -1972,12 +1980,10 @@ var model_elements = {
     },
     "expression": 4.105033050393594,
     "id": 4,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 1,
     "name": "TSC2",
-    "parent": 234
+    "parent": 230
    }
   },
   {
@@ -1989,12 +1995,10 @@ var model_elements = {
     },
     "expression": 2.925312091499649,
     "id": 6,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ALK",
-    "parent": 232
+    "parent": 227
    }
   },
   {
@@ -2006,9 +2010,7 @@ var model_elements = {
     },
     "expression": 4.543521730675291,
     "id": 7,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "GRB2",
     "parent": ""
@@ -2023,27 +2025,41 @@ var model_elements = {
     "expression": null,
     "id": 9,
     "members": {
-     "HGNC": {
-      "SHC1": {
-       "bin_expression": 7,
-       "expression": 4.595253654640566,
-       "mutation": 0
+     "SHC1": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10840",
+       "UniProt": "http://identifiers.org/uniprot/P29353"
       },
-      "SHC2": {
-       "bin_expression": 3,
-       "expression": 3.2938043599193363,
-       "mutation": 0
+      "expression": 4.595253654640566,
+      "mutation": 0
+     },
+     "SHC2": {
+      "bin_expression": 3,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:29869",
+       "UniProt": "http://identifiers.org/uniprot/P98077"
       },
-      "SHC3": {
-       "bin_expression": 2,
-       "expression": 3.0674428427763805,
-       "mutation": 0
+      "expression": 3.2938043599193363,
+      "mutation": 0
+     },
+     "SHC3": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:18181",
+       "UniProt": "http://identifiers.org/uniprot/Q92529"
       },
-      "SHC4": {
-       "bin_expression": 0,
-       "expression": 2.442479769064448,
-       "mutation": 0
-      }
+      "expression": 3.0674428427763805,
+      "mutation": 0
+     },
+     "SHC4": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:16743",
+       "UniProt": "http://identifiers.org/uniprot/Q6S5L8"
+      },
+      "expression": 2.442479769064448,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -2060,9 +2076,7 @@ var model_elements = {
     },
     "expression": 3.938769822783117,
     "id": 11,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ARAF",
     "parent": 228
@@ -2077,12 +2091,10 @@ var model_elements = {
     },
     "expression": 4.666995067948759,
     "id": 12,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "MAP2K1",
-    "parent": 231
+    "parent": 224
    }
   },
   {
@@ -2094,12 +2106,10 @@ var model_elements = {
     },
     "expression": 4.453333631837039,
     "id": 14,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "MAP2K2",
-    "parent": 231
+    "parent": 224
    }
   },
   {
@@ -2111,12 +2121,10 @@ var model_elements = {
     },
     "expression": 3.699924402742476,
     "id": 16,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ARHGAP35",
-    "parent": 229
+    "parent": 226
    }
   },
   {
@@ -2128,12 +2136,10 @@ var model_elements = {
     },
     "expression": 4.602092562192712,
     "id": 17,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "HRAS",
-    "parent": 227
+    "parent": 232
    }
   },
   {
@@ -2145,12 +2151,10 @@ var model_elements = {
     },
     "expression": 4.677214450561052,
     "id": 19,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "KRAS",
-    "parent": 227
+    "parent": 232
    }
   },
   {
@@ -2162,12 +2166,10 @@ var model_elements = {
     },
     "expression": 4.568495067193246,
     "id": 21,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "NRAS",
-    "parent": 227
+    "parent": 232
    }
   },
   {
@@ -2179,12 +2181,10 @@ var model_elements = {
     },
     "expression": 5.1121288933070215,
     "id": 23,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RHOA",
-    "parent": 225
+    "parent": 234
    }
   },
   {
@@ -2196,12 +2196,10 @@ var model_elements = {
     },
     "expression": 3.448242412634439,
     "id": 25,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RHOB",
-    "parent": 225
+    "parent": 234
    }
   },
   {
@@ -2213,12 +2211,10 @@ var model_elements = {
     },
     "expression": 5.0068338600966085,
     "id": 27,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RHOC",
-    "parent": 225
+    "parent": 234
    }
   },
   {
@@ -2230,9 +2226,7 @@ var model_elements = {
     },
     "expression": 3.678062904974345,
     "id": 29,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 1,
     "name": "BRAF",
     "parent": 228
@@ -2247,9 +2241,7 @@ var model_elements = {
     },
     "expression": 4.576318310099583,
     "id": 32,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 1,
     "name": "CCND1",
     "parent": ""
@@ -2264,12 +2256,10 @@ var model_elements = {
     },
     "expression": 5.002934579566123,
     "id": 33,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "CDK4",
-    "parent": 235
+    "parent": 237
    }
   },
   {
@@ -2281,12 +2271,10 @@ var model_elements = {
     },
     "expression": 4.221335979533828,
     "id": 35,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "CDK6",
-    "parent": 235
+    "parent": 237
    }
   },
   {
@@ -2298,9 +2286,7 @@ var model_elements = {
     },
     "expression": 4.028815169846887,
     "id": 37,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RB1",
     "parent": ""
@@ -2315,37 +2301,59 @@ var model_elements = {
     "expression": null,
     "id": 40,
     "members": {
-     "HGNC": {
-      "DUSP1": {
-       "bin_expression": 6,
-       "expression": 4.456897187449348,
-       "mutation": 0
+     "DUSP1": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3064",
+       "UniProt": "http://identifiers.org/uniprot/P28562"
       },
-      "DUSP2": {
-       "bin_expression": 1,
-       "expression": 2.6646419755561253,
-       "mutation": 0
+      "expression": 4.456897187449348,
+      "mutation": 0
+     },
+     "DUSP2": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3068",
+       "UniProt": "http://identifiers.org/uniprot/Q05923"
       },
-      "DUSP3": {
-       "bin_expression": 6,
-       "expression": 4.444778414819478,
-       "mutation": 0
+      "expression": 2.6646419755561253,
+      "mutation": 0
+     },
+     "DUSP3": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3069",
+       "UniProt": "http://identifiers.org/uniprot/P51452"
       },
-      "DUSP4": {
-       "bin_expression": 1,
-       "expression": 2.726727209026572,
-       "mutation": 0
+      "expression": 4.444778414819478,
+      "mutation": 0
+     },
+     "DUSP4": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3070",
+       "UniProt": "http://identifiers.org/uniprot/Q13115"
       },
-      "DUSP5": {
-       "bin_expression": 6,
-       "expression": 4.370753578104503,
-       "mutation": 0
+      "expression": 2.726727209026572,
+      "mutation": 0
+     },
+     "DUSP5": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3071",
+       "UniProt": "http://identifiers.org/uniprot/Q16690"
       },
-      "DUSP6": {
-       "bin_expression": 7,
-       "expression": 4.845482530591811,
-       "mutation": 0
-      }
+      "expression": 4.370753578104503,
+      "mutation": 0
+     },
+     "DUSP6": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3072",
+       "UniProt": "http://identifiers.org/uniprot/Q16828"
+      },
+      "expression": 4.845482530591811,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -2362,12 +2370,10 @@ var model_elements = {
     },
     "expression": 4.3221572482330775,
     "id": 41,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "MAPK1",
-    "parent": 238
+    "parent": 235
    }
   },
   {
@@ -2379,12 +2385,10 @@ var model_elements = {
     },
     "expression": 3.9541459888295476,
     "id": 43,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "MAPK3",
-    "parent": 238
+    "parent": 235
    }
   },
   {
@@ -2396,12 +2400,10 @@ var model_elements = {
     },
     "expression": 3.894703652609229,
     "id": 45,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "EGFR",
-    "parent": 232
+    "parent": 227
    }
   },
   {
@@ -2413,12 +2415,10 @@ var model_elements = {
     },
     "expression": 3.4488608456074403,
     "id": 48,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ERBB2",
-    "parent": 232
+    "parent": 227
    }
   },
   {
@@ -2430,22 +2430,28 @@ var model_elements = {
     "expression": null,
     "id": 51,
     "members": {
-     "HGNC": {
-      "ETS1": {
-       "bin_expression": 6,
-       "expression": 4.45408227073109,
-       "mutation": 0
+     "ETS1": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3488",
+       "UniProt": "http://identifiers.org/uniprot/P14921"
       },
-      "ETS2": {
-       "bin_expression": 5,
-       "expression": 3.9352048674265805,
-       "mutation": 0
-      }
+      "expression": 4.45408227073109,
+      "mutation": 0
+     },
+     "ETS2": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3489",
+       "UniProt": "http://identifiers.org/uniprot/P15036"
+      },
+      "expression": 3.9352048674265805,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "ETS",
-    "parent": 226
+    "parent": 236
    }
   },
   {
@@ -2457,9 +2463,7 @@ var model_elements = {
     },
     "expression": 3.6363875858131562,
     "id": 54,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "MDM2",
     "parent": ""
@@ -2475,37 +2479,55 @@ var model_elements = {
     "expression": null,
     "id": 56,
     "members": {
-     "HGNC": {
-      "FGFR1": {
-       "bin_expression": 6,
-       "expression": 4.469645317874998,
-       "mutation": 0
+     "FGFR1": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3688",
+       "UniProt": "http://identifiers.org/uniprot/P11362"
       },
-      "FGFR2": {
-       "bin_expression": 1,
-       "expression": 2.717670503002262,
-       "mutation": 0
+      "expression": 4.469645317874998,
+      "mutation": 0
+     },
+     "FGFR2": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3689",
+       "UniProt": "http://identifiers.org/uniprot/P21802"
       },
-      "FGFR3": {
-       "bin_expression": 2,
-       "expression": 3.0766404436703416,
-       "mutation": 0
+      "expression": 2.717670503002262,
+      "mutation": 0
+     },
+     "FGFR3": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3690",
+       "UniProt": "http://identifiers.org/uniprot/P22607"
       },
-      "FGFR4": {
-       "bin_expression": 2,
-       "expression": 2.997386384397313,
-       "mutation": 0
+      "expression": 3.0766404436703416,
+      "mutation": 0
+     },
+     "FGFR4": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3691",
+       "UniProt": "http://identifiers.org/uniprot/P22455"
       },
-      "FGFRL1": {
-       "bin_expression": 4,
-       "expression": 3.595275711802099,
-       "mutation": 0
-      }
+      "expression": 2.997386384397313,
+      "mutation": 0
+     },
+     "FGFRL1": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3693",
+       "UniProt": "http://identifiers.org/uniprot/Q8N441"
+      },
+      "expression": 3.595275711802099,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "FGFR",
-    "parent": 232
+    "parent": 227
    }
   },
   {
@@ -2517,32 +2539,46 @@ var model_elements = {
     "expression": null,
     "id": 59,
     "members": {
-     "HGNC": {
-      "FOS": {
-       "bin_expression": 6,
-       "expression": 4.457730548245998,
-       "mutation": 0
+     "FOS": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3796",
+       "UniProt": "http://identifiers.org/uniprot/P01100"
       },
-      "FOSB": {
-       "bin_expression": 4,
-       "expression": 3.8022262376910696,
-       "mutation": 0
+      "expression": 4.457730548245998,
+      "mutation": 0
+     },
+     "FOSB": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3797",
+       "UniProt": "http://identifiers.org/uniprot/P53539"
       },
-      "FOSL1": {
-       "bin_expression": 8,
-       "expression": 5.197649896020498,
-       "mutation": 0
+      "expression": 3.8022262376910696,
+      "mutation": 0
+     },
+     "FOSL1": {
+      "bin_expression": 8,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:13718",
+       "UniProt": "http://identifiers.org/uniprot/P15407"
       },
-      "FOSL2": {
-       "bin_expression": 4,
-       "expression": 3.7960884286806684,
-       "mutation": 0
-      }
+      "expression": 5.197649896020498,
+      "mutation": 0
+     },
+     "FOSL2": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3798",
+       "UniProt": "http://identifiers.org/uniprot/P15408"
+      },
+      "expression": 3.7960884286806684,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "FOS_family",
-    "parent": 226
+    "name": "FOS family",
+    "parent": 236
    }
   },
   {
@@ -2554,22 +2590,28 @@ var model_elements = {
     "expression": null,
     "id": 63,
     "members": {
-     "HGNC": {
-      "RASGRF1": {
-       "bin_expression": 1,
-       "expression": 2.6928469192772297,
-       "mutation": 0
+     "RASGRF1": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9875",
+       "UniProt": "http://identifiers.org/uniprot/Q13972"
       },
-      "RASGRF2": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
-      }
+      "expression": 2.6928469192772297,
+      "mutation": 0
+     },
+     "RASGRF2": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9876",
+       "UniProt": "http://identifiers.org/uniprot/O14827"
+      },
+      "expression": null,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "RASGRF",
-    "parent": 230
+    "parent": 229
    }
   },
   {
@@ -2581,22 +2623,28 @@ var model_elements = {
     "expression": null,
     "id": 65,
     "members": {
-     "HGNC": {
-      "SOS1": {
-       "bin_expression": 5,
-       "expression": 4.0733517023869,
-       "mutation": 0
+     "SOS1": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11187",
+       "UniProt": "http://identifiers.org/uniprot/Q07889"
       },
-      "SOS2": {
-       "bin_expression": 4,
-       "expression": 3.7933712489189553,
-       "mutation": 0
-      }
+      "expression": 4.0733517023869,
+      "mutation": 0
+     },
+     "SOS2": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11188",
+       "UniProt": "http://identifiers.org/uniprot/Q07890"
+      },
+      "expression": 3.7933712489189553,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "SOS",
-    "parent": 230
+    "parent": 229
    }
   },
   {
@@ -2605,11 +2653,9 @@ var model_elements = {
     "db_refs": {},
     "expression": null,
     "id": 67,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
-    "name": "Growth_factor_proteins",
+    "name": "Growth factor proteins",
     "parent": ""
    }
   },
@@ -2622,22 +2668,28 @@ var model_elements = {
     "expression": null,
     "id": 72,
     "members": {
-     "HGNC": {
-      "PDGFRA": {
-       "bin_expression": 2,
-       "expression": 2.9768083373380656,
-       "mutation": 0
+     "PDGFRA": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8803",
+       "UniProt": "http://identifiers.org/uniprot/P16234"
       },
-      "PDGFRB": {
-       "bin_expression": 2,
-       "expression": 3.058046230395281,
-       "mutation": 0
-      }
+      "expression": 2.9768083373380656,
+      "mutation": 0
+     },
+     "PDGFRB": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8804",
+       "UniProt": "http://identifiers.org/uniprot/P09619"
+      },
+      "expression": 3.058046230395281,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "PDGFR",
-    "parent": 232
+    "parent": 227
    }
   },
   {
@@ -2649,12 +2701,10 @@ var model_elements = {
     },
     "expression": 2.5921767573958667,
     "id": 74,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ROS1",
-    "parent": 232
+    "parent": 227
    }
   },
   {
@@ -2666,32 +2716,46 @@ var model_elements = {
     "expression": null,
     "id": 78,
     "members": {
-     "HGNC": {
-      "PIK3CA": {
-       "bin_expression": 5,
-       "expression": 4.182386117037066,
-       "mutation": 0
+     "PIK3CA": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8975",
+       "UniProt": "http://identifiers.org/uniprot/P42336"
       },
-      "PIK3CB": {
-       "bin_expression": 4,
-       "expression": 3.5985716634821405,
-       "mutation": 0
+      "expression": 4.182386117037066,
+      "mutation": 0
+     },
+     "PIK3CB": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8976",
+       "UniProt": "http://identifiers.org/uniprot/P42338"
       },
-      "PIK3CD": {
-       "bin_expression": 4,
-       "expression": 3.637689819118401,
-       "mutation": 0
+      "expression": 3.5985716634821405,
+      "mutation": 0
+     },
+     "PIK3CD": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8977",
+       "UniProt": "http://identifiers.org/uniprot/O00329"
       },
-      "PIK3CG": {
-       "bin_expression": 2,
-       "expression": 2.9211660506377384,
-       "mutation": 0
-      }
+      "expression": 3.637689819118401,
+      "mutation": 0
+     },
+     "PIK3CG": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8978",
+       "UniProt": "http://identifiers.org/uniprot/P48736"
+      },
+      "expression": 2.9211660506377384,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "PI3K_p110",
-    "parent": 224
+    "name": "PI3K p110",
+    "parent": 238
    }
   },
   {
@@ -2703,42 +2767,64 @@ var model_elements = {
     "expression": null,
     "id": 80,
     "members": {
-     "HGNC": {
-      "PIK3R1": {
-       "bin_expression": 5,
-       "expression": 3.915399835212269,
-       "mutation": 0
+     "PIK3R1": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8979",
+       "UniProt": "http://identifiers.org/uniprot/P27986"
       },
-      "PIK3R2": {
-       "bin_expression": 4,
-       "expression": 3.6920533650340803,
-       "mutation": 1
+      "expression": 3.915399835212269,
+      "mutation": 0
+     },
+     "PIK3R2": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8980",
+       "UniProt": "http://identifiers.org/uniprot/O00459"
       },
-      "PIK3R3": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+      "expression": 3.6920533650340803,
+      "mutation": 1
+     },
+     "PIK3R3": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8981",
+       "UniProt": "http://identifiers.org/uniprot/Q92569"
       },
-      "PIK3R4": {
-       "bin_expression": 6,
-       "expression": 4.417936463370463,
-       "mutation": 0
+      "expression": null,
+      "mutation": 0
+     },
+     "PIK3R4": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8982",
+       "UniProt": "http://identifiers.org/uniprot/Q99570"
       },
-      "PIK3R5": {
-       "bin_expression": 1,
-       "expression": 2.8733206018153985,
-       "mutation": 0
+      "expression": 4.417936463370463,
+      "mutation": 0
+     },
+     "PIK3R5": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:30035",
+       "UniProt": "http://identifiers.org/uniprot/Q8WYR1"
       },
-      "PIK3R6": {
-       "bin_expression": 0,
-       "expression": 2.4983105537896004,
-       "mutation": 0
-      }
+      "expression": 2.8733206018153985,
+      "mutation": 0
+     },
+     "PIK3R6": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:27101",
+       "UniProt": "http://identifiers.org/uniprot/Q5UE93"
+      },
+      "expression": 2.4983105537896004,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "PIK3R_I",
-    "parent": 224
+    "name": "PIK3R I",
+    "parent": 238
    }
   },
   {
@@ -2750,9 +2836,7 @@ var model_elements = {
     },
     "expression": 4.5316960100144845,
     "id": 82,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RAF1",
     "parent": 228
@@ -2767,9 +2851,7 @@ var model_elements = {
     },
     "expression": 3.8088858673598116,
     "id": 84,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RALGDS",
     "parent": ""
@@ -2784,27 +2866,37 @@ var model_elements = {
     "expression": null,
     "id": 86,
     "members": {
-     "HGNC": {
-      "JUN": {
-       "bin_expression": 7,
-       "expression": 4.7124897575435245,
-       "mutation": 0
+     "JUN": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:6204",
+       "UniProt": "http://identifiers.org/uniprot/P05412"
       },
-      "JUNB": {
-       "bin_expression": 5,
-       "expression": 4.1773344555057,
-       "mutation": 0
+      "expression": 4.7124897575435245,
+      "mutation": 0
+     },
+     "JUNB": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:6205",
+       "UniProt": "http://identifiers.org/uniprot/P17275"
       },
-      "JUND": {
-       "bin_expression": 4,
-       "expression": 3.858537197569639,
-       "mutation": 0
-      }
+      "expression": 4.1773344555057,
+      "mutation": 0
+     },
+     "JUND": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:6206",
+       "UniProt": "http://identifiers.org/uniprot/P17535"
+      },
+      "expression": 3.858537197569639,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "JUN_family",
-    "parent": 226
+    "name": "JUN family",
+    "parent": 236
    }
   },
   {
@@ -2816,9 +2908,7 @@ var model_elements = {
     },
     "expression": 4.075181854618691,
     "id": 106,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "TP53",
     "parent": ""
@@ -2833,12 +2923,10 @@ var model_elements = {
     },
     "expression": 3.8333383889393975,
     "id": 108,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 1,
     "name": "NF1",
-    "parent": 229
+    "parent": 226
    }
   },
   {
@@ -2850,9 +2938,7 @@ var model_elements = {
     },
     "expression": null,
     "id": 123,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "PIP3",
     "parent": ""
@@ -2867,9 +2953,7 @@ var model_elements = {
     },
     "expression": 4.367355921026018,
     "id": 127,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "PDPK1",
     "parent": ""
@@ -2884,17 +2968,23 @@ var model_elements = {
     "expression": null,
     "id": 129,
     "members": {
-     "HGNC": {
-      "TIAM1": {
-       "bin_expression": 3,
-       "expression": 3.446381812222442,
-       "mutation": 0
+     "TIAM1": {
+      "bin_expression": 3,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11805",
+       "UniProt": "http://identifiers.org/uniprot/Q13009"
       },
-      "TIAM2": {
-       "bin_expression": 1,
-       "expression": 2.8987251815894934,
-       "mutation": 0
-      }
+      "expression": 3.446381812222442,
+      "mutation": 0
+     },
+     "TIAM2": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11806",
+       "UniProt": "http://identifiers.org/uniprot/Q8IVF5"
+      },
+      "expression": 2.8987251815894934,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -2911,22 +3001,28 @@ var model_elements = {
     "expression": null,
     "id": 131,
     "members": {
-     "HGNC": {
-      "PRKAA1": {
-       "bin_expression": 5,
-       "expression": 4.0827494767272805,
-       "mutation": 0
+     "PRKAA1": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9376",
+       "UniProt": "http://identifiers.org/uniprot/Q13131"
       },
-      "PRKAA2": {
-       "bin_expression": 1,
-       "expression": 2.6414741105040993,
-       "mutation": 0
-      }
+      "expression": 4.0827494767272805,
+      "mutation": 0
+     },
+     "PRKAA2": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9377",
+       "UniProt": "http://identifiers.org/uniprot/P54646"
+      },
+      "expression": 2.6414741105040993,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "AMPK_alpha",
-    "parent": 236
+    "name": "AMPK alpha",
+    "parent": 225
    }
   },
   {
@@ -2938,32 +3034,50 @@ var model_elements = {
     "expression": null,
     "id": 132,
     "members": {
-     "HGNC": {
-      "MAPKAP1": {
-       "bin_expression": 7,
-       "expression": 4.563374278536823,
-       "mutation": 0
+     "MAPKAP1": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:18752",
+       "UniProt": "http://identifiers.org/uniprot/Q9BPZ7"
       },
-      "MLST8": {
-       "bin_expression": 5,
-       "expression": 4.12201917208003,
-       "mutation": 0
+      "expression": 4.563374278536823,
+      "mutation": 0
+     },
+     "MLST8": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:24825",
+       "UniProt": "http://identifiers.org/uniprot/Q9BVC4"
       },
-      "MTOR": {
-       "bin_expression": 4,
-       "expression": 3.6735737964230513,
-       "mutation": 0
+      "expression": 4.12201917208003,
+      "mutation": 0
+     },
+     "MTOR": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:3942",
+       "UniProt": "http://identifiers.org/uniprot/P42345"
       },
-      "RICTOR": {
-       "bin_expression": 5,
-       "expression": 4.076239819775025,
-       "mutation": 0
+      "expression": 3.6735737964230513,
+      "mutation": 0
+     },
+     "RICTOR": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:28611",
+       "UniProt": "http://identifiers.org/uniprot/Q6R327"
       },
-      "RPTOR": {
-       "bin_expression": 4,
-       "expression": 3.750816842649754,
-       "mutation": 0
-      }
+      "expression": 4.076239819775025,
+      "mutation": 0
+     },
+     "RPTOR": {
+      "bin_expression": 4,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:30287",
+       "UniProt": "http://identifiers.org/uniprot/Q8N122"
+      },
+      "expression": 3.750816842649754,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -2980,22 +3094,28 @@ var model_elements = {
     "expression": null,
     "id": 134,
     "members": {
-     "HGNC": {
-      "PRKAB1": {
-       "bin_expression": 5,
-       "expression": 3.9946250537686043,
-       "mutation": 0
+     "PRKAB1": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9378",
+       "UniProt": "http://identifiers.org/uniprot/Q9Y478"
       },
-      "PRKAB2": {
-       "bin_expression": 5,
-       "expression": 4.150357257998519,
-       "mutation": 0
-      }
+      "expression": 3.9946250537686043,
+      "mutation": 0
+     },
+     "PRKAB2": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9379",
+       "UniProt": "http://identifiers.org/uniprot/O43741"
+      },
+      "expression": 4.150357257998519,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "AMPK_beta",
-    "parent": 236
+    "name": "AMPK beta",
+    "parent": 225
    }
   },
   {
@@ -3007,27 +3127,37 @@ var model_elements = {
     "expression": null,
     "id": 136,
     "members": {
-     "HGNC": {
-      "PRKAG1": {
-       "bin_expression": 7,
-       "expression": 4.702809517017822,
-       "mutation": 0
+     "PRKAG1": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9385",
+       "UniProt": "http://identifiers.org/uniprot/P54619"
       },
-      "PRKAG2": {
-       "bin_expression": 5,
-       "expression": 4.135069013823447,
-       "mutation": 0
+      "expression": 4.702809517017822,
+      "mutation": 0
+     },
+     "PRKAG2": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9386",
+       "UniProt": "http://identifiers.org/uniprot/Q9UGJ0"
       },
-      "PRKAG3": {
-       "bin_expression": 1,
-       "expression": 2.649334858712142,
-       "mutation": 0
-      }
+      "expression": 4.135069013823447,
+      "mutation": 0
+     },
+     "PRKAG3": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9387",
+       "UniProt": "http://identifiers.org/uniprot/Q9UGI9"
+      },
+      "expression": 2.649334858712142,
+      "mutation": 0
      }
     },
     "mutation": 0,
-    "name": "AMPK_gamma",
-    "parent": 236
+    "name": "AMPK gamma",
+    "parent": 225
    }
   },
   {
@@ -3039,9 +3169,7 @@ var model_elements = {
     },
     "expression": 4.17730558434186,
     "id": 138,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "PTEN",
     "parent": ""
@@ -3056,27 +3184,41 @@ var model_elements = {
     "expression": null,
     "id": 141,
     "members": {
-     "HGNC": {
-      "RAC1": {
-       "bin_expression": 8,
-       "expression": 5.150357257998518,
-       "mutation": 0
+     "RAC1": {
+      "bin_expression": 8,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9801",
+       "UniProt": "http://identifiers.org/uniprot/P63000"
       },
-      "RAC2": {
-       "bin_expression": 7,
-       "expression": 4.683686295917995,
-       "mutation": 0
+      "expression": 5.150357257998518,
+      "mutation": 0
+     },
+     "RAC2": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9802",
+       "UniProt": "http://identifiers.org/uniprot/P15153"
       },
-      "RAC3": {
-       "bin_expression": 5,
-       "expression": 4.1026394836913,
-       "mutation": 0
+      "expression": 4.683686295917995,
+      "mutation": 0
+     },
+     "RAC3": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9803",
+       "UniProt": "http://identifiers.org/uniprot/P60763"
       },
-      "RHOG": {
-       "bin_expression": 7,
-       "expression": 4.609231456315056,
-       "mutation": 0
-      }
+      "expression": 4.1026394836913,
+      "mutation": 0
+     },
+     "RHOG": {
+      "bin_expression": 7,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:672",
+       "UniProt": "http://identifiers.org/uniprot/P84095"
+      },
+      "expression": 4.609231456315056,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -3093,37 +3235,59 @@ var model_elements = {
     "expression": null,
     "id": 142,
     "members": {
-     "HGNC": {
-      "PAK1": {
-       "bin_expression": 5,
-       "expression": 4.1194868355646355,
-       "mutation": 0
+     "PAK1": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8590",
+       "UniProt": "http://identifiers.org/uniprot/Q13153"
       },
-      "PAK2": {
-       "bin_expression": 6,
-       "expression": 4.397279378853592,
-       "mutation": 0
+      "expression": 4.1194868355646355,
+      "mutation": 0
+     },
+     "PAK2": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8591",
+       "UniProt": "http://identifiers.org/uniprot/Q13177"
       },
-      "PAK3": {
-       "bin_expression": 1,
-       "expression": 2.605305046141109,
-       "mutation": 0
+      "expression": 4.397279378853592,
+      "mutation": 0
+     },
+     "PAK3": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:8592",
+       "UniProt": "http://identifiers.org/uniprot/O75914"
       },
-      "PAK4": {
-       "bin_expression": 6,
-       "expression": 4.387745659608863,
-       "mutation": 0
+      "expression": 2.605305046141109,
+      "mutation": 0
+     },
+     "PAK4": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:16059",
+       "UniProt": "http://identifiers.org/uniprot/O96013"
       },
-      "PAK5": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+      "expression": 4.387745659608863,
+      "mutation": 0
+     },
+     "PAK5": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:15916",
+       "UniProt": "http://identifiers.org/uniprot/Q9P286"
       },
-      "PAK6": {
-       "bin_expression": 1,
-       "expression": 2.8228216453031045,
-       "mutation": 0
-      }
+      "expression": null,
+      "mutation": 0
+     },
+     "PAK6": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:16061",
+       "UniProt": "http://identifiers.org/uniprot/Q9NQU5"
+      },
+      "expression": 2.8228216453031045,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -3140,9 +3304,7 @@ var model_elements = {
     },
     "expression": 4.70934629509387,
     "id": 146,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RALA",
     "parent": 233
@@ -3157,9 +3319,7 @@ var model_elements = {
     },
     "expression": 4.5885518064856425,
     "id": 148,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RALB",
     "parent": 233
@@ -3174,27 +3334,37 @@ var model_elements = {
     "expression": null,
     "id": 150,
     "members": {
-     "HGNC": {
-      "RASA1": {
-       "bin_expression": 8,
-       "expression": 4.8763448762469315,
-       "mutation": 0
+     "RASA1": {
+      "bin_expression": 8,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9871",
+       "UniProt": "http://identifiers.org/uniprot/P20936"
       },
-      "RASA2": {
-       "bin_expression": 5,
-       "expression": 3.953034457250357,
-       "mutation": 0
+      "expression": 4.8763448762469315,
+      "mutation": 0
+     },
+     "RASA2": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9872",
+       "UniProt": "http://identifiers.org/uniprot/Q15283"
       },
-      "RASA3": {
-       "bin_expression": 3,
-       "expression": 3.392521089931932,
-       "mutation": 0
-      }
+      "expression": 3.953034457250357,
+      "mutation": 0
+     },
+     "RASA3": {
+      "bin_expression": 3,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:20331",
+       "UniProt": "http://identifiers.org/uniprot/Q14644"
+      },
+      "expression": 3.392521089931932,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "RASA",
-    "parent": 229
+    "parent": 226
    }
   },
   {
@@ -3206,27 +3376,37 @@ var model_elements = {
     "expression": null,
     "id": 157,
     "members": {
-     "HGNC": {
-      "RASAL1": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+     "RASAL1": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9873",
+       "UniProt": "http://identifiers.org/uniprot/O95294"
       },
-      "RASAL2": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+      "expression": null,
+      "mutation": 0
+     },
+     "RASAL2": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9874",
+       "UniProt": "http://identifiers.org/uniprot/Q9UJF2"
       },
-      "RASAL3": {
-       "bin_expression": 2,
-       "expression": 3.1159431769390546,
-       "mutation": 0
-      }
+      "expression": null,
+      "mutation": 0
+     },
+     "RASAL3": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:26129",
+       "UniProt": "http://identifiers.org/uniprot/Q86YV0"
+      },
+      "expression": 3.1159431769390546,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "RASAL",
-    "parent": 229
+    "parent": 226
    }
   },
   {
@@ -3238,27 +3418,41 @@ var model_elements = {
     "expression": null,
     "id": 170,
     "members": {
-     "HGNC": {
-      "RASGRP1": {
-       "bin_expression": 0,
-       "expression": 2.2576785748691846,
-       "mutation": 0
+     "RASGRP1": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9878",
+       "UniProt": "http://identifiers.org/uniprot/O95267"
       },
-      "RASGRP2": {
-       "bin_expression": 0,
-       "expression": 2.4913616938342726,
-       "mutation": 0
+      "expression": 2.2576785748691846,
+      "mutation": 0
+     },
+     "RASGRP2": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:9879",
+       "UniProt": "http://identifiers.org/uniprot/Q7LDG7"
       },
-      "RASGRP3": {
-       "bin_expression": 0,
-       "expression": 2.4578818967339924,
-       "mutation": 0
+      "expression": 2.4913616938342726,
+      "mutation": 0
+     },
+     "RASGRP3": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:14545",
+       "UniProt": "http://identifiers.org/uniprot/Q8IV61"
       },
-      "RASGRP4": {
-       "bin_expression": 0,
-       "expression": 2.521138083704036,
-       "mutation": 0
-      }
+      "expression": 2.4578818967339924,
+      "mutation": 0
+     },
+     "RASGRP4": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:18958",
+       "UniProt": "http://identifiers.org/uniprot/Q8TDF6"
+      },
+      "expression": 2.521138083704036,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -3275,9 +3469,7 @@ var model_elements = {
     },
     "expression": 4.065019214136254,
     "id": 174,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "RHEB",
     "parent": ""
@@ -3292,12 +3484,10 @@ var model_elements = {
     },
     "expression": 3.5645477117559476,
     "id": 176,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ROCK1",
-    "parent": 237
+    "parent": 231
    }
   },
   {
@@ -3309,12 +3499,10 @@ var model_elements = {
     },
     "expression": null,
     "id": 178,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "ROCK2",
-    "parent": 237
+    "parent": 231
    }
   },
   {
@@ -3326,27 +3514,37 @@ var model_elements = {
     "expression": null,
     "id": 194,
     "members": {
-     "HGNC": {
-      "SPRED1": {
-       "bin_expression": 5,
-       "expression": 4.041984501486786,
-       "mutation": 0
+     "SPRED1": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:20249",
+       "UniProt": "http://identifiers.org/uniprot/Q7Z699"
       },
-      "SPRED2": {
-       "bin_expression": 5,
-       "expression": 4.09412159584056,
-       "mutation": 0
+      "expression": 4.041984501486786,
+      "mutation": 0
+     },
+     "SPRED2": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:17722",
+       "UniProt": "http://identifiers.org/uniprot/Q7Z698"
       },
-      "SPRED3": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
-      }
+      "expression": 4.09412159584056,
+      "mutation": 0
+     },
+     "SPRED3": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:31041",
+       "UniProt": "http://identifiers.org/uniprot/Q2MJR0"
+      },
+      "expression": null,
+      "mutation": 0
      }
     },
     "mutation": 0,
     "name": "SPRED",
-    "parent": 229
+    "parent": 226
    }
   },
   {
@@ -3358,27 +3556,41 @@ var model_elements = {
     "expression": null,
     "id": 201,
     "members": {
-     "HGNC": {
-      "SPRY1": {
-       "bin_expression": 2,
-       "expression": 3.028977705208778,
-       "mutation": 0
+     "SPRY1": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11269",
+       "UniProt": "http://identifiers.org/uniprot/O43609"
       },
-      "SPRY2": {
-       "bin_expression": 6,
-       "expression": 4.504606770641953,
-       "mutation": 0
+      "expression": 3.028977705208778,
+      "mutation": 0
+     },
+     "SPRY2": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11270",
+       "UniProt": "http://identifiers.org/uniprot/O43597"
       },
-      "SPRY3": {
-       "bin_expression": 0,
-       "expression": 2.320146286111054,
-       "mutation": 0
+      "expression": 4.504606770641953,
+      "mutation": 0
+     },
+     "SPRY3": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:11271",
+       "UniProt": "http://identifiers.org/uniprot/O43610"
       },
-      "SPRY4": {
-       "bin_expression": 5,
-       "expression": 3.9545801627437567,
-       "mutation": 0
-      }
+      "expression": 2.320146286111054,
+      "mutation": 0
+     },
+     "SPRY4": {
+      "bin_expression": 5,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:15533",
+       "UniProt": "http://identifiers.org/uniprot/Q9C004"
+      },
+      "expression": 3.9545801627437567,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -3395,9 +3607,7 @@ var model_elements = {
     },
     "expression": 3.8011291875797033,
     "id": 205,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "STK11",
     "parent": ""
@@ -3412,9 +3622,7 @@ var model_elements = {
     },
     "expression": 4.975551280503598,
     "id": 212,
-    "members": {
-     "HGNC": {}
-    },
+    "members": {},
     "mutation": 0,
     "name": "EIF4EBP1",
     "parent": ""
@@ -3429,37 +3637,59 @@ var model_elements = {
     "expression": null,
     "id": 214,
     "members": {
-     "HGNC": {
-      "RPS6KA1": {
-       "bin_expression": 2,
-       "expression": 3.164055291893451,
-       "mutation": 0
+     "RPS6KA1": {
+      "bin_expression": 2,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10430",
+       "UniProt": "http://identifiers.org/uniprot/Q15418"
       },
-      "RPS6KA2": {
-       "bin_expression": 1,
-       "expression": 2.823474229170301,
-       "mutation": 0
+      "expression": 3.164055291893451,
+      "mutation": 0
+     },
+     "RPS6KA2": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10431",
+       "UniProt": "http://identifiers.org/uniprot/Q15349"
       },
-      "RPS6KA3": {
-       "bin_expression": 6,
-       "expression": 4.288182130613657,
-       "mutation": 0
+      "expression": 2.823474229170301,
+      "mutation": 0
+     },
+     "RPS6KA3": {
+      "bin_expression": 6,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10432",
+       "UniProt": "http://identifiers.org/uniprot/P51812"
       },
-      "RPS6KA4": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+      "expression": 4.288182130613657,
+      "mutation": 0
+     },
+     "RPS6KA4": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10433",
+       "UniProt": "http://identifiers.org/uniprot/O75676"
       },
-      "RPS6KA5": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+      "expression": null,
+      "mutation": 0
+     },
+     "RPS6KA5": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10434",
+       "UniProt": "http://identifiers.org/uniprot/O75582"
       },
-      "RPS6KA6": {
-       "bin_expression": 0,
-       "expression": 2.501059262217751,
-       "mutation": 0
-      }
+      "expression": null,
+      "mutation": 0
+     },
+     "RPS6KA6": {
+      "bin_expression": 0,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:10435",
+       "UniProt": "http://identifiers.org/uniprot/Q9UK32"
+      },
+      "expression": 2.501059262217751,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -3476,17 +3706,23 @@ var model_elements = {
     "expression": null,
     "id": 215,
     "members": {
-     "HGNC": {
-      "KSR1": {
-       "bin_expression": 9,
-       "expression": null,
-       "mutation": 0
+     "KSR1": {
+      "bin_expression": 9,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:6465",
+       "UniProt": "http://identifiers.org/uniprot/Q8IVT5"
       },
-      "KSR2": {
-       "bin_expression": 1,
-       "expression": 2.6404814369704215,
-       "mutation": 0
-      }
+      "expression": null,
+      "mutation": 0
+     },
+     "KSR2": {
+      "bin_expression": 1,
+      "db_refs": {
+       "HGNC": "http://identifiers.org/hgnc/HGNC:18610",
+       "UniProt": "http://identifiers.org/uniprot/Q6VAB6"
+      },
+      "expression": 2.6404814369704215,
+      "mutation": 0
      }
     },
     "mutation": 0,
@@ -3500,7 +3736,7 @@ var model_elements = {
     "expression": null,
     "id": 224,
     "mutation": 0,
-    "name": "Group[78, 80]",
+    "name": "Group[12, 14]",
     "parent": ""
    }
   },
@@ -3510,7 +3746,7 @@ var model_elements = {
     "expression": null,
     "id": 225,
     "mutation": 0,
-    "name": "Group[23, 25, 27]",
+    "name": "Group[131, 136, 134]",
     "parent": ""
    }
   },
@@ -3520,7 +3756,7 @@ var model_elements = {
     "expression": null,
     "id": 226,
     "mutation": 0,
-    "name": "Group[51, 59, 86]",
+    "name": "Group[16, 150, 157, 194, 108]",
     "parent": ""
    }
   },
@@ -3530,7 +3766,7 @@ var model_elements = {
     "expression": null,
     "id": 227,
     "mutation": 0,
-    "name": "Group[17, 19, 21]",
+    "name": "Group[6, 45, 48, 56, 72, 74]",
     "parent": ""
    }
   },
@@ -3550,7 +3786,7 @@ var model_elements = {
     "expression": null,
     "id": 229,
     "mutation": 0,
-    "name": "Group[16, 150, 157, 194, 108]",
+    "name": "Group[63, 65]",
     "parent": ""
    }
   },
@@ -3560,7 +3796,7 @@ var model_elements = {
     "expression": null,
     "id": 230,
     "mutation": 0,
-    "name": "Group[63, 65]",
+    "name": "Group[2, 4]",
     "parent": ""
    }
   },
@@ -3570,7 +3806,7 @@ var model_elements = {
     "expression": null,
     "id": 231,
     "mutation": 0,
-    "name": "Group[12, 14]",
+    "name": "Group[178, 176]",
     "parent": ""
    }
   },
@@ -3580,7 +3816,7 @@ var model_elements = {
     "expression": null,
     "id": 232,
     "mutation": 0,
-    "name": "Group[6, 45, 48, 56, 72, 74]",
+    "name": "Group[17, 19, 21]",
     "parent": ""
    }
   },
@@ -3600,7 +3836,7 @@ var model_elements = {
     "expression": null,
     "id": 234,
     "mutation": 0,
-    "name": "Group[2, 4]",
+    "name": "Group[23, 25, 27]",
     "parent": ""
    }
   },
@@ -3610,7 +3846,7 @@ var model_elements = {
     "expression": null,
     "id": 235,
     "mutation": 0,
-    "name": "Group[33, 35]",
+    "name": "Group[41, 43]",
     "parent": ""
    }
   },
@@ -3620,7 +3856,7 @@ var model_elements = {
     "expression": null,
     "id": 236,
     "mutation": 0,
-    "name": "Group[131, 136, 134]",
+    "name": "Group[51, 59, 86]",
     "parent": ""
    }
   },
@@ -3630,7 +3866,7 @@ var model_elements = {
     "expression": null,
     "id": 237,
     "mutation": 0,
-    "name": "Group[178, 176]",
+    "name": "Group[33, 35]",
     "parent": ""
    }
   },
@@ -3640,7 +3876,7 @@ var model_elements = {
     "expression": null,
     "id": 238,
     "mutation": 0,
-    "name": "Group[41, 43]",
+    "name": "Group[78, 80]",
     "parent": ""
    }
   }

@@ -278,8 +278,6 @@ $(function(){
     // if the node has members, build pie chart background arrays, qtips
     if (data.hasOwnProperty("members")){
       members = data.members;
-
-
         if (Object.keys(members).length > 0){
           fam_length = Object.keys(members).length
           var pie_sizes = new Array(16).fill(0);
@@ -299,20 +297,16 @@ $(function(){
 
             pie_mutations[current_slice] = (members[gene].mutation);
             var db_links = [];
-            if (members[gene]['db_refs'].hasOwnProperty("HGNC")){
-              db_links.push({
-                id: gene,
-                name: 'HGNC',
-                url: members[gene]['db_refs']['HGNC']
-              });
-            };
-            if (members[gene]['db_refs'].hasOwnProperty("UniProt")){
-              db_links.push({
-                id: gene,
-                name: 'UniProt',
-                url: members[gene]['db_refs']['UniProt']
-              });
-            };
+            for (var namespace in members[gene]['db_refs']){
+              if (namespace !== 'BE'){
+                db_links.push({
+                  id: gene,
+                  name: namespace,
+                  url: members[gene]['db_refs'][namespace]
+                });
+              }
+            } // for (var namespace ...)
+            
 
             content.push(db_links);
             current_slice += 1;
@@ -359,33 +353,31 @@ $(function(){
         n.addClass('hasMembers');
         //console.log(n.data().qtip);
 
-    }}
-    // if a node is an attractor, tag it with nAttractor class
-    if (n.data('name') === 'Attractor'){
-      n.addClass('nAttractor');
-    }
+    }}// member check
+
     // call out to qtip api if node is not parent
     if (n.isParent() == false){
-      var g = n.data('name');
 
       if (n.data().qtip){
         tip = n.data().qtip;
         n.qtip(tip);
       }
       else {
+        var content_text = [];
+        if (data.hasOwnProperty("db_refs")){
+          db_refs = data.db_refs;
+          for (var namespace in db_refs) {
+            content_text.push(
+              {name : namespace, url: db_refs[namespace]});
+          }
+
+        }
+
         n.qtip({
-          content: {title: '<b style="font-size:14px">' + g + '</b>',
-            text: [{
-              name: 'GeneCard',
-              url: 'http://www.genecards.org/cgi-bin/carddisp.pl?gene=' + g
-            },
-            {
-              name: 'UniProt',
-              url: 'http://www.uniprot.org/uniprot/?query='+ g +'&fil=organism%3A%22Homo+sapiens+%28Human%29+%5B9606%5D%22&sort=score'
-            }
-          ].map(function( link ){
-            return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
-          }).join('<br />')
+          content: {title: '<b style="font-size:14px">' + n.data('name') + '</b>',
+            text: content_text.map(function( link ){
+              return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
+            }).join('<br />')
         },
 
           position: {
@@ -402,6 +394,11 @@ $(function(){
         });// n.qtip
       }
     }; // check if n.isParent()
+
+    // if a node is an attractor, tag it with nAttractor class
+    if (n.data('name') === 'Attractor'){
+      n.addClass('nAttractor');
+    }; // if Attractor
   });
 
 
