@@ -1,4 +1,4 @@
-var colorbrewer = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
+var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
 //0-4 are greens, 5 is a grey
 //var exp_colorscale = ['#edf8e9', '#bae4b3', '#74c476', '#31a354', '#006d2c', '#bdbdbd']
 
@@ -18,8 +18,8 @@ $(function(){
           'width': '200px',
           'height': '200px',
           'border-width': 7,
-          'border-color': colorbrewer[4],
-          'background-color':colorbrewer[4],
+          'border-color': default_colors[4],
+          'background-color':default_colors[4],
           'background-color': function(node){
             current_colorscale = exp_colorscale;
             if (node.data('mutation') !== 0){
@@ -52,7 +52,7 @@ $(function(){
         selector: ':parent',
         style: {
           'label': '',
-          'background-color': colorbrewer[1],
+          'background-color': default_colors[1],
           'background-opacity': 1,
           'z-index': 1
         }
@@ -61,8 +61,8 @@ $(function(){
       {
         selector: 'edge',
         style: {
-        'line-color': colorbrewer[4],
-        'target-arrow-color': colorbrewer[4],
+        'line-color': default_colors[4],
+        'target-arrow-color': default_colors[4],
         //'width': function(edge){ return edge.data('weight')*6},
         'width':13,
         'target-arrow-shape': 'triangle',
@@ -76,9 +76,9 @@ $(function(){
       {
         selector: '.complex',
         style: {
-        'line-color': colorbrewer[3],
-        'target-arrow-color': colorbrewer[3],
-        'source-arrow-color': colorbrewer[3],
+        'line-color': default_colors[3],
+        'target-arrow-color': default_colors[3],
+        'source-arrow-color': default_colors[3],
         //'width': '6px',
         'target-arrow-shape': 'circle',
         'source-arrow-shape': 'circle',
@@ -88,9 +88,9 @@ $(function(){
 
       {  selector: '.negative',
         style: {
-        'line-color': colorbrewer[2],
-        'target-arrow-color': colorbrewer[2],
-        'source-arrow-color': colorbrewer[2],
+        'line-color': default_colors[2],
+        'target-arrow-color': default_colors[2],
+        'source-arrow-color': default_colors[2],
         //'width': '6px',
         'target-arrow-shape': 'tee',
         'source-arrow-shape': 'none',
@@ -135,8 +135,8 @@ $(function(){
           'content': 'data(name)',
           'pie-size': '100%',
           'border-width': 7,
-          'border-color': colorbrewer[4],
-          'background-color':colorbrewer[4],
+          'border-color': default_colors[4],
+          'background-color':default_colors[4],
           'pie-1-background-size':function(node){
             return node.data().pie_sizes[0]},
           'pie-2-background-size':function(node){
@@ -319,7 +319,7 @@ $(function(){
 
         var list_lines = content.map(function( link ){
         var line = '<b style="font-size:13px">' + String(link[0].id) + '</b>' + ' ' +
-                   '<a  style="font-size:11px" target="_blank" href="' + link[0].url + '">' + link[0].name + '</a>&nbsp;' + 
+                   '<a  style="font-size:11px" target="_blank" href="' + link[0].url + '">' + link[0].name + '</a>&nbsp;' +
                    '<a style="font-size:11px" target="_blank" href="' + link[1].url + '">' + link[1].name  + '</a>';
         return line;
         });
@@ -431,40 +431,3 @@ $(function(){
 
 
 });// dom ready
-
-
-
-
-
-// 'pie-1-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[0]]},
-// 'pie-2-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[1]]},
-// 'pie-3-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[2]]},
-// 'pie-4-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[3]]},
-// 'pie-5-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[4]]},
-// 'pie-6-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[5]]},
-// 'pie-7-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[6]]},
-// 'pie-8-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[7]]},
-// 'pie-9-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[8]]},
-// 'pie-10-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[9]]},
-// 'pie-11-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[10]]},
-// 'pie-12-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[11]]},
-// 'pie-13-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[12]]},
-// 'pie-14-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[13]]},
-// 'pie-15-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[14]]},
-// 'pie-16-background-color': function(node){
-//   return exp_colorscale[node.data().pie_colors[15]]},
