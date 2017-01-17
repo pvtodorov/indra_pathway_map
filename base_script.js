@@ -5,6 +5,23 @@ var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
 var cy;
 
 $(function(){
+
+  var win = $(window);
+
+  win.resize(function() {
+    resize();
+  });
+
+  function resize() {
+    console.log(win.height(), win.innerHeight());
+    $("#cy-container").height(win.innerHeight() - 0);
+    cy.resize();
+    cy.fit();
+  }
+
+  setTimeout(resize, 0);
+
+
   var cy = cytoscape({
     container: document.getElementById('cy'),
 
@@ -210,6 +227,7 @@ $(function(){
     directed: 'true',
     fit: 'true',
     rankDir: 'TB',
+    padding: 0,
     //nodeSep: 50,
     //rankSep: 100,
     //edgeSep: 50,
@@ -248,6 +266,7 @@ $(function(){
     //console.log( 'mouseup' );
     if (dragged === true){
       layout.run();
+      resize();
       dragged = false;
     }
 
