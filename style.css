@@ -3,6 +3,10 @@ h1 {
   font-size: 1em;
 }
 
+#inputForm {
+  height: 100%
+}
+
 #cy {
   border: solid;
   border-width: 1;
