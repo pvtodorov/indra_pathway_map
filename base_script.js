@@ -22,7 +22,7 @@ $(function(){
   setTimeout(resize, 0);
 
 
-  var cy = cytoscape({
+  cy = cytoscape({
     container: document.getElementById('cy'),
 
     elements: model_elements,

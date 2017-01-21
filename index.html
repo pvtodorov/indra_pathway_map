@@ -14,6 +14,8 @@
     <script src="base_script.js"></script>
     <!-- model output from cyjs_assembler -->
     <script src="model.js"></script>
+    <!-- script that executes visualiation -->
+    <script src="cell_dict.js"></script>
 
     <!-- LAYOUTS -->
     <!-- dagre layout-->
@@ -39,6 +41,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+
+
 </head>
 
 
@@ -52,36 +60,17 @@
 
         <div class="col-sm-4">
 
-  <form id="inputForm">
-  <div class="form-group">
+          <select id='cellSelect' class="selectpicker">
 
-  <div class="form-group">
-    <label for="mechanismText">Describe your mechanism</label>
-    <textarea class="form-control" id="mechanismText" rows="20"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label for="mechanismText">CCLE cell line</label>
-    <textarea class="form-control" id="mechanismText" rows="1"></textarea>
-  </div>
-
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
+          </select>
+          <div>
+            <button id'loadButton' type="submit" class="btn btn-primary">Load</button>
+          </div>
 
         </div>
+
+
+
         <div class="col-sm-8">
 
           <!-- graph : start -->
