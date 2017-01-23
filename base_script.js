@@ -12,12 +12,33 @@ $(function(){
     resize();
   });
 
-  $.each(cell_files, function(name, file) {
+  //build dropdown using the provided dict
+  var cell_dict = $.ajax({url: "http://pathway-map.surge.sh/cell_dict.json", async: false}).responseJSON;
+  $.each(cell_dict, function(name, file) {
        $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+       console.log(name);
     });
 
+
+
+  // function fetchJSONobj(urlJSON){
+  //   var response = $.ajax({url: urlJSON})
+  //   return response;
+  // }
+  //
+  // function buildDropdown(response){
+  //     var cell_dict = response.responseJSON;
+  //     console.log(cell_dict);
+  //     $.each(cell_dict, function(name, file) {
+  //       $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+  //       console.log(name, file);
+  //     });
+  // }
+  //
+  // fetchJSONobj("http://pathway-map.surge.sh/cell_dict.json").done(buildDropdown);
+
   function resize() {
-    console.log(win.height(), win.innerHeight());
+    //console.log(win.height(), win.innerHeight());
     $("#cy-container").height(win.innerHeight() - 0);
     cy.resize();
     cy.fit();
@@ -276,8 +297,6 @@ $(function(){
 
     });
 
-
-
   cy.edges().forEach(function(e){
     if (e.data('i') === 'Complex'){
       e.addClass('complex');
@@ -296,8 +315,6 @@ $(function(){
       //console.log(e.data('i'));
     }
   });
-
-
   cy.nodes().forEach(function(n){
     data = n.data()
     // if the node has members, build pie chart background arrays, qtips
