@@ -12,6 +12,10 @@ $(function(){
     resize();
   });
 
+  $.each(cell_files, function(name, file) {
+       $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+    });
+
   function resize() {
     console.log(win.height(), win.innerHeight());
     $("#cy-container").height(win.innerHeight() - 0);
