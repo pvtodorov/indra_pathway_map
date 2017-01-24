@@ -28,6 +28,9 @@ $(function(){
   });
   //***************************************
 
+  $("#loadButton").click(function(){
+    console.log($('#cellSelect').val());
+});
 
   function resize() {
     //console.log(win.height(), win.innerHeight());
