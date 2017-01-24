@@ -13,29 +13,29 @@ $(function(){
   });
 
   //build dropdown using the provided dict
-  var cell_dict = $.ajax({url: "http://pathway-map.surge.sh/cell_dict.json", async: false}).responseJSON;
-  $.each(cell_dict, function(name, file) {
-       $('#cellSelect').append($('<option/>').attr("value", file).text(name));
-       console.log(name);
-    });
+  // var cell_dict = $.ajax({url: "http://pathway-map.surge.sh/cell_dict.json", async: false}).responseJSON;
+  // $.each(cell_dict, function(name, file) {
+  //      $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+  //      console.log(name);
+  //   });
 
 
 
-  // function fetchJSONobj(urlJSON){
-  //   var response = $.ajax({url: urlJSON})
-  //   return response;
-  // }
-  //
-  // function buildDropdown(response){
-  //     var cell_dict = response.responseJSON;
-  //     console.log(cell_dict);
-  //     $.each(cell_dict, function(name, file) {
-  //       $('#cellSelect').append($('<option/>').attr("value", file).text(name));
-  //       console.log(name, file);
-  //     });
-  // }
-  //
-  // fetchJSONobj("http://pathway-map.surge.sh/cell_dict.json").done(buildDropdown);
+  var cell_dict_response = $.ajax({url: "http://pathway-map.surge.sh/cell_dict.json"});
+
+  function buildDropdown(cell_dict_response){
+      var cell_dict = cell_dict_response.responseJSON;
+      console.log(cell_dict);
+      $.each(cell_dict, function(name, file) {
+        $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+        console.log(name, file);
+      });
+  }
+
+
+  cell_dict_response.done(buildDropdown(cell_dict_response));
+
+
 
   function resize() {
     //console.log(win.height(), win.innerHeight());
