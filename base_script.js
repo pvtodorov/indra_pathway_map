@@ -12,29 +12,21 @@ $(function(){
     resize();
   });
 
-  //build dropdown using the provided dict
-  // var cell_dict = $.ajax({url: "http://pathway-map.surge.sh/cell_dict.json", async: false}).responseJSON;
-  // $.each(cell_dict, function(name, file) {
-  //      $('#cellSelect').append($('<option/>').attr("value", file).text(name));
-  //      console.log(name);
-  //   });
 
+  //build dropdown using json
+  //***************************************
+  var cell_dict_response = $.ajax({
+    url: "cell_dict.json",
+  });
 
-
-  var cell_dict_response = $.ajax({url: "http://pathway-map.surge.sh/cell_dict.json"});
-
-  function buildDropdown(cell_dict_response){
+  cell_dict_response.done(function(){
       var cell_dict = cell_dict_response.responseJSON;
-      console.log(cell_dict);
       $.each(cell_dict, function(name, file) {
-        $('#cellSelect').append($('<option/>').attr("value", file).text(name));
-        console.log(name, file);
-      });
-  }
-
-
-  cell_dict_response.done(buildDropdown(cell_dict_response));
-
+           $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+        });
+      $('.selectpicker').selectpicker('refresh');
+  });
+  //***************************************
 
 
   function resize() {
