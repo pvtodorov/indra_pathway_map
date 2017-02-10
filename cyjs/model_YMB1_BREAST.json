@@ -1922,7 +1922,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:427",
      "UniProt": "http://identifiers.org/uniprot/Q9UM73"
     },
-    "expression": 2.9305857929690107,
+    
     "id": 1,
     "members": {},
     "mutation": 0,
@@ -1937,7 +1937,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:4566",
      "UniProt": "http://identifiers.org/uniprot/P62993"
     },
-    "expression": 4.635930262101636,
+
     "id": 2,
     "members": {},
     "mutation": 0,
@@ -1960,7 +1960,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:10840",
        "UniProt": "http://identifiers.org/uniprot/P29353"
       },
-      "expression": 4.2685141923391825,
+
       "mutation": 0
      },
      "SHC2": {
@@ -1969,7 +1969,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:29869",
        "UniProt": "http://identifiers.org/uniprot/P98077"
       },
-      "expression": 3.2111032602101206,
+
       "mutation": 0
      },
      "SHC3": {
@@ -1978,7 +1978,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:18181",
        "UniProt": "http://identifiers.org/uniprot/Q92529"
       },
-      "expression": 2.774736734223408,
+
       "mutation": 0
      },
      "SHC4": {
@@ -1987,7 +1987,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:16743",
        "UniProt": "http://identifiers.org/uniprot/Q6S5L8"
       },
-      "expression": 2.5966651612525267,
+
       "mutation": 0
      }
     },
@@ -2003,7 +2003,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:646",
      "UniProt": "http://identifiers.org/uniprot/P10398"
     },
-    "expression": 4.0949265509026,
+
     "id": 6,
     "members": {},
     "mutation": 0,
@@ -2018,7 +2018,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:6840",
      "UniProt": "http://identifiers.org/uniprot/Q02750"
     },
-    "expression": 4.879365538255835,
+
     "id": 7,
     "members": {},
     "mutation": 0,
@@ -2033,7 +2033,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:6842",
      "UniProt": "http://identifiers.org/uniprot/P36507"
     },
-    "expression": 3.990598334080745,
+
     "id": 9,
     "members": {},
     "mutation": 0,
@@ -2048,7 +2048,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:1097",
      "UniProt": "http://identifiers.org/uniprot/P15056"
     },
-    "expression": 3.7146971088176084,
+
     "id": 11,
     "members": {},
     "mutation": 0,
@@ -2063,7 +2063,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:1582",
      "UniProt": "http://identifiers.org/uniprot/P24385"
     },
-    "expression": 4.581946756153038,
+
     "id": 14,
     "members": {},
     "mutation": 0,
@@ -2078,7 +2078,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:1773",
      "UniProt": "http://identifiers.org/uniprot/P11802"
     },
-    "expression": 4.944606780703923,
+
     "id": 15,
     "members": {},
     "mutation": 0,
@@ -2093,7 +2093,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:1777",
      "UniProt": "http://identifiers.org/uniprot/Q00534"
     },
-    "expression": 2.6836983868537265,
+
     "id": 17,
     "members": {},
     "mutation": 0,
@@ -2108,7 +2108,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:3236",
      "UniProt": "http://identifiers.org/uniprot/P00533"
     },
-    "expression": 3.3969214809779245,
+
     "id": 19,
     "members": {},
     "mutation": 0,
@@ -2123,7 +2123,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:3430",
      "UniProt": "http://identifiers.org/uniprot/P04626"
     },
-    "expression": 4.4388795907101555,
+
     "id": 22,
     "members": {},
     "mutation": 0,
@@ -2146,7 +2146,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3488",
        "UniProt": "http://identifiers.org/uniprot/P14921"
       },
-      "expression": 2.7553490579761357,
+
       "mutation": 0
      },
      "ETS2": {
@@ -2155,7 +2155,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3489",
        "UniProt": "http://identifiers.org/uniprot/P15036"
       },
-      "expression": 3.5809028017313453,
+
       "mutation": 0
      }
     },
@@ -2179,7 +2179,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3064",
        "UniProt": "http://identifiers.org/uniprot/P28562"
       },
-      "expression": 3.9573980778618334,
+
       "mutation": 0
      },
      "DUSP2": {
@@ -2188,7 +2188,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3068",
        "UniProt": "http://identifiers.org/uniprot/Q05923"
       },
-      "expression": 3.883192694642745,
+
       "mutation": 0
      },
      "DUSP3": {
@@ -2197,7 +2197,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3069",
        "UniProt": "http://identifiers.org/uniprot/P51452"
       },
-      "expression": 3.844765237151409,
+
       "mutation": 0
      },
      "DUSP4": {
@@ -2206,7 +2206,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3070",
        "UniProt": "http://identifiers.org/uniprot/Q13115"
       },
-      "expression": 4.812728747657524,
+
       "mutation": 0
      },
      "DUSP5": {
@@ -2215,7 +2215,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3071",
        "UniProt": "http://identifiers.org/uniprot/Q16690"
       },
-      "expression": 4.312168339540078,
+
       "mutation": 0
      },
      "DUSP6": {
@@ -2224,7 +2224,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3072",
        "UniProt": "http://identifiers.org/uniprot/Q16828"
       },
-      "expression": 2.8359979687320873,
+
       "mutation": 0
      }
     },
@@ -2240,7 +2240,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:6973",
      "UniProt": "http://identifiers.org/uniprot/Q00987"
     },
-    "expression": 3.8604233156553067,
+
     "id": 29,
     "members": {},
     "mutation": 0,
@@ -2264,7 +2264,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3688",
        "UniProt": "http://identifiers.org/uniprot/P11362"
       },
-      "expression": 4.097821657655913,
+
       "mutation": 0
      },
      "FGFR2": {
@@ -2273,7 +2273,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3689",
        "UniProt": "http://identifiers.org/uniprot/P21802"
       },
-      "expression": 2.6193145445295234,
+
       "mutation": 0
      },
      "FGFR3": {
@@ -2282,7 +2282,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3690",
        "UniProt": "http://identifiers.org/uniprot/P22607"
       },
-      "expression": 3.7085881581515885,
+
       "mutation": 0
      },
      "FGFR4": {
@@ -2291,7 +2291,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3691",
        "UniProt": "http://identifiers.org/uniprot/P22455"
       },
-      "expression": 4.431264568749061,
+
       "mutation": 0
      },
      "FGFRL1": {
@@ -2300,7 +2300,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3693",
        "UniProt": "http://identifiers.org/uniprot/Q8N441"
       },
-      "expression": 3.449551419746748,
+
       "mutation": 0
      }
     },
@@ -2324,7 +2324,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3796",
        "UniProt": "http://identifiers.org/uniprot/P01100"
       },
-      "expression": 4.002492927990551,
+
       "mutation": 0
      },
      "FOSB": {
@@ -2333,7 +2333,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3797",
        "UniProt": "http://identifiers.org/uniprot/P53539"
       },
-      "expression": 3.407190491390807,
+
       "mutation": 0
      },
      "FOSL1": {
@@ -2342,7 +2342,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:13718",
        "UniProt": "http://identifiers.org/uniprot/P15407"
       },
-      "expression": 3.5399931627136363,
+
       "mutation": 0
      },
      "FOSL2": {
@@ -2351,7 +2351,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3798",
        "UniProt": "http://identifiers.org/uniprot/P15408"
       },
-      "expression": 2.968247667387891,
+
       "mutation": 0
      }
     },
@@ -2375,7 +2375,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9875",
        "UniProt": "http://identifiers.org/uniprot/Q13972"
       },
-      "expression": 3.025262438048289,
+
       "mutation": 0
      },
      "RASGRF2": {
@@ -2408,7 +2408,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11187",
        "UniProt": "http://identifiers.org/uniprot/Q07889"
       },
-      "expression": 3.9896076444992437,
+
       "mutation": 0
      },
      "SOS2": {
@@ -2417,7 +2417,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11188",
        "UniProt": "http://identifiers.org/uniprot/Q07890"
       },
-      "expression": 3.7951521048224284,
+
       "mutation": 0
      }
     },
@@ -2453,7 +2453,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8803",
        "UniProt": "http://identifiers.org/uniprot/P16234"
       },
-      "expression": 2.2728903517269337,
+
       "mutation": 0
      },
      "PDGFRB": {
@@ -2462,7 +2462,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8804",
        "UniProt": "http://identifiers.org/uniprot/P09619"
       },
-      "expression": 2.8652491212629903,
+
       "mutation": 0
      }
     },
@@ -2478,7 +2478,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:10261",
      "UniProt": "http://identifiers.org/uniprot/P08922"
     },
-    "expression": 2.7538182923065415,
+
     "id": 49,
     "members": {},
     "mutation": 0,
@@ -2493,7 +2493,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:5173",
      "UniProt": "http://identifiers.org/uniprot/P01112"
     },
-    "expression": 4.175002190696295,
+
     "id": 51,
     "members": {},
     "mutation": 0,
@@ -2516,7 +2516,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8975",
        "UniProt": "http://identifiers.org/uniprot/P42336"
       },
-      "expression": 3.6626139659386423,
+
       "mutation": 0
      },
      "PIK3CB": {
@@ -2525,7 +2525,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8976",
        "UniProt": "http://identifiers.org/uniprot/P42338"
       },
-      "expression": 3.9960651949755266,
+
       "mutation": 0
      },
      "PIK3CD": {
@@ -2534,7 +2534,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8977",
        "UniProt": "http://identifiers.org/uniprot/O00329"
       },
-      "expression": 2.922377445391884,
+
       "mutation": 0
      },
      "PIK3CG": {
@@ -2543,7 +2543,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8978",
        "UniProt": "http://identifiers.org/uniprot/P48736"
       },
-      "expression": 2.4908943415769333,
+
       "mutation": 0
      }
     },
@@ -2567,7 +2567,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8979",
        "UniProt": "http://identifiers.org/uniprot/P27986"
       },
-      "expression": 4.17813251128055,
+
       "mutation": 0
      },
      "PIK3R2": {
@@ -2576,7 +2576,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8980",
        "UniProt": "http://identifiers.org/uniprot/O00459"
       },
-      "expression": 3.9117533610723076,
+
       "mutation": 0
      },
      "PIK3R3": {
@@ -2594,7 +2594,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8982",
        "UniProt": "http://identifiers.org/uniprot/Q99570"
       },
-      "expression": 4.444737823774618,
+
       "mutation": 0
      },
      "PIK3R5": {
@@ -2603,7 +2603,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:30035",
        "UniProt": "http://identifiers.org/uniprot/Q8WYR1"
       },
-      "expression": 2.8745442552607665,
+
       "mutation": 0
      },
      "PIK3R6": {
@@ -2612,7 +2612,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:27101",
        "UniProt": "http://identifiers.org/uniprot/Q5UE93"
       },
-      "expression": 2.3155573040897846,
+
       "mutation": 0
      }
     },
@@ -2628,7 +2628,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:9829",
      "UniProt": "http://identifiers.org/uniprot/P04049"
     },
-    "expression": 4.440651413064297,
+
     "id": 58,
     "members": {},
     "mutation": 0,
@@ -2643,7 +2643,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:9842",
      "UniProt": "http://identifiers.org/uniprot/Q12967"
     },
-    "expression": 4.03813054994696,
+
     "id": 60,
     "members": {},
     "mutation": 0,
@@ -2666,7 +2666,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:6204",
        "UniProt": "http://identifiers.org/uniprot/P05412"
       },
-      "expression": 3.5197975806541884,
+
       "mutation": 0
      },
      "JUNB": {
@@ -2675,7 +2675,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:6205",
        "UniProt": "http://identifiers.org/uniprot/P17275"
       },
-      "expression": 3.978743371404763,
+
       "mutation": 0
      },
      "JUND": {
@@ -2684,7 +2684,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:6206",
        "UniProt": "http://identifiers.org/uniprot/P17535"
       },
-      "expression": 3.688775350711568,
+
       "mutation": 0
      }
     },
@@ -2700,7 +2700,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:6407",
      "UniProt": "http://identifiers.org/uniprot/P01116"
     },
-    "expression": 4.933341373645594,
+
     "id": 66,
     "members": {},
     "mutation": 0,
@@ -2715,7 +2715,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:6871",
      "UniProt": "http://identifiers.org/uniprot/P28482"
     },
-    "expression": 4.620463622189131,
+
     "id": 73,
     "members": {},
     "mutation": 0,
@@ -2730,7 +2730,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:6877",
      "UniProt": "http://identifiers.org/uniprot/P27361"
     },
-    "expression": 4.202508929815113,
+
     "id": 75,
     "members": {},
     "mutation": 0,
@@ -2745,7 +2745,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:7989",
      "UniProt": "http://identifiers.org/uniprot/P01111"
     },
-    "expression": 2.7363714458700374,
+
     "id": 85,
     "members": {},
     "mutation": 0,
@@ -2760,7 +2760,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:8816",
      "UniProt": "http://identifiers.org/uniprot/O15530"
     },
-    "expression": 4.670259803919144,
+
     "id": 94,
     "members": {},
     "mutation": 0,
@@ -2783,7 +2783,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:391",
        "UniProt": "http://identifiers.org/uniprot/P31749"
       },
-      "expression": 4.45010422687957,
+
       "mutation": 0
      },
      "AKT2": {
@@ -2792,7 +2792,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:392",
        "UniProt": "http://identifiers.org/uniprot/P31751"
       },
-      "expression": 3.355674565714098,
+
       "mutation": 0
      },
      "AKT3": {
@@ -2801,7 +2801,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:393",
        "UniProt": "http://identifiers.org/uniprot/Q9Y243"
       },
-      "expression": 2.8750988673524946,
+
       "mutation": 0
      }
     },
@@ -2840,7 +2840,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11805",
        "UniProt": "http://identifiers.org/uniprot/Q13009"
       },
-      "expression": 3.6760520373043026,
+
       "mutation": 0
      },
      "TIAM2": {
@@ -2849,7 +2849,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11806",
        "UniProt": "http://identifiers.org/uniprot/Q8IVF5"
       },
-      "expression": 3.206501173840331,
+
       "mutation": 0
      }
     },
@@ -2873,7 +2873,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9801",
        "UniProt": "http://identifiers.org/uniprot/P63000"
       },
-      "expression": 5.209116183759622,
+
       "mutation": 0
      },
      "RAC2": {
@@ -2882,7 +2882,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9802",
        "UniProt": "http://identifiers.org/uniprot/P15153"
       },
-      "expression": 3.660353215881163,
+
       "mutation": 0
      },
      "RAC3": {
@@ -2891,7 +2891,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9803",
        "UniProt": "http://identifiers.org/uniprot/P60763"
       },
-      "expression": 4.075630958447257,
+
       "mutation": 0
      },
      "RHOG": {
@@ -2900,7 +2900,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:672",
        "UniProt": "http://identifiers.org/uniprot/P84095"
       },
-      "expression": 4.236145623645469,
+
       "mutation": 0
      }
     },
@@ -2924,7 +2924,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8590",
        "UniProt": "http://identifiers.org/uniprot/Q13153"
       },
-      "expression": 3.5597487984062033,
+
       "mutation": 0
      },
      "PAK2": {
@@ -2933,7 +2933,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8591",
        "UniProt": "http://identifiers.org/uniprot/Q13177"
       },
-      "expression": 4.219276192225852,
+
       "mutation": 0
      },
      "PAK3": {
@@ -2942,7 +2942,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:8592",
        "UniProt": "http://identifiers.org/uniprot/O75914"
       },
-      "expression": 2.765498589649754,
+
       "mutation": 0
      },
      "PAK4": {
@@ -2951,7 +2951,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:16059",
        "UniProt": "http://identifiers.org/uniprot/O96013"
       },
-      "expression": 4.524042225046311,
+
       "mutation": 0
      },
      "PAK5": {
@@ -2969,7 +2969,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:16061",
        "UniProt": "http://identifiers.org/uniprot/Q9NQU5"
       },
-      "expression": 3.9097513062942486,
+
       "mutation": 0
      }
     },
@@ -2985,7 +2985,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:9839",
      "UniProt": "http://identifiers.org/uniprot/P11233"
     },
-    "expression": 4.8856677912385535,
+
     "id": 109,
     "members": {},
     "mutation": 0,
@@ -3000,7 +3000,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:9840",
      "UniProt": "http://identifiers.org/uniprot/P11234"
     },
-    "expression": 4.38679704897032,
+
     "id": 111,
     "members": {},
     "mutation": 0,
@@ -3015,7 +3015,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:667",
      "UniProt": "http://identifiers.org/uniprot/P61586"
     },
-    "expression": 5.083299958362913,
+
     "id": 116,
     "members": {},
     "mutation": 0,
@@ -3030,7 +3030,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:668",
      "UniProt": "http://identifiers.org/uniprot/P62745"
     },
-    "expression": 4.567779186240765,
+
     "id": 118,
     "members": {},
     "mutation": 0,
@@ -3045,7 +3045,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:669",
      "UniProt": "http://identifiers.org/uniprot/P08134"
     },
-    "expression": 4.921176653752268,
+
     "id": 120,
     "members": {},
     "mutation": 0,
@@ -3068,7 +3068,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9878",
        "UniProt": "http://identifiers.org/uniprot/O95267"
       },
-      "expression": 2.794877643408275,
+
       "mutation": 0
      },
      "RASGRP2": {
@@ -3077,7 +3077,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9879",
        "UniProt": "http://identifiers.org/uniprot/Q7LDG7"
       },
-      "expression": 2.6236051726008487,
+
       "mutation": 0
      },
      "RASGRP3": {
@@ -3086,7 +3086,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:14545",
        "UniProt": "http://identifiers.org/uniprot/Q8IV61"
       },
-      "expression": 2.4964776450183854,
+
       "mutation": 0
      },
      "RASGRP4": {
@@ -3095,7 +3095,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:18958",
        "UniProt": "http://identifiers.org/uniprot/Q8TDF6"
       },
-      "expression": 2.5723101327644144,
+
       "mutation": 0
      }
     },
@@ -3111,7 +3111,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:10011",
      "UniProt": "http://identifiers.org/uniprot/Q15382"
     },
-    "expression": 4.08308006914535,
+
     "id": 126,
     "members": {},
     "mutation": 0,
@@ -3134,7 +3134,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:18752",
        "UniProt": "http://identifiers.org/uniprot/Q9BPZ7"
       },
-      "expression": 4.160354427328004,
+
       "mutation": 0
      },
      "MLST8": {
@@ -3143,7 +3143,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:24825",
        "UniProt": "http://identifiers.org/uniprot/Q9BVC4"
       },
-      "expression": 4.311374251883899,
+
       "mutation": 0
      },
      "MTOR": {
@@ -3152,7 +3152,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:3942",
        "UniProt": "http://identifiers.org/uniprot/P42345"
       },
-      "expression": 3.950091273746005,
+
       "mutation": 0
      },
      "RICTOR": {
@@ -3161,7 +3161,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:28611",
        "UniProt": "http://identifiers.org/uniprot/Q6R327"
       },
-      "expression": 3.993100295964999,
+
       "mutation": 0
      },
      "RPTOR": {
@@ -3170,7 +3170,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:30287",
        "UniProt": "http://identifiers.org/uniprot/Q8N122"
       },
-      "expression": 3.642241902829155,
+
       "mutation": 0
      }
     },
@@ -3186,7 +3186,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:10251",
      "UniProt": "http://identifiers.org/uniprot/Q13464"
     },
-    "expression": 3.693287530023261,
+
     "id": 129,
     "members": {},
     "mutation": 0,
@@ -3216,7 +3216,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:11389",
      "UniProt": "http://identifiers.org/uniprot/Q15831"
     },
-    "expression": 3.5389461763581718,
+
     "id": 147,
     "members": {},
     "mutation": 0,
@@ -3239,7 +3239,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9376",
        "UniProt": "http://identifiers.org/uniprot/Q13131"
       },
-      "expression": 3.599003027158162,
+
       "mutation": 0
      },
      "PRKAA2": {
@@ -3248,7 +3248,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9377",
        "UniProt": "http://identifiers.org/uniprot/P54646"
       },
-      "expression": 3.0939578028485757,
+
       "mutation": 0
      }
     },
@@ -3272,7 +3272,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9378",
        "UniProt": "http://identifiers.org/uniprot/Q9Y478"
       },
-      "expression": 3.988051080861258,
+
       "mutation": 0
      },
      "PRKAB2": {
@@ -3281,7 +3281,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9379",
        "UniProt": "http://identifiers.org/uniprot/O43741"
       },
-      "expression": 4.2184058760322625,
+
       "mutation": 0
      }
     },
@@ -3305,7 +3305,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9385",
        "UniProt": "http://identifiers.org/uniprot/P54619"
       },
-      "expression": 4.5460841667797345,
+
       "mutation": 0
      },
      "PRKAG2": {
@@ -3314,7 +3314,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9386",
        "UniProt": "http://identifiers.org/uniprot/Q9UGJ0"
       },
-      "expression": 3.954144562926625,
+
       "mutation": 0
      },
      "PRKAG3": {
@@ -3323,7 +3323,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9387",
        "UniProt": "http://identifiers.org/uniprot/Q9UGI9"
       },
-      "expression": 2.7814473409490095,
+
       "mutation": 0
      }
     },
@@ -3347,7 +3347,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:10430",
        "UniProt": "http://identifiers.org/uniprot/Q15418"
       },
-      "expression": 3.615545948347543,
+
       "mutation": 0
      },
      "RPS6KA2": {
@@ -3356,7 +3356,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:10431",
        "UniProt": "http://identifiers.org/uniprot/Q15349"
       },
-      "expression": 3.0035565853142874,
+
       "mutation": 0
      },
      "RPS6KA3": {
@@ -3365,7 +3365,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:10432",
        "UniProt": "http://identifiers.org/uniprot/P51812"
       },
-      "expression": 3.7444011892510245,
+
       "mutation": 0
      },
      "RPS6KA4": {
@@ -3392,7 +3392,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:10435",
        "UniProt": "http://identifiers.org/uniprot/Q9UK32"
       },
-      "expression": 2.9748966840939794,
+
       "mutation": 0
      }
     },
@@ -3425,7 +3425,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:18610",
        "UniProt": "http://identifiers.org/uniprot/Q6VAB6"
       },
-      "expression": 2.5601413960786594,
+
       "mutation": 0
      }
     },
@@ -3441,7 +3441,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:12362",
      "UniProt": "http://identifiers.org/uniprot/Q92574"
     },
-    "expression": 4.085242716296362,
+
     "id": 166,
     "members": {},
     "mutation": 0,
@@ -3456,7 +3456,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:12363",
      "UniProt": "http://identifiers.org/uniprot/P49815"
     },
-    "expression": 4.293646729197337,
+
     "id": 168,
     "members": {},
     "mutation": 0,
@@ -3471,7 +3471,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:4591",
      "UniProt": "http://identifiers.org/uniprot/Q9NRY4"
     },
-    "expression": 3.8584069304394615,
+
     "id": 173,
     "members": {},
     "mutation": 0,
@@ -3486,7 +3486,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:9884",
      "UniProt": "http://identifiers.org/uniprot/P06400"
     },
-    "expression": 3.923772174249647,
+
     "id": 180,
     "members": {},
     "mutation": 0,
@@ -3501,7 +3501,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:11998",
      "UniProt": "http://identifiers.org/uniprot/P04637"
     },
-    "expression": 3.54458938515792,
+
     "id": 185,
     "members": {},
     "mutation": 0,
@@ -3516,7 +3516,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:7765",
      "UniProt": "http://identifiers.org/uniprot/P21359"
     },
-    "expression": 3.721348215001131,
+
     "id": 187,
     "members": {},
     "mutation": 0,
@@ -3531,7 +3531,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:9588",
      "UniProt": "http://identifiers.org/uniprot/P60484"
     },
-    "expression": 4.473009649595245,
+
     "id": 194,
     "members": {},
     "mutation": 0,
@@ -3572,7 +3572,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:26129",
        "UniProt": "http://identifiers.org/uniprot/Q86YV0"
       },
-      "expression": 3.3456855646239907,
+
       "mutation": 0
      }
     },
@@ -3596,7 +3596,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9871",
        "UniProt": "http://identifiers.org/uniprot/P20936"
       },
-      "expression": 4.552249892981624,
+
       "mutation": 0
      },
      "RASA2": {
@@ -3605,7 +3605,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:9872",
        "UniProt": "http://identifiers.org/uniprot/Q15283"
       },
-      "expression": 3.6749213633288553,
+
       "mutation": 0
      },
      "RASA3": {
@@ -3614,7 +3614,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:20331",
        "UniProt": "http://identifiers.org/uniprot/Q14644"
       },
-      "expression": 3.0964215081080795,
+
       "mutation": 0
      }
     },
@@ -3638,7 +3638,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:20249",
        "UniProt": "http://identifiers.org/uniprot/Q7Z699"
       },
-      "expression": 2.9644105038204787,
+
       "mutation": 0
      },
      "SPRED2": {
@@ -3647,7 +3647,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:17722",
        "UniProt": "http://identifiers.org/uniprot/Q7Z698"
       },
-      "expression": 3.098231940955949,
+
       "mutation": 0
      },
      "SPRED3": {
@@ -3680,7 +3680,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11269",
        "UniProt": "http://identifiers.org/uniprot/O43609"
       },
-      "expression": 3.7971084213868496,
+
       "mutation": 0
      },
      "SPRY2": {
@@ -3689,7 +3689,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11270",
        "UniProt": "http://identifiers.org/uniprot/O43597"
       },
-      "expression": 2.35569522875412,
+
       "mutation": 0
      },
      "SPRY3": {
@@ -3698,7 +3698,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:11271",
        "UniProt": "http://identifiers.org/uniprot/O43610"
       },
-      "expression": 2.344469785236246,
+
       "mutation": 0
      },
      "SPRY4": {
@@ -3707,7 +3707,7 @@
        "HGNC": "http://identifiers.org/hgnc/HGNC:15533",
        "UniProt": "http://identifiers.org/uniprot/Q9C004"
       },
-      "expression": 2.880263737236679,
+
       "mutation": 0
      }
     },
@@ -3723,7 +3723,7 @@
      "HGNC": "http://identifiers.org/hgnc/HGNC:3288",
      "UniProt": "http://identifiers.org/uniprot/Q13541"
     },
-    "expression": 4.922494878488162,
+
     "id": 223,
     "members": {},
     "mutation": 0,
