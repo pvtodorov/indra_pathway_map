@@ -25,10 +25,12 @@ $(function(){
            $('#cellSelect').append($('<option/>').attr("value", file).text(name));
         });
       $('.selectpicker').selectpicker('refresh');
+
+      drawCytoscape()
   });
   //***************************************
 
-  $("#loadButton").click(function(){
+  function drawCytoscape () {
     var model_response = $.ajax({
       url: 'cyjs/' + $('#cellSelect').val(),
     });
@@ -434,7 +436,11 @@ $(function(){
         }; // if Attractor
       });
     })
+  }
 
+  $("#loadButton").click(function(){
+
+    drawCytoscape()
 
     console.log($('#cellSelect').val());
 });
@@ -449,6 +455,7 @@ $(function(){
   setTimeout(resize, 0);
 
   cy = cytoscape()
+
 
 
 // cy.edges().forEach(function(e){
