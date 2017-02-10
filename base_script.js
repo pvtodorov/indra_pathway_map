@@ -29,6 +29,15 @@ $(function(){
   //***************************************
 
   $("#loadButton").click(function(){
+    var model_response = $.ajax({
+      url: 'cyjs/' + $('#cellSelect').val(),
+    });
+    model_response.done(function(){
+      var model_dict = model_response.responseJSON;
+      console.log(model_dict)
+    })
+
+
     console.log($('#cellSelect').val());
 });
 
