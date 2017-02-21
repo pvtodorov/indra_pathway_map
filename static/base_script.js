@@ -16,7 +16,7 @@ $(function(){
   //build dropdown using json
   //***************************************
   var cell_dict_response = $.ajax({
-    url: "cell_dict.json",
+    url: "static/cell_dict.json",
   });
 
   cell_dict_response.done(function(){
@@ -32,7 +32,7 @@ $(function(){
 
   function drawCytoscape () {
     var model_response = $.ajax({
-      url: 'cyjs/' + $('#cellSelect').val(),
+      url: 'static/cyjs/' + $('#cellSelect').val(),
     });
     model_response.done(function(){
       var model_dict = model_response.responseJSON;

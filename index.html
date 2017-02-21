@@ -2,49 +2,34 @@
 <html>
 <head>
     <title>Pathway map test</title>
-
-    <!-- BASICS -->
-    <!-- jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- cytsoscape.js -->
-    <script src="cytoscape.min.js"></script>
-
-    <!-- MODEL -->
-    <!-- script that executes visualiation -->
-    <script src="base_script.js"></script>
-    <!-- model output from cyjs_assembler -->
-    <script src="model.js"></script>
-    <!-- script that executes visualiation -->
-    <script src="cell_dict.js"></script>
-
-    <!-- LAYOUTS -->
-    <!-- dagre layout-->
-    <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
-    <!-- cytoscape.js extension for dagre layout -->
-    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.1.2/cytoscape-dagre.js"></script>
-    <!-- cola physics-based layout -->
-    <script src="cola.v3.min.js"></script>
-    <!-- cytoscape.js extension for cola layout -->
-    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-cola/1.4.3/cytoscape-cola.js"></script>
-
-    <!-- qtip js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
-    <!-- qtip css -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.css">
-    <!-- cytoscape.js qtip extension -->
-    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.2.5/cytoscape-qtip.js"></script>
-
     <!-- CSS -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="static/style.css" rel="stylesheet" type="text/css" />
 
-    <!-- Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="static/bower_components/qtip2/jquery.qtip.min.css" />
+    <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="static/bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
+    <!-- endbower -->
+    <!-- bower:js -->
+    <script src="static/bower_components/jquery/dist/jquery.js"></script>
+    <script src="static/bower_components/cytoscape/dist/cytoscape.js"></script>
+    <script src="static/bower_components/lodash/lodash.js"></script>
+    <script src="static/bower_components/graphlib/dist/graphlib.core.js"></script>
+    <script src="static/bower_components/dagre/dist/dagre.core.js"></script>
+    <script src="static/bower_components/dagre/dist/dagre.core.min.js"></script>
+    <script src="static/bower_components/cytoscape-dagre/cytoscape-dagre.js"></script>
+    <script src="static/bower_components/webcola/WebCola/cola.min.js"></script>
+    <script src="static/bower_components/cytoscape-cola/cytoscape-cola.js"></script>
+    <script src="static/bower_components/ev-emitter/ev-emitter.js"></script>
+    <script src="static/bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="static/bower_components/qtip2/jquery.qtip.min.js"></script>
+    <script src="static/bower_components/cytoscape-qtip/cytoscape-qtip.js"></script>
+    <script src="static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="static/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
+    <!-- endbower -->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <!-- script that executes visualiation -->
+    <script src="static/base_script.js"></script>
 
 
 </head>
