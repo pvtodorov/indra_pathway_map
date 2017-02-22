@@ -38,12 +38,21 @@
 
 <body>
 
-    <h1>pathway_map demo</h1>
+    <h1>pathway map demo</h1>
     <!-- container-fluid : start -->
     <div class="container-fluid">
       <div class="row">
 
         <div class="col-sm-4">
+          <form>
+  <div class="form-group">
+    <label for="textArea">Describe your mechanism.</label>
+    <textarea class="form-control" id="textArea" rows="3"></textarea>
+  </div>
+
+</form>
+
+
           <select id='cellSelect' class="selectpicker"></select>
           <button id='loadButton' type="submit" class="btn btn-primary">Load</button>
         </div>

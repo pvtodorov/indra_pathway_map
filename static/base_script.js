@@ -26,16 +26,12 @@ $(function(){
         });
       $('.selectpicker').selectpicker('refresh');
 
-      drawCytoscape()
+      //drawCytoscape()
   });
   //***************************************
 
-  function drawCytoscape () {
-    var model_response = $.ajax({
-      url: 'static/cyjs/' + $('#cellSelect').val(),
-    });
-    model_response.done(function(){
-      var model_dict = model_response.responseJSON;
+  function drawCytoscape (model_response) {
+      var model_dict = model_response;
       console.log(model_dict)
       var exp_colorscale = model_dict.exp_colorscale
       var mut_colorscale = model_dict.mut_colorscale
@@ -435,14 +431,42 @@ $(function(){
           n.addClass('nAttractor');
         }; // if Attractor
       });
-    })
+
   }
 
   $("#loadButton").click(function(){
+    var txt = $('#textArea')[0].value
 
-    drawCytoscape()
 
-    console.log($('#cellSelect').val());
+
+    function txtReach(txt) {
+      var input_txt = {'text':txt}
+      console.log(input_txt)
+      console.log("converting text to statements via REACH");
+      return $.ajax({
+                    url: "http://127.0.0.1:8080/reach/process_text",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(input_txt),
+                    });
+    }
+
+    function assembleCyJS(res) {
+      var res_json = res
+      res_json['line'] = $('#cellSelect').val().slice(6,-5)
+      console.log(res_json)
+      console.log("converting statements to cyjs");
+      return $.ajax({
+          url: "http://127.0.0.1:8080/assemblers/cyjs",
+          type: "POST",
+          dataType: "json",
+          data: JSON.stringify(res_json),
+      });
+    }
+
+    txtReach(txt).then(assembleCyJS).then(drawCytoscape);
+
+    console.log($('#cellSelect').val().substring(6));
 });
 
   function resize() {
