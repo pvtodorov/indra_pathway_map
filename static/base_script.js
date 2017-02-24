@@ -4,6 +4,10 @@ var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
 
 var cy;
 
+var preset_pos = {};
+
+var id_pos = {}
+
 $(function(){
 
   var win = $(window);
@@ -248,8 +252,27 @@ $(function(){
         //padding: 10,
         edgeWeight: function( edge ){ return edge.data('weight'); }
       };
+      // if a prior model has been built, use its positions for layout
+      if (Object.keys(preset_pos).length !== 0) {
+        cy.nodes().forEach(function(n){id_pos[n.id()] = preset_pos[n.data().name]})
+        console.log(id_pos)
+        params = {
+          name: 'preset',
+          positions: id_pos, // map of (node id) => (position obj); or function(node){ return somPos; }
+          zoom: undefined, // the zoom level to set (prob want fit = false if set)
+          fit: true, // whether to fit to viewport
+          padding: 30, // padding on fit
+          animate: false, // whether to transition the node positions
+          animationDuration: 500, // duration of animation in ms if enabled
+          animationEasing: undefined, // easing of animation if enabled
+          ready: undefined, // callback on layoutready
+          stop: undefined, // on layoutstop
+        };
+      }
+
       var layout = cy.makeLayout( params );
       layout.run();
+
       var params = {
         name: 'cola',
         nodeSpacing: 40,
@@ -262,11 +285,18 @@ $(function(){
         ungrabifyWhileSimulating: false,
         edgeLength: function( edge ){ return edge.data('weight'); },
         // layout event callbacks
-        ready: function(){cy.fit();}, // on layoutready
-        stop: function(){}, // on layoutstop
+        ready: undefined, // on layoutready
+        stop: undefined, // on layoutstop
       };
       var layout = cy.makeLayout( params );
-      layout.run();
+      if (Object.keys(preset_pos).length === 0) {
+        layout.run();
+      }
+
+      cy.on(('layoutready'),function(){
+          resize();
+        });
+
 
       var dragged = false;
       cy.on(('mousedown'),function(){
@@ -280,11 +310,18 @@ $(function(){
         //console.log( 'mouseup' );
         if (dragged === true){
           layout.run();
-          resize();
           dragged = false;
         }
+      });
 
-        });
+      cy.on(('layoutstop'),function(){
+        nds = (cy.json()).elements.nodes
+        nds.forEach( function(n) {
+          preset_pos[n.data.name] = n.position;
+        })
+      });
+
+
 
       cy.edges().forEach(function(e){
         if (e.data('i') === 'Complex'){
@@ -472,8 +509,8 @@ $(function(){
   function resize() {
     //console.log(win.height(), win.innerHeight());
     $("#cy-container").height(win.innerHeight() - 0);
-    cy.resize();
     cy.fit();
+    cy.resize();
   }
 
   setTimeout(resize, 0);
