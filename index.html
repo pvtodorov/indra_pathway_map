@@ -30,64 +30,81 @@
 
     <!-- script that executes visualiation -->
     <script src="static/base_script.js"></script>
-
-
 </head>
 
-
-
 <body>
-
-    <h1><img src="indra_logo_v2.png" alt="INDRA logo" style="height:30px;"></img> INDRA </h1>
-    <h4>Integrated Network and Dynamical Reasoning Assembler </h4>
     <!-- container-fluid : start -->
     <div class="container-fluid">
-      <div class="row">
 
-        <div class="col-sm-4">
-          <h5>Input</h5>
-          <form>
-  <div class="form-group">
-    <label for="textArea">Describe your mechanism.</label>
-    <textarea class="form-control" id="textArea" rows="25" placeholder="HRAS, NRAS and KRAS activate ARAF, BRAF and RAF1."></textarea>
-  </div>
-
-</form>
-          <div class="form-group">
-          <div>
-          <label for="cellSelect">Choose a cell line.</label>
+    <div class=row>
+        <div class="col-xs-4">
+            <h1><img src="indra_logo_v2.png" alt="INDRA logo" style="height:30px;"></img> INDRA </h1>
+            <h5>Integrated Network and Dynamical Reasoning Assembler </h5>
         </div>
-        <div>
-          <select id='cellSelect' class="selectpicker"></select>
-        </div>
-        </div>
-          <button id='loadButton' type="submit" class="btn btn-primary">Load</button>
-        </div>
+    </div>
 
+    <div class=row>
+      <div class="col-xs-4">
 
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#ras227">McCormick Map</a></li>
+          <li ><a data-toggle="tab" href="#byom">BYOM</a></li>
+        </ul>
 
-        <div class="col-sm-8">
-
-          <!-- graph : start -->
-          <h5>Graph</h5>
-              <div id="cy-container">
-                <div id="cy"></div>
+          <div id="left_half" >
+            <div class="tab-content">
+              <div id="ras227" class="tab-pane fade in active">
+                <div class="form-group">
+                    <div>
+                        <label for="cellSelectStatic">Choose a cell line.</label>
+                    </div>
+                    <div>
+                        <select id='cellSelectStatic' class="selectpicker"></select>
+                    </div>
+                </div>
+                <button id='loadButtonStatic' type="submit" class="btn btn-primary">Load</button>
               </div>
 
-          <!-- graph : end -->
+              <div id="byom" class="tab-pane fade in">
 
-        </div>
+                  <div >
+                    <h5>Input</h5>
+                    <form>
+                        <div class="form-group">
+                          <label for="textArea">Describe your mechanism.</label>
+                          <textarea class="form-control" id="textArea" rows="20" placeholder="HRAS, NRAS and KRAS activate ARAF, BRAF and RAF1."></textarea>
+                        </div>
+
+                     </form>
+                        <div class="form-group">
+                            <div>
+                                <label for="cellSelectDynamic">Choose a cell line.</label>
+                            </div>
+                            <div>
+                                <select id='cellSelectDynamic' class="selectpicker"></select>
+                            </div>
+                        </div>
+                        <button id='loadButtonDynamic' type="submit" class="btn btn-primary">Load</button>
+                  </div>
+              </div>
+            </div>
+          </div>
 
 
-      </div>
     </div>
+    <div class="col-sm-8">
+
+      <!-- graph : start -->
+      <!-- <h5>Graph</h5> -->
+          <div id="cy-container">
+            <div id="cy"></div>
+          </div>
+    <!-- graph : end -->
+
+  </div>
+  </div>
+
+
     <!-- container-fluid : end -->
-
-
-
-
-
-
-
 </body>
 </html>

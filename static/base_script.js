@@ -4,8 +4,10 @@ var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
 
 var cy;
 
+// {name : position} dict
 var preset_pos = {};
 
+// {id : position} dict
 var id_pos = {}
 
 $(function(){
@@ -25,13 +27,33 @@ $(function(){
 
   cell_dict_response.done(function(){
       var cell_dict = cell_dict_response.responseJSON;
+
       $.each(cell_dict, function(name, file) {
-           $('#cellSelect').append($('<option/>').attr("value", file).text(name));
+           $('#cellSelectStatic').append($('<option/>').attr("value", file).text(name));
         });
+
+      $.each(cell_dict, function(name, file) {
+           $('#cellSelectDynamic').append($('<option/>').attr("value", file).text(name));
+        });
+
       $('.selectpicker').selectpicker('refresh');
 
-      //drawCytoscape()
   });
+
+  // get preset_pos for McCormick model
+  //***************************************
+
+  preset_pos_response = $.ajax({
+    url: "static/preset_pos.json",
+  });
+  cell_dict_response.done(function(){
+    preset_pos = preset_pos_response.responseJSON
+  })
+
+
+  //***************************************
+
+  //drawCytoscape()
   //***************************************
 
   function drawCytoscape (model_response) {
@@ -289,9 +311,10 @@ $(function(){
         stop: undefined, // on layoutstop
       };
       var layout = cy.makeLayout( params );
-      if (Object.keys(preset_pos).length === 0) {
-        layout.run();
-      }
+      // if (Object.keys(preset_pos).length === 0) {
+      //   layout.run();
+      // }
+      layout.run();
 
       cy.on(('layoutready'),function(){
           resize();
@@ -471,7 +494,11 @@ $(function(){
 
   }
 
-  $("#loadButton").click(function(){
+  //***************************************
+  //
+
+
+  $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value
 
 
@@ -490,7 +517,7 @@ $(function(){
 
     function assembleCyJS(res) {
       var res_json = res
-      res_json['line'] = $('#cellSelect').val().slice(6,-5)
+      res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5)
       console.log(res_json)
       console.log("converting statements to cyjs");
       return $.ajax({
@@ -503,7 +530,12 @@ $(function(){
 
     txtReach(txt).then(assembleCyJS).then(drawCytoscape);
 
-    console.log($('#cellSelect').val().substring(6));
+    console.log($('#cellSelectDynamic').val().substring(6));
+});
+
+$('a[data-toggle=tab]').click(function(){
+    cy.destroy();
+    console.log(this.href);
 });
 
   function resize() {
