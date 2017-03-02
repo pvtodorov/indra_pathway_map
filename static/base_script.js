@@ -42,11 +42,10 @@ $(function(){
 
   // get preset_pos for McCormick model
   //***************************************
-
   preset_pos_response = $.ajax({
     url: "static/preset_pos.json",
   });
-  cell_dict_response.done(function(){
+  preset_pos_response.done(function(){
     preset_pos = preset_pos_response.responseJSON
   })
 
@@ -501,8 +500,6 @@ $(function(){
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value
 
-
-
     function txtReach(txt) {
       var input_txt = {'text':txt}
       console.log(input_txt)
@@ -512,6 +509,16 @@ $(function(){
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(input_txt),
+                    });
+    }
+
+    function groundingMapper(res) {
+      //var stmts = res.responseJSON
+      return $.ajax({
+                    url: "http://127.0.0.1:8080/preassemblers/grounding_mapper",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(stmts),
                     });
     }
 
@@ -528,10 +535,27 @@ $(function(){
       });
     }
 
+    //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
     txtReach(txt).then(assembleCyJS).then(drawCytoscape);
 
     console.log($('#cellSelectDynamic').val().substring(6));
 });
+
+
+$("#loadButtonStatic").click(function(){
+
+  function getModel() {
+    return $.ajax({
+      url: 'static/cyjs/' + $('#cellSelectStatic').val(),
+    });
+  }
+
+  //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
+  getModel().then(drawCytoscape);
+
+  console.log($('#cellSelectDynamic').val().substring(6));
+});
+
 
 $('a[data-toggle=tab]').click(function(){
     cy.destroy();
