@@ -335,6 +335,20 @@ $(function(){
           dragged = false;
         }
       });
+      cy.on(('touchstart'),function(){
+        //console.log( 'mousedown' );
+        layout.stop();
+        cy.nodes().on(('drag'), function(){
+          dragged = true;
+        })
+        });
+      cy.on(('touchend'),function(){
+        //console.log( 'mouseup' );
+        if (dragged === true){
+          layout.run();
+          dragged = false;
+        }
+      });
 
       cy.on(('layoutstop'),function(){
         nds = (cy.json()).elements.nodes
