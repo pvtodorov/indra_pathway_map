@@ -2,7 +2,7 @@ var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
 //0-4 are greens, 5 is a grey
 //var exp_colorscale = ['#edf8e9', '#bae4b3', '#74c476', '#31a354', '#006d2c', '#bdbdbd']
 
-var cy;
+var cy = cytoscape();
 
 // {name : position} dict
 var preset_pos = {};
@@ -14,29 +14,34 @@ $(function(){
 
   var win = $(window);
 
-
-
-
-  //build dropdown using json
+  // retrieve a JSON from a url
   //***************************************
-  var cell_dict_response = $.ajax({
-    url: "static/cell_dict.json",
-  });
+  function grabJSON (url) {
+    return $.ajax({
+      url: url,
+    })
+  }
+  //***************************************
 
-  cell_dict_response.done(function(){
-      var cell_dict = cell_dict_response.responseJSON;
+  //build bootstrap-select dropdown using json
+  //***************************************
+  function dropdownFromJSON (div_id, ajax_response) {
+    $.each(ajax_response, function(name, file) {
+         $(div_id).append($('<option/>').attr("value", file).text(name));
+      });
+    $('.selectpicker').selectpicker('refresh');
+  }
+  //***************************************
 
-      $.each(cell_dict, function(name, file) {
-           $('#cellSelectStatic').append($('<option/>').attr("value", file).text(name));
-        });
+  // ok now actually build the dropdown pickers
+  grabJSON('static/cell_dict.json').then(
+    function(ajax_response){
+      for (d of ['#cellSelectStatic', '#cellSelectDynamic']) {
+          dropdownFromJSON(d, ajax_response)
+        }
+      }
+  )
 
-      $.each(cell_dict, function(name, file) {
-           $('#cellSelectDynamic').append($('<option/>').attr("value", file).text(name));
-        });
-
-      $('.selectpicker').selectpicker('refresh');
-
-  });
 
   // get preset_pos for McCormick model
   //***************************************
@@ -582,8 +587,6 @@ $('a[data-toggle=tab]').click(function(){
   }
 
   setTimeout(resize, 0);
-
-  cy = cytoscape()
 
   win.resize(function() {
     resize();
