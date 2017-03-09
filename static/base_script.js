@@ -14,9 +14,7 @@ $(function(){
 
   var win = $(window);
 
-  win.resize(function() {
-    resize();
-  });
+
 
 
   //build dropdown using json
@@ -553,7 +551,7 @@ $(function(){
     txtReach(txt).then(assembleCyJS).then(drawCytoscape);
 
     console.log($('#cellSelectDynamic').val().substring(6));
-});
+  });
 
 
 $("#loadButtonStatic").click(function(){
@@ -587,7 +585,9 @@ $('a[data-toggle=tab]').click(function(){
 
   cy = cytoscape()
 
-
+  win.resize(function() {
+    resize();
+  });
 
 // cy.edges().forEach(function(e){
 //   var g = e.data('weight');
