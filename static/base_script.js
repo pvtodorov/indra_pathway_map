@@ -44,14 +44,14 @@ function setPresetPos () {
 //drawCytoscape()
 //***************************************
 
-function drawCytoscape (model_response) {
+function drawCytoscape (div_id, model_response) {
     var model_dict = model_response;
     console.log(model_dict)
     var exp_colorscale = model_dict.exp_colorscale
     var mut_colorscale = model_dict.mut_colorscale
     var model_elements = model_dict.model_elements
     cy = cytoscape({
-      container: document.getElementById('cy'),
+      container: document.getElementById(div_id),
 
       elements: model_elements,
 
@@ -557,7 +557,9 @@ $(function(){
     }
 
     //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
-    txtReach(txt).then(assembleCyJS).then(drawCytoscape);
+    txtReach(txt).then(assembleCyJS).then(function (model_response) {
+      drawCytoscape ('cy', model_response)
+    });
 
     console.log($('#cellSelectDynamic').val().substring(6));
   });
@@ -572,7 +574,9 @@ $("#loadButtonStatic").click(function(){
   }
 
   //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
-  getModel().then(drawCytoscape);
+  getModel().then(function (model_response) {
+    drawCytoscape ('cy', model_response)
+  });
 
   console.log($('#cellSelectDynamic').val().substring(6));
 });
