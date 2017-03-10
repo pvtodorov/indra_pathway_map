@@ -558,7 +558,7 @@ $(function(){
 
     //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
     txtReach(txt).then(assembleCyJS).then(function (model_response) {
-      drawCytoscape ('cy', model_response)
+      drawCytoscape ('cy_1', model_response)
     });
 
     console.log($('#cellSelectDynamic').val().substring(6));
@@ -575,7 +575,7 @@ $("#loadButtonStatic").click(function(){
 
   //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
   getModel().then(function (model_response) {
-    drawCytoscape ('cy', model_response)
+    drawCytoscape ('cy_1', model_response)
   });
 
   console.log($('#cellSelectDynamic').val().substring(6));
