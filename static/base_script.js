@@ -10,30 +10,42 @@ var preset_pos = {};
 // {id : position} dict
 var id_pos = {}
 
+// retrieve a JSON from a url
+//***************************************
+function grabJSON (url) {
+  return $.ajax({
+    url: url,
+  })
+}
+//***************************************
+
+//build bootstrap-select dropdown using json
+//***************************************
+function dropdownFromJSON (div_id, ajax_response) {
+  $.each(ajax_response, function(name, file) {
+       $(div_id).append($('<option/>').attr("value", file).text(name));
+    });
+  $('.selectpicker').selectpicker('refresh');
+}
+//***************************************
+
+// get preset_pos for McCormick model
+//***************************************
+// function to set preset_pos for McCormick model
+//***************************************
+function setPresetPos () {
+  grabJSON("static/preset_pos.json").then(function (ajax_response) {
+    preset_pos = ajax_response;
+  })
+}
+//***************************************
+
+
 $(function(){
 
   var win = $(window);
 
-  // retrieve a JSON from a url
-  //***************************************
-  function grabJSON (url) {
-    return $.ajax({
-      url: url,
-    })
-  }
-  //***************************************
-
-  //build bootstrap-select dropdown using json
-  //***************************************
-  function dropdownFromJSON (div_id, ajax_response) {
-    $.each(ajax_response, function(name, file) {
-         $(div_id).append($('<option/>').attr("value", file).text(name));
-      });
-    $('.selectpicker').selectpicker('refresh');
-  }
-  //***************************************
-
-  // ok now actually build the dropdown pickers
+  // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
       for (d of ['#cellSelectStatic', '#cellSelectDynamic']) {
@@ -42,22 +54,8 @@ $(function(){
       }
   )
 
-
-  // get preset_pos for McCormick model
-  //***************************************
-  // function to set preset_pos for McCormick model
-  //***************************************
-  function setPresetPos () {
-    grabJSON("static/preset_pos.json").then(function (ajax_response) {
-      preset_pos = ajax_response;
-    })
-  }
-  //***************************************
-
-  // actually set the preset pos
+  // set the preset_pos
   setPresetPos()
-
-  
 
   //drawCytoscape()
   //***************************************
