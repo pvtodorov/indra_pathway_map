@@ -587,6 +587,20 @@ $('a[data-toggle=tab]').click(function(){
     console.log(this.href);
 });
 
+// get all divs of class cy
+// get their data-url location
+// draw them!
+$('.cy').each(function(){
+    var div_id = $(this).attr('id')
+    console.log(div_id)
+    var data_model = $(this).attr('data-url')
+    console.log(data_model)
+    grabJSON(data_model).then(function (model_response){
+        drawCytoscape(div_id, model_response)
+    })
+    console.log($(this).attr('data-url'))
+})
+
   function resize() {
     //console.log(win.height(), win.innerHeight());
     $("#cy-container").height(win.innerHeight() - 0);
