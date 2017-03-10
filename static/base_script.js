@@ -321,7 +321,7 @@ $(function(){
       layout.run();
 
       cy.on(('layoutready'),function(){
-          resize();
+          cy.resize();
         });
 
 
