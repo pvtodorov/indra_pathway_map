@@ -45,15 +45,19 @@ $(function(){
 
   // get preset_pos for McCormick model
   //***************************************
-  preset_pos_response = $.ajax({
-    url: "static/preset_pos.json",
-  });
-  preset_pos_response.done(function(){
-    preset_pos = preset_pos_response.responseJSON
-  })
-
-
+  // function to set preset_pos for McCormick model
   //***************************************
+  function setPresetPos () {
+    grabJSON("static/preset_pos.json").then(function (ajax_response) {
+      preset_pos = ajax_response;
+    })
+  }
+  //***************************************
+
+  // actually set the preset pos
+  setPresetPos()
+
+  
 
   //drawCytoscape()
   //***************************************
