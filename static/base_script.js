@@ -344,6 +344,7 @@ function drawCytoscape (div_id, model_response) {
       nds.forEach( function(n) {
         preset_pos[n.data.name] = n.position;
       })
+      cy.center();
     });
 
 
@@ -603,7 +604,7 @@ $('.cy').each(function(){
 
   function resize() {
     //console.log(win.height(), win.innerHeight());
-    $("#cy-container").height(win.innerHeight() - 0);
+    $(".cy-container").height(win.innerHeight() - 0);
     cy.fit();
     cy.resize();
   }
