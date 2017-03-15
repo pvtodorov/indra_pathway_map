@@ -304,6 +304,8 @@ function drawCytoscape (div_id, model_response) {
     // }
     layout.run();
 
+    cy.panzoom();
+
     cy.on(('layoutready'),function(){
         cy.resize();
       });
