@@ -304,9 +304,11 @@ function drawCytoscape (div_id, model_response) {
     // }
     layout.run();
 
+
     cy.panzoom();
 
     cy.on(('layoutready'),function(){
+        cy.center();
         cy.resize();
       });
 
@@ -346,7 +348,7 @@ function drawCytoscape (div_id, model_response) {
       nds.forEach( function(n) {
         preset_pos[n.data.name] = n.position;
       })
-      cy.center();
+      //cy.center();
     });
 
 
@@ -593,22 +595,22 @@ $('a[data-toggle=tab]').click(function(){
 // get all divs of class cy
 // get their data-url location
 // draw them!
-$('.cy').each(function(){
-    var div_id = $(this).attr('id')
-    console.log(div_id)
-    var data_model = $(this).attr('data-url')
-    console.log(data_model)
-    grabJSON(data_model).then(function (model_response){
-        drawCytoscape(div_id, model_response)
-    })
-    console.log($(this).attr('data-url'))
-})
+// $('.cy').each(function(){
+//     var div_id = $(this).attr('id')
+//     console.log(div_id)
+//     var data_model = $(this).attr('data-url')
+//     console.log(data_model)
+//     grabJSON(data_model).then(function (model_response){
+//         drawCytoscape(div_id, model_response)
+//     })
+//     console.log($(this).attr('data-url'))
+// })
 
   function resize() {
     //console.log(win.height(), win.innerHeight());
     $(".cy-container").height(win.innerHeight() - 0);
-    cy.fit();
-    cy.resize();
+    //cy.fit();
+    //cy.resize();
   }
 
   setTimeout(resize, 0);
