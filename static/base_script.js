@@ -581,6 +581,8 @@ $(function(){
 
 $("#loadButtonStatic").click(function(){
 
+  setPresetPos()
+
   function getModel() {
     return $.ajax({
       url: 'static/cyjs/' + $('#cellSelectStatic').val(),
