@@ -595,6 +595,95 @@ $(function(){
     console.log($('#cellSelectDynamic').val().substring(6));
   });
 
+  $("#downloadPySB").click(function(){
+    var txt = $('#textArea')[0].value
+
+    function txtReach(txt) {
+      var input_txt = {'text':txt}
+      console.log(input_txt)
+      console.log("converting text to statements via REACH");
+      return $.ajax({
+                    //url: "http://127.0.0.1:8080/reach/process_text",
+                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/reach/process_text",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(input_txt),
+                    });
+    }
+
+    function groundingMapper(res) {
+      var stmts = res
+      return $.ajax({
+                    //url: "http://127.0.0.1:8080/preassembly/map_grounding",
+                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/preassembly/map_grounding",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(stmts),
+                    });
+    }
+
+    function assemblePySB(res) {
+      var res_json = res
+      res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5)
+      console.log(res_json)
+      console.log("converting statements to cyjs");
+      return $.ajax({
+          url: "http://127.0.0.1:8080/assemblers/pysb",
+          //url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/assemblers/pysb",
+          type: "POST",
+          dataType: "json",
+          data: JSON.stringify(res_json),
+      });
+    }
+
+    txtReach(txt).then(groundingMapper).then(assemblePySB).then(function (res) {
+      download($('#cellSelectDynamic').val()+'_PySB.json', JSON.stringify(res, null, 2))
+    });
+    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    //   drawCytoscape ('cy_1', model_response)
+    // });
+
+    console.log($('#cellSelectDynamic').val().substring(6));
+  });
+
+
+  $("#downloadINDRA").click(function(){
+    var txt = $('#textArea')[0].value
+
+    function txtReach(txt) {
+      var input_txt = {'text':txt}
+      console.log(input_txt)
+      console.log("converting text to statements via REACH");
+      return $.ajax({
+                    //url: "http://127.0.0.1:8080/reach/process_text",
+                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/reach/process_text",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(input_txt),
+                    });
+    }
+
+    function groundingMapper(res) {
+      var stmts = res
+      return $.ajax({
+                    //url: "http://127.0.0.1:8080/preassembly/map_grounding",
+                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/preassembly/map_grounding",
+                    type: "POST",
+                    dataType: "json",
+                    data: JSON.stringify(stmts),
+                    });
+    }
+
+    txtReach(txt).then(groundingMapper).then(function (res) {
+      download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res, null, 2))
+    });
+    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    //   drawCytoscape ('cy_1', model_response)
+    // });
+
+    console.log($('#cellSelectDynamic').val().substring(6));
+  });
+
 
 $("#loadButtonStatic").click(function(){
 
