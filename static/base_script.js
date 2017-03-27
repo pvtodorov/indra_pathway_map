@@ -553,7 +553,7 @@ $(function(){
       console.log("converting text to statements via REACH");
       return $.ajax({
                     //url: "http://127.0.0.1:8080/reach/process_text",
-                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/reach/process_text",
+                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/reach/process_text",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(input_txt),
@@ -564,7 +564,7 @@ $(function(){
       var stmts = res
       return $.ajax({
                     //url: "http://127.0.0.1:8080/preassembly/map_grounding",
-                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/preassembly/map_grounding",
+                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/preassembly/map_grounding",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(stmts),
@@ -578,7 +578,7 @@ $(function(){
       console.log("converting statements to cyjs");
       return $.ajax({
           //url: "http://127.0.0.1:8080/assemblers/cyjs",
-          url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/assemblers/cyjs",
+          url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/assemblers/cyjs",
           type: "POST",
           dataType: "json",
           data: JSON.stringify(res_json),
@@ -604,7 +604,7 @@ $(function(){
       console.log("converting text to statements via REACH");
       return $.ajax({
                     //url: "http://127.0.0.1:8080/reach/process_text",
-                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/reach/process_text",
+                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/reach/process_text",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(input_txt),
@@ -615,7 +615,7 @@ $(function(){
       var stmts = res
       return $.ajax({
                     //url: "http://127.0.0.1:8080/preassembly/map_grounding",
-                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/preassembly/map_grounding",
+                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/preassembly/map_grounding",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(stmts),
@@ -628,7 +628,7 @@ $(function(){
       console.log(res_json)
       console.log("converting statements to cyjs");
       return $.ajax({
-          url: "http://127.0.0.1:8080/assemblers/pysb",
+          url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/assemblers/pysb",
           //url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/assemblers/pysb",
           type: "POST",
           dataType: "json",
@@ -656,7 +656,7 @@ $(function(){
       console.log("converting text to statements via REACH");
       return $.ajax({
                     //url: "http://127.0.0.1:8080/reach/process_text",
-                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/reach/process_text",
+                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/reach/process_text",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(input_txt),
@@ -667,7 +667,7 @@ $(function(){
       var stmts = res
       return $.ajax({
                     //url: "http://127.0.0.1:8080/preassembly/map_grounding",
-                    url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/preassembly/map_grounding",
+                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/preassembly/map_grounding",
                     type: "POST",
                     dataType: "json",
                     data: JSON.stringify(stmts),
