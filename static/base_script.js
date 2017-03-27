@@ -314,12 +314,6 @@ function drawCytoscape (div_id, model_response) {
 
     cy.endBatch();
 
-    cy.on(('layoutready'),function(){
-        cy.center();
-        cy.resize();
-      });
-
-
     var dragged = false;
     cy.on(('mousedown'),function(){
       //console.log( 'mousedown' );
