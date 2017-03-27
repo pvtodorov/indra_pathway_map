@@ -10,6 +10,8 @@ var preset_pos = {};
 // {id : position} dict
 var id_pos = {}
 
+var indra_server_addr = "http://ec2-52-55-90-184.compute-1.amazonaws.com:8080"
+
 // retrieve a JSON from a url
 //***************************************
 function grabJSON (url) {
@@ -532,6 +534,60 @@ function download(filename, text) {
 }
 //***************************************
 
+//send text to REACH, get back stmts
+//***************************************
+function txtReach(txt) {
+  var input_txt = {'text':txt}
+  console.log(input_txt)
+  console.log("converting text to statements via REACH");
+  return $.ajax({
+                url: indra_server_addr + "/reach/process_text",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(input_txt),
+                });
+}
+
+// send stmts to grounding mapper, get grounded stmts
+//***************************************
+function groundingMapper(res) {
+  var stmts = res
+  return $.ajax({
+                url: indra_server_addr + "/preassembly/map_grounding",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(stmts),
+                });
+}
+//***************************************
+
+
+function assembleCyJS(res) {
+  var res_json = res
+  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5)
+  console.log(res_json)
+  console.log("converting statements to cyjs");
+  return $.ajax({
+      url: indra_server_addr + "/assemblers/cyjs",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
+function assemblePySB(res) {
+  var res_json = res
+  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5)
+  console.log(res_json)
+  console.log("converting statements to cyjs");
+  return $.ajax({
+      url: indra_server_addr + "/assemblers/pysb",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
 $(function(){
 
   var win = $(window);
@@ -554,44 +610,6 @@ $(function(){
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value
 
-    function txtReach(txt) {
-      var input_txt = {'text':txt}
-      console.log(input_txt)
-      console.log("converting text to statements via REACH");
-      return $.ajax({
-                    //url: "http://127.0.0.1:8080/reach/process_text",
-                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/reach/process_text",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify(input_txt),
-                    });
-    }
-
-    function groundingMapper(res) {
-      var stmts = res
-      return $.ajax({
-                    //url: "http://127.0.0.1:8080/preassembly/map_grounding",
-                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/preassembly/map_grounding",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify(stmts),
-                    });
-    }
-
-    function assembleCyJS(res) {
-      var res_json = res
-      res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5)
-      console.log(res_json)
-      console.log("converting statements to cyjs");
-      return $.ajax({
-          //url: "http://127.0.0.1:8080/assemblers/cyjs",
-          url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/assemblers/cyjs",
-          type: "POST",
-          dataType: "json",
-          data: JSON.stringify(res_json),
-      });
-    }
-
     txtReach(txt).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
       drawCytoscape ('cy_1', model_response)
     });
@@ -604,44 +622,6 @@ $(function(){
 
   $("#downloadPySB").click(function(){
     var txt = $('#textArea')[0].value
-
-    function txtReach(txt) {
-      var input_txt = {'text':txt}
-      console.log(input_txt)
-      console.log("converting text to statements via REACH");
-      return $.ajax({
-                    //url: "http://127.0.0.1:8080/reach/process_text",
-                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/reach/process_text",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify(input_txt),
-                    });
-    }
-
-    function groundingMapper(res) {
-      var stmts = res
-      return $.ajax({
-                    //url: "http://127.0.0.1:8080/preassembly/map_grounding",
-                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/preassembly/map_grounding",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify(stmts),
-                    });
-    }
-
-    function assemblePySB(res) {
-      var res_json = res
-      res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5)
-      console.log(res_json)
-      console.log("converting statements to cyjs");
-      return $.ajax({
-          url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/assemblers/pysb",
-          //url: "http://ec2-204-236-254-148.compute-1.amazonaws.com:8080/assemblers/pysb",
-          type: "POST",
-          dataType: "json",
-          data: JSON.stringify(res_json),
-      });
-    }
 
     txtReach(txt).then(groundingMapper).then(assemblePySB).then(function (res) {
       download($('#cellSelectDynamic').val()+'_PySB.json', JSON.stringify(res, null, 2))
@@ -656,30 +636,6 @@ $(function(){
 
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value
-
-    function txtReach(txt) {
-      var input_txt = {'text':txt}
-      console.log(input_txt)
-      console.log("converting text to statements via REACH");
-      return $.ajax({
-                    //url: "http://127.0.0.1:8080/reach/process_text",
-                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/reach/process_text",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify(input_txt),
-                    });
-    }
-
-    function groundingMapper(res) {
-      var stmts = res
-      return $.ajax({
-                    //url: "http://127.0.0.1:8080/preassembly/map_grounding",
-                    url: "http://ec2-54-172-185-130.compute-1.amazonaws.com:8080/preassembly/map_grounding",
-                    type: "POST",
-                    dataType: "json",
-                    data: JSON.stringify(stmts),
-                    });
-    }
 
     txtReach(txt).then(groundingMapper).then(function (res) {
       download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res, null, 2))
