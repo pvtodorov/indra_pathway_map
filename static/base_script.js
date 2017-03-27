@@ -50,6 +50,8 @@ function drawCytoscape (div_id, model_response) {
     var exp_colorscale = model_dict.exp_colorscale
     var mut_colorscale = model_dict.mut_colorscale
     var model_elements = model_dict.model_elements
+
+
     cy = cytoscape({
       container: document.getElementById(div_id),
 
@@ -250,6 +252,7 @@ function drawCytoscape (div_id, model_response) {
           }}],
 
     });
+    cy.startBatch();
     var params = {
       name: 'dagre',
       directed: 'true',
@@ -307,6 +310,8 @@ function drawCytoscape (div_id, model_response) {
 
     cy.panzoom();
 
+    cy.endBatch();
+
     cy.on(('layoutready'),function(){
         cy.center();
         cy.resize();
@@ -351,7 +356,7 @@ function drawCytoscape (div_id, model_response) {
       //cy.center();
     });
 
-
+    cy.startBatch();
 
     cy.edges().forEach(function(e){
       if (e.data('i') === 'Complex'){
@@ -501,6 +506,8 @@ function drawCytoscape (div_id, model_response) {
       if (n.data('name') === 'Attractor'){
         n.addClass('nAttractor');
       }; // if Attractor
+
+      cy.endBatch();
     });
 
 }
