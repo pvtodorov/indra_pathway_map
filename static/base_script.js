@@ -589,9 +589,17 @@ $(function(){
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
+
+      var interesting_lines = {"A101D_SKIN":"model_A101D_SKIN.json", "LOXIMVI_SKIN":"model_LOXIMVI_SKIN.json"};
+      for (d of ['#cellSelectStatic', '#cellSelectDynamic']) {
+          dropdownFromJSON(d, interesting_lines)
+          $(d).append($('<option data-divider="true"/>'))
+        }
+
       for (d of ['#cellSelectStatic', '#cellSelectDynamic']) {
           dropdownFromJSON(d, ajax_response)
         }
+
       }
   )
 
