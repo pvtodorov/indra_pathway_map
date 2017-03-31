@@ -697,7 +697,7 @@ $(function(){
     // txtReach(txt).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
-
+    $('.cyjs2loopy').prop('disabled', false);
     console.log($('#cellSelectDynamic').val().substring(6));
   });
 
@@ -759,6 +759,7 @@ $("#loadButtonStatic").click(function(){
     drawCytoscape ('cy_1', model_response)
   });
 
+  $('.cyjs2loopy').prop('disabled', false);
   console.log($('#cellSelectDynamic').val().substring(6));
 });
 
