@@ -303,7 +303,9 @@ function drawCytoscape (div_id, model_response) {
           		}) / posys.length;
         		return ({'x': x, 'y' : y})
         	}
+          // update preset_pos
         	preset_pos[n.data().name] = getAvgPos(posxs, posys)
+          // update id_pos
           id_pos[n.id()] = preset_pos[n.data().name]
         }
 
@@ -782,8 +784,6 @@ $(function(){
 
 $("#loadButtonStatic").click(function(){
 
-  setPresetPos()
-
   function getModel() {
     return $.ajax({
       url: 'static/cyjs/' + $('#cellSelectStatic').val(),
@@ -809,6 +809,19 @@ $(".cyjs2loopy").click(function(){
   );
 
 });
+
+$(".presetLayout").click(function(){
+  // console.log(this)
+  if (this.classList.contains("active")){
+    $(".presetLayout").removeClass("active")
+    preset_pos = {}
+}
+  else {
+    $(".presetLayout").addClass("active")
+    setPresetPos()
+  }
+
+})
 
 // destroy cy on tab change
 // don't really want this
