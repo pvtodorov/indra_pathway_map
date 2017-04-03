@@ -290,19 +290,22 @@ function drawCytoscape (div_id, model_response) {
         	var posys = []
         	cnode_ids.forEach(function(i) {
         		if (id_pos[i] !== undefined){
+              console.log(id_pos[i], id_pos[i])
         			posxs.push(id_pos[i]['x'])
         			posys.push(id_pos[i]['y'])
         		}
         	})
         	function getAvgPos(posxs, posys) {
-        		var x = posxs.reduce(function (p, c) {
-            		return p + c;
-          		}) / posxs.length;
-        		var y = posys.reduce(function (p, c) {
-            		return p + c;
-          		}) / posys.length;
-        		return ({'x': x, 'y' : y})
-        	}
+            if ((posxs.length > 0) && (posys.length > 0)){
+          		var x = posxs.reduce(function (p, c) {
+              		return p + c;
+            		}) / posxs.length;
+          		var y = posys.reduce(function (p, c) {
+              		return p + c;
+            		}) / posys.length;
+          		return ({'x': x, 'y' : y})
+          	}
+          }
           // update preset_pos
         	preset_pos[n.data().name] = getAvgPos(posxs, posys)
           // update id_pos
