@@ -271,7 +271,43 @@ function drawCytoscape (div_id, model_response) {
     };
     // if a prior model has been built, use its positions for layout
     if (Object.keys(preset_pos).length !== 0) {
-      cy.nodes().forEach(function(n){id_pos[n.id()] = preset_pos[n.data().name]})
+      cy.nodes().forEach(function(n){
+        id_pos[n.id()] = preset_pos[n.data().name]
+        // if a node is added and not in preset_pos, set its avg position based
+        // on the other nodes it's connected to
+        if (id_pos[n.id()] === undefined) {
+          var cedges = n.connectedEdges()
+        	var cnode_ids = [];
+        	cedges.forEach(function(e){
+        		if (e.target().id() !== n.id()){
+        			cnode_ids.push(e.target().id())
+        		}
+        		if (e.source().id() !== n.id()){
+        			cnode_ids.push(e.source().id())
+        		}
+        	})
+        	var posxs = []
+        	var posys = []
+        	cnode_ids.forEach(function(i) {
+        		if (id_pos[i] !== undefined){
+        			posxs.push(id_pos[i]['x'])
+        			posys.push(id_pos[i]['y'])
+        		}
+        	})
+        	function getAvgPos(posxs, posys) {
+        		var x = posxs.reduce(function (p, c) {
+            		return p + c;
+          		}) / posxs.length;
+        		var y = posys.reduce(function (p, c) {
+            		return p + c;
+          		}) / posys.length;
+        		return ({'x': x, 'y' : y})
+        	}
+        	preset_pos[n.data().name] = getAvgPos(posxs, posys)
+          id_pos[n.id()] = preset_pos[n.data().name]
+        }
+
+      })
       console.log(id_pos)
       params = {
         name: 'preset',
