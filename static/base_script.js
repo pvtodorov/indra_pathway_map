@@ -6,6 +6,7 @@ var cy = cytoscape();
 
 // {name : position} dict
 var preset_pos = {};
+var preset_pos_static = {}
 
 // {id : position} dict
 var id_pos = {};
@@ -40,6 +41,7 @@ function dropdownFromJSON (div_id, ajax_response) {
 function setPresetPos () {
   grabJSON("static/preset_pos.json").then(function (ajax_response) {
     preset_pos = ajax_response;
+    preset_pos_static = preset_pos
   })
 }
 //***************************************
@@ -343,15 +345,33 @@ function drawCytoscape (div_id, model_response) {
       ungrabifyWhileSimulating: false,
       edgeLength: function( edge ){ return edge.data('weight'); },
       // layout event callbacks
-      ready: undefined, // on layoutready
+      ready: function(){
+        cy.fit(30)
+      }, // on layoutready
       stop: undefined, // on layoutstop
     };
     var layout = cy.makeLayout( params );
-    // if (Object.keys(preset_pos).length === 0) {
-    //   layout.run();
-    // }
     layout.run();
 
+    var params = {
+      name: 'cola',
+      nodeSpacing: 40,
+      flow: { axis: 'y', },
+      animate: true,
+      randomize: false,
+      maxSimulationTime: 2000,
+      fit: false,
+      infinite: false,
+      ungrabifyWhileSimulating: false,
+      edgeLength: function( edge ){ return edge.data('weight'); },
+      // layout event callbacks
+      ready: function(){
+        //cy.fit(30)
+      }, // on layoutready
+      stop: undefined, // on layoutstop
+    };
+    var layout = cy.makeLayout( params );
+    //layout.run();
 
     cy.panzoom();
 
@@ -820,12 +840,24 @@ $(".presetLayout").click(function(){
   if (this.classList.contains("active")){
     $(".presetLayout").removeClass("active")
     preset_pos = {}
-}
+  }
   else {
     $(".presetLayout").addClass("active")
-    setPresetPos()
+    preset_pos = preset_pos_static
   }
 
+})
+
+$('a[href="#byom"]').click(function(){
+  if (this.classList.contains("active") === false){
+    preset_pos = {}
+  }
+  console.log(preset_pos)
+})
+
+$('a[href="#ras227"]').click(function(){
+  preset_pos = preset_pos_static
+  console.log(preset_pos)
 })
 
 // destroy cy on tab change
