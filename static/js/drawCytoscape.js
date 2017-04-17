@@ -206,7 +206,8 @@ function drawCytoscape (div_id, model_response) {
               return node.data().pie_colors[14]},
             'pie-16-background-color': function(node){
               return node.data().pie_colors[15]},
-          }}],
+          }}
+      ],
 
     });
     cy.startBatch();
