@@ -1,7 +1,3 @@
-var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000']
-//0-4 are greens, 5 is a grey
-//var exp_colorscale = ['#edf8e9', '#bae4b3', '#74c476', '#31a354', '#006d2c', '#bdbdbd']
-
 var cy = cytoscape();
 
 // {name : position} dict
