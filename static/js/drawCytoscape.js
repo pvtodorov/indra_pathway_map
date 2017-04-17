@@ -421,7 +421,6 @@ function drawCytoscape (div_id, model_response) {
             fam_length = Object.keys(members).length
             var pie_sizes = new Array(16).fill(0);
             var pie_colors = new Array(16).fill(exp_colorscale[exp_colorscale.length -1]);
-            var pie_mutations = new Array(16).fill(0);
             var current_slice = 0;
             var content = []; // stores the
             for (var gene in members) {
@@ -434,7 +433,6 @@ function drawCytoscape (div_id, model_response) {
               }
             //console.log(pie_colors);
 
-              pie_mutations[current_slice] = (members[gene].mutation);
               var db_links = [];
               for (var namespace in members[gene]['db_refs']){
                 if (namespace !== 'BE'){
@@ -452,7 +450,6 @@ function drawCytoscape (div_id, model_response) {
           }
           n.data('pie_sizes', pie_sizes);
           n.data('pie_colors', pie_colors);
-          n.data('pie_mutations', pie_mutations);
 
           var list_lines = content.map(function( link ){
           var line = '<b style="font-size:13px">' + String(link[0].id) + '</b>' + ' ' +
