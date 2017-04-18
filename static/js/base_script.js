@@ -11,6 +11,13 @@ var scapes = {};
 
 var indra_server_addr = "http://ec2-52-55-90-184.compute-1.amazonaws.com:8080"
 
+var ctxt = {}
+grabJSON('static/test/model_context.json').then(
+  function(ajax_response){
+    console.log('done')
+    ctxt =  ajax_response
+  })
+
 $(function(){
 
   var win = $(window);
@@ -34,9 +41,6 @@ $(function(){
 
   // set the preset_pos
   setPresetPos()
-
-
-
 
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value
@@ -98,19 +102,13 @@ $("#loadButtonStatic").click(function(){
 
   setPresetPos()
 
-  function getModel() {
-    return $.ajax({
-      url: 'static/cyjs/' + $('#cellSelectStatic').val(),
-    });
-  }
-
-  //txtReach(txt).then(groundingMapper).then(assembleCyJS).then(drawCytoscape);
-  getModel().then(function (model_response) {
+  grabJSON('static/test/model.json').then(function (model_response) {
     drawCytoscape ('cy_1', model_response)
   });
 
+
+
   $('.cyjs2loopy').prop('disabled', false);
-  console.log($('#cellSelectDynamic').val().substring(6));
 });
 
 $(".cyjs2loopy").click(function(){

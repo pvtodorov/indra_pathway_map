@@ -5,24 +5,10 @@ var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000', '#bdb
 // [orange, light orange, RED, blue, black, gray]
 
 
-var exp_colorscale = ["#f7fcf5","#e5f5e0","#c7e9c0","#a1d99b","#74c476","#41ab5d","#238b45","#006d2c","#00441b", '#bdbdbd']
-var mut_colorscale = ["#fff5f0","#fee0d2","#fcbba1","#fc9272","#fb6a4a","#ef3b2c","#cb181d","#a50f15","#67000d", '#bdbdbd']
+var exp_colorscale = ["#e5f5e0","#a1d99b","#31a354"]
+var mut_colorscale = ["#fee0d2","#fc9272","#de2d26"]
 
-function contextualizeNodes(scape) {
-    var cy = scape
-
-
-}
-
-function drawCytoscape (div_id, model_response) {
-    var model_dict = model_response;
-    //console.log(model_dict)
-    // var exp_colorscale = model_dict.exp_colorscale
-    // console.log(exp_colorscale)
-    // var mut_colorscale = model_dict.mut_colorscale
-    var model_elements = model_dict.model_elements
-
-
+function drawCytoscape (div_id, model_elements) {
     cy = cytoscape({
       container: document.getElementById(div_id),
 
@@ -412,7 +398,7 @@ function drawCytoscape (div_id, model_response) {
         //console.log(e.data('i'));
       }
     });
-    iterateNodes(cy)
+    //contextualizeNodes(cy)
     scapes[div_id] = cy;
 }
 

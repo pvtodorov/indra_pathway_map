@@ -32,10 +32,11 @@
     <!-- endbower -->
 
     <!-- js -->
-    <script src="static/js/base_script.js"></script>
     <script src="static/js/drawCytoscape.js"></script>
+    <script src="static/js/contextualizeNodes.js"></script>
     <script src="static/js/requests_APIs.js"></script>
     <script src="static/js/loopyFromCyJS.js"></script>
+    <script src="static/js/base_script.js"></script>
     <!-- js -->
 
 
@@ -83,6 +84,7 @@
                   <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#ras227">McCormick Map</a></li>
                     <li ><a data-toggle="tab" href="#byom">BYOM</a></li>
+                    <li ><a data-toggle="tab" href="#context">Context</a></li>
                     <li ><a data-toggle="tab" href="#about">About</a></li>
                   </ul>
 
@@ -128,6 +130,18 @@
                                 <button id='downloadPySB' type="submit" class="btn btn-default">Download PySB</button>
                                 <!-- <button id='INDRA2loopy' type="submit" class="btn btn-primary">INDRA2Loopy</button> -->
                             </div>
+                      </div>
+                  </div>
+                  <div id="context" class="tab-pane fade in">
+                      <div >
+                        <h5>Dataset</h5>
+                        <h5>ID</h5>
+                        <h5>Colorscales</h5>
+                        <ul>
+                            <li>Wildtype</li>
+                            <li>Mutated</li>
+                            <li>Bins</font></li>
+                        </ul>
                       </div>
                   </div>
                   <div id="about" class="tab-pane fade in">
