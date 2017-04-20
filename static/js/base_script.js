@@ -160,6 +160,7 @@ $('#scale_slider').slider()
       svgScales ("#exp_svg", bins, "Greens")
       svgScales ("#mut_svg", bins, "Oranges")
       console.log(bins)
+      contextualizeNodes(cy)
       }
 
     )
