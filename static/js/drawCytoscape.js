@@ -4,10 +4,6 @@
 var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000', '#bdbdbd']
 // [orange, light orange, RED, blue, black, gray]
 
-
-var exp_colorscale = ["#e5f5e0","#a1d99b","#31a354"]
-var mut_colorscale = ["#fee0d2","#fc9272","#de2d26"]
-
 function drawCytoscape (div_id, model_elements) {
     cy = cytoscape({
       container: document.getElementById(div_id),

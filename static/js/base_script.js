@@ -19,6 +19,8 @@ grabJSON('static/test/model_context.json').then(
   })
 
 var bins = 3
+var exp_colorscale = colorbrewer['Greens']
+var mut_colorscale = colorbrewer['Oranges']
 
 $(function(){
 

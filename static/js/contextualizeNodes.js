@@ -1,7 +1,4 @@
-var bins = 3
-
 function contextualizeNodes(cy){
-    var cy = cy
     var cell_line = $('#cellSelectDynamic').val().substring(6, $('#cellSelectDynamic').val().length-5)
     var ctxt_exp = ctxt['CCLE']['bin_expression'][bins][cell_line]
     var ctxt_mut = ctxt['CCLE']['mutation'][cell_line]
@@ -24,10 +21,10 @@ function contextualizeNodes(cy){
                 // as per the array conditions above
                 if (ctxt_bin !== null){
                     if (((ctxt_mut[gene]) !== 1) && ((ctxt_exp[gene]) !== undefined)){
-                      pie_colors[current_slice] = exp_colorscale[(ctxt_exp[gene])]
+                      pie_colors[current_slice] = exp_colorscale[bins][(ctxt_exp[gene])]
                     }
                     if (((ctxt_mut[gene]) === 1) && ((ctxt_exp[gene]) !== undefined)){
-                      pie_colors[current_slice] = mut_colorscale[(ctxt_exp[gene])]
+                      pie_colors[current_slice] = mut_colorscale[bins][(ctxt_exp[gene])]
                     }
                 }
 
@@ -98,10 +95,10 @@ function contextualizeNodes(cy){
             if (ctxt_bin !== null){
                 var bkg_col = default_colors[5]
                 if (((ctxt_mut[gene]) !== 1) && ((ctxt_exp[gene]) !== undefined)){
-                   bkg_col = exp_colorscale[(ctxt_exp[gene])]
+                   bkg_col = exp_colorscale[bins][(ctxt_exp[gene])]
                 }
                 if (((ctxt_mut[gene]) === 1) && ((ctxt_exp[gene]) !== undefined)){
-                  bkg_col = mut_colorscale[(ctxt_exp[gene])]
+                  bkg_col = mut_colorscale[bins][(ctxt_exp[gene])]
                 }
                 n.style({'background-color' : bkg_col})
             }
