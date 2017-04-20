@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="static/bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
     <link rel="stylesheet" href="static/bower_components/cytoscape-panzoom/cytoscape.js-panzoom.css" />
     <link rel="stylesheet" href="static/bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
     <!-- endbower -->
     <!-- bower:js -->
     <script src="static/bower_components/jquery/dist/jquery.js"></script>
@@ -29,9 +30,11 @@
     <script src="static/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="static/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="static/bower_components/cytoscape-panzoom/cytoscape-panzoom.js"></script>
+    <script src="static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
     <!-- endbower -->
 
     <!-- js -->
+    <script src="static/colorbrewer/colorbrewer.js"></script>
     <script src="static/js/drawCytoscape.js"></script>
     <script src="static/js/contextualizeNodes.js"></script>
     <script src="static/js/requests_APIs.js"></script>
@@ -140,8 +143,25 @@
                         <ul>
                             <li>Wildtype</li>
                             <li>Mutated</li>
-                            <li>Bins</font></li>
+                            <li>Bins</li>
                         </ul>
+                            <div>
+                               <input  id="scale_slider" type="text"
+                                        data-provide="slider"
+                                        data-slider-ticks="[3,4,5,6,7,8,9]"
+
+                                        data-slider-min="1"
+                                        data-slider-max="9"
+                                        data-slider-step="1"
+                                        data-slider-value="3"
+                                        data-slider-tooltip="hide"
+                                        >
+                                </input>
+                                <div id="exp_svg"></div>
+                                <div id="mut_svg"></div>
+                            </div>
+
+
                       </div>
                   </div>
                   <div id="about" class="tab-pane fade in">

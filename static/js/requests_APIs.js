@@ -17,6 +17,28 @@ function dropdownFromJSON (div_id, ajax_response) {
 }
 //***************************************
 
+//build svg scales based on slider pick
+//***************************************
+function svgScales (div_id, bins, scale) {
+  var sq = 25 // length of rect square sides
+  var svg_container = $(div_id)
+  svg_container.html("")
+  var svg = document.createElementNS("http://www.w3.org/2000/svg", 'svg');
+  svg.setAttribute('width', String(sq*bins))
+  svg.setAttribute('height', String(sq))
+  for (i=0; i<bins; i++){
+    var x=(i*sq)
+    var rect = document.createElementNS("http://www.w3.org/2000/svg", 'rect');
+    rect.setAttribute('fill', colorbrewer[scale][bins][i])
+    rect.setAttribute('width', String(sq))
+    rect.setAttribute('height', String(sq))
+    rect.setAttribute('x', String(i*sq))
+    svg.appendChild(rect)
+  }
+  svg_container.append(svg)
+}
+//***************************************
+
 // get preset_pos for McCormick model
 //***************************************
 // function to set preset_pos for McCormick model

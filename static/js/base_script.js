@@ -18,6 +18,8 @@ grabJSON('static/test/model_context.json').then(
     ctxt =  ajax_response
   })
 
+var bins = 3
+
 $(function(){
 
   var win = $(window);
@@ -27,17 +29,20 @@ $(function(){
     function(ajax_response){
 
       var interesting_lines = {"A101D_SKIN":"model_A101D_SKIN.json", "LOXIMVI_SKIN":"model_LOXIMVI_SKIN.json"};
-      for (d of ['#cellSelectStatic', '#cellSelectDynamic']) {
+      for (var d of ['#cellSelectStatic', '#cellSelectDynamic']) {
           dropdownFromJSON(d, interesting_lines)
           $(d).append($('<option data-divider="true"/>'))
         }
 
-      for (d of ['#cellSelectStatic', '#cellSelectDynamic']) {
+      for (var d of ['#cellSelectStatic', '#cellSelectDynamic']) {
           dropdownFromJSON(d, ajax_response)
         }
 
       }
   )
+
+  svgScales ("#exp_svg", bins, "Greens")
+  svgScales ("#mut_svg", bins, "Oranges")
 
   // set the preset_pos
   setPresetPos()
@@ -146,6 +151,17 @@ $('a[href="#ras227"]').click(function(){
   preset_pos = preset_pos_static
   console.log(preset_pos)
 })
+
+$('#scale_slider').slider()
+		.on('change', function(slideEvt){
+      bins = slideEvt.value.newValue
+      svgScales ("#exp_svg", bins, "Greens")
+      svgScales ("#mut_svg", bins, "Oranges")
+      console.log(bins)
+      }
+
+    )
+
 
 // destroy cy on tab change
 // don't really want this
