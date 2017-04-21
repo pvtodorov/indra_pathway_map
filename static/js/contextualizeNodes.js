@@ -1,4 +1,5 @@
 function contextualizeNodes(cy){
+    cy.startBatch()
     var cell_line = $('#cellSelectDynamic').val().substring(6, $('#cellSelectDynamic').val().length-5)
     var ctxt_exp = ctxt['CCLE']['bin_expression'][bins][cell_line]
     var ctxt_mut = ctxt['CCLE']['mutation'][cell_line]
@@ -150,5 +151,5 @@ function contextualizeNodes(cy){
 
 
       });
-
+  cy.endBatch()
 }
