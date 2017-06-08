@@ -53,7 +53,8 @@ $(function(){
     var txt = $('#textArea')[0].value
 
     txtReach(txt).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
-      drawCytoscape ('cy_1', model_response)
+      drawCytoscape('cy_1', model_response)
+      qtipNodes(scapes['cy_1'])
     });
     // txtReach(txt).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
@@ -111,6 +112,7 @@ $("#loadButtonStatic").click(function(){
 
   grabJSON('static/test/model.json').then(function (model_response) {
     drawCytoscape ('cy_1', model_response)
+    qtipNodes(scapes['cy_1'])
   });
 
 
