@@ -95,14 +95,7 @@
 
                 <div class="tab-content">
                   <div id="ras227" class="tab-pane fade in active">
-                    <div class="form-group">
-                        <div>
-                            <label for="cellSelectStatic">Choose a cell line.</label>
-                        </div>
-                        <div>
-                            <select id='cellSelectStatic' class="selectpicker"></select>
-                        </div>
-                    </div>
+                    <div>.</div>
                     <button id='loadButtonStatic' type="submit" class="btn btn-primary">Load</button>
                     <button id='cyjs2loopyStatic' type="submit" class="btn btn-success cyjs2loopy" disabled>cyjs2Loopy</button>
                   </div>
@@ -117,14 +110,6 @@
                             </div>
 
                          </form>
-                            <div class="form-group">
-                                <div>
-                                    <label for="cellSelectDynamic">Choose a cell line.</label>
-                                </div>
-                                <div>
-                                    <select id='cellSelectDynamic' class="selectpicker"></select>
-                                </div>
-                            </div>
                             <div class= 'btn-div'>
                                 <button id='loadButtonDynamic' type="submit" class="btn btn-primary">Load</button>
                                 <button id='presetLayoutDynamic' type="submit" class="btn btn-default presetLayout">Preset layout</button>
@@ -140,13 +125,16 @@
                   <div id="context" class="tab-pane fade in">
                       <div >
                         <h5>Dataset</h5>
+                        <b>CCLE</b>
                         <h5>ID</h5>
-                        <h5>Colorscales</h5>
-                        <ul>
-                            <li>Wildtype</li>
-                            <li>Mutated</li>
-                            <li>Bins</li>
-                        </ul>
+                        <div class="form-group">
+                            <div>
+                                <label for="cellSelectDynamic">Choose a cell line.</label>
+                            </div>
+                            <div>
+                                <select id='cellSelectDynamic' class="selectpicker"></select>
+                            </div>
+                        </div>
                             <div>
                                <input  id="scale_slider" type="text"
                                         data-provide="slider"
@@ -159,8 +147,13 @@
                                         data-slider-tooltip="hide"
                                         >
                                 </input>
-                                <div id="exp_svg"></div>
-                                <div id="mut_svg"></div>
+                                <div>
+                                    <b>WT</b>
+                                    <div id="exp_svg"></div>
+                                    <b>MUT</b>
+                                    <div id="mut_svg"></div>
+                                </div>
+
                             </div>
 
 
