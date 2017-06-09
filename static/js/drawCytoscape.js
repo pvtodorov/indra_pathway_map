@@ -102,6 +102,11 @@ function drawCytoscape (div_id, model_elements) {
 
           }},
 
+          {  selector: '.highlighted',
+          style: {
+            'opacity':0.30,
+          }},
+
           {  selector: '.nAttractor',
           style: {
             'label': null,
