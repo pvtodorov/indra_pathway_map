@@ -49,7 +49,6 @@ function drawCytoscape (div_id, model_elements) {
           style: {
           'line-color': default_colors[4],
           'target-arrow-color': default_colors[4],
-          //'width': function(edge){ return edge.data('weight')*6},
           'width':13,
           'target-arrow-shape': 'triangle',
           'control-point-step-size': '140px',
@@ -104,7 +103,8 @@ function drawCytoscape (div_id, model_elements) {
 
           {  selector: '.highlighted',
           style: {
-            'opacity':0.30,
+            'opacity':0.2,
+
           }},
 
           {  selector: '.nAttractor',
@@ -204,11 +204,6 @@ function drawCytoscape (div_id, model_elements) {
       fit: 'true',
       rankDir: 'TB',
       padding: 0,
-      //nodeSep: 50,
-      //rankSep: 100,
-      //edgeSep: 50,
-      //padding: 10,
-      edgeWeight: function( edge ){ return edge.data('weight'); }
     };
     // if a prior model has been built, use its positions for layout
     if (Object.keys(preset_pos).length !== 0) {
@@ -282,7 +277,6 @@ function drawCytoscape (div_id, model_elements) {
       fit: false,
       infinite: false,
       ungrabifyWhileSimulating: false,
-      edgeLength: function( edge ){ return edge.data('weight'); },
       // layout event callbacks
       ready: function(){
         cy.fit(30)
@@ -302,7 +296,6 @@ function drawCytoscape (div_id, model_elements) {
       fit: false,
       infinite: false,
       ungrabifyWhileSimulating: false,
-      edgeLength: function( edge ){ return edge.data('weight'); },
       // layout event callbacks
       ready: function(){
         //cy.fit(30)
