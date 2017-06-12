@@ -67,7 +67,7 @@ $(function(){
     var txt = $('#textArea')[0].value
 
     txtReach(txt).then(groundingMapper).then(assemblePySB).then(function (res) {
-      download($('#cellSelectDynamic').val()+'_PySB.json', JSON.stringify(res, null, 2))
+      download($('#cellSelectDynamic').val().slice(6,-5)+'.py', res['model'])
     });
     // txtReach(txt).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
