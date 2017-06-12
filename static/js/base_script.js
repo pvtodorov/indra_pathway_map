@@ -81,7 +81,7 @@ $(function(){
     var txt = $('#textArea')[0].value
 
     txtReach(txt).then(groundingMapper).then(function (res) {
-      download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res, null, 2))
+      download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res['statements'], null, 2))
     });
     // txtReach(txt).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
