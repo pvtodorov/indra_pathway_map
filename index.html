@@ -89,7 +89,7 @@
               <div class="modal-body">
                   <div class="tabbable">
                   <ul class="nav nav-tabs">
-                    <li class="active"><a data-toggle="tab" href="#ras227">McCormick Map</a></li>
+                    <li class="active"><a data-toggle="tab" href="#ras227">Prebuilt models</a></li>
                     <li ><a data-toggle="tab" href="#byom">BYOM</a></li>
                     <li ><a data-toggle="tab" href="#context">Context</a></li>
                     <li ><a data-toggle="tab" href="#about">About</a></li>
@@ -97,7 +97,11 @@
 
                 <div class="tab-content">
                   <div id="ras227" class="tab-pane fade in active">
-                    <div>.</div>
+                    <div>
+                        <div>
+                            <select id='model_picker' class="selectpicker"></select>
+                        </div>
+                    </div>
                     <button id='loadButtonStatic' type="submit" class="btn btn-primary">Load</button>
                     <button id='cyjs2loopyStatic' type="submit" class="btn btn-success cyjs2loopy" disabled>cyjs2Loopy</button>
                   </div>

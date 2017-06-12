@@ -1,6 +1,7 @@
 var cy = cytoscape();
 
 // {name : position} dict
+var prebuilt_model = 'McCormick';
 var preset_pos = {};
 var preset_pos_static = {}
 
@@ -12,7 +13,7 @@ var scapes = {};
 var indra_server_addr = "http://ec2-52-55-90-184.compute-1.amazonaws.com:8080"
 
 var ctxt = {}
-grabJSON('static/test/model_context.json').then(
+grabJSON('static/models/' + prebuilt_model + '/model_context.json').then(
   function(ajax_response){
     console.log('done')
     ctxt =  ajax_response
@@ -25,6 +26,14 @@ var mut_colorscale = colorbrewer['Oranges']
 $(function(){
 
   var win = $(window);
+
+  // build the dropdown pickers
+  grabJSON('static/cell_dict.json').then(
+    function(ajax_response){
+      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut"};
+      dropdownFromJSON('#model_picker', prebuilt_models)
+      }
+  )
 
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
@@ -110,7 +119,7 @@ $("#loadButtonStatic").click(function(){
 
   setPresetPos()
 
-  grabJSON('static/test/model.json').then(function (model_response) {
+  grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
     drawCytoscape ('cy_1', model_response)
     qtipNodes(scapes['cy_1'])
   });
@@ -167,6 +176,11 @@ $('#scale_slider').slider()
 
     )
 
+// change prebuilt_model name every time the user changes dropdown
+$('#model_picker').on('changed.bs.select', function(){
+  prebuilt_model = $('#model_picker').selectpicker('val')
+})
+
 
 // destroy cy on tab change
 // don't really want this
@@ -184,8 +198,8 @@ $('.cy').each(function(){
     var data_model = $(this).attr('data-url')
     console.log(data_model)
     setPresetPos()
-
-    grabJSON('static/test/model.json').then(function (model_response) {
+    
+    grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
       drawCytoscape ('cy_1', model_response)
       qtipNodes(scapes['cy_1'])
     });
