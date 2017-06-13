@@ -26,7 +26,7 @@ function highlightPath(cy, uuids){
               }
             }
             if (highlighted === true){
-              n.addClass('highlighted')
+              n.addClass('transparent')
             }
           //}// check if n.isParent()
       })
@@ -44,7 +44,7 @@ function highlightPath(cy, uuids){
                 }
               }
               if (highlighted === true){
-                e.addClass('highlighted')
+                e.addClass('transparent')
               }
             }// check if n.isParent()
         })
@@ -56,15 +56,15 @@ function unHighlight(cy){
   cy.startBatch()
 
   cy.nodes().forEach(function(n){
-    n.removeClass('highlighted')
-      if (n.hasClass('highlighted') === false){
+    n.removeClass('transparent')
+      if (n.hasClass('transparent') === false){
         console.log(n.name)
 
       }
   })
   cy.edges().forEach(function(e){
-    e.removeClass('highlighted')
-    if (e.hasClass('highlighted') === false){
+    e.removeClass('transparent')
+    if (e.hasClass('transparent') === false){
       console.log(e.name)
     }
   })
