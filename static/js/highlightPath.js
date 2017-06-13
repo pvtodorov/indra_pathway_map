@@ -9,11 +9,10 @@ var path_uuids = ['8cf69fb9-8475-4ea6-bca4-3ed4fd713201',
                     '0032751c-bbc8-47c5-b386-ad54a60722a1'
                     ]
 
+
+
 function highlightPath(cy, uuids){
     cy.startBatch()
-    var cell_line = $('#cellSelectDynamic').val().substring(6, $('#cellSelectDynamic').val().length-5)
-    var ctxt_exp = ctxt['CCLE']['bin_expression'][bins][cell_line]
-    var ctxt_mut = ctxt['CCLE']['mutation'][cell_line]
     cy.nodes().forEach(function(n){
         var highlighted = true
         var data = n.data()
@@ -49,5 +48,25 @@ function highlightPath(cy, uuids){
               }
             }// check if n.isParent()
         })
+  cy.endBatch()
+}
+
+
+function unHighlight(cy){
+  cy.startBatch()
+
+  cy.nodes().forEach(function(n){
+    n.removeClass('highlighted')
+      if (n.hasClass('highlighted') === false){
+        console.log(n.name)
+
+      }
+  })
+  cy.edges().forEach(function(e){
+    e.removeClass('highlighted')
+    if (e.hasClass('highlighted') === false){
+      console.log(e.name)
+    }
+  })
   cy.endBatch()
 }
