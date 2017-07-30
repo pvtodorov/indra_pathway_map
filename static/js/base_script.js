@@ -221,6 +221,18 @@ $('.cy').each(function(){
     resize();
   });
 
+
+          $('#menu').on('show.bs.modal', function (e) {
+              console.log('show')
+              $(".cy-panzoom").css({"display": "none"})
+          })
+          $('#menu').on('hidden.bs.modal', function (e) {
+              console.log('hidden')
+              $(".cy-panzoom").css({"display": "unset"})
+          })
+
+
+
 // cy.edges().forEach(function(e){
 //   var g = e.data('weight');
 //   e.qtip({
