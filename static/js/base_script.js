@@ -209,9 +209,10 @@ $('.cy').each(function(){
 
   function resize() {
     //console.log(win.height(), win.innerHeight());
-    $(".cy-container").height(win.innerHeight() - 0);
-    //cy.fit();
-    //cy.resize();
+    $(".cy-container").height(win.innerHeight() - 250);
+    $(".cy").height(win.innerHeight() - 250);
+    //scapes.cy_1.fit(padding=30)
+    scapes['cy_1'].center()
   }
 
   setTimeout(resize, 0);

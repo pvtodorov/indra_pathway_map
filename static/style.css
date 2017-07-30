@@ -1,5 +1,6 @@
 html, body {
-  margin: 50;
+  height: calc(100% - 10%);
+  margin: 2%;
 }
 
 h1 {
@@ -17,8 +18,12 @@ h5 {
 
 .cy {
   border: solid;
-  border-width: 1;
-  height: 80%
+  border-width: 0.5;
+  height: 100%;
+}
+
+.cy-container {
+  height: 100%;
 }
 
 .btn-div{
