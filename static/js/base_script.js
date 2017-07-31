@@ -209,16 +209,39 @@ $('.cy').each(function(){
 
   function resize() {
     //console.log(win.height(), win.innerHeight());
-    $(".cy-container").height(win.innerHeight() - 0);
-    //cy.fit();
-    //cy.resize();
+    $(".cy-container").height(win.innerHeight() - 250);
+    $(".cy").height(win.innerHeight() - 250);
+    //scapes.cy_1.fit(padding=30)
+    scapes['cy_1'].center()
   }
 
   setTimeout(resize, 0);
 
-  win.resize(function() {
-    resize();
+
+  var resizeTimer;
+
+  $(window).on('resize', function(e) {
+
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+
+      resize();
+
+    }, 250);
+
   });
+
+
+          $('#menu').on('show.bs.modal', function (e) {
+              console.log('show')
+              $(".cy-panzoom").css({"display": "none"})
+          })
+          $('#menu').on('hidden.bs.modal', function (e) {
+              console.log('hidden')
+              $(".cy-panzoom").css({"display": "unset"})
+          })
+
+
 
 // cy.edges().forEach(function(e){
 //   var g = e.data('weight');
