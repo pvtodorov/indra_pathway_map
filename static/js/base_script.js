@@ -217,8 +217,18 @@ $('.cy').each(function(){
 
   setTimeout(resize, 0);
 
-  win.resize(function() {
-    resize();
+
+  var resizeTimer;
+
+  $(window).on('resize', function(e) {
+
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+
+      resize();
+
+    }, 250);
+
   });
 
 
