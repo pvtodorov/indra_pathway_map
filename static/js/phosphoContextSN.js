@@ -46,12 +46,19 @@ function phosphoContextSN(cy, dataset, condition){
 
          nodes.push({group: "nodes", data: {id: parent_id},
                                             style: {'background-opacity':0,
-                                                    'border-width': 8,
+                                                    'border-width': 1,
                                                     'z-index': 100
                                                     }
                     });
+        nodes.push({group: "nodes", data: {id: parent_id+"_2", parent: parent_id},
+                                           style: {'background-opacity':0,
+                                                   'border-width': 1,
+                                                   'z-index': 100
+                                                   }
+                   });
+
          var node_json = node.json()
-         node_json['data']['parent'] = parent_id
+         node_json['data']['parent'] = parent_id+"_2"
          nodes.push(node_json)
          cy.add(nodes)
          cy.add(edges)
@@ -78,7 +85,7 @@ function phosphoContextSN(cy, dataset, condition){
       // Whether to enable incremental mode
       randomize: false,
       // Node repulsion (non overlapping) multiplier
-      nodeRepulsion: 10,
+      nodeRepulsion: 1,
       // Ideal edge (non nested) length
       idealEdgeLength: 100,
       // Divisor to compute edge forces
@@ -98,9 +105,9 @@ function phosphoContextSN(cy, dataset, condition){
       // Represents the amount of the horizontal space to put between the zero degree members during the tiling operation(can also be a function)
       tilingPaddingHorizontal: 1,
       // Gravity range (constant) for compounds
-      gravityRangeCompound: 0,
+      gravityRangeCompound: 0.5,
       // Gravity force (constant) for compounds
-      gravityCompound: 1,
+      gravityCompound: 2,
       // Gravity range (constant)
       gravityRange: 1,
       // Initial cooling factor for incremental layout
