@@ -1,7 +1,7 @@
 var cy = cytoscape();
 
 // {name : position} dict
-var prebuilt_model = 'McCormick';
+var prebuilt_model = 'Korkut2';
 var preset_pos = {};
 var preset_pos_static = {}
 
@@ -19,6 +19,14 @@ grabJSON('static/models/' + prebuilt_model + '/model_context.json').then(
     ctxt =  ajax_response
   })
 
+var korkut = {}
+grabJSON('static/models/' + 'Korkut' + '/korkut.json').then(
+  function(ajax_response){
+    console.log('done')
+    korkut =  ajax_response
+  })
+var condition = 'AK|10'
+
 var bins = 3
 var exp_colorscale = colorbrewer['Greens']
 var mut_colorscale = colorbrewer['Oranges']
@@ -30,7 +38,7 @@ $(function(){
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
-      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut"};
+      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2"};
       dropdownFromJSON('#model_picker', prebuilt_models)
       }
   )
@@ -198,7 +206,7 @@ $('.cy').each(function(){
     var data_model = $(this).attr('data-url')
     console.log(data_model)
     setPresetPos()
-    
+
     grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
       drawCytoscape ('cy_1', model_response)
       qtipNodes(scapes['cy_1'])
