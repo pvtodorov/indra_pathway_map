@@ -89,8 +89,8 @@ function phosphoContextSN(cy, dataset, condition){
     	name: "cose-bilkent",
       //ready: function () {
       // Called on `layoutstop`
-      stop: function () {
-      },
+      ready: function() {},
+      stop: function () {},
       // number of ticks per frame; higher is faster but more jerky
       refresh: 1000,
       // Whether to fit the network view after when done
@@ -129,7 +129,7 @@ function phosphoContextSN(cy, dataset, condition){
       initialEnergyOnIncremental:0.9
     };
 
-    cy.startBatch();
+
     for (n_id in cmp_nodes){
         var n_ids = cmp_nodes[n_id]
         var sub_selectors = [];
@@ -143,45 +143,41 @@ function phosphoContextSN(cy, dataset, condition){
         var layout = sub_cy.makeLayout( params );
         layout.run()
     }
-    cy.endBatch();
 
+
+    var layoutTimer;
     cy.on(('layoutstop'),function(){
-        for (n_id in cmp_nodes){
-            var n_ids = cmp_nodes[n_id].slice(1,cmp_nodes[n_id].length)
-            var sub_selectors = [];
-            for (n2 of n_ids){
-                var selector_string_sub = 'node[id = ' +'"' + n2 + '"' + ']'
-                sub_selectors.push(selector_string_sub)
-            }
-            var selector_string = sub_selectors.join(',')
-            var sub_cy = cy.$(selector_string)
-            var node_tag = "sub"+n_id
-            sub_cy.nodes().forEach(function(n){
-                n.addClass(node_tag)
-                console.log(n)
-                console.log(n.hasClass(node_tag))
-            })
-            console.log(sub_cy.length)
-        }
-        cy.$('node[id !*= "."]').nodes().forEach(function(node){
-            var posx = node.position('x')
-            var posy = node.position('y')
-            var node_tag = ".sub"+node.data('id')
-            var associates = cy.$(node_tag)
-            console.log('----------------')
-            console.log(node.data('id'))
-            console.log(associates.length)
-            associates.nodes().forEach(function(assc){
-                var posx_a = assc.position('x')
-                var posy_a = assc.position('y')
-                console.log(assc.data('id'))
-                assc.data('pos_diff', {'dx': posx - posx_a,
-                                       'dy': posy - posy_a})
-               console.log(assc.data('pos_diff'))
-            })
-        })
+          clearTimeout(layoutTimer);
+          layoutTimer = setTimeout(function() {
+              console.log('this fires once!')
+              for (n_id in cmp_nodes){
+                  var n_ids = cmp_nodes[n_id].slice(1,cmp_nodes[n_id].length)
+                  var sub_selectors = [];
+                  for (n2 of n_ids){
+                      var selector_string_sub = 'node[id = ' +'"' + n2 + '"' + ']'
+                      sub_selectors.push(selector_string_sub)
+                  }
+                  var selector_string = sub_selectors.join(',')
+                  var sub_cy = cy.$(selector_string)
+                  var node_tag = "sub"+n_id
+                  sub_cy.nodes().forEach(function(n){
+                      n.addClass(node_tag)
+                  })
+              }
+              cy.$('node[id !*= "."]').nodes().forEach(function(node){
+                  var posx = node.position('x')
+                  var posy = node.position('y')
+                  var node_tag = ".sub"+node.data('id')
+                  var associates = cy.$(node_tag)
+                  associates.nodes().forEach(function(assc){
+                      var posx_a = assc.position('x')
+                      var posy_a = assc.position('y')
+                      assc.data('pos_diff', {'dx': posx - posx_a,
+                                             'dy': posy - posy_a})
+                  })
+              })
+          }, 250);
     })
-
 
 
     cy.$('node[id !*= "."]').nodes().on("drag", function(evt){
