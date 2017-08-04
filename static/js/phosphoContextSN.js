@@ -32,13 +32,15 @@ function phosphoContextSN(cy, dataset, condition){
              for (var site in sites) {
                var node_site = {group: "nodes", data: {id: node.data('id')+'.'+site,
                                                        name: sites[site],
-                                                       parent: parent_id},
+                                                       parent: parent_id,
+                                                       uuid_list: node.data('uuid_list')},
                                                 style: {'width':50,
                                                         'height':50,
                                                         'background-color':linear_scale(values[site]),
                                                         'z-index': 10,
                                                         'text-halign': 'right',
-                                                        'text-valign': 'bottom'},
+                                                        'text-valign': 'center',
+                                                        'z-index': 10},
                                                 position: {'x': node.position('x'),
                                                            'y': node.position('y')},
                                                 grabbable: false}
@@ -53,7 +55,8 @@ function phosphoContextSN(cy, dataset, condition){
              }
          }
 
-         nodes.push({group: "nodes", data: {id: parent_id},
+         nodes.push({group: "nodes", data: {id: parent_id,
+                                            uuid_list: node.data('uuid_list')},
                                             style: {'background-opacity':0,
                                                     'border-width': 1,
                                                     'z-index': 100},
@@ -62,7 +65,8 @@ function phosphoContextSN(cy, dataset, condition){
                                            grabbable: false
                     });
         cmp_nodes[node.data('id')].push(parent_id)
-        nodes.push({group: "nodes", data: {id: parent_id2, parent: parent_id},
+        nodes.push({group: "nodes", data: {id: parent_id2, parent: parent_id,
+                                           uuid_list: node.data('uuid_list')},
                                            style: {'background-opacity':0,
                                                    'border-width': 1,
                                                    'z-index': 100},
