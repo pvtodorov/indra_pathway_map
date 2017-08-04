@@ -1,4 +1,4 @@
-function highlightPath(cy, uuids){
+function highlightPath(cy, path_uuids){
     cy.startBatch()
     // nodes
     cy.nodes().forEach(function(n){
@@ -15,7 +15,7 @@ function highlightPath(cy, uuids){
             }
             // if still see_thru, then add the .transparent class
             if (see_thru === true){
-              n.addClass('transparent')
+              n.addClass('transparentNode')
             }
       })
       cy.edges().forEach(function(e){
@@ -34,7 +34,7 @@ function highlightPath(cy, uuids){
               }
               // if still see_thru, then add the .transparent class
               if (see_thru === true){
-                e.addClass('transparent')
+                e.addClass('transparentEdge')
               }
             }
         })
@@ -47,12 +47,12 @@ function unHighlight(cy){
   cy.startBatch()
   cy.nodes().forEach(function(n){
     n.removeClass('transparent')
-      if (n.hasClass('transparent') === false){
+      if (n.hasClass('transparentNode') === false){
       }
   })
   cy.edges().forEach(function(e){
     e.removeClass('transparent')
-    if (e.hasClass('transparent') === false){
+    if (e.hasClass('transparentEdge') === false){
     }
   })
   cy.endBatch()

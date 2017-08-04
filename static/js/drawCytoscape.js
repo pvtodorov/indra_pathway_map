@@ -101,9 +101,15 @@ function drawCytoscape (div_id, model_elements) {
 
           }},
 
-          {  selector: '.transparent',
+          {  selector: '.transparentNode',
           style: {
             'opacity':0.4,
+
+          }},
+
+          {  selector: '.transparentEdge',
+          style: {
+            'opacity':0.05,
 
           }},
 
