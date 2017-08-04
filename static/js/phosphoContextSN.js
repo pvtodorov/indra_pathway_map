@@ -43,12 +43,8 @@ function phosphoContextSN(cy, dataset, condition){
                                                         'z-index': 10},
                                                 position: {'x': node.position('x'),
                                                            'y': node.position('y')},
-                                                grabbable: false}
-                // var edge_site = { group: "edges", data: { id: node.data('id')+'.'+site+'edge',
-                //                                           source: node.data('id')+'.'+site,
-                //                                           target: node.data('id'),
-                //                                           type: 'Activation',
-                //                                           weight: 50} }
+                                                grabbable: false,
+                                                selectable: false}
                 nodes.push(node_site)
                 cmp_nodes[node.data('id')].push(node_site['data']['id'])
                 // site_edges.push(edge_site)
@@ -58,21 +54,25 @@ function phosphoContextSN(cy, dataset, condition){
          nodes.push({group: "nodes", data: {id: parent_id,
                                             uuid_list: node.data('uuid_list')},
                                             style: {'background-opacity':0,
-                                                    'border-width': 1,
-                                                    'z-index': 100},
+                                                    'border-width': 0,
+                                                    'z-index': 2},
                                             position: {'x': node.position('x'),
                                                        'y': node.position('y')},
-                                           grabbable: false
+                                           grabbable: false,
+                                           selectable: false
+
                     });
         cmp_nodes[node.data('id')].push(parent_id)
         nodes.push({group: "nodes", data: {id: parent_id2, parent: parent_id,
                                            uuid_list: node.data('uuid_list')},
                                            style: {'background-opacity':0,
-                                                   'border-width': 1,
-                                                   'z-index': 100},
+                                                   'border-width': 0,
+                                                   'z-index': 1},
                                            position: {'x': node.position('x'),
                                                       'y': node.position('y')},
-                                           grabbable: false
+                                           grabbable: false,
+                                           selectable: false
+
                    });
         cmp_nodes[node.data('id')].push(parent_id2)
 
@@ -169,6 +169,7 @@ function phosphoContextSN(cy, dataset, condition){
                   })
               }
               cy.$('node[id !*= "."]').nodes().forEach(function(node){
+                  node.style('z-index', 5)
                   var posx = node.position('x')
                   var posy = node.position('y')
                   var node_tag = ".sub"+node.data('id')
