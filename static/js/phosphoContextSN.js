@@ -118,7 +118,7 @@ function phosphoContextSN(cy, dataset, condition){
       flow: { axis: 'y', },
       animate: true,
       randomize: false,
-      maxSimulationTime: 2000,
+      maxSimulationTime: 1000,
       fit: false,
       infinite: false,
       ungrabifyWhileSimulating: false
@@ -157,6 +157,13 @@ function phosphoContextSN(cy, dataset, condition){
                                             clearTimeout(animated_timer);
                                             animated_timer = setTimeout(function() {
                                                 layout.run();
+                                                cy.promiseOn('layoutstop').then(function(){
+                                                    if (removed !== undefined){
+                                                        cy.add(removed)
+                                                        removed = undefined;
+                                                        pushNodes()
+                                                    }
+                                                })
                                             }, 50);
                                     }
                                 })
@@ -165,6 +172,13 @@ function phosphoContextSN(cy, dataset, condition){
                                 console.log('free already!')
                                 dragged = false
                                 layout.run()
+                                cy.promiseOn('layoutstop').then(function(){
+                                    if (removed !== undefined){
+                                        cy.add(removed)
+                                        removed = undefined;
+                                        pushNodes()
+                                    }
+                                })
                             }
 
                         }, 50);
@@ -210,19 +224,6 @@ function phosphoContextSN(cy, dataset, condition){
             pullNodes()
         }
     })
-
-
-    cy.on('layoutstop', function(){
-        if (removed !== undefined){
-            cy.add(removed)
-            removed = undefined;
-            pushNodes()
-        }
-    })
-
-
-
-
 
 
 
