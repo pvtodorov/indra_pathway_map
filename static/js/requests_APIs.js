@@ -148,3 +148,15 @@ function get_ccle_mrna_amounts(gene_list, cell_lines) {
                 });
 }
 
+function get_ccle_cna(gene_list, cell_lines) {
+  var input_txt = {'gene_list': gene_list,
+                   'cell_lines': cell_lines}
+  console.log(input_txt)
+  console.log("asking for cna");
+  return $.ajax({
+                url: indra_server_addr + "/databases/cbio/ccle_cna",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify(input_txt),
+                });
+}
