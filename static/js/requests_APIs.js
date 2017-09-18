@@ -135,9 +135,10 @@ function assembleLoopy(res) {
   });
 }
 
-function get_ccle_mrna_amounts(gene_list, cell_lines) {
+var mrna;
+function get_ccle_mrna_amounts(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
-                   'cell_lines': cell_lines}
+                   'cell_lines': [cell_line]}
   console.log(input_txt)
   console.log("asking for mrna");
   $.ajax({
@@ -150,13 +151,14 @@ function get_ccle_mrna_amounts(gene_list, cell_lines) {
                   res = res.replace(/NaN/g, "null")
                   res = JSON.parse(res)
                   res = res[cell_line]
-                  return res
+                  mrna = res;
               })
 }
 
-function get_ccle_cna(gene_list, cell_lines) {
+var cna;
+function get_ccle_cna(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
-                   'cell_lines': cell_lines}
+                   'cell_lines': [cell_line]}
   console.log(input_txt)
   console.log("asking for cna");
   $.ajax({
@@ -165,10 +167,10 @@ function get_ccle_cna(gene_list, cell_lines) {
         dataType: "json",
         data: JSON.stringify(input_txt),
        }).then(function(res){
-                  res = res["cna"] 
+                  res = res["cna"]
                   res = res.replace(/NaN/g, "null")
                   res = JSON.parse(res)
                   res = res[cell_line]
-                  return res
+                  cna = res;
               })
 }
