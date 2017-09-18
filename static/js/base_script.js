@@ -27,9 +27,14 @@ grabJSON('static/models/' + 'Korkut' + '/korkut.json').then(
   })
 var condition = 'AK|10'
 
-var bins = 3
-var exp_colorscale = colorbrewer['Greens']
-var mut_colorscale = colorbrewer['Oranges']
+var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7]
+var exp_colorscale = d3.scaleThreshold()
+    .domain(domain)
+    .range(['#f7fcf5','#e5f5e0','#c7e9c0','#a1d99b','#74c476','#41ab5d','#238b45','#006d2c','#00441b']);
+var mut_colorscale =  d3.scaleThreshold()
+    .domain(domain)
+    .range(['#fff5eb','#fee6ce','#fdd0a2','#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704']);
+
 
 $(function(){
 
@@ -59,9 +64,6 @@ $(function(){
 
       }
   )
-
-  svgScales ("#exp_svg", bins, "Greens")
-  svgScales ("#mut_svg", bins, "Oranges")
 
   // set the preset_pos
   setPresetPos()
