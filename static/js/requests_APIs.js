@@ -135,17 +135,23 @@ function assembleLoopy(res) {
   });
 }
 
-function get_ccle_mrna_amounts(gene_list, cell_lines) {
+function get_ccle_mrna_amounts(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
-                   'cell_lines': cell_lines}
+                   'cell_lines': [cell_line]}
   console.log(input_txt)
   console.log("asking for mrna");
-  return $.ajax({
-                url: indra_server_addr + "/databases/cbio/ccle_mrna_amounts",
-                type: "POST",
-                dataType: "json",
-                data: JSON.stringify(input_txt),
-                });
+  $.ajax({
+          url: indra_server_addr + "/databases/cbio/ccle_mrna_amounts",
+          type: "POST",
+          dataType: "json",
+          data: JSON.stringify(input_txt),
+         }).then(function(res){
+                    res = res["mrna_amounts"]
+                    res = res.replace(/NaN/g, "null")
+                    res = JSON.parse(res)
+                    res = res[cell_line]
+                    return res
+                })
 }
 
 function get_ccle_cna(gene_list, cell_lines) {
