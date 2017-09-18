@@ -1,7 +1,7 @@
 var cy = cytoscape();
 
 // {name : position} dict
-var prebuilt_model = 'Korkut2';
+var prebuilt_model = 'McCormick';
 var preset_pos = {};
 var preset_pos_static = {}
 
@@ -10,7 +10,7 @@ var id_pos = {};
 
 var scapes = {};
 
-var indra_server_addr = "http://ec2-52-55-90-184.compute-1.amazonaws.com:8080"
+var indra_server_addr = "http://0.0.0.0:8080"
 
 var ctxt = {}
 grabJSON('static/models/' + prebuilt_model + '/model_context.json').then(
