@@ -32,3 +32,5 @@ data\.json
 ras_pathway_v1\.json
 
 webpack\.config\.js
+
+\.idea/
