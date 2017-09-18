@@ -141,18 +141,18 @@ function get_ccle_mrna_amounts(gene_list, cell_line) {
                    'cell_lines': [cell_line]}
   console.log(input_txt)
   console.log("asking for mrna");
-  $.ajax({
-        url: indra_server_addr + "/databases/cbio/ccle_mrna_amounts",
-        type: "POST",
-        dataType: "json",
-        data: JSON.stringify(input_txt),
-       }).then(function(res){
-                  res = res["mrna_amounts"]
-                  res = res.replace(/NaN/g, "null")
-                  res = JSON.parse(res)
-                  res = res[cell_line]
-                  mrna = res;
-              })
+  return $.ajax({
+            url: indra_server_addr + "/databases/cbio/ccle_mrna_amounts",
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(input_txt),
+           }).then(function(res){
+                      res = res["mrna_amounts"]
+                      res = res.replace(/NaN/g, "null")
+                      res = JSON.parse(res)
+                      res = res[cell_line]
+                      mrna = res;
+                  })
 }
 
 var cna;
@@ -161,16 +161,16 @@ function get_ccle_cna(gene_list, cell_line) {
                    'cell_lines': [cell_line]}
   console.log(input_txt)
   console.log("asking for cna");
-  $.ajax({
-        url: indra_server_addr + "/databases/cbio/ccle_cna",
-        type: "POST",
-        dataType: "json",
-        data: JSON.stringify(input_txt),
-       }).then(function(res){
-                  res = res["cna"]
-                  res = res.replace(/NaN/g, "null")
-                  res = JSON.parse(res)
-                  res = res[cell_line]
-                  cna = res;
-              })
+  return $.ajax({
+            url: indra_server_addr + "/databases/cbio/ccle_cna",
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(input_txt),
+           }).then(function(res){
+                      res = res["cna"]
+                      res = res.replace(/NaN/g, "null")
+                      res = JSON.parse(res)
+                      res = res[cell_line]
+                      cna = res;
+                  })
 }
