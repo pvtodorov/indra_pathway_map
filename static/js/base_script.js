@@ -35,6 +35,8 @@ var mut_colorscale =  d3.scaleThreshold()
     .domain(domain)
     .range(['#fff5eb','#fee6ce','#fdd0a2','#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704']);
 
+var parser = 'trips';
+
 
 $(function(){
 
@@ -71,11 +73,11 @@ $(function(){
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
+    txtProcess(txt, parser).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
       drawCytoscape('cy_1', model_response)
       qtipNodes(scapes['cy_1'])
     });
-    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    // txtProcess(txt, parser).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
     $('.cyjs2loopy').prop('disabled', false);
@@ -85,10 +87,10 @@ $(function(){
   $("#downloadPySB").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(assemblePySB).then(function (res) {
+    txtProcess(txt, parser).then(groundingMapper).then(assemblePySB).then(function (res) {
       download($('#cellSelectDynamic').val().slice(6,-5)+'.py', res['model'])
     });
-    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    // txtProcess(txt, parser).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
 
@@ -99,10 +101,10 @@ $(function(){
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(function (res) {
+    txtProcess(txt, parser).then(groundingMapper).then(function (res) {
       download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res['statements'], null, 2))
     });
-    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    // txtProcess(txt, parser).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
 
@@ -112,7 +114,7 @@ $(function(){
   $("#loopy").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(assembleLoopy).then(function (res) {
+    txtProcess(txt, parser).then(groundingMapper).then(assembleLoopy).then(function (res) {
 
         window.open(
           res['loopy_url'].toString(),
@@ -168,6 +170,37 @@ $('a[href="#byom"]').click(function(){
     preset_pos = {}
   }
   console.log(preset_pos)
+})
+
+$("#parseReach").click(function(){
+  // console.log(this)
+  if (this.classList.contains("active")){
+    $("#parseReach").removeClass("active")
+    $("#parseTrips").addClass("active")
+    parser='trips'
+  }
+  else {
+    $("#parseReach").addClass("active")
+    $("#parseTrips").removeClass("active")
+    parser='reach'
+  }
+
+})
+
+
+$("#parseTrips").click(function(){
+  // console.log(this)
+  if (this.classList.contains("active")){
+    $("#parseTrips").removeClass("active")
+    $("#parseReach").addClass("active")
+    parser='reach'
+  }
+  else {
+    $("#parseTrips").addClass("active")
+    $("#parseReach").removeClass("active")
+    parser='trips'
+  }
+
 })
 
 $('a[href="#ras227"]').click(function(){

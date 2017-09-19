@@ -68,14 +68,14 @@ function download(filename, text) {
 }
 //***************************************
 
-//send text to REACH, get back stmts
+//send text to a reading system, get back stmts
 //***************************************
-function txtReach(txt) {
+function txtProcess(txt, parser) {
   var input_txt = {'text':txt}
   console.log(input_txt)
-  console.log("converting text to statements via REACH");
+  console.log("converting text to statements using " + parser);
   return $.ajax({
-                url: indra_server_addr + "/reach/process_text",
+                url: indra_server_addr + "/"+ parser + "/process_text",
                 type: "POST",
                 dataType: "json",
                 data: JSON.stringify(input_txt),
