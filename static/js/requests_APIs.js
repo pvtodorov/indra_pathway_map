@@ -142,7 +142,7 @@ function get_ccle_mrna_amounts(gene_list, cell_line) {
   console.log(input_txt)
   console.log("asking for mrna");
   return $.ajax({
-            url: indra_server_addr + "/databases/cbio/ccle_mrna_amounts",
+            url: indra_server_addr + "/databases/cbio/get_ccle_mrna_amounts",
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
@@ -162,7 +162,7 @@ function get_ccle_cna(gene_list, cell_line) {
   console.log(input_txt)
   console.log("asking for cna");
   return $.ajax({
-            url: indra_server_addr + "/databases/cbio/ccle_cna",
+            url: indra_server_addr + "/databases/cbio/get_ccle_cna",
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
