@@ -174,3 +174,22 @@ function get_ccle_cna(gene_list, cell_line) {
                       cna = res;
                   })
 }
+
+var mutations;
+function get_ccle_mutations(gene_list, cell_line) {
+  var input_txt = {'gene_list': gene_list,
+                   'cell_lines': [cell_line]}
+  console.log(input_txt)
+  console.log("asking for cna");
+  return $.ajax({
+            url: indra_server_addr + "/databases/cbio/get_mutations_ccle",
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(input_txt),
+           }).then(function(res){
+                      res = res["mutations"]
+                      res = JSON.parse(res)
+                      res = res[cell_line]
+                      mutations = res;
+                  })
+}
