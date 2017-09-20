@@ -110,12 +110,13 @@
                 <div class="tab-content">
                   <div id="ras227" class="tab-pane fade in active">
                     <div>
+                        <br>
                         <div>
                             <select id='model_picker' class="selectpicker"></select>
                         </div>
                     </div>
+                    <br>
                     <button id='loadButtonStatic' type="submit" class="btn btn-primary">Load</button>
-                    <button id='cyjs2loopyStatic' type="submit" class="btn btn-success cyjs2loopy" disabled>cyjs2Loopy</button>
                   </div>
 
                   <div id="byom" class="tab-pane fade in">
@@ -140,36 +141,6 @@ HIPK2 inactivates Wip1.
 
        </form>
 
-                         </form>
-                            <div class= 'btn-div'>
-                                <button id='loadButtonDynamic' type="submit" class="btn btn-primary">Load</button>
-                                <button id='presetLayoutDynamic' type="submit" class="btn btn-default presetLayout">Preset layout</button>
-                                <button id='cyjs2loopyDynamic' type="submit" class="btn btn-success cyjs2loopy" disabled>cyjs2Loopy</button>
-                            </div>
-                            <div class='btn-div'>
-                                <button id='downloadINDRA' type="submit" class="btn btn-default">Download INDRA statments</button>
-                                <button id='downloadPySB' type="submit" class="btn btn-default">Download PySB</button>
-                                <!-- <button id='INDRA2loopy' type="submit" class="btn btn-primary">INDRA2Loopy</button> -->
-                            </div>
-                      </div>
-                  </div>
-                  <div id="context" class="tab-pane fade in">
-                      <div >
-                        <h5>Dataset</h5>
-                        <b>CCLE</b>
-                        <h5>ID</h5>
-                        <div class="form-group">
-                            <div>
-                                <label for="cellSelectDynamic">Choose a cell line.</label>
-                            </div>
-                            <div>
-                                <select id='cellSelectDynamic' class="selectpicker"></select>
-                            </div>
-                        </div>
-                            <div>
-                               <input  id="scale_slider" type="text"
-                                        data-provide="slider"
-                                        data-slider-ticks="[3,4,5,6,7,8,9]"
           <div class= 'btn-div'>
               <div><b>NLP System</b></div>
               <button id='parseReach' type="submit" class="btn btn-default parserSelect">REACH</button>
@@ -186,21 +157,23 @@ HIPK2 inactivates Wip1.
               <button id='downloadINDRA' type="submit" class="btn btn-default">Download INDRA statments</button>
               <button id='downloadPySB' type="submit" class="btn btn-default">Download PySB</button>
 
-                                        data-slider-min="1"
-                                        data-slider-max="9"
-                                        data-slider-step="1"
-                                        data-slider-value="3"
-                                        data-slider-tooltip="hide"
-                                        >
-                                </input>
-                                <div>
-                                    <b>WT</b>
-                                    <div id="exp_svg"></div>
-                                    <b>MUT</b>
-                                    <div id="mut_svg"></div>
-                                </div>
+          </div>
+    </div>
 
-                            </div>
+</div>
+                  <div id="context" class="tab-pane fade in">
+                      <div >
+                          <div class="form-group">
+                              <br>
+                              <div>
+                                  <label for="cellSelectDynamic">Choose a cell line.</label>
+                              </div>
+                              <div>
+                                  <select id='cellSelectDynamic' class="selectpicker"></select>
+                              </div>
+                              <br>
+                              <button id='loadContextButton' type="submit" class="btn btn-primary">Load</button>
+                          </div>
 
 
                       </div>
@@ -236,7 +209,7 @@ HIPK2 inactivates Wip1.
 
       </div>
   </div>
-
+  <br>
   <div class="row">
     <div class="col-md-12">
 
