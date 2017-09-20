@@ -84,6 +84,12 @@ $(function(){
     console.log($('#cellSelectDynamic').val().substring(6));
   });
 
+  $("#loadContextButton").click(function(){
+    var cell_line = $('#cellSelectDynamic').val().slice(6,-5)
+    contextualizeNodesCCLE(cy, cell_line)
+    console.log($('#cellSelectDynamic').val().substring(6));
+  });
+
   $("#downloadPySB").click(function(){
     var txt = $('#textArea')[0].value
 
@@ -207,17 +213,6 @@ $('a[href="#ras227"]').click(function(){
   preset_pos = preset_pos_static
   console.log(preset_pos)
 })
-
-$('#scale_slider').slider()
-		.on('change', function(slideEvt){
-      bins = slideEvt.value.newValue
-      svgScales ("#exp_svg", bins, "Greens")
-      svgScales ("#mut_svg", bins, "Oranges")
-      console.log(bins)
-      contextualizeNodes(cy)
-      }
-
-    )
 
 // change prebuilt_model name every time the user changes dropdown
 $('#model_picker').on('changed.bs.select', function(){
