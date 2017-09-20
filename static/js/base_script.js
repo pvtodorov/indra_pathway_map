@@ -1,7 +1,7 @@
 var cy = cytoscape();
 
 // {name : position} dict
-var prebuilt_model = 'Korkut2';
+var prebuilt_model = 'McCormick';
 var preset_pos = {};
 var preset_pos_static = {}
 
@@ -10,7 +10,7 @@ var id_pos = {};
 
 var scapes = {};
 
-var indra_server_addr = "http://ec2-52-55-90-184.compute-1.amazonaws.com:8080"
+var indra_server_addr = "http://ec2-34-226-201-156.compute-1.amazonaws.com:8080"
 
 var ctxt = {}
 grabJSON('static/models/' + prebuilt_model + '/model_context.json').then(
@@ -27,9 +27,16 @@ grabJSON('static/models/' + 'Korkut' + '/korkut.json').then(
   })
 var condition = 'AK|10'
 
-var bins = 3
-var exp_colorscale = colorbrewer['Greens']
-var mut_colorscale = colorbrewer['Oranges']
+var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7]
+var exp_colorscale = d3.scaleThreshold()
+    .domain(domain)
+    .range(['#f7fcf5','#e5f5e0','#c7e9c0','#a1d99b','#74c476','#41ab5d','#238b45','#006d2c','#00441b']);
+var mut_colorscale =  d3.scaleThreshold()
+    .domain(domain)
+    .range(['#fff5eb','#fee6ce','#fdd0a2','#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704']);
+
+var parser = 'trips';
+
 
 $(function(){
 
@@ -38,7 +45,8 @@ $(function(){
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
-      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2"};
+      var prebuilt_models = {"McCormick":"McCormick"};
+      // var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2"};
       dropdownFromJSON('#model_picker', prebuilt_models)
       }
   )
@@ -60,33 +68,36 @@ $(function(){
       }
   )
 
-  svgScales ("#exp_svg", bins, "Greens")
-  svgScales ("#mut_svg", bins, "Oranges")
-
   // set the preset_pos
   setPresetPos()
 
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
+    txtProcess(txt, parser).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
       drawCytoscape('cy_1', model_response)
       qtipNodes(scapes['cy_1'])
     });
-    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    // txtProcess(txt, parser).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
     $('.cyjs2loopy').prop('disabled', false);
     console.log($('#cellSelectDynamic').val().substring(6));
   });
 
+  $("#loadContextButton").click(function(){
+    var cell_line = $('#cellSelectDynamic').val().slice(6,-5)
+    contextualizeNodesCCLE(cy, cell_line)
+    console.log($('#cellSelectDynamic').val().substring(6));
+  });
+
   $("#downloadPySB").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(assemblePySB).then(function (res) {
+    txtProcess(txt, parser).then(groundingMapper).then(assemblePySB).then(function (res) {
       download($('#cellSelectDynamic').val().slice(6,-5)+'.py', res['model'])
     });
-    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    // txtProcess(txt, parser).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
 
@@ -97,10 +108,10 @@ $(function(){
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(function (res) {
+    txtProcess(txt, parser).then(groundingMapper).then(function (res) {
       download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res['statements'], null, 2))
     });
-    // txtReach(txt).then(assembleCyJS).then(function (model_response) {
+    // txtProcess(txt, parser).then(assembleCyJS).then(function (model_response) {
     //   drawCytoscape ('cy_1', model_response)
     // });
 
@@ -110,7 +121,7 @@ $(function(){
   $("#loopy").click(function(){
     var txt = $('#textArea')[0].value
 
-    txtReach(txt).then(groundingMapper).then(assembleLoopy).then(function (res) {
+    txtProcess(txt, parser).then(groundingMapper).then(assembleLoopy).then(function (res) {
 
         window.open(
           res['loopy_url'].toString(),
@@ -168,21 +179,41 @@ $('a[href="#byom"]').click(function(){
   console.log(preset_pos)
 })
 
+$("#parseReach").click(function(){
+  // console.log(this)
+  if (this.classList.contains("active")){
+    $("#parseReach").removeClass("active")
+    $("#parseTrips").addClass("active")
+    parser='trips'
+  }
+  else {
+    $("#parseReach").addClass("active")
+    $("#parseTrips").removeClass("active")
+    parser='reach'
+  }
+
+})
+
+
+$("#parseTrips").click(function(){
+  // console.log(this)
+  if (this.classList.contains("active")){
+    $("#parseTrips").removeClass("active")
+    $("#parseReach").addClass("active")
+    parser='reach'
+  }
+  else {
+    $("#parseTrips").addClass("active")
+    $("#parseReach").removeClass("active")
+    parser='trips'
+  }
+
+})
+
 $('a[href="#ras227"]').click(function(){
   preset_pos = preset_pos_static
   console.log(preset_pos)
 })
-
-$('#scale_slider').slider()
-		.on('change', function(slideEvt){
-      bins = slideEvt.value.newValue
-      svgScales ("#exp_svg", bins, "Greens")
-      svgScales ("#mut_svg", bins, "Oranges")
-      console.log(bins)
-      contextualizeNodes(cy)
-      }
-
-    )
 
 // change prebuilt_model name every time the user changes dropdown
 $('#model_picker').on('changed.bs.select', function(){
