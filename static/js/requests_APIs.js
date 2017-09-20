@@ -136,20 +136,18 @@ function assembleLoopy(res) {
 }
 
 var mrna;
-function get_ccle_mrna_amounts(gene_list, cell_line) {
+function get_ccle_mrna(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]}
   console.log(input_txt)
   console.log("asking for mrna");
   return $.ajax({
-            url: indra_server_addr + "/databases/cbio/get_ccle_mrna_amounts",
+            url: indra_server_addr + "/databases/cbio/get_ccle_mrna",
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
            }).then(function(res){
                       res = res["mrna_amounts"]
-                      res = res.replace(/NaN/g, "null")
-                      res = JSON.parse(res)
                       res = res[cell_line]
                       mrna = res;
                   })
@@ -168,8 +166,6 @@ function get_ccle_cna(gene_list, cell_line) {
             data: JSON.stringify(input_txt),
            }).then(function(res){
                       res = res["cna"]
-                      res = res.replace(/NaN/g, "null")
-                      res = JSON.parse(res)
                       res = res[cell_line]
                       cna = res;
                   })
@@ -180,15 +176,14 @@ function get_ccle_mutations(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]}
   console.log(input_txt)
-  console.log("asking for cna");
+  console.log("asking for mutations");
   return $.ajax({
-            url: indra_server_addr + "/databases/cbio/get_mutations_ccle",
+            url: indra_server_addr + "/databases/cbio/get_ccle_mutations",
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
            }).then(function(res){
                       res = res["mutations"]
-                      res = JSON.parse(res)
                       res = res[cell_line]
                       mutations = res;
                   })
