@@ -10,7 +10,7 @@ var id_pos = {};
 
 var scapes = {};
 
-var indra_server_addr = "http://0.0.0.0:8080"
+var indra_server_addr = "http://ec2-34-226-201-156.compute-1.amazonaws.com:8080"
 
 var ctxt = {}
 grabJSON('static/models/' + prebuilt_model + '/model_context.json').then(
@@ -45,7 +45,8 @@ $(function(){
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
-      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2"};
+      var prebuilt_models = {"McCormick":"McCormick"};
+      // var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2"};
       dropdownFromJSON('#model_picker', prebuilt_models)
       }
   )
