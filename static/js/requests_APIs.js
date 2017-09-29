@@ -17,6 +17,16 @@ function dropdownFromJSON (div_id, ajax_response) {
 }
 //***************************************
 
+//build bootstrap-select dropdown using json
+//***************************************
+function dropdownCtxtSelectFromJSON (div_id, ajax_response) {
+  $.each(ajax_response, function(name, file) {
+       $(div_id).append($('<option/>').attr("value", file).text(file));
+    });
+}
+//***************************************
+
+
 //build svg scales based on slider pick
 //***************************************
 function svgScales (div_id, bins, scale) {
