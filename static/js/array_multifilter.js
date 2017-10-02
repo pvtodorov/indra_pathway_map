@@ -4,13 +4,13 @@ function array_multifilter(arr, f_arr){
   var filtered_arr = arr;
   function array_filter(arr, val, pos){
     var filtered_arr = arr.filter(function(row){
-      return row[pos] == val
-    })
-    return filtered_arr
+      return row[pos] == val;
+    });
+    return filtered_arr;
   }
-  for (i in f_arr){
+  for (var i in f_arr){
     if (f_arr[i] !== ""){
-      filtered_arr = array_filter(filtered_arr, f_arr[i], i)
+      filtered_arr = array_filter(filtered_arr, f_arr[i], i);
     }
   }
   return filtered_arr;
@@ -33,27 +33,27 @@ function onlyUnique(value, index, self) {
 
 function get_unique_col_vals(arr){
   var uniques_arr = [];
-  for (i=0; i<=arr[0].length; i++){
-    uniques_arr.push(extractColumn(arr, i).filter(onlyUnique))
+  for (var i=0; i<=arr[0].length; i++){
+    uniques_arr.push(extractColumn(arr, i).filter(onlyUnique));
   }
-  return uniques_arr
+  return uniques_arr;
 }
 
 function clearCtxtSelects(){
-  var ctx_pickers = $('.ctx-select .selectpicker')
-  for (p of ctx_pickers){
+  var ctx_pickers = $('.ctx-select .selectpicker');
+  for (var p of ctx_pickers){
     while (p.options.length > 0) {
         p.remove(0);
     }
   }
-  $('.ctx-select').selectpicker('refresh').selectpicker('render')
+  $('.ctx-select').selectpicker('refresh').selectpicker('render');
 }
 
 function build_ctx_dropdowns(arr, ctx_select_divs, current_ctx_selection){
-  unique_col_val = get_unique_col_vals(arr)
-  for (i in ctx_select_divs){
-    dropdownCtxtSelectFromJSON(ctx_select_divs[i], unique_col_val[i])
-    $(ctx_select_divs[i]).selectpicker('val', current_ctx_selection[i])
+  unique_col_val = get_unique_col_vals(arr);
+  for (var i in ctx_select_divs){
+    dropdownCtxtSelectFromJSON(ctx_select_divs[i], unique_col_val[i]);
+    $(ctx_select_divs[i]).selectpicker('val', current_ctx_selection[i]);
   }
-  $('.ctx-select').selectpicker('refresh').selectpicker('render')
+  $('.ctx-select').selectpicker('refresh').selectpicker('render');
 }
