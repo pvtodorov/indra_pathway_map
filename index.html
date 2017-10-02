@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="static/bower_components/cytoscape-panzoom/cytoscape.js-panzoom.css" />
     <link rel="stylesheet" href="static/bower_components/components-font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+    <link rel="stylesheet" href="static/bower_components/datatables.net-dt/css/jquery.dataTables.css" />
     <!-- endbower -->
     <!-- bower:js -->
     <script src="static/bower_components/jquery/dist/jquery.js"></script>
@@ -32,6 +33,7 @@
     <script src="static/bower_components/cytoscape-panzoom/cytoscape-panzoom.js"></script>
     <script src="static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
     <script src="static/bower_components/papaparse/papaparse.js"></script>
+    <script src="static/bower_components/datatables.net/js/jquery.dataTables.js"></script>
     <!-- endbower -->
     <!-- d3 -->
     <script src="https://d3js.org/d3-array.v1.min.js"></script>
@@ -54,6 +56,7 @@
     <script src="static/js/highlightPath.js"></script>
     <script src="static/js/requests_APIs.js"></script>
     <script src="static/js/loopyFromCyJS.js"></script>
+    <script src="static/js/array_multifilter.js"></script>
     <script src="static/js/base_script.js"></script>
     <!-- js -->
 
@@ -104,6 +107,7 @@
                     <li class="active"><a data-toggle="tab" href="#ras227">Prebuilt models</a></li>
                     <li ><a data-toggle="tab" href="#byom">BYOM</a></li>
                     <li ><a data-toggle="tab" href="#context">Context</a></li>
+                    <li ><a data-toggle="tab" href="#phospho">Phospho</a></li>
                     <li ><a data-toggle="tab" href="#about">About</a></li>
                   </ul>
 
@@ -178,6 +182,38 @@ HIPK2 inactivates Wip1.
 
                       </div>
                   </div>
+
+                  <div id="phospho" class="tab-pane fade in">
+                      <div >
+                          <div class="form-group">
+                              <br>
+                              <span>
+                                  <select id='drug_select' title="drug" label="Drug" class="selectpicker ctx-select" data-width=20%></select>
+                                  <select id='conc_select' title="concentration" label ="Concentration" class="selectpicker ctx-select" data-width=20%></select>
+                                  <select id='time_select' title="timepoint" class="selectpicker ctx-select" data-width=20%></select>
+                                  <select id='cell_line_select' title="cell line" class="selectpicker ctx-select" data-width=20%></select>
+                                  <button id='load_context' type="submit" class="btn btn-primary">Load</button>
+                                  <button id='reset_filter' type="submit" class="btn btn-danger">Reset</button>
+                              </span>
+                              <hr>
+                              <table id="path_table" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Path</th>
+                                        <th>Start</th>
+                                        <th>End</th>
+                                        <th>Length</th>
+                                        <th>Score</th>
+                                        <th>id</th>
+                                    </tr>
+                                </thead>
+                            </table>
+
+
+                          </div>
+                      </div>
+                  </div>
+
                   <div id="about" class="tab-pane fade in">
                       <div >
                         <h5>How do I read this map?</h5>
