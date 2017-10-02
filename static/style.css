@@ -31,3 +31,8 @@ h5 {
     padding-bottom:5px;
 
 }
+
+body .modal-dialog {
+    /* new custom width */
+    width: 80%;
+}
