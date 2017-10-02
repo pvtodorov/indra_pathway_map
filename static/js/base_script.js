@@ -13,7 +13,7 @@ var scapes = {};
 var indra_server_addr = "http://ec2-34-226-201-156.compute-1.amazonaws.com:8080"
 
 var ctxt = {}
-grabJSON('static/models/' + prebuilt_model + '/model_context.json').then(
+grabJSON('static/models/Fallahi_mass_spec/fallahi_data.json').then(
   function(ajax_response){
     console.log('done')
     ctxt =  ajax_response
@@ -37,19 +37,64 @@ var mut_colorscale =  d3.scaleThreshold()
 
 var parser = 'trips';
 
+var select_array;
+var sub_select_array;
+var unique_col_val;
+
+var ctx_select_divs = ['#drug_select', '#conc_select', '#time_select', '#cell_line_select']
+var current_ctx_selection = new Array(ctx_select_divs.length).fill("")
+
+var paths;
+var table_data;
+var path_uuids_dict = {}
+var table;
+var path_id;
+
+grabJSON('static/models/' + 'Fallahi_mass_spec' + '/paths.json').then(
+  function(ajax_response){
+    console.log('done')
+    paths =  ajax_response
+    var path_metas = []
+    for (i=0; i<paths['Vemurafenib_1_1_MMACSF'].length; i++){
+    	meta = paths['Vemurafenib_1_1_MMACSF'][i]["meta"]
+      meta.push(i)
+    	path_metas.push(meta)
+      path_uuids_dict[i] = paths['Vemurafenib_1_1_MMACSF'][i]['path']
+    }
+    table_data = [path_metas]
+    table = $('#path_table').DataTable( {
+      data: table_data[0]
+    } );
+
+
+  })
 
 $(function(){
 
   var win = $(window);
 
+  // $('#path_table').DataTable( {
+  //   data: table_data
+  // } );
+
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
-      var prebuilt_models = {"McCormick":"McCormick"};
-      // var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2"};
+      //var prebuilt_models = {"McCormick":"McCormick"};
+      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2", "Fallahi": "Fallahi_mass_spec"};
       dropdownFromJSON('#model_picker', prebuilt_models)
       }
   )
+
+
+  grabJSON('static/models/Fallahi_mass_spec/fallahi_select.json').then(
+    function(ajax_response){
+      select_array =  ajax_response
+      sub_select_array = select_array
+      console.log(select_array.map(function(value,index) { return value[1]; }))
+      build_ctx_dropdowns(sub_select_array, ctx_select_divs, current_ctx_selection)
+    })
+
 
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
@@ -219,6 +264,46 @@ $('a[href="#ras227"]').click(function(){
 $('#model_picker').on('changed.bs.select', function(){
   prebuilt_model = $('#model_picker').selectpicker('val')
 })
+
+// change prebuilt_model name every time the user changes dropdown
+$('.ctx-select').on('changed.bs.select', function(){
+  console.log('changed!')
+  var div_id = "#" + this.id
+  var val = $(div_id).selectpicker('val')
+  current_ctx_selection[ctx_select_divs.indexOf(div_id)] = val
+  sub_select_array = array_multifilter(sub_select_array, current_ctx_selection)
+  console.log(div_id, val, sub_select_array)
+  clearCtxtSelects()
+  build_ctx_dropdowns(sub_select_array, ctx_select_divs, current_ctx_selection)
+})
+
+$("#reset_filter").click(function(){
+  sub_select_array = select_array
+  current_ctx_selection = new Array(ctx_select_divs.length).fill("")
+  clearCtxtSelects()
+  build_ctx_dropdowns(sub_select_array, ctx_select_divs, current_ctx_selection)
+  grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
+    drawCytoscape ('cy_1', model_response)
+    qtipNodes(scapes['cy_1'])
+  });
+})
+
+$("#load_context").click(function(){
+  condition = current_ctx_selection.join('_')
+  phosphoContextSN(scapes['cy_1'], ctxt, condition)
+})
+
+$('#path_table').on( 'click', 'tr', function () {
+        if ( $(this).hasClass('selected') ) {
+            $(this).removeClass('selected');
+        }
+        else {
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+            path_id = this.childNodes[5].innerText
+            highlightPath(scapes['cy_1'], path_uuids_dict[path_id])
+        }
+    } );
 
 
 // destroy cy on tab change
