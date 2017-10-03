@@ -55,7 +55,7 @@ grabJSON('static/models/' + 'Fallahi_mass_spec' + '/paths.json').then(
     console.log('done');
     paths =  ajax_response;
     var path_metas = [];
-    for (i=0; i<paths['Vemurafenib_1_1_MMACSF'].length; i++){
+    for (var i=0; i<paths['Vemurafenib_1_1_MMACSF'].length; i++){
     	meta = paths['Vemurafenib_1_1_MMACSF'][i]["meta"];
       meta.push(i);
     	path_metas.push(meta);
