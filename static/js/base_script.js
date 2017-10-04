@@ -334,31 +334,23 @@ $('.cy').each(function(){
     scapes['cy_1'].center();
   }
 
-  setTimeout(resize, 0);
-
-
   var resizeTimer;
-
   $(window).on('resize', function(e) {
-
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
-
       resize();
-
     }, 250);
-
   });
+  setTimeout(resize, 0);
 
-
-          $('#menu').on('show.bs.modal', function (e) {
-              console.log('show');
-              $(".cy-panzoom").css({"display": "none"});
-          });
-          $('#menu').on('hidden.bs.modal', function (e) {
-              console.log('hidden');
-              $(".cy-panzoom").css({"display": "unset"});
-          });
+  $('#menu').on('show.bs.modal', function (e) {
+      console.log('show');
+      $(".cy-panzoom").css({"display": "none"});
+  });
+  $('#menu').on('hidden.bs.modal', function (e) {
+      console.log('hidden');
+      $(".cy-panzoom").css({"display": "unset"});
+  });
 
 
 
