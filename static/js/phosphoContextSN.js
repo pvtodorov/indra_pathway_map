@@ -138,19 +138,15 @@ function phosphoContextSN(cy, dataset, condition){
                     complete: function(){
                         if (removed === undefined){
                                 removed = cy.remove(assc);
-                                console.log('removed start!');
                             }
                         else {
                             removed = removed.add(cy.remove(assc));
-                            console.log('removed another!');
                         }
                         clearTimeout(animated_timer);
                         animated_timer = setTimeout(function() {
                             if (cy.$(':grabbed').length > 0){
                                 cy.promiseOn('free').then(function(){
-                                    //console.log(event)
                                     if (dragged == true){
-                                            console.log('freeeeeeeeedom!');
                                             clearTimeout(animated_timer);
                                             animated_timer = setTimeout(function() {
                                                 layout.run();
@@ -166,7 +162,6 @@ function phosphoContextSN(cy, dataset, condition){
                                 });
                             }
                             else {
-                                console.log('free already!');
                                 dragged = false;
                                 layout.run();
                                 cy.promiseOn('layoutstop').then(function(){
@@ -202,7 +197,6 @@ function phosphoContextSN(cy, dataset, condition){
                     duration: pull_duration/3,
                     queue: true,
                     complete: function(){
-                        console.log('pushed nodes!');
                         dragged = false;
                     }
                 });
@@ -214,7 +208,6 @@ function phosphoContextSN(cy, dataset, condition){
     var animated;
     cy.$('.original').on(('drag'), function(){
         if (dragged === false){
-            console.log('drag!');
             dragged = true;
             pullNodes();
         }

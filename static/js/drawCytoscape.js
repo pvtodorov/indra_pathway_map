@@ -229,7 +229,6 @@ function drawCytoscape (div_id, model_elements) {
         	var posys = [];
         	cnode_ids.forEach(function(i) {
         		if (id_pos[i] !== undefined){
-              console.log(id_pos[i], id_pos[i]);
         			posxs.push(id_pos[i]['x']);
         			posys.push(id_pos[i]['y']);
         		}
@@ -240,7 +239,6 @@ function drawCytoscape (div_id, model_elements) {
           id_pos[n.id()] = preset_pos[n.data().name];
       }
     });
-      console.log(id_pos);
       params = {
         name: 'preset',
         positions: id_pos, // map of (node id) => (position obj); or function(node){ return somPos; }
@@ -327,28 +325,24 @@ function drawCytoscape (div_id, model_elements) {
 
     var dragged = false;
     cy.on(('mousedown'),function(){
-      //console.log( 'mousedown' );
       layout.stop();
       cy.nodes().on(('drag'), function(){
         dragged = true;
     });
     });
     cy.on(('mouseup'),function(){
-      //console.log( 'mouseup' );
       if (dragged === true){
         layout.run();
         dragged = false;
       }
     });
     cy.on(('touchstart'),function(){
-      //console.log( 'mousedown' );
       layout.stop();
       cy.nodes().on(('drag'), function(){
         dragged = true;
       });
     });
     cy.on(('touchend'),function(){
-      //console.log( 'mouseup' );
       if (dragged === true){
         layout.run();
         dragged = false;
@@ -360,7 +354,6 @@ function drawCytoscape (div_id, model_elements) {
       nds.forEach( function(n) {
         preset_pos[n.data.name] = n.position;
     });
-      //cy.center();
     });
 
 
@@ -368,22 +361,17 @@ function drawCytoscape (div_id, model_elements) {
     cy.edges().forEach(function(e){
       if (e.data('i') === 'Complex'){
         e.addClass('complex');
-        //console.log(e.data('i'));
       }
       if (e.data('polarity') === 'negative'){
         e.addClass('negative');
-        //console.log(e.data('polarity'));
       }
       if (e.data('i') === 'Attractor'){
         e.addClass('Attractor');
-        //console.log(e.data('Attractor'));
       }
       if (e.data('i') === 'Virtual'){
         e.addClass('virtual');
-        //console.log(e.data('i'));
       }
     });
-    //contextualizeNodes(cy)
     scapes[div_id] = cy;
 }
 

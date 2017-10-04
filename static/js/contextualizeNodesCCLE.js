@@ -8,33 +8,23 @@ function contextualizeNodesCCLE(cy, cell_line){
 
     function set_context(){
       if ((mrna === null) | (mutations === null)){
-        console.log('null mrna or mutations');
         return;
       }
       gene_names.forEach(function(n){
         mutated[n] = mutations[n].length;
       });
-      console.log('-----');
-      console.log(mutated);
-      console.log(mrna);
-      console.log('-----');
       cy.nodes().forEach(function(n){
           var data = n.data();
           if (data.hasOwnProperty("members")){
             members = data.members;
-            // console.log(members)
             var fam_length = Object.keys(members).length;
               if (fam_length > 0){
                 var pie_sizes = new Array(16).fill(0);
                 var pie_colors = new Array(16).fill(default_colors[5]);
                 var current_slice = 0;
                 for (var gene in members) {
-                  console.log(gene);
-                  console.log(mrna);
                   var exp_val = mrna[gene];
-                  console.log(exp_val);
                   var mut_val = mutated[gene];
-                  console.log(mut_val);
                   pie_sizes[current_slice] = (100*(1/fam_length));
                   // if a gene exists in the context object, set its color
                   // if a gene does not exist in context, it is already grey
@@ -52,13 +42,9 @@ function contextualizeNodesCCLE(cy, cell_line){
                 }
               n.data('pie_sizes', pie_sizes);
               n.data('pie_colors', pie_colors);
-              console.log(n.data('pie_colors'));
-
               n.addClass('hasMembers');
-
               }
           }// member check
-
 
           // call out to qtip api if node is not parent
           if (n.isParent() == false){
@@ -83,8 +69,6 @@ function contextualizeNodesCCLE(cy, cell_line){
     // get_ccle_cna(gene_names, cell_line)
     Promise.all([get_ccle_mrna(gene_names, cell_line),
                  get_ccle_mutations(gene_names, cell_line)]).then(function(){
-                   console.log(mrna);
-                   console.log(cna);
                    set_context();
                  });
 

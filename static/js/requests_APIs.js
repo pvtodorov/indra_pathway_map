@@ -59,8 +59,6 @@ function download(filename, text) {
 //***************************************
 function txtProcess(txt, parser) {
   var input_txt = {'text':txt};
-  console.log(input_txt);
-  console.log("converting text to statements using " + parser);
   return $.ajax({
                 url: indra_server_addr + "/"+ parser + "/process_text",
                 type: "POST",
@@ -86,8 +84,6 @@ function groundingMapper(res) {
 function assembleCyJS(res) {
   var res_json = res;
   res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
-  console.log(res_json);
-  console.log("converting statements to cyjs");
   return $.ajax({
       url: indra_server_addr + "/assemblers/cyjs",
       type: "POST",
@@ -99,8 +95,6 @@ function assembleCyJS(res) {
 function assemblePySB(res) {
   var res_json = res;
   res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
-  console.log(res_json);
-  console.log("converting statements to cyjs");
   return $.ajax({
       url: indra_server_addr + "/assemblers/pysb",
       type: "POST",
@@ -112,8 +106,6 @@ function assemblePySB(res) {
 function assembleLoopy(res) {
   var res_json = res;
   res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
-  console.log(res_json);
-  console.log("converting statements to cyjs");
   return $.ajax({
       url: indra_server_addr + "/assemblers/sif/loopy",
       type: "POST",
@@ -126,8 +118,6 @@ var mrna;
 function get_ccle_mrna(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]};
-  console.log(input_txt);
-  console.log("asking for mrna");
   return $.ajax({
             url: indra_server_addr + "/databases/cbio/get_ccle_mrna",
             type: "POST",
@@ -144,8 +134,6 @@ var cna;
 function get_ccle_cna(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]};
-  console.log(input_txt);
-  console.log("asking for cna");
   return $.ajax({
             url: indra_server_addr + "/databases/cbio/get_ccle_cna",
             type: "POST",
@@ -162,8 +150,6 @@ var mutations;
 function get_ccle_mutations(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]};
-  console.log(input_txt);
-  console.log("asking for mutations");
   return $.ajax({
             url: indra_server_addr + "/databases/cbio/get_ccle_mutations",
             type: "POST",
