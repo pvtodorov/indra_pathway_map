@@ -1,22 +1,22 @@
 function qtipNodes(cy){
-    cy.startBatch()
+    cy.startBatch();
     cy.nodes().forEach(function(n){
-        var data = n.data()
+        var data = n.data();
         // if the node has members, build pie chart background arrays, qtips
         if (data.hasOwnProperty("members")){
           members = data.members;
-          var fam_length = Object.keys(members).length
+          var fam_length = Object.keys(members).length;
             if (fam_length > 0){
               var content = []; // stores the db_links
               for (var gene in members) {
                 var db_links = [];
                 for (var namespace in members[gene]['db_refs']){
                   if (namespace !== 'BE'){
-                    db_links.push({
-                      id: gene,
-                      name: namespace,
-                      url: members[gene]['db_refs'][namespace]
-                    });
+                    var tip_content = {id: gene,
+                                       name: namespace,
+                                       url: members[gene]['db_refs'][namespace]
+                                     };
+                    db_links.push(tip_content);
                   }
                 } // for (var namespace ...)
                 content.push(db_links);
@@ -50,10 +50,8 @@ function qtipNodes(cy){
                   height: 8
                 }
               }
-            }
-
-            n.data('qtip', qtip_api_call)
-
+          };
+            n.data('qtip', qtip_api_call);
         }
 
         }// member check
@@ -61,9 +59,7 @@ function qtipNodes(cy){
 
         // call out to qtip api if node is not parent
         if (n.isParent() == false){
-
-            var gene = n.data().name
-
+            var gene = n.data().name;
           if (n.data().qtip){
             tip = n.data().qtip;
             n.qtip(tip);
@@ -77,18 +73,14 @@ function qtipNodes(cy){
               for (var namespace in db_refs) {
                 content_text.push(
                   {name : namespace, url: db_refs[namespace]});
-
               }
-
             }
-
             n.qtip({
               content: {title: '<b style="font-size:14px">' + n.data('name') + '</b>',
                 text: content_text.map(function( link ){
                   return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
                 }).join('<br />')
             },
-
               position: {
                 my: 'top center',
                 at: 'bottom center'
@@ -102,8 +94,8 @@ function qtipNodes(cy){
               }
             });// n.qtip
           }
-        }; // check if n.isParent()
+        } // check if n.isParent()
 
       });
-  cy.endBatch()
+  cy.endBatch();
 }

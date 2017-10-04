@@ -1,7 +1,4 @@
-//drawCytoscape()
-//***************************************
-
-var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000', '#bdbdbd']
+var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000', '#bdbdbd'];
 // [orange, light orange, RED, blue, black, gray]
 
 function drawCytoscape (div_id, model_elements) {
@@ -135,70 +132,70 @@ function drawCytoscape (div_id, model_elements) {
             'border-color': default_colors[4],
             'background-color':default_colors[4],
             'pie-1-background-size':function(node){
-              return node.data().pie_sizes[0]},
+              return node.data().pie_sizes[0];},
             'pie-2-background-size':function(node){
-              return node.data().pie_sizes[1]},
+              return node.data().pie_sizes[1];},
             'pie-3-background-size':function(node){
-              return node.data().pie_sizes[2]},
+              return node.data().pie_sizes[2];},
             'pie-4-background-size':function(node){
-              return node.data().pie_sizes[3]},
+              return node.data().pie_sizes[3];},
             'pie-5-background-size':function(node){
-              return node.data().pie_sizes[4]},
+              return node.data().pie_sizes[4];},
             'pie-6-background-size':function(node){
-              return node.data().pie_sizes[5]},
+              return node.data().pie_sizes[5];},
             'pie-7-background-size':function(node){
-              return node.data().pie_sizes[6]},
+              return node.data().pie_sizes[6];},
             'pie-8-background-size':function(node){
-              return node.data().pie_sizes[7]},
+              return node.data().pie_sizes[7];},
             'pie-9-background-size':function(node){
-              return node.data().pie_sizes[8]},
+              return node.data().pie_sizes[8];},
             'pie-10-background-size':function(node){
-              return node.data().pie_sizes[9]},
+              return node.data().pie_sizes[9];},
             'pie-11-background-size':function(node){
-              return node.data().pie_sizes[10]},
+              return node.data().pie_sizes[10];},
             'pie-12-background-size':function(node){
-              return node.data().pie_sizes[11]},
+              return node.data().pie_sizes[11];},
             'pie-13-background-size':function(node){
-              return node.data().pie_sizes[12]},
+              return node.data().pie_sizes[12];},
             'pie-14-background-size':function(node){
-              return node.data().pie_sizes[13]},
+              return node.data().pie_sizes[13];},
             'pie-15-background-size':function(node){
-              return node.data().pie_sizes[14]},
+              return node.data().pie_sizes[14];},
             'pie-16-background-size':function(node){
-              return node.data().pie_sizes[15]},
+              return node.data().pie_sizes[15];},
             // slice colors according to expression bin
             'pie-1-background-color': function(node){
-              return node.data().pie_colors[0]},
+              return node.data().pie_colors[0];},
             'pie-2-background-color': function(node){
-              return node.data().pie_colors[1]},
+              return node.data().pie_colors[1];},
             'pie-3-background-color': function(node){
-              return node.data().pie_colors[2]},
+              return node.data().pie_colors[2];},
             'pie-4-background-color': function(node){
-              return node.data().pie_colors[3]},
+              return node.data().pie_colors[3];},
             'pie-5-background-color': function(node){
-              return node.data().pie_colors[4]},
+              return node.data().pie_colors[4];},
             'pie-6-background-color': function(node){
-              return node.data().pie_colors[5]},
+              return node.data().pie_colors[5];},
             'pie-7-background-color': function(node){
-              return node.data().pie_colors[6]},
+              return node.data().pie_colors[6];},
             'pie-8-background-color': function(node){
-              return node.data().pie_colors[7]},
+              return node.data().pie_colors[7];},
             'pie-9-background-color': function(node){
-              return node.data().pie_colors[8]},
+              return node.data().pie_colors[8];},
             'pie-10-background-color': function(node){
-              return node.data().pie_colors[9]},
+              return node.data().pie_colors[9];},
             'pie-11-background-color': function(node){
-              return node.data().pie_colors[10]},
+              return node.data().pie_colors[10];},
             'pie-12-background-color': function(node){
-              return node.data().pie_colors[11]},
+              return node.data().pie_colors[11];},
             'pie-13-background-color': function(node){
-              return node.data().pie_colors[12]},
+              return node.data().pie_colors[12];},
             'pie-14-background-color': function(node){
-              return node.data().pie_colors[13]},
+              return node.data().pie_colors[13];},
             'pie-15-background-color': function(node){
-              return node.data().pie_colors[14]},
+              return node.data().pie_colors[14];},
             'pie-16-background-color': function(node){
-              return node.data().pie_colors[15]},
+              return node.data().pie_colors[15];},
           }}
       ],
 
@@ -214,48 +211,34 @@ function drawCytoscape (div_id, model_elements) {
     // if a prior model has been built, use its positions for layout
     if (Object.keys(preset_pos).length !== 0) {
       cy.nodes().forEach(function(n){
-        id_pos[n.id()] = preset_pos[n.data().name]
+        id_pos[n.id()] = preset_pos[n.data().name];
         // if a node is added and not in preset_pos, set its avg position based
         // on the other nodes it's connected to
         if (id_pos[n.id()] === undefined) {
-          var cedges = n.connectedEdges()
+          var cedges = n.connectedEdges();
         	var cnode_ids = [];
         	cedges.forEach(function(e){
         		if (e.target().id() !== n.id()){
-        			cnode_ids.push(e.target().id())
+        			cnode_ids.push(e.target().id());
         		}
         		if (e.source().id() !== n.id()){
-        			cnode_ids.push(e.source().id())
+        			cnode_ids.push(e.source().id());
         		}
-        	})
-        	var posxs = []
-        	var posys = []
+        	});
+        	var posxs = [];
+        	var posys = [];
         	cnode_ids.forEach(function(i) {
         		if (id_pos[i] !== undefined){
-              console.log(id_pos[i], id_pos[i])
-        			posxs.push(id_pos[i]['x'])
-        			posys.push(id_pos[i]['y'])
+        			posxs.push(id_pos[i]['x']);
+        			posys.push(id_pos[i]['y']);
         		}
-        	})
-        	function getAvgPos(posxs, posys) {
-            if ((posxs.length > 0) && (posys.length > 0)){
-          		var x = posxs.reduce(function (p, c) {
-              		return p + c;
-            		}) / posxs.length;
-          		var y = posys.reduce(function (p, c) {
-              		return p + c;
-            		}) / posys.length;
-          		return ({'x': x, 'y' : y})
-          	}
-          }
+        	});
           // update preset_pos
-        	preset_pos[n.data().name] = getAvgPos(posxs, posys)
+        	preset_pos[n.data().name] = getAvgPos(posxs, posys);
           // update id_pos
-          id_pos[n.id()] = preset_pos[n.data().name]
-        }
-
-      })
-      console.log(id_pos)
+          id_pos[n.id()] = preset_pos[n.data().name];
+      }
+    });
       params = {
         name: 'preset',
         positions: id_pos, // map of (node id) => (position obj); or function(node){ return somPos; }
@@ -285,7 +268,7 @@ function drawCytoscape (div_id, model_elements) {
       ungrabifyWhileSimulating: false,
       // layout event callbacks
       ready: function(){
-        cy.fit(30)
+        cy.fit(30);
       }, // on layoutready
       stop: undefined, // on layoutstop
     };
@@ -342,28 +325,24 @@ function drawCytoscape (div_id, model_elements) {
 
     var dragged = false;
     cy.on(('mousedown'),function(){
-      //console.log( 'mousedown' );
       layout.stop();
       cy.nodes().on(('drag'), function(){
         dragged = true;
-      })
-      });
+    });
+    });
     cy.on(('mouseup'),function(){
-      //console.log( 'mouseup' );
       if (dragged === true){
         layout.run();
         dragged = false;
       }
     });
     cy.on(('touchstart'),function(){
-      //console.log( 'mousedown' );
       layout.stop();
       cy.nodes().on(('drag'), function(){
         dragged = true;
-      })
       });
+    });
     cy.on(('touchend'),function(){
-      //console.log( 'mouseup' );
       if (dragged === true){
         layout.run();
         dragged = false;
@@ -371,11 +350,10 @@ function drawCytoscape (div_id, model_elements) {
     });
 
     cy.on(('layoutstop'),function(){
-      nds = (cy.json()).elements.nodes
+      nds = (cy.json()).elements.nodes;
       nds.forEach( function(n) {
         preset_pos[n.data.name] = n.position;
-      })
-      //cy.center();
+    });
     });
 
 
@@ -383,25 +361,29 @@ function drawCytoscape (div_id, model_elements) {
     cy.edges().forEach(function(e){
       if (e.data('i') === 'Complex'){
         e.addClass('complex');
-        //console.log(e.data('i'));
       }
       if (e.data('polarity') === 'negative'){
         e.addClass('negative');
-        //console.log(e.data('polarity'));
       }
       if (e.data('i') === 'Attractor'){
         e.addClass('Attractor');
-        //console.log(e.data('Attractor'));
       }
       if (e.data('i') === 'Virtual'){
         e.addClass('virtual');
-        //console.log(e.data('i'));
       }
     });
-    //contextualizeNodes(cy)
     scapes[div_id] = cy;
 }
 
-//***************************************
-//
-//
+
+function getAvgPos(posxs, posys) {
+    if ((posxs.length > 0) && (posys.length > 0)){
+        var x = posxs.reduce(function (p, c) {
+            return p + c;
+            }) / posxs.length;
+        var y = posys.reduce(function (p, c) {
+            return p + c;
+            }) / posys.length;
+        return ({'x': x, 'y' : y});
+    }
+  }
