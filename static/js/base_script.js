@@ -33,7 +33,7 @@ var mut_colorscale =  d3.scaleThreshold()
     .domain(domain)
     .range(['#fff5eb','#fee6ce','#fdd0a2','#fdae6b','#fd8d3c','#f16913','#d94801','#a63603','#7f2704']);
 
-var parser = 'trips';
+var parser = 'reach';
 
 var select_array;
 var sub_select_array;
@@ -71,7 +71,7 @@ $(function(){
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
-      var prebuilt_models = {"McCormick":"McCormick", "Korkut":"Korkut", "Korkut2":"Korkut2", "Fallahi": "Fallahi_mass_spec"};
+      var prebuilt_models = {"McCormick":"McCormick"};
       dropdownFromJSON('#model_picker', prebuilt_models);
       }
   );
@@ -107,6 +107,7 @@ $(function(){
     txtProcess(txt, parser).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
       drawCytoscape('cy_1', model_response);
       qtipNodes(scapes['cy_1']);
+      $('#menu').modal('hide');
     });
     $('.cyjs2loopy').prop('disabled', false);
   });
@@ -114,6 +115,7 @@ $(function(){
   $("#loadContextButton").click(function(){
     var cell_line = $('#cellSelectDynamic').val().slice(6,-5);
     contextualizeNodesCCLE(cy, cell_line);
+    $('#menu').modal('hide');
   });
 
   $("#downloadPySB").click(function(){
@@ -149,6 +151,8 @@ $("#loadButtonStatic").click(function(){
   grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
     drawCytoscape ('cy_1', model_response);
     qtipNodes(scapes['cy_1']);
+    $('#menu').modal('hide');
+
   });
   $('.cyjs2loopy').prop('disabled', false);
 });
