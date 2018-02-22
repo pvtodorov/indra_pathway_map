@@ -10,7 +10,7 @@ var id_pos = {};
 
 var scapes = {};
 
-var indra_server_addr = "http://ec2-34-226-201-156.compute-1.amazonaws.com:8080";
+var indra_server_addr = "http://ec2-54-88-146-250.compute-1.amazonaws.com:8080";
 
 var ctxt = {};
 grabJSON('static/models/Fallahi_mass_spec/fallahi_data.json').then(
@@ -104,6 +104,7 @@ $(function(){
 
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value;
+    setPresetPos();
     txtProcess(txt, parser).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
       drawCytoscape('cy_1', model_response);
       qtipNodes(scapes['cy_1']);
@@ -121,7 +122,7 @@ $(function(){
   $("#downloadPySB").click(function(){
     var txt = $('#textArea')[0].value;
     txtProcess(txt, parser).then(groundingMapper).then(assemblePySB).then(function (res) {
-      download($('#cellSelectDynamic').val().slice(6,-5)+'.py', res['model']);
+      download('model.py', res['model']);
     });
   });
 
@@ -129,9 +130,25 @@ $(function(){
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value;
     txtProcess(txt, parser).then(groundingMapper).then(function (res) {
-      download($('#cellSelectDynamic').val()+'_INDRA_stmts.json', JSON.stringify(res['statements'], null, 2));
+      download('stmts.json', JSON.stringify(res['statements'], null, 2));
     });
   });
+
+
+  $("#downloadPNG").click(function(){
+    var cypng = scapes['cy_1'].png({scale: 3})
+    var dl = document.createElement('a');
+    dl.href = cypng;
+    dl.download = 'graph.png';
+    HTMLElement.prototype.click = function() {
+    var evt = this.ownerDocument.createEvent('MouseEvents');
+    evt.initMouseEvent('click', true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+    this.dispatchEvent(evt);
+    }    
+    dl.click();
+
+  });
+
 
   $("#loopy").click(function(){
     var txt = $('#textArea')[0].value;
