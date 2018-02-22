@@ -104,7 +104,7 @@
                     <li class="active"><a data-toggle="tab" href="#ras227">Prebuilt models</a></li>
                     <li ><a data-toggle="tab" href="#byom">BYOM</a></li>
                     <li ><a data-toggle="tab" href="#context">Context</a></li>
-                    <li ><a data-toggle="tab" href="#phospho">Phospho</a></li>
+                    <!-- <li ><a data-toggle="tab" href="#phospho">Phospho</a></li> -->
                     <li ><a data-toggle="tab" href="#about">About</a></li>
                   </ul>
 
@@ -127,16 +127,49 @@
           <div class="form-group">
             <label for="textArea">Describe your mechanism.</label>
             <textarea class="form-control" id="textArea" rows="15">
-Active ATM phosphorylates ATM, and phosphorylated ATM is active.
-Active ATM activates p53.
-p53 is transcribed and active p53 transcribes MDM2.
-MDM2 is degraded.
-Active p53 activates Wip1.
-Active Wip1 inactivates p53.
-Active Wip1 dephosphorylates ATM.
-MDM2 ubiquitinates p53 and ubiquitinated p53 is degraded.
-HIPK2 inactivates Wip1.
-
+Growth-factor proteins activate EGFR, ERBB2 and FGFR.
+Growth-factor proteins activate PDGFR.
+Growth-factor proteins activate MET, ROS1 and ALK.
+EGFR, ERBB2, PDGFR, MET, ROS1, ALK and FGFR activate GRB2 and SHC.
+GRB2 and SHC activate RASGRF and SOS.
+GRB2 binds SHC.
+SOS and RASGRF activate HRAS, NRAS and KRAS.
+RASGRP activates HRAS, KRAS and NRAS.
+SPRY deactivates HRAS, KRAS and NRAS.
+RASA/ARHGAP35 deactivates HRAS, NRAS and KRAS.
+RASAL deactivates HRAS, NRAS and KRAS.
+NF1/SPRED deactivates HRAS, NRAS and KRAS.
+RASA/ARHGAP35 deactivates RHOA, RHOB and RHOC.
+RASAL deactivates RHOA, RHOB and RHOC.
+NF1/SPRED deactivates RHOA, RHOB and RHOC.
+HRAS, NRAS and KRAS activate RALGDS.
+RALGDS activates RALA and RALB.
+HRAS, NRAS and KRAS activate ARAF, BRAF and RAF1.
+ARAF, BRAF and RAF1 activate MAP2K1 and MAP2K2.
+MAP2K1 and MAP2K2 activate MAPK1 and MAPK3.
+MAPK1 and MAPK3 activate ETS, JUN and FOS.
+KSR binds ARAF, BRAF and RAF1.
+KSR binds MAP2K1 and MAP2K2.
+KSR binds MAPK1 and MAPK3.
+ETS, FOS and JUN activate MDM2, CCND1 and DUSP.
+MDM2 deactivates TP53.
+CCND1 activates CDK4 and CDK6, which deactivate RB1.
+DUSP deactivates MAPK1 and MAPK3.
+SOS and RASGRF activate RHOA, RHOB and RHOC.
+RHOA, RHOB and RHOC activate ROCK1 and ROCK2.
+HRAS, NRAS and KRAS activate PIK3C and PIK3R.
+PIK3C and PIK3R activate PIP3.
+PTEN deactivates PIP3.
+PIP3 activates PDPK1, AKT and TIAM.
+PDPK1 activates AKT.
+AKT deactivates TSC1/TSC2.
+TSC1/TSC2 deactivates RHEB.
+RHEB activates mTORC2.
+STK11 activates PRKAA, PRKAB and PRKAG.
+PRKAA, PRKAB and PRKAG deactivate mTORC2.
+mTORC2 deactivates EIF4EBP1.
+mTORC2 activates RPS6KB1 and RPS6KB2.
+TIAM activates RAC, which activates PAK.
             </textarea>
           </div>
 
@@ -144,20 +177,18 @@ HIPK2 inactivates Wip1.
 
           <div class= 'btn-div'>
               <div><b>NLP System</b></div>
-              <button id='parseReach' type="submit" class="btn btn-default parserSelect">REACH</button>
-              <button id='parseTrips' type="submit" class="btn btn-default parserSelect active">TRIPS</button>
-
+              <button id='parseReach' type="submit" class="btn btn-default parserSelect active">REACH</button>
+              <button id='parseTrips' type="submit" class="btn btn-default parserSelect">TRIPS</button>
+              <br>
+              <div><b>Download Outputs</b></div>
+              <button id='downloadINDRA' type="submit" class="btn btn-default">Download INDRA statments</button>
+              <button id='downloadPySB' type="submit" class="btn btn-default">Download PySB</button>
+              <button id='downloadPNG' type="submit" class="btn btn-default">Download PNG</button>
           </div>
+
           <hr>
           <div class= 'btn-div'>
               <button id='loadButtonDynamic' type="submit" class="btn btn-primary">Load</button>
-              <button id='presetLayoutDynamic' type="submit" class="btn btn-default presetLayout active">Preset layout</button>
-
-          </div>
-          <div class='btn-div'>
-              <button id='downloadINDRA' type="submit" class="btn btn-default">Download INDRA statments</button>
-              <button id='downloadPySB' type="submit" class="btn btn-default">Download PySB</button>
-
           </div>
     </div>
 
@@ -180,7 +211,7 @@ HIPK2 inactivates Wip1.
                       </div>
                   </div>
 
-                  <div id="phospho" class="tab-pane fade in">
+                  <!-- <div id="phospho" class="tab-pane fade in">
                       <div >
                           <div class="form-group">
                               <br>
@@ -209,27 +240,44 @@ HIPK2 inactivates Wip1.
 
                           </div>
                       </div>
-                  </div>
+                  </div> -->
 
                   <div id="about" class="tab-pane fade in">
                       <div >
-                        <h5>How do I read this map?</h5>
-                        <ul>
-                            <li>Nodes represent pathway elements.</li>
-                            <li>Nodes that are subdivided into pie charts represent families.</li>
-                            <li>Wild-type genes are colored <font color="green">green.</font></li>
-                            <li>Mutated genes are colored <font color="orange">orange.</font></li>
-                            <li>The intensity of each color corresponds to the expression level of a gene in CCLE.</li>
-                            <li>Clicking a node provides additional context via CiteAb, HGNC, and UniProt.</li>
-                        </ul>
-                        <h5>How does this work?</h5>
-                        <ul>
-                            <li>All models are generated using <a href="https://github.com/sorgerlab/indra">INDRA</a> developed by the <a href="http://hits.harvard.edu/the-program/laboratory-of-systems-pharmacology/about/">Laboratory of Systems Pharmacology</a> at Harvard Medical School.</li>
-                            <li>Natural language processing is done using the <a href="https://github.com/clulab/reach">REACH</a> natural language processor developed by the CLU Lab at the University of Arizona.</li>
-                            <li>Interactive network visualizations are implemented in <a href="http://js.cytoscape.org">cytoscape.js</a></li>
-                            <li><a href="http://ncase.me/loopy/">Loopy</a> is a qualitative modeling tool for creating interactive simulations.</li>
-                            <li><a href="http://www.colorbrewer2.org">Colorbrewer2</a> provides all the colorscales used to contextualize nodes.</li>
-                        </ul>
+                          <h4>How do I read this map?</h4>
+                          <ul>
+                              <li>Nodes represent genes.</li>
+                              <li>Nodes that are subdivided into pie charts represent families.</li>
+                              <li>Wild-type genes are colored <font color="green">green.</font></li>
+                              <li>Mutated genes are colored <font color="orange">orange.</font></li>
+                              <li>The intensity of each color corresponds to the expression level of a gene in CCLE.</li>
+                              <li>Clicking a node provides additional context via CiteAb, HGNC, and UniProt.</li>
+                              <li><a href="https://www.cancer.gov/research/key-initiatives/ras/ras-central/blog/2014/what-do-we-mean-ras-pathway">The RAS Pathway Map</a> model was drawn by Dr. Frank McCormick at the NCI RAS Initiative.</li>
+                          </ul>
+                          <br>
+                          <h4>Build your own model from text</h4>
+                          <ul>
+                              <li>Open the BYOM (Build your own model) tab.</li>
+                              <li>Enter a list of sentences describing biological mechanisms.</li>
+                              <li>Click load and exit the menu.</li>
+                              <li>Your model should be ready momentarily.</li>
+                              <li>The text example in BYOM is a description of Frank McCormick's Ras Pathway diagram.</li>
+                          </ul>
+                          <br>
+                          <h4>Model context</h4>
+                          <ul>
+                              <li>Network models can be contextualized using Context tab.</li>
+                              <li>Users can load gene expression and mutation data from each of the 900+ cell lines available in the <a href="https://portals.broadinstitute.org/ccle">CCLE</a>.</li>
+                              <li>We access a publicly available version of the CCLE hosted on <a href="http://www.cbioportal.org/">cBio Portal</a>.</li>
+                          </ul>
+                          <br>
+                          <h4>How does this work?</h4>
+                          <ul>
+                              <li>All models are generated using <a href="https://github.com/sorgerlab/indra">INDRA</a> developed by the <a href="http://hits.harvard.edu/the-program/laboratory-of-systems-pharmacology/about/">Laboratory of Systems Pharmacology</a> at Harvard Medical School.</li>
+                              <li>Natural language processing is done using the <a href="https://github.com/clulab/reach">REACH</a> natural language processor developed by the CLU Lab at the University of Arizona or the <a href="https://www.ihmc.us/trips/">TRIPS</a> processor developed by IHMC.</li>
+                              <li>Interactive network visualizations are implemented in <a href="http://js.cytoscape.org">cytoscape.js</a></li>
+                              <li><a href="http://www.colorbrewer2.org">Colorbrewer2</a> was used to select colorscales for models.</li>
+                          </ul>
                       </div>
                   </div>
                 </div>
