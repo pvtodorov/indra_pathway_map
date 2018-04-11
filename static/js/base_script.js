@@ -10,7 +10,7 @@ var id_pos = {};
 
 var scapes = {};
 
-var indra_server_addr = "http://34.200.241.199:8000";
+var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
 
 var ctxt = {};
 grabJSON('static/models/Fallahi_mass_spec/fallahi_data.json').then(
