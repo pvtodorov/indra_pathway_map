@@ -92,9 +92,12 @@ function assembleCyJS(res) {
   });
 }
 
-function assemblePySB(res) {
+function requestPySB(res, export_format=null) {
   var res_json = res;
   res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
+  if (export_format){
+    res_json['export_format'] = export_format;
+    }
   return $.ajax({
       url: indra_server_addr + "/assemblers/pysb",
       type: "POST",
@@ -102,6 +105,28 @@ function assemblePySB(res) {
       data: JSON.stringify(res_json),
   });
 }
+
+function assemblePySB(res) {
+  return requestPySB(res);
+  }
+
+function assembleSBML(res) {
+    return requestPySB(res, 'sbml');
+    }
+
+function assembleSBGN(res) {
+    return requestPySB(res, 'sbgn');
+    }
+
+function assembleBNGL(res) {
+    return requestPySB(res, 'bngl');
+    }
+
+function assembleKappa(res) {
+    return requestPySB(res, 'kappa');
+    }
+
+
 
 function assembleLoopy(res) {
   var res_json = res;

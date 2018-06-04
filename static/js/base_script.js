@@ -126,6 +126,33 @@ $(function(){
     });
   });
 
+  $("#downloadSBML").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(assembleSBML).then(function (res) {
+      download('model.sbml', res['model']);
+    });
+  });
+
+  $("#downloadSBGN").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(assembleSBGN).then(function (res) {
+      download('model.sbgn', res['model']);
+    });
+  });
+
+  $("#downloadKappa").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(assembleKappa).then(function (res) {
+      download('model.ka', res['model']);
+    });
+  });
+
+  $("#downloadBNGL").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(assembleBNGL).then(function (res) {
+      download('model.bngl', res['model']);
+    });
+  });
 
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value;
