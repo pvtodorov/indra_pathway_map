@@ -92,10 +92,10 @@ function assembleCyJS(res) {
   });
 }
 
-function assemblePySB(res, export_format=null) {
+function requestPySB(res, export_format=null) {
   var res_json = res;
   res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
-  if(export_format){
+  if (export_format){
     res_json['export_format'] = export_format;
     }
   return $.ajax({
@@ -106,20 +106,24 @@ function assemblePySB(res, export_format=null) {
   });
 }
 
+function assemblePySB(res) {
+  return requestPySB(res);
+  }
+
 function assembleSBML(res) {
-    return assemblePySB(res, 'sbml');
+    return requestPySB(res, 'sbml');
     }
 
 function assembleSBGN(res) {
-    return assemblePySB(res, 'sbgn');
+    return requestPySB(res, 'sbgn');
     }
 
 function assembleBNGL(res) {
-    return assemblePySB(res, 'bngl');
+    return requestPySB(res, 'bngl');
     }
 
 function assembleKappa(res) {
-    return assemblePySB(res, 'kappa');
+    return requestPySB(res, 'kappa');
     }
 
 
