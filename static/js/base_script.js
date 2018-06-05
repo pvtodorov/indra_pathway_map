@@ -163,8 +163,22 @@ $(function(){
 
   $("#NDEX").click(function(){
     var txt = $('#textArea')[0].value;
+    var modal = $('#ndexModal')
+    var modal_body = modal.find('.modal-body')[0]
+    modal_body.innerHTML = null
+    var par = document.createElement("p");
+    par.textContent = 'Uploading model to NDEX...'
+    modal_body.append(par)
     txtProcess(txt, parser).then(groundingMapper).then(shareNDEX).then(function (res) {
-      console.log(res);
+      par.textContent = 'Network uploaded to NDEX.'
+      var par2 = document.createElement("p");
+      var network_address =  "http://ndexbio.org/#/network/" + res['network_id']
+      var temp_link = document.createElement("a");
+      temp_link.href = network_address;
+      temp_link.text = network_address;
+      temp_link.target = '_blank';
+      par2.append(temp_link);
+      modal_body.append(par2);
     });
   });
 
