@@ -365,10 +365,10 @@ $(window).on('resize', function(e) {
 });
 setTimeout(resize, 0);
 
-$('#menu').on('show.bs.modal', function (e) {
+$('.modal').on('show.bs.modal', function (e) {
     $(".cy-panzoom").css({"display": "none"});
 });
-$('#menu').on('hidden.bs.modal', function (e) {
+$('.modal').on('hidden.bs.modal', function (e) {
     $(".cy-panzoom").css({"display": "unset"});
 });
 
