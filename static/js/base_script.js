@@ -154,6 +154,20 @@ $(function(){
     });
   });
 
+  $("#downloadCX").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(assembleCX).then(function (res) {
+      download('model.cx', res['model']);
+    });
+  });
+
+  $("#NDEX").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(shareNDEX).then(function (res) {
+      console.log(res);
+    });
+  });
+
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value;
     txtProcess(txt, parser).then(groundingMapper).then(function (res) {

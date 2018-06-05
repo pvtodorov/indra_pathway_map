@@ -106,6 +106,28 @@ function requestPySB(res, export_format=null) {
   });
 }
 
+function assembleCX(res) {
+  var res_json = res;
+  res_json['cyjs_model'] = JSON.stringify(cy.json())
+  return $.ajax({
+      url: indra_server_addr + "/assemblers/cx",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
+function shareNDEX(res) {
+  var res_json = res;
+  res_json['cyjs_model'] = JSON.stringify(cy.json())
+  return $.ajax({
+      url: indra_server_addr + "/share_model",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
 function assemblePySB(res) {
   return requestPySB(res);
   }
