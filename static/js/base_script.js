@@ -9,8 +9,10 @@ var preset_pos_static = {};
 var id_pos = {};
 
 var scapes = {};
+var stmts = {};
 
-var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
+// var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
+var indra_server_addr = "http://0.0.0.0:8080";
 
 var ctxt = {};
 grabJSON('static/models/Fallahi_mass_spec/fallahi_data.json').then(

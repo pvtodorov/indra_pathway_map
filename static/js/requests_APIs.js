@@ -59,31 +59,31 @@ function download(filename, text) {
 //***************************************
 function txtProcess(txt, parser) {
   var input_txt = {'text':txt};
-  return $.ajax({
-                url: indra_server_addr + "/"+ parser + "/process_text",
-                type: "POST",
-                dataType: "json",
-                data: JSON.stringify(input_txt),
-                });
+  stmts = $.ajax({
+    url: indra_server_addr + "/"+ parser + "/process_text",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(input_txt),
+    });
+  return stmts
 }
 
 // send stmts to grounding mapper, get grounded stmts
 //***************************************
 function groundingMapper(res) {
-  var stmts = res;
-  return $.ajax({
-                url: indra_server_addr + "/preassembly/map_grounding",
-                type: "POST",
-                dataType: "json",
-                data: JSON.stringify(stmts),
-                });
+  stmts = $.ajax({
+    url: indra_server_addr + "/preassembly/map_grounding",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(res),
+    });
+  return stmts
 }
 //***************************************
 
 
 function assembleCyJS(res) {
   var res_json = res;
-  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
   return $.ajax({
       url: indra_server_addr + "/assemblers/cyjs",
       type: "POST",
@@ -152,7 +152,6 @@ function assembleKappa(res) {
 
 function assembleLoopy(res) {
   var res_json = res;
-  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
   return $.ajax({
       url: indra_server_addr + "/assemblers/sif/loopy",
       type: "POST",
