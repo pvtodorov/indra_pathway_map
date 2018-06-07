@@ -146,3 +146,21 @@ function getFilteredUUIDs(edge){
     var filtered_uuids = filterUUIDs(...element_array)
     return filtered_uuids
 }
+function updateStmtsBox(uuid_list){
+    var stmts_box = $('#edgeModal').find('.modal-body').find('.edgeModal-stmtsbox')[0]
+    stmts_box.innerHTML = null
+    for (var u of uuid_list){
+        if (stmts !== undefined){
+            var statement = stmts.responseJSON.statements.filter(st => st.id == u)
+            var panel = document.createElement("div");
+            panel.classList.add('panel')
+            panel.classList.add('panel-default')
+            var panel_body = document.createElement("div")
+            panel_body.classList.add('panel-body')
+            var par = document.createElement("p")
+            par.textContent = JSON.stringify(statement, null, 2)
+            panel_body.appendChild(par)
+            panel.appendChild(panel_body)
+            stmts_box.appendChild(panel)}
+    }
+}
