@@ -117,6 +117,16 @@ function toggleButton(button){
     button.classList.add('active')
 }
 
+function deactivateAllButtons(){
+    var button_classes = ["btn-src", "btn-targ"];
+    for (var button_class of button_classes){
+        var class_str = "." + button_class
+        for (b of $(class_str)){
+            b.classList.remove('active')
+        }
+    }
+}
+
 function getActiveButtons(){
     var src_active = $(".btn-src.active")[0]
     var targ_active = $(".btn-targ.active")[0]
