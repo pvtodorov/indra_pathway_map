@@ -31,17 +31,22 @@ function modalEdges(cy){
             target_button.dataset.id = t.data().id
             targets_div.appendChild(target_button)
             targets_div.append(" ")
-                var f_uuids = filterUUIDs(s, t, this);
+            
         }
+        var f_uuids = getFilteredUUIDs(current_edge);
+        deactivateAllButtons()
+        updateStmtsBox(f_uuids)
         $(".btn-src").on('click', function(b){
             toggleButton(b.target)
-            var f_uuids = getFilteredUUIDs(current_edge)
+            f_uuids = getFilteredUUIDs(current_edge)
             console.log(f_uuids)
+            updateStmtsBox(f_uuids)
         })
         $(".btn-targ").on('click', function(b){
             toggleButton(b.target)
-            var f_uuids = getFilteredUUIDs(current_edge)
+            f_uuids = getFilteredUUIDs(current_edge)
             console.log(f_uuids)
+            updateStmtsBox(f_uuids)
         })
     })
 }
@@ -146,6 +151,7 @@ function getFilteredUUIDs(edge){
     var filtered_uuids = filterUUIDs(...element_array)
     return filtered_uuids
 }
+
 function updateStmtsBox(uuid_list){
     var stmts_box = $('#edgeModal').find('.modal-body').find('.edgeModal-stmtsbox')[0]
     stmts_box.innerHTML = null
