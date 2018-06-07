@@ -376,6 +376,8 @@ function drawCytoscape (div_id, model_elements) {
       }
     });
     scapes[div_id] = cy;
+
+    modalEdges(cy);
 }
 
 
