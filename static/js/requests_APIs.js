@@ -26,18 +26,6 @@ function dropdownCtxtSelectFromJSON (div_id, ajax_response) {
 }
 //***************************************
 
-// get preset_pos for McCormick model
-//***************************************
-// function to set preset_pos for McCormick model
-//***************************************
-function setPresetPos () {
-  grabJSON("static/models/" + prebuilt_model + "/preset_pos.json").then(function (ajax_response) {
-    preset_pos = ajax_response;
-    preset_pos_static = preset_pos;
-  });
-}
-//***************************************
-
 
 //download a model
 //***************************************
