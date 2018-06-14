@@ -342,12 +342,4 @@ $('.cy').each(function(){
   setTimeout(resize, 0);
 });
 
-$('.modal').on('show.bs.modal', function (e) {
-    $(".cy-panzoom").css({"display": "none"});
-});
-$('.modal').on('hidden.bs.modal', function (e) {
-    $(".cy-panzoom").css({"display": "unset"});
-});
-
-
 });// dom ready
