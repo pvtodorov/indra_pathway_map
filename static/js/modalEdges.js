@@ -178,20 +178,24 @@ function updateStmtsBox(uuid_set){
     if (stmts !== undefined){
         for (var u of uuid_list){
             var panel = document.createElement("div");
-            panel.classList.add('panel')
-            panel.classList.add('panel-default')
-            var panel_body = document.createElement("div")
-            panel_body.classList.add('panel-body')
-            var par = document.createElement("p")
-            par.textContent = sentences.sentences[u]
+            panel.classList.add('panel');
+            panel.classList.add('panel-default');
+            var panel_body = document.createElement("div");
+            panel_body.classList.add('panel-body');
+            var par = document.createElement("p");
+            par.textContent = sentences.sentences[u];
             var ev_button = document.createElement("button");
-            ev_button.classList.add('btn', 'btn-default', 'btn-evidence', 'pull-right')
-            ev_button.textContent = "Get evidence"
-            ev_button.dataset.id = u
-            panel_body.appendChild(par)
-            panel_body.appendChild(ev_button)
-            panel.appendChild(panel_body)
-            stmts_box.appendChild(panel)}
+            ev_button.classList.add('btn', 'btn-default', 'btn-evidence', 'pull-right');
+            ev_button.textContent = "Get evidence";
+            ev_button.dataset.id = u;
+            var sel_stmt = getStatementsByUUID([u], stmts.statements)[0];
+            var json_view = renderjson(sel_stmt);
+            panel_body.appendChild(par);
+            panel_body.appendChild(json_view);
+            panel_body.appendChild(ev_button);
+            panel.appendChild(panel_body);
+            stmts_box.appendChild(panel);
+        }
     }
     $(".btn-evidence").on('click', function(b){
         let uuid = b.currentTarget.dataset.id;

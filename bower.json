@@ -31,7 +31,8 @@
     "seiyria-bootstrap-slider": "^9.7.3",
     "papaparse": "^4.2.0",
     "datatables.net": "^1.10.15",
-    "datatables.net-dt": "^3.2.2"
+    "datatables.net-dt": "^3.2.2",
+    "renderjson": "https://raw.githubusercontent.com/caldwell/renderjson/master/renderjson.js"
   },
   "overrides": {
     "bootstrap": {
