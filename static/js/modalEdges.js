@@ -84,14 +84,19 @@ function getUUIDs(ele){
     return ele.data().uuid_list
 }
 
-function filterUUIDs(e1, e2, e3){
-    var s_uuids = new Set(e1.data().uuid_list);
-    var t_uuids = new Set(e2.data().uuid_list);
-    var e_uuids = new Set(e3.data().uuid_list);
-    f_uuids = intersection(s_uuids, t_uuids);
-    f_uuids = intersection(f_uuids, e_uuids);
-    return f_uuids
 
+function intersectLists(list_of_lists){
+    var merged_set = new Set();
+    for (var ll of list_of_lists){
+        var ll_set = new Set(ll);
+        merged_set = union(merged_set, ll_set);
+    }
+    var intersect_set = new Set(merged_set);
+    for (var ll of list_of_lists){
+        var ll_set = new Set(ll);
+        intersect_set = intersection(intersect_set, ll_set);
+    }
+    return intersect_set;
 }
 
 function intersection(setA, setB) {
@@ -102,6 +107,14 @@ function intersection(setA, setB) {
         }
     }
     return _intersection;
+}
+
+function union(setA, setB) {
+    var _union = new Set(setA);
+    for (var elem of setB) {
+        _union.add(elem);
+    }
+    return _union;
 }
 
 modalEdges(cy);
@@ -148,7 +161,10 @@ function getFilteredUUIDs(edge){
         element_array[1] = cy.getElementById(active_btns[1].dataset.id)
     }
     console.log(element_array)
-    var filtered_uuids = filterUUIDs(...element_array)
+    var list_of_uuid_lists = [element_array[0].data().uuid_list,
+                              element_array[1].data().uuid_list,
+                              element_array[2].data().uuid_list,]
+    var filtered_uuids = intersectLists(list_of_uuid_lists)
     return filtered_uuids
 }
 
