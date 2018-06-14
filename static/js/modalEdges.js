@@ -117,8 +117,6 @@ function union(setA, setB) {
     return _union;
 }
 
-modalEdges(cy);
-
 // statements.filter(st => st.id == "afb92699-ccad-4cef-a56c-adda79a7688a")
 
 
