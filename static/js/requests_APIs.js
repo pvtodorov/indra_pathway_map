@@ -92,6 +92,16 @@ function assembleCyJS(res) {
   });
 }
 
+function assembleEnglish(res) {
+  var res_json = res;
+  return $.ajax({
+      url: indra_server_addr + "/assemblers/english",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
 function requestPySB(res, export_format=null) {
   var res_json = res;
   res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
