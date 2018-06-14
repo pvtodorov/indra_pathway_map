@@ -48,6 +48,16 @@ function modalEdges(cy){
             console.log(f_uuids)
             updateStmtsBox(f_uuids)
         })
+        $(".btn-evidence").on('click', function(b){
+            let uuid = b.currentTarget.dataset.id;
+            let selected_stmt = getStatementsByUUID([uuid], stmts.statements)[0];
+            let ev_query = {'statement': selected_stmt};
+            let evidence_promise = getEvidence(ev_query);
+            evidence_promise.then(function(res){
+                console.log('fulfilled');
+                console.log(res.statements);
+            })
+        })
     })
 }
 
