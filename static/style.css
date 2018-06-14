@@ -33,6 +33,13 @@ h5 {
 
 }
 
+.btn-evidence{
+  padding-top:5px;
+  padding-bottom:5px;
+  float: right;
+
+}
+
 body .modal-dialog {
     /* new custom width */
     width: 80%;
