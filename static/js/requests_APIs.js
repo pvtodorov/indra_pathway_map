@@ -81,6 +81,19 @@ function groundingMapper(res) {
 }
 //***************************************
 
+// query db for support to single statement
+//***************************************
+function getEvidence(res) {
+  stmts_db = $.ajax({
+    url: indra_server_addr + "/indra_db_rest/get_evidence",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(res),
+    });
+  return stmts_db
+}
+//***************************************
+
 
 function assembleCyJS(res) {
   var res_json = res;
