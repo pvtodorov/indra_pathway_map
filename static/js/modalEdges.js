@@ -166,19 +166,19 @@ function getFilteredUUIDs(edge){
     return filtered_uuids
 }
 
-function updateStmtsBox(uuid_list){
+function updateStmtsBox(uuid_set){
+    var uuid_list = new Array(...uuid_set)
     var stmts_box = $('#edgeModal').find('.modal-body').find('.edgeModal-stmtsbox')[0]
     stmts_box.innerHTML = null
-    for (var u of uuid_list){
-        if (stmts !== undefined){
-            var statement = stmts.responseJSON.statements.filter(st => st.id == u)
+    if (stmts !== undefined){
+        for (var u of uuid_list){
             var panel = document.createElement("div");
             panel.classList.add('panel')
             panel.classList.add('panel-default')
             var panel_body = document.createElement("div")
             panel_body.classList.add('panel-body')
             var par = document.createElement("p")
-            par.textContent = JSON.stringify(statement, null, 2)
+            par.textContent = sentences.sentences[u]
             var ev_button = document.createElement("button");
             ev_button.classList.add('btn', 'btn-default', 'btn-evidence', 'pull-right')
             ev_button.textContent = "Get evidence"
