@@ -166,6 +166,11 @@ function getFilteredUUIDs(edge){
     return filtered_uuids
 }
 
+function getStatementsByUUID(uuid_list, stmts_list){
+    let stmts_list_f = stmts_list.filter(st => (uuid_list.includes(st.id)))
+    return stmts_list_f
+}
+
 function updateStmtsBox(uuid_set){
     var uuid_list = new Array(...uuid_set)
     var stmts_box = $('#edgeModal').find('.modal-body').find('.edgeModal-stmtsbox')[0]
