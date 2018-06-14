@@ -165,7 +165,12 @@ function updateStmtsBox(uuid_list){
             panel_body.classList.add('panel-body')
             var par = document.createElement("p")
             par.textContent = JSON.stringify(statement, null, 2)
+            var ev_button = document.createElement("button");
+            ev_button.classList.add('btn', 'btn-default', 'btn-evidence', 'pull-right')
+            ev_button.textContent = "Get evidence"
+            ev_button.dataset.id = u
             panel_body.appendChild(par)
+            panel_body.appendChild(ev_button)
             panel.appendChild(panel_body)
             stmts_box.appendChild(panel)}
     }
