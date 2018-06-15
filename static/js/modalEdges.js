@@ -184,6 +184,7 @@ function updateStmtsBox(uuid_set){
             panel_body.classList.add('panel-body');
             var par = document.createElement("p");
             par.textContent = sentences.sentences[u];
+            var ev_button_div = document.createElement("div");
             var ev_button = document.createElement("button");
             ev_button.classList.add('btn', 'btn-default', 'btn-evidence', 'pull-right');
             ev_button.textContent = "Get evidence";
@@ -192,12 +193,15 @@ function updateStmtsBox(uuid_set){
             var json_view = renderjson(sel_stmt);
             panel_body.appendChild(par);
             panel_body.appendChild(json_view);
-            panel_body.appendChild(ev_button);
+            ev_button_div.appendChild(ev_button);
+            panel_body.appendChild(ev_button_div);
             panel.appendChild(panel_body);
-            stmts_box.appendChild(panel);
+            panel_group.appendChild(panel);
+            stmts_box.appendChild(panel_group);
         }
     }
     $(".btn-evidence").on('click', function(b){
+        let button_ele = b.currentTarget;
         let uuid = b.currentTarget.dataset.id;
         let selected_stmt = getStatementsByUUID([uuid], stmts.statements)[0];
         let ev_query = {'statement': selected_stmt};
