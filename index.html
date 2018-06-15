@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="static/bower_components/bootstrap-select/dist/css/bootstrap-select.css" />
     <link rel="stylesheet" href="static/bower_components/cytoscape-panzoom/cytoscape.js-panzoom.css" />
-    <link rel="stylesheet" href="static/bower_components/components-font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="static/bower_components/components-font-awesome/css/fontawesome-all.css" />
     <link rel="stylesheet" href="static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
     <link rel="stylesheet" href="static/bower_components/datatables.net-dt/css/jquery.dataTables.css" />
     <!-- endbower -->
@@ -20,7 +20,6 @@
     <script src="static/bower_components/lodash/lodash.js"></script>
     <script src="static/bower_components/graphlib/dist/graphlib.core.js"></script>
     <script src="static/bower_components/dagre/dist/dagre.core.js"></script>
-    <script src="static/bower_components/dagre/dist/dagre.core.min.js"></script>
     <script src="static/bower_components/cytoscape-dagre/cytoscape-dagre.js"></script>
     <script src="static/bower_components/webcola/WebCola/cola.min.js"></script>
     <script src="static/bower_components/cytoscape-cola/cytoscape-cola.js"></script>
@@ -34,6 +33,7 @@
     <script src="static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
     <script src="static/bower_components/papaparse/papaparse.js"></script>
     <script src="static/bower_components/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="static/bower_components/renderjson/index.js"></script>
     <!-- endbower -->
     <!-- d3 -->
     <script src="https://d3js.org/d3-array.v1.min.js"></script>
@@ -54,6 +54,7 @@
     <script src="static/js/highlightPath.js"></script>
     <script src="static/js/requests_APIs.js"></script>
     <script src="static/js/array_multifilter.js"></script>
+    <script src="static/js/modalEdges.js"></script>
     <script src="static/js/base_script.js"></script>
     <!-- js -->
 
@@ -70,7 +71,9 @@
       ga('send', 'pageview');
     </script>
     <!-- end google analytics -->
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -127,9 +130,7 @@
           <div class="form-group">
             <label for="textArea">Describe your mechanism.</label>
             <textarea class="form-control" id="textArea" rows="15">
-Growth-factor proteins activate EGFR, ERBB2 and FGFR.
-Growth-factor proteins activate PDGFR.
-Growth-factor proteins activate MET, ROS1 and ALK.
+Growth-factor proteins activate EGFR, ERBB2, FGFR, PDGFR, MET, ROS1, and ALK.
 EGFR, ERBB2, PDGFR, MET, ROS1, ALK and FGFR activate GRB2 and SHC.
 GRB2 and SHC activate RASGRF and SOS.
 GRB2 binds SHC.
@@ -305,10 +306,48 @@ TIAM activates RAC, which activates PAK.
               <button id='downloadSBGN' type="submit" class="btn btn-default">SBGN</button>
               <button id='downloadBNGL' type="submit" class="btn btn-default">BNGL</button>
               <button id='downloadKappa' type="submit" class="btn btn-default">Kappa</button>
+              <button id='downloadCX' type="submit" class="btn btn-default">CX</button>
+              <button id='NDEX' type="submit" class="btn btn-default" data-toggle="modal" data-target="#ndexModal">NDEX</button>
               <button id='downloadPNG' type="submit" class="btn btn-default">PNG</button>
     <!-- graph : end -->
   </div>
   </div>
+  <!-- modal start -->
+  <div class="modal fade" id="ndexModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">NDEX Upload</h4>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- modal end -->
+  <!-- modal start -->
+  <div class="modal" id="edgeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content modal-fullscreen">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Edge statements</h4>
+        </div>
+        <div class="modal-body">
+            <div class="edgeModal-sources btn-div"></div>
+            <div class="edgeModal-targets btn-div"></div>
+            <div class="edgeModal-stmtsbox"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal end -->
   </div>
     <!-- container-fluid : end -->
 </body>

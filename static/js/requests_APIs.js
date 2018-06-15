@@ -26,18 +26,6 @@ function dropdownCtxtSelectFromJSON (div_id, ajax_response) {
 }
 //***************************************
 
-// get preset_pos for McCormick model
-//***************************************
-// function to set preset_pos for McCormick model
-//***************************************
-function setPresetPos () {
-  grabJSON("static/models/" + prebuilt_model + "/preset_pos.json").then(function (ajax_response) {
-    preset_pos = ajax_response;
-    preset_pos_static = preset_pos;
-  });
-}
-//***************************************
-
 
 //download a model
 //***************************************
@@ -59,33 +47,56 @@ function download(filename, text) {
 //***************************************
 function txtProcess(txt, parser) {
   var input_txt = {'text':txt};
-  return $.ajax({
-                url: indra_server_addr + "/"+ parser + "/process_text",
-                type: "POST",
-                dataType: "json",
-                data: JSON.stringify(input_txt),
-                });
+  stmts = $.ajax({
+    url: indra_server_addr + "/"+ parser + "/process_text",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(input_txt),
+    });
+  return stmts
 }
 
 // send stmts to grounding mapper, get grounded stmts
 //***************************************
 function groundingMapper(res) {
-  var stmts = res;
-  return $.ajax({
-                url: indra_server_addr + "/preassembly/map_grounding",
-                type: "POST",
-                dataType: "json",
-                data: JSON.stringify(stmts),
-                });
+  stmts = $.ajax({
+    url: indra_server_addr + "/preassembly/map_grounding",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(res),
+    });
+  return stmts
+}
+//***************************************
+
+// query db for support to single statement
+//***************************************
+function getEvidence(res) {
+  stmts_db = $.ajax({
+    url: indra_server_addr + "/indra_db_rest/get_evidence",
+    type: "POST",
+    dataType: "json",
+    data: JSON.stringify(res),
+    });
+  return stmts_db
 }
 //***************************************
 
 
 function assembleCyJS(res) {
   var res_json = res;
-  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
   return $.ajax({
       url: indra_server_addr + "/assemblers/cyjs",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
+function assembleEnglish(res) {
+  var res_json = res;
+  return $.ajax({
+      url: indra_server_addr + "/assemblers/english",
       type: "POST",
       dataType: "json",
       data: JSON.stringify(res_json),
@@ -100,6 +111,28 @@ function requestPySB(res, export_format=null) {
     }
   return $.ajax({
       url: indra_server_addr + "/assemblers/pysb",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
+function assembleCX(res) {
+  var res_json = res;
+  res_json['cyjs_model'] = JSON.stringify(cy.json())
+  return $.ajax({
+      url: indra_server_addr + "/assemblers/cx",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
+function shareNDEX(res) {
+  var res_json = res;
+  res_json['cyjs_model'] = JSON.stringify(cy.json())
+  return $.ajax({
+      url: indra_server_addr + "/share_model",
       type: "POST",
       dataType: "json",
       data: JSON.stringify(res_json),
@@ -130,7 +163,6 @@ function assembleKappa(res) {
 
 function assembleLoopy(res) {
   var res_json = res;
-  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
   return $.ajax({
       url: indra_server_addr + "/assemblers/sif/loopy",
       type: "POST",

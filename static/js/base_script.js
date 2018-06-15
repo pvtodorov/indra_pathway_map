@@ -9,21 +9,30 @@ var preset_pos_static = {};
 var id_pos = {};
 
 var scapes = {};
+var stmts;
+var sentences;
+var evidence = {};
 
-var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
+// var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
+var indra_server_addr = "http://0.0.0.0:8080";
 
 var ctxt = {};
-grabJSON('static/models/Fallahi_mass_spec/fallahi_data.json').then(
-  function(ajax_response){
-    ctxt =  ajax_response;
-  });
 
-var korkut = {};
-grabJSON('static/models/' + 'Korkut' + '/korkut.json').then(
-  function(ajax_response){
-    korkut =  ajax_response;
-  });
-var condition = 'AK|10';
+var ras_model_promise = grabJSON('static/models/McCormick/model.json');
+var ras_preset_pos_promise = grabJSON('static/models/McCormick/preset_pos.json');
+var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise]);
+var ras_stmts_promise = grabJSON('static/models/McCormick/stmts.json');
+var ras_stmts_response;
+ras_stmts_promise.then(function(res){
+  ras_stmts_response = res;
+  stmts = ras_stmts_response;
+})
+var ras_sentences_promise = grabJSON('static/models/McCormick/sentences.json');
+var ras_sentences_response;
+ras_sentences_promise.then(function(res){
+  ras_sentences_response = res;
+  sentences = res;
+})
 
 var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7];
 var exp_colorscale = d3.scaleThreshold()
@@ -48,42 +57,13 @@ var path_uuids_dict = {};
 var table;
 var path_id;
 
-grabJSON('static/models/' + 'Fallahi_mass_spec' + '/paths.json').then(
-  function(ajax_response){
-    paths =  ajax_response;
-    var path_metas = [];
-    for (var i=0; i<paths['Vemurafenib_1_1_MMACSF'].length; i++){
-    	meta = paths['Vemurafenib_1_1_MMACSF'][i]["meta"];
-      meta.push(i);
-    	path_metas.push(meta);
-      path_uuids_dict[i] = paths['Vemurafenib_1_1_MMACSF'][i]['path'];
-    }
-    table_data = [path_metas];
-    table = $('#path_table').DataTable( {
-      data: table_data[0]
-    } );
-  });
-
 $(function(){
 
   var win = $(window);
-
-  // build the dropdown pickers
-  grabJSON('static/cell_dict.json').then(
-    function(ajax_response){
-      var prebuilt_models = {"McCormick":"McCormick"};
-      dropdownFromJSON('#model_picker', prebuilt_models);
-      }
-  );
-
-
-  grabJSON('static/models/Fallahi_mass_spec/fallahi_select.json').then(
-    function(ajax_response){
-      select_array =  ajax_response;
-      sub_select_array = select_array;
-      build_ctx_dropdowns(sub_select_array, ctx_select_divs, current_ctx_selection);
-    });
-
+  var container_fluid_height = ($('body').height());
+  var cy_height = String(container_fluid_height/1.2024);
+  $('.cy')[0].setAttribute("style", "height:" + cy_height +  "px;");
+  $('.cy-container')[0].setAttribute("style", "height:" + cy_height +  "px;");
 
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
@@ -99,17 +79,26 @@ $(function(){
       }
   );
 
-  // set the preset_pos
-  setPresetPos();
 
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value;
-    setPresetPos();
-    txtProcess(txt, parser).then(groundingMapper).then(assembleCyJS).then(function (model_response) {
+    
+    var stmts_promise = txtProcess(txt, parser).then(groundingMapper);
+    var cyjs_promise = stmts_promise.then(assembleCyJS);
+    var english_promise = stmts_promise.then(assembleEnglish)
+    var english_promise;
+    stmts_promise.then(function (model_response) {
+      stmts = model_response;
+    });
+    cyjs_promise.then(function (model_response) {
       drawCytoscape('cy_1', model_response);
       qtipNodes(scapes['cy_1']);
       $('#menu').modal('hide');
     });
+    english_promise.then(function (model_response) {
+      sentences = model_response;
+    })
+    
     $('.cyjs2loopy').prop('disabled', false);
   });
 
@@ -154,6 +143,34 @@ $(function(){
     });
   });
 
+  $("#downloadCX").click(function(){
+    var txt = $('#textArea')[0].value;
+    txtProcess(txt, parser).then(groundingMapper).then(assembleCX).then(function (res) {
+      download('model.cx', res['model']);
+    });
+  });
+
+  $("#NDEX").click(function(){
+    var txt = $('#textArea')[0].value;
+    var modal = $('#ndexModal')
+    var modal_body = modal.find('.modal-body')[0]
+    modal_body.innerHTML = null
+    var par = document.createElement("p");
+    par.textContent = 'Uploading model to NDEX...'
+    modal_body.append(par)
+    txtProcess(txt, parser).then(groundingMapper).then(shareNDEX).then(function (res) {
+      par.textContent = 'Network uploaded to NDEX.'
+      var par2 = document.createElement("p");
+      var network_address =  "http://ndexbio.org/#/network/" + res['network_id']
+      var temp_link = document.createElement("a");
+      temp_link.href = network_address;
+      temp_link.text = network_address;
+      temp_link.target = '_blank';
+      par2.append(temp_link);
+      modal_body.append(par2);
+    });
+  });
+
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value;
     txtProcess(txt, parser).then(groundingMapper).then(function (res) {
@@ -191,14 +208,17 @@ $(function(){
 
 
 $("#loadButtonStatic").click(function(){
-  setPresetPos();
-  grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
+  model_components_promise.then(function (promises) {
+    preset_pos = promises[1];
+    var model_response = promises[0];
     drawCytoscape ('cy_1', model_response);
     qtipNodes(scapes['cy_1']);
-    $('#menu').modal('hide');
-
+    scapes['cy_1'].fit();
+    modalEdges(cy);
+    scapes['cy_1'].fit();
   });
-  $('.cyjs2loopy').prop('disabled', false);
+  var stmts = ras_stmts_response;
+  var sentences = ras_sentences_response;
 });
 
 $(".cyjs2loopy").click(function(){
@@ -301,48 +321,25 @@ $('#path_table').on( 'click', 'tr', function () {
     } );
 
 
-// destroy cy on tab change
-// don't really want this
-// $('a[data-toggle=tab]').click(function(){
-//     cy.destroy();
-//     console.log(this.href);
-// });
-
-// get all divs of class cy
-// get their data-url location
-// draw them!
 $('.cy').each(function(){
-    var div_id = $(this).attr('id');
-    var data_model = $(this).attr('data-url');
-    setPresetPos();
-    grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
-      drawCytoscape ('cy_1', model_response);
-      qtipNodes(scapes['cy_1']);
-    });
-    console.log($(this).attr('da;ta-url'));
+  $('.cy')[0].setAttribute("style", "height: 100%;");
+  document.getElementById("loadButtonStatic").click();
+  function resize() {
+    $(".cy-container").height(win.innerHeight() - 250);
+    $(".cy").height(win.innerHeight() - 250);
+    if (scapes['cy_1']){
+      scapes['cy_1'].center();
+    }
+  }
+  
+  var resizeTimer;
+  $(window).on('resize', function(e) {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      resize();
+    }, 250);
+  });
+  setTimeout(resize, 0);
 });
-
-function resize() {
-  $(".cy-container").height(win.innerHeight() - 250);
-  $(".cy").height(win.innerHeight() - 250);
-  scapes['cy_1'].center();
-}
-
-var resizeTimer;
-$(window).on('resize', function(e) {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
-    resize();
-  }, 250);
-});
-setTimeout(resize, 0);
-
-$('#menu').on('show.bs.modal', function (e) {
-    $(".cy-panzoom").css({"display": "none"});
-});
-$('#menu').on('hidden.bs.modal', function (e) {
-    $(".cy-panzoom").css({"display": "unset"});
-});
-
 
 });// dom ready
