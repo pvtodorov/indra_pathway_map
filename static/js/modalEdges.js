@@ -171,12 +171,48 @@ function getStatementsByUUID(uuid_list, stmts_list){
     return stmts_list_f
 }
 
+function statementPanelAddEvidence(button_ele){
+    let parent_panel = ($(button_ele).parent().parent().parent().parent()[0]);
+    $(parent_panel).find(".ev-panel" ).remove();
+    let uuid = button_ele.dataset.id;
+    let evidence_stmts = evidence[uuid];
+    var evs = [];
+    for (st of evidence_stmts){
+	    for (ev of st.evidence){
+		    evs.push([ev.text, ev.pmid])
+	    }
+    }
+    for (ev of evs){
+        var ev_panel = document.createElement("div");
+        ev_panel.classList.add('panel', 'panel-default', 'ev-panel');
+        var ev_panel_body = document.createElement("div");
+        ev_panel_body.classList.add('panel-body');
+        var par = document.createElement("p");
+        par.textContent = ev[0];
+        par.style.fontSize = "14px";
+        var link_out = document.createElement("a");
+        var addr = "https://www.ncbi.nlm.nih.gov/pubmed/" + String(ev[1])
+        link_out.setAttribute('href', addr);
+        link_out.target = '_blank';
+        var fa_icon = document.createElement("i");
+        fa_icon.classList.add("fas", "fa-external-link-alt");
+        fa_icon.style.paddingLeft = "5px";
+        link_out.appendChild(fa_icon);
+        par.appendChild(link_out);
+        ev_panel_body.appendChild(par);
+        ev_panel.appendChild(ev_panel_body);
+        parent_panel.appendChild(ev_panel);
+    }
+}
+
 function updateStmtsBox(uuid_set){
     var uuid_list = new Array(...uuid_set)
     var stmts_box = $('#edgeModal').find('.modal-body').find('.edgeModal-stmtsbox')[0]
     stmts_box.innerHTML = null
     if (stmts !== undefined){
         for (var u of uuid_list){
+            var panel_group = document.createElement("div");
+            panel_group.classList.add('panel-group', 'panel', 'panel-default');
             var panel = document.createElement("div");
             panel.classList.add('panel');
             panel.classList.add('panel-default');
@@ -207,12 +243,14 @@ function updateStmtsBox(uuid_set){
         let ev_query = {'statement': selected_stmt};
         if (evidence[uuid]){
             console.log(evidence[uuid]);
+            statementPanelAddEvidence(button_ele);
         }
         else {
             let evidence_promise = getEvidence(ev_query);
             evidence_promise.then(function(res){
                 console.log(res.statements);
                 evidence[uuid] = res.statements;
+                statementPanelAddEvidence(button_ele)
             })
         }
     })
