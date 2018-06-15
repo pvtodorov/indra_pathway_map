@@ -1,5 +1,5 @@
 function modalEdges(cy){
-    cy.edges().on('click', function(e){
+    cy.edges().on('tap', function(e){
         var current_edge = this;
         var src_tar_list = getSourcesTargets(current_edge)
         var edge_uuids = getUUIDs(current_edge)
