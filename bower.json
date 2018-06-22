@@ -33,7 +33,8 @@
     "datatables.net": "^1.10.15",
     "datatables.net-dt": "^3.2.2",
     "renderjson": "https://raw.githubusercontent.com/caldwell/renderjson/master/renderjson.js",
-    "font-awesome": "^5.0.13"
+    "font-awesome": "^5.0.13",
+    "FileSaver.min": "https://raw.githubusercontent.com/Teleborder/FileSaver.js/master/FileSaver.min.js"
   },
   "overrides": {
     "bootstrap": {

@@ -180,17 +180,14 @@ $(function(){
 
 
   $("#downloadPNG").click(function(){
-    var cypng = scapes['cy_1'].png({scale: 3})
-    var dl = document.createElement('a');
-    dl.href = cypng;
-    dl.download = 'graph.png';
-    HTMLElement.prototype.click = function() {
-    var evt = this.ownerDocument.createEvent('MouseEvents');
-    evt.initMouseEvent('click', true, true, this.ownerDocument.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
-    this.dispatchEvent(evt);
-    }    
-    dl.click();
-
+    var png_scale = 20;
+    var cypng = scapes['cy_1'].png({scale: png_scale, output:'blob'});
+    // console.log(cypng.length)
+    while (cypng.length < 7) {
+      png_scale -= 1;
+      cypng = scapes['cy_1'].png({scale: png_scale, output:'blob'});
+    }
+    download('model.png', cypng);
   });
 
 
