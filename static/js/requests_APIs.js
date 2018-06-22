@@ -29,17 +29,20 @@ function dropdownCtxtSelectFromJSON (div_id, ajax_response) {
 
 //download a model
 //***************************************
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
+function download(exportName, exportObj){
+  if (exportName.includes('.png')){
+    encoding_type = "image/png";
+    var data = atob( exportObj.substring( "data:image/png;base64,".length ) ),
+    asArray = new Uint8Array(data.length);
+    for( var i = 0, len = data.length; i < len; ++i ) {
+        asArray[i] = data.charCodeAt(i);    
+    }
+    var blob = new Blob( [ asArray.buffer ], {type: "image/png"} );
+  }
+  else {
+    var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
+  }
+  saveAs(blob, exportName);
 }
 //***************************************
 
