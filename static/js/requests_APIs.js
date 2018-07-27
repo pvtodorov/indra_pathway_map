@@ -131,9 +131,13 @@ function assembleCX(res) {
   });
 }
 
-function shareNDEX(res) {
-  var res_json = res;
-  res_json['cyjs_model'] = JSON.stringify(cy.json())
+function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence) {
+  var res_json = {};
+  res_json['stmts'] = JSON.stringify(stmts);
+  res_json['model_elements'] = JSON.stringify(model_elements);
+  res_json['preset_pos'] = JSON.stringify(preset_pos);
+  res_json['sentences'] = JSON.stringify(sentences);
+  res_json['evidence'] = JSON.stringify(evidence);
   return $.ajax({
       url: indra_server_addr + "/share_model",
       type: "POST",
