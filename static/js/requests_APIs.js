@@ -146,6 +146,18 @@ function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence) {
   });
 }
 
+
+function getNDEX(network_id) {
+  var res_json = {"network_id": network_id};
+  return $.ajax({
+      url: indra_server_addr + "/fetch_model",
+      type: "POST",
+      dataType: "json",
+      data: JSON.stringify(res_json),
+  });
+}
+
+
 function assemblePySB(res) {
   return requestPySB(res);
   }
