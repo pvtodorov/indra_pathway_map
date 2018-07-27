@@ -12,6 +12,7 @@ var scapes = {};
 var stmts;
 var sentences;
 var evidence = {};
+var model_elements;
 
 var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
 //var indra_server_addr = "http://0.0.0.0:8080";
@@ -91,6 +92,7 @@ $(function(){
       stmts = model_response;
     });
     cyjs_promise.then(function (model_response) {
+      model_elements = model_response;
       drawCytoscape('cy_1', model_response);
       qtipNodes(scapes['cy_1']);
       $('#menu').modal('hide');
@@ -158,7 +160,7 @@ $(function(){
     var par = document.createElement("p");
     par.textContent = 'Uploading model to NDEX...'
     modal_body.append(par)
-    txtProcess(txt, parser).then(groundingMapper).then(shareNDEX).then(function (res) {
+    shareNDEX(model_elements, preset_pos, stmts, sentences, evidence).then(function (res) {
       par.textContent = 'Network uploaded to NDEX.'
       var par2 = document.createElement("p");
       var network_address =  "http://ndexbio.org/#/network/" + res['network_id']
@@ -170,6 +172,20 @@ $(function(){
       modal_body.append(par2);
     });
   });
+
+
+  $("#getNDEX").click(function(){
+    var network_id = 'f0e016f2-9157-11e8-a4bf-0ac135e8bacf';
+    getNDEX(network_id).then(function (res) {
+      model_elements = JSON.parse(res.model_elements)
+      preset_pos = JSON.parse(res.preset_pos)
+      stmts = JSON.parse(res.stmts)
+      sentences = JSON.parse(res.sentences)
+      evidence = JSON.parse(res.evidence)
+      drawCytoscape ('cy_1', model_elements);
+    });
+  });
+
 
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value;
@@ -207,8 +223,8 @@ $(function(){
 $("#loadButtonStatic").click(function(){
   model_components_promise.then(function (promises) {
     preset_pos = promises[1];
-    var model_response = promises[0];
-    drawCytoscape ('cy_1', model_response);
+    model_elements = promises[0];
+    drawCytoscape ('cy_1', model_elements);
     qtipNodes(scapes['cy_1']);
     scapes['cy_1'].fit();
     modalEdges(cy);
@@ -295,6 +311,7 @@ $("#reset_filter").click(function(){
   clearCtxtSelects();
   build_ctx_dropdowns(sub_select_array, ctx_select_divs, current_ctx_selection);
   grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
+    model_elements = model_response;
     drawCytoscape ('cy_1', model_response);
     qtipNodes(scapes['cy_1']);
   });
