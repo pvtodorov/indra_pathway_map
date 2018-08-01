@@ -218,7 +218,7 @@ function updateStmtsBox(uuid_set){
             panel.classList.add('panel-default');
             var panel_body = document.createElement("div");
             panel_body.classList.add('panel-body');
-            var par = document.createElement("p");
+            var par = document.createElement("h3");
             par.textContent = sentences.sentences[u];
             var ev_button_div = document.createElement("div");
             var ev_button = document.createElement("button");
@@ -226,8 +226,11 @@ function updateStmtsBox(uuid_set){
             ev_button.textContent = "Get evidence";
             ev_button.dataset.id = u;
             var sel_stmt = getStatementsByUUID([u], stmts.statements)[0];
-            var json_view = renderjson(sel_stmt);
+            var json_view = renderjson.set_collapse_msg(function(){return ' more info '})(sel_stmt);
+            var json_title = document.createElement("h5");
+            json_title.textContent = "INDRA statement details";
             panel_body.appendChild(par);
+            panel_body.appendChild(json_title)
             panel_body.appendChild(json_view);
             ev_button_div.appendChild(ev_button);
             panel_body.appendChild(ev_button_div);
