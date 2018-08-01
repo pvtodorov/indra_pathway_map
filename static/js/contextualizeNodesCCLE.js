@@ -1,4 +1,4 @@
-function contextualizeNodesCCLE(cy, cell_line){
+function contextualizeNodesCCLE(cy, cell_line, mrna, mutations){
     cy.startBatch();
     var gene_names = get_cy_gene_names(cy);
     var mutated = {};
@@ -67,10 +67,16 @@ function contextualizeNodesCCLE(cy, cell_line){
     }
     // get_ccle_mrna_amounts(gene_names, cell_line)
     // get_ccle_cna(gene_names, cell_line)
-    Promise.all([get_ccle_mrna(gene_names, cell_line),
-                 get_ccle_mutations(gene_names, cell_line)]).then(function(){
-                   set_context();
-                 });
+    if ((mrna === undefined) | (mutations === undefined)){
+      Promise.all([get_ccle_mrna(gene_names, cell_line),
+        get_ccle_mutations(gene_names, cell_line)]).then(function(){
+          set_context();
+        });
+    }
+    else {
+      set_context();
+    }
+
 
 
 

@@ -107,8 +107,8 @@ $(function(){
   });
 
   $("#loadContextButton").click(function(){
-    var cell_line = $('#cellSelectDynamic').val().slice(6,-5);
-    contextualizeNodesCCLE(cy, cell_line);
+    cell_line = $('#cellSelectDynamic').val().slice(6,-5);
+    contextualizeNodesCCLE(cy, cell_line, mrna, mutations);
     $('#menu').modal('hide');
   });
 
@@ -162,7 +162,7 @@ $(function(){
     var par = document.createElement("p");
     par.textContent = 'Uploading model to NDEX...'
     modal_body.append(par)
-    shareNDEX(model_elements, preset_pos, stmts, sentences, evidence).then(function (res) {
+    shareNDEX(cyjs_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations).then(function (res) {
       par.textContent = 'Network uploaded to NDEX.'
       var par2 = document.createElement("p");
       var network_address =  "http://ndexbio.org/#/network/" + res['network_id']
@@ -184,6 +184,9 @@ $(function(){
       stmts = JSON.parse(res.stmts)
       sentences = JSON.parse(res.sentences)
       evidence = JSON.parse(res.evidence)
+      cell_line = JSON.parse(res.cell_line)
+      mrna = JSON.parse(res.mrna)
+      mutations = JSON.parse(res.mutations)
       drawCytoscape ('cy_1', model_elements);
     });
   });
