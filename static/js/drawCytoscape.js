@@ -2,6 +2,8 @@ var default_colors = ['#fdbb84','#fee8c8','#e34a33', '#3182bd', '#000000', '#bdb
 // [orange, light orange, RED, blue, black, gray]
 
 function drawCytoscape (div_id, model_elements) {
+    cyjs_elements = JSON.parse(JSON.stringify(model_elements))
+
     cy = cytoscape({
       container: document.getElementById(div_id),
 

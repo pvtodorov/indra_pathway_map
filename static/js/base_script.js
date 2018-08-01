@@ -12,6 +12,7 @@ var scapes = {};
 var stmts;
 var sentences;
 var evidence = {};
+var cyjs_elements; //this is set by drawCytoscape with a copy of model_elements
 var model_elements;
 
 var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
