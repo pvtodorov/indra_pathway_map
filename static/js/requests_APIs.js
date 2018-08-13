@@ -193,7 +193,6 @@ function assembleLoopy(res) {
   });
 }
 
-var mrna;
 function get_ccle_mrna(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]};
@@ -202,14 +201,9 @@ function get_ccle_mrna(gene_list, cell_line) {
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
-           }).then(function(res){
-                      res = res["mrna_amounts"];
-                      res = res[cell_line];
-                      mrna = res;
-                  });
+           })
 }
 
-var cna;
 function get_ccle_cna(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]};
@@ -218,14 +212,9 @@ function get_ccle_cna(gene_list, cell_line) {
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
-           }).then(function(res){
-                      res = res["cna"];
-                      res = res[cell_line];
-                      cna = res;
-                  });
+           })
 }
 
-var mutations;
 function get_ccle_mutations(gene_list, cell_line) {
   var input_txt = {'gene_list': gene_list,
                    'cell_lines': [cell_line]};
@@ -234,9 +223,5 @@ function get_ccle_mutations(gene_list, cell_line) {
             type: "POST",
             dataType: "json",
             data: JSON.stringify(input_txt),
-           }).then(function(res){
-                      res = res["mutations"];
-                      res = res[cell_line];
-                      mutations = res;
-                  });
+           })
 }
