@@ -1,12 +1,20 @@
 function contextualizeNodesCCLE(cy, cell_line, mrna, mutations){
-    cy.startBatch();
     var gene_names = get_cy_gene_names(cy);
-    var mutated = {};
-    gene_names.forEach(function(n){
-      mutated[n] = 0;
-    });
+    var mrna_promise = get_ccle_mrna(gene_names, cell_line)
+    var mutations_promise = get_ccle_mutations(gene_names, cell_line)
+    Promise.all([mrna_promise, mutations_promise]).then(function(pp){
+      mrna = pp[0].mrna_amounts[cell_line]
+      mutations = pp[1].mutations[cell_line]
+      set_context();
+    })
+
 
     function set_context(){
+      cy.startBatch();
+      var mutated = {};
+      gene_names.forEach(function(n){
+        mutated[n] = 0;
+      });
       if ((mrna === null) | (mutations === null)){
         return;
       }
@@ -64,22 +72,13 @@ function contextualizeNodesCCLE(cy, cell_line, mrna, mutations){
           } // check if n.isParent()
 
         });
-    }
-    // get_ccle_mrna_amounts(gene_names, cell_line)
-    // get_ccle_cna(gene_names, cell_line)
-    if ((mrna === undefined) | (mutations === undefined)){
-      Promise.all([get_ccle_mrna(gene_names, cell_line),
-        get_ccle_mutations(gene_names, cell_line)]).then(function(){
-          set_context();
-        });
-    }
-    else {
-      set_context();
+        cy.endBatch();
     }
 
 
 
 
 
-  cy.endBatch();
+
+  
 }
