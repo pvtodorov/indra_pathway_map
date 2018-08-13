@@ -36,6 +36,8 @@ ras_sentences_promise.then(function(res){
   ras_sentences_response = res;
   sentences = res;
 })
+var mrna;
+var mutations;
 
 var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7];
 var exp_colorscale = d3.scaleThreshold()
