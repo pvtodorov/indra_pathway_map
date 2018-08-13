@@ -333,6 +333,7 @@ function drawCytoscape (div_id, model_elements) {
       $('.modal').on('hidden.bs.modal', function (e) {
         $(".cy-panzoom").css({"display": "unset"});
       });
+      $(".cy-panzoom")[0].classList.add("hidden-xs")
     });
 
     var dragged = false;
