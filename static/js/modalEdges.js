@@ -182,23 +182,37 @@ function statementPanelAddEvidence(button_ele){
 		    evs.push([ev.text, ev.pmid])
 	    }
     }
-    for (ev of evs){
+    if (evs.length > 0){
+        for (ev of evs){
+            var ev_panel = document.createElement("div");
+            ev_panel.classList.add('panel', 'panel-default', 'ev-panel');
+            var ev_panel_body = document.createElement("div");
+            ev_panel_body.classList.add('panel-body');
+            var par = document.createElement("p");
+            par.textContent = ev[0];
+            par.style.fontSize = "14px";
+            var link_out = document.createElement("a");
+            var addr = "https://www.ncbi.nlm.nih.gov/pubmed/" + String(ev[1])
+            link_out.setAttribute('href', addr);
+            link_out.target = '_blank';
+            var fa_icon = document.createElement("i");
+            fa_icon.classList.add("fas", "fa-external-link-alt");
+            fa_icon.style.paddingLeft = "5px";
+            link_out.appendChild(fa_icon);
+            par.appendChild(link_out);
+            ev_panel_body.appendChild(par);
+            ev_panel.appendChild(ev_panel_body);
+            parent_panel.appendChild(ev_panel);
+        }
+    }
+    else {
         var ev_panel = document.createElement("div");
         ev_panel.classList.add('panel', 'panel-default', 'ev-panel');
         var ev_panel_body = document.createElement("div");
         ev_panel_body.classList.add('panel-body');
         var par = document.createElement("p");
-        par.textContent = ev[0];
+        par.textContent = "No evidence found";
         par.style.fontSize = "14px";
-        var link_out = document.createElement("a");
-        var addr = "https://www.ncbi.nlm.nih.gov/pubmed/" + String(ev[1])
-        link_out.setAttribute('href', addr);
-        link_out.target = '_blank';
-        var fa_icon = document.createElement("i");
-        fa_icon.classList.add("fas", "fa-external-link-alt");
-        fa_icon.style.paddingLeft = "5px";
-        link_out.appendChild(fa_icon);
-        par.appendChild(link_out);
         ev_panel_body.appendChild(par);
         ev_panel.appendChild(ev_panel_body);
         parent_panel.appendChild(ev_panel);
