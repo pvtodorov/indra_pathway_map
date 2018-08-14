@@ -14,6 +14,8 @@ var sentences;
 var evidence = {};
 var cyjs_elements; //this is set by drawCytoscape with a copy of model_elements
 var model_elements;
+var mrna;
+var mutations;
 var cell_line;
 
 var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
@@ -23,7 +25,9 @@ var ctxt = {};
 
 var ras_model_promise = grabJSON('static/models/McCormick/model.json');
 var ras_preset_pos_promise = grabJSON('static/models/McCormick/preset_pos.json');
-var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise]);
+var mrna_promise = grabJSON('static/models/McCormick/mrna.json');
+var mutations_promise = grabJSON('static/models/McCormick/mutations.json');
+var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise, mrna_promise, mutations_promise]);
 var ras_stmts_promise = grabJSON('static/models/McCormick/stmts.json');
 var ras_stmts_response;
 ras_stmts_promise.then(function(res){
@@ -36,8 +40,6 @@ ras_sentences_promise.then(function(res){
   ras_sentences_response = res;
   sentences = res;
 })
-var mrna;
-var mutations;
 
 var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7];
 var exp_colorscale = d3.scaleThreshold()
@@ -73,7 +75,7 @@ $(function(){
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(
     function(ajax_response){
-      var interesting_lines = {"A101D_SKIN":"model_A101D_SKIN.json", "LOXIMVI_SKIN":"model_LOXIMVI_SKIN.json"};
+      var interesting_lines = {"LOXIMVI_SKIN":"model_LOXIMVI_SKIN.json", "A101D_SKIN":"model_A101D_SKIN.json"};
       for (var d of ['#cellSelectStatic', '#cellSelectDynamic']) {
           dropdownFromJSON(d, interesting_lines);
           $(d).append($('<option data-divider="true"/>'));
@@ -110,7 +112,7 @@ $(function(){
 
   $("#loadContextButton").click(function(){
     cell_line = $('#cellSelectDynamic').val().slice(6,-5);
-    contextualizeNodesCCLE(cy, cell_line, mrna, mutations);
+    contextualizeNodesCCLE(cy, cell_line);
     $('#menu').modal('hide');
   });
 
@@ -231,11 +233,14 @@ $("#loadButtonStatic").click(function(){
   model_components_promise.then(function (promises) {
     preset_pos = promises[1];
     model_elements = promises[0];
+    mrna = promises[2];
+    mutations = promises[3];
     drawCytoscape ('cy_1', model_elements);
     qtipNodes(scapes['cy_1']);
     scapes['cy_1'].fit();
     modalEdges(cy);
     scapes['cy_1'].fit();
+    contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
   });
   var stmts = ras_stmts_response;
   var sentences = ras_sentences_response;
