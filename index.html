@@ -101,18 +101,21 @@
         <div class="modal" id="menu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
+                    <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="false">&times;</span></button>
+                          </div>
               <div class="modal-body">
                   <div class="tabbable">
                   <ul class="nav nav-tabs">
-                    <li ><a data-toggle="tab" href="#byom">Build</a></li>
+                    <li class="active"><a data-toggle="tab" href="#byom">Build</a></li>
                     <li ><a data-toggle="tab" href="#context">Context</a></li>
                     <!-- <li ><a data-toggle="tab" href="#phospho">Phospho</a></li> -->
-                    <li class="active"><a data-toggle="tab" href="#ras227">Prebuilt models</a></li>
+                    <li ><a data-toggle="tab" href="#ras227">Prebuilt models</a></li>
                     <li ><a data-toggle="tab" href="#about">About</a></li>
                   </ul>
 
                 <div class="tab-content">
-                  <div id="ras227" class="tab-pane fade in active">
+                  <div id="ras227" class="tab-pane fade in">
                     <div>
                         <br>
                         <div>
@@ -125,7 +128,7 @@
                     <button id='loadButtonStatic' type="submit" class="btn btn-primary">Load</button>
                   </div>
 
-                  <div id="byom" class="tab-pane fade in">
+                  <div id="byom" class="tab-pane fade in active">
     <br>
     <div>
       <form>
