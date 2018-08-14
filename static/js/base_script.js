@@ -238,7 +238,6 @@ $("#loadButtonStatic").click(function(){
     drawCytoscape ('cy_1', model_elements);
     qtipNodes(scapes['cy_1']);
     scapes['cy_1'].fit();
-    modalEdges(cy);
     scapes['cy_1'].fit();
     contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
   });
