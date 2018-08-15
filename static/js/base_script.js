@@ -158,10 +158,8 @@ $(function(){
     });
   });
 
-  $("#NDEX").click(function(){
-    var txt = $('#textArea')[0].value;
-    var modal = $('#ndexModal')
-    var modal_body = modal.find('.modal-body')[0]
+  $("#NDEX_upload_btn").click(function(){
+    var modal_body = $('.ndex-upload-container')[0]
     modal_body.innerHTML = null
     var par = document.createElement("p");
     par.textContent = 'Uploading model to NDEX...'
@@ -180,8 +178,8 @@ $(function(){
   });
 
 
-  $("#getNDEX").click(function(){
-    var network_id = 'f0e016f2-9157-11e8-a4bf-0ac135e8bacf';
+  $("#loadNDEX").click(function(){
+    var network_id = $("#ndexUUID")[0].value
     getNDEX(network_id).then(function (res) {
       model_elements = JSON.parse(res.model_elements)
       preset_pos = JSON.parse(res.preset_pos)
@@ -191,7 +189,8 @@ $(function(){
       cell_line = JSON.parse(res.cell_line)
       mrna = JSON.parse(res.mrna)
       mutations = JSON.parse(res.mutations)
-      drawCytoscape ('cy_1', model_elements);
+      model_components_promise = Promise.all([model_elements, preset_pos, mrna, mutations]);
+      document.getElementById("loadButtonStatic").click();
     });
   });
 
@@ -241,8 +240,6 @@ $("#loadButtonStatic").click(function(){
     scapes['cy_1'].fit();
     contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
   });
-  var stmts = ras_stmts_response;
-  var sentences = ras_sentences_response;
 });
 
 $(".cyjs2loopy").click(function(){
