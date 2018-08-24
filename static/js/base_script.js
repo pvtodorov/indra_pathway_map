@@ -186,7 +186,7 @@ $(function(){
       stmts = JSON.parse(res.stmts)
       sentences = JSON.parse(res.sentences)
       evidence = JSON.parse(res.evidence)
-      cell_line = JSON.parse(res.cell_line)
+      cell_line = res.cell_line
       mrna = JSON.parse(res.mrna)
       mutations = JSON.parse(res.mutations)
       model_components_promise = Promise.all([model_elements, preset_pos, mrna, mutations]);
