@@ -21,7 +21,7 @@ function drawCytoscape (div_id, model_elements) {
             'background-color':default_colors[5],
             'background-opacity': 1,
             'font-size': '65px',
-            'text-halign': 'above',
+            'text-halign': 'center',
             'text-valign': 'center',
             'z-index': 2,
             'color': '#FFFFFF',
