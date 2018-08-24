@@ -20,16 +20,16 @@ function drawCytoscape (div_id, model_elements) {
             'border-color': default_colors[4],
             'background-color':default_colors[5],
             'background-opacity': 1,
-            'font-size': '40px',
+            'font-size': '65px',
             'text-halign': 'above',
             'text-valign': 'center',
             'z-index': 2,
             'color': '#FFFFFF',
             'text-outline-color': '#000000',
-            'text-outline-width': 5,
-            'font-weight': 700,
+            'text-outline-width': 8,
+            'font-weight': 500,
             'text-wrap': 'wrap',
-            'text-max-width': '200px'
+            'text-max-width': '300px'
           }
         },
 
