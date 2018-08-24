@@ -173,7 +173,14 @@ function getStatementsByUUID(uuid_list, stmts_list){
 
 function statementPanelAddEvidence(button_ele){
     let parent_panel = ($(button_ele).parent().parent().parent().parent()[0]);
-    $(parent_panel).find(".ev-panel" ).remove();
+    $(parent_panel).find(".ev-grid-container").remove();
+    var grid_container = document.createElement('div');
+    grid_container.classList.add('container-fluid', 'ev-grid-container');
+    grid_container.appendChild(document.createElement('br'))
+    var parent_panel_row = document.createElement("div");
+    parent_panel_row.classList.add('row', 'parent-panel-row');
+    grid_container.append(parent_panel_row);
+    parent_panel.appendChild(grid_container);
     let uuid = button_ele.dataset.id;
     let evidence_stmts = evidence[uuid];
     var evs = [];
@@ -184,6 +191,8 @@ function statementPanelAddEvidence(button_ele){
     }
     if (evs.length > 0){
         for (ev of evs){
+            var ev_panel_row_item = document.createElement("div");
+            ev_panel_row_item.classList.add('col-md-12');
             var ev_panel = document.createElement("div");
             ev_panel.classList.add('panel', 'panel-default', 'ev-panel');
             var ev_panel_body = document.createElement("div");
@@ -202,10 +211,14 @@ function statementPanelAddEvidence(button_ele){
             par.appendChild(link_out);
             ev_panel_body.appendChild(par);
             ev_panel.appendChild(ev_panel_body);
-            parent_panel.appendChild(ev_panel);
+            ev_panel_row_item.appendChild(ev_panel);
+            ev_panel_row_item.appendChild(document.createElement('br'))
+            parent_panel_row.appendChild(ev_panel_row_item);
         }
     }
     else {
+        var ev_panel_row_item = document.createElement("div");
+        ev_panel_row_item.classList.add('col-md-12');
         var ev_panel = document.createElement("div");
         ev_panel.classList.add('panel', 'panel-default', 'ev-panel');
         var ev_panel_body = document.createElement("div");
@@ -215,7 +228,9 @@ function statementPanelAddEvidence(button_ele){
         par.style.fontSize = "14px";
         ev_panel_body.appendChild(par);
         ev_panel.appendChild(ev_panel_body);
-        parent_panel.appendChild(ev_panel);
+        ev_panel_row_item.appendChild(ev_panel);
+        ev_panel_row_item.appendChild(document.createElement('br'))
+        parent_panel_row.appendChild(ev_panel_row_item);
     }
 }
 
