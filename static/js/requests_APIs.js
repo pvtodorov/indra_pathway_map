@@ -1,8 +1,9 @@
 // retrieve a JSON from a url
 //***************************************
-function grabJSON (url) {
+function grabJSON (url, dtype='json') {
   return $.ajax({
     url: url,
+    dataType: dtype
   });
 }
 //***************************************
