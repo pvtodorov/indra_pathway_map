@@ -132,7 +132,7 @@ function assembleCX(res) {
   });
 }
 
-function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations) {
+function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations, txt_input, parser) {
   var res_json = {};
   res_json['stmts'] = JSON.stringify(stmts);
   res_json['model_elements'] = JSON.stringify(model_elements);
@@ -142,6 +142,8 @@ function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_
   res_json['cell_line'] = cell_line;
   res_json['mrna'] = JSON.stringify(mrna);
   res_json['mutations'] = JSON.stringify(mutations);
+  res_json['txt_input'] = txt_input;
+  res_json['parser'] = parser;
   return $.ajax({
       url: indra_server_addr + "/share_model",
       type: "POST",

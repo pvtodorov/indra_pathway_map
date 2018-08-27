@@ -174,10 +174,12 @@ $(function(){
     var par = document.createElement("p");
     par.textContent = 'Uploading model to NDEX...'
     modal_body.append(par)
-    shareNDEX(cyjs_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations).then(function (res) {
+    txt_input = $('#textArea')[0].value;
+    shareNDEX(cyjs_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations, txt_input, parser).then(function (res) {
       par.textContent = 'Network uploaded to NDEX.'
       var par2 = document.createElement("p");
-      var network_address =  "http://ndexbio.org/#/network/" + res['network_id']
+      network_id = res['network_id']
+      var network_address =  "http://ndexbio.org/#/network/" + network_id
       var temp_link = document.createElement("a");
       temp_link.href = network_address;
       temp_link.text = network_address;
@@ -197,10 +199,25 @@ $(function(){
       sentences = JSON.parse(res.sentences)
       evidence = JSON.parse(res.evidence)
       cell_line = res.cell_line
+      $('#cellSelectDynamic').selectpicker()[0].value = 'model_' + cell_line + '.json'
+      $('#cellSelectDynamic').selectpicker('refresh')
       mrna = JSON.parse(res.mrna)
       mutations = JSON.parse(res.mutations)
-      model_components_promise = Promise.all([model_elements, preset_pos, mrna, mutations]);
-      document.getElementById("loadButtonStatic").click();
+      txt_input = res.txt_input;
+      $('#textArea').val(txt_input);
+      parser = res.parser;
+      $("#parseReach")[0].classList.remove('active')
+      $("#parseTrips")[0].classList.remove('active')
+      if (parser == 'trips'){
+        $("#parseTrips").addClass("active");
+      }
+      else {
+        $("#parseReach").addClass("active");
+      }
+      drawCytoscape ('cy_1', model_elements);
+      qtipNodes(scapes['cy_1']);
+      scapes['cy_1'].fit();
+      contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
     });
   });
 
