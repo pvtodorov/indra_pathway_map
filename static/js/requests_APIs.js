@@ -145,7 +145,7 @@ function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_
   res_json['txt_input'] = txt_input;
   res_json['parser'] = parser;
   return $.ajax({
-      url: indra_server_addr + "/share_model",
+      url: indra_server_addr + "/share_model_ndex",
       type: "POST",
       dataType: "json",
       data: JSON.stringify(res_json),
@@ -156,7 +156,7 @@ function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_
 function getNDEX(network_id) {
   var res_json = {"network_id": network_id};
   return $.ajax({
-      url: indra_server_addr + "/fetch_model",
+      url: indra_server_addr + "/fetch_model_ndex",
       type: "POST",
       dataType: "json",
       data: JSON.stringify(res_json),
