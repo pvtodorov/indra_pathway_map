@@ -36,6 +36,7 @@ model_components_promise.then(function(promises){
   mrna = promises[2];
   mutations = promises[3];
   drawCytoscape ('cy_1', model_elements);
+  clearUploadInfo();
   qtipNodes(scapes['cy_1']);
   scapes['cy_1'].fit();
   contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
@@ -111,6 +112,7 @@ $(function(){
     cyjs_promise.then(function (model_response) {
       model_elements = model_response;
       drawCytoscape('cy_1', model_response);
+      clearUploadInfo();
       qtipNodes(scapes['cy_1']);
       $('#menu').modal('hide');
       document.getElementById("loadContextButton").click();
@@ -215,9 +217,11 @@ $(function(){
         $("#parseReach").addClass("active");
       }
       drawCytoscape ('cy_1', model_elements);
+      clearUploadInfo();
       qtipNodes(scapes['cy_1']);
       scapes['cy_1'].fit();
       contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
+      $('#ndexModal').modal('hide');
     });
   });
 
@@ -265,6 +269,7 @@ $("#loadButtonStatic").click(function(){
     model_elements = promises[0];
     txt_input = promises[2];
     drawCytoscape ('cy_1', model_elements);
+    clearUploadInfo();
     qtipNodes(scapes['cy_1']);
     $('#textArea').val(txt_input);
     scapes['cy_1'].fit();
@@ -352,6 +357,7 @@ $("#reset_filter").click(function(){
   grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
     model_elements = model_response;
     drawCytoscape ('cy_1', model_response);
+    clearUploadInfo();
     qtipNodes(scapes['cy_1']);
   });
 });
@@ -396,3 +402,8 @@ $('.cy').each(function(){
 });
 
 });// dom ready
+
+function clearUploadInfo(){
+  var modal_body = $('.ndex-upload-container')[0]
+  modal_body.innerHTML = null
+}
