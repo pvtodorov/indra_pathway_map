@@ -113,12 +113,11 @@ $(function(){
       drawCytoscape('cy_1', model_response);
       qtipNodes(scapes['cy_1']);
       $('#menu').modal('hide');
+      document.getElementById("loadContextButton").click();
     });
     english_promise.then(function (model_response) {
       sentences = model_response;
     })
-    
-    $('.cyjs2loopy').prop('disabled', false);
   });
 
   $("#loadContextButton").click(function(){
