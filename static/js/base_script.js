@@ -17,24 +17,36 @@ var model_elements;
 var mrna;
 var mutations;
 var cell_line;
+var txt_input;
+var network_id;
 
 var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
 //var indra_server_addr = "http://0.0.0.0:8080";
 
 var ctxt = {};
 
-var ras_model_promise = grabJSON('static/models/McCormick/model.json');
-var ras_preset_pos_promise = grabJSON('static/models/McCormick/preset_pos.json');
-var mrna_promise = grabJSON('static/models/McCormick/mrna.json');
-var mutations_promise = grabJSON('static/models/McCormick/mutations.json');
+var ras_model_promise = grabJSON('static/models/' + prebuilt_model + '/model.json');
+var ras_preset_pos_promise = grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
+var mrna_promise = grabJSON('static/models/' + prebuilt_model + '/mrna.json');
+var mutations_promise = grabJSON('static/models/' + prebuilt_model + '/mutations.json');
 var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise, mrna_promise, mutations_promise]);
-var ras_stmts_promise = grabJSON('static/models/McCormick/stmts.json');
+model_components_promise.then(function(promises){
+  preset_pos = promises[1];
+  model_elements = promises[0];
+  mrna = promises[2];
+  mutations = promises[3];
+  drawCytoscape ('cy_1', model_elements);
+  qtipNodes(scapes['cy_1']);
+  scapes['cy_1'].fit();
+  contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
+})
+var ras_stmts_promise = grabJSON('static/models/' + prebuilt_model + '/stmts.json');
 var ras_stmts_response;
 ras_stmts_promise.then(function(res){
   ras_stmts_response = res;
   stmts = ras_stmts_response;
 })
-var ras_sentences_promise = grabJSON('static/models/McCormick/sentences.json');
+var ras_sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
 var ras_sentences_response;
 ras_sentences_promise.then(function(res){
   ras_sentences_response = res;
@@ -89,7 +101,6 @@ $(function(){
 
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value;
-    
     var stmts_promise = txtProcess(txt, parser).then(groundingMapper);
     var cyjs_promise = stmts_promise.then(assembleCyJS);
     var english_promise = stmts_promise.then(assembleEnglish)
@@ -229,17 +240,21 @@ $(function(){
 
 
 $("#loadButtonStatic").click(function(){
-  model_components_promise.then(function (promises) {
+  model_promise = grabJSON('static/models/' + prebuilt_model + '/model.json');
+  preset_pos_promise = grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
+  txt_input_promise = grabJSON('static/models/' + prebuilt_model + '/txt_input.json', dtype='text');
+  var model_components_promise = Promise.all([model_promise, preset_pos_promise, txt_input_promise]);
+  model_components_promise.then(function(promises){
     preset_pos = promises[1];
     model_elements = promises[0];
-    mrna = promises[2];
-    mutations = promises[3];
+    txt_input = promises[2];
     drawCytoscape ('cy_1', model_elements);
     qtipNodes(scapes['cy_1']);
+    $('#textArea').val(txt_input);
     scapes['cy_1'].fit();
-    scapes['cy_1'].fit();
-    contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
-  });
+    document.getElementById("loadContextButton").click();
+  })
+
 });
 
 $(".cyjs2loopy").click(function(){
@@ -345,7 +360,7 @@ $('#path_table').on( 'click', 'tr', function () {
 
 $('.cy').each(function(){
   $('.cy')[0].setAttribute("style", "height: 100%;");
-  document.getElementById("loadButtonStatic").click();
+  // document.getElementById("loadButtonStatic").click();
   function resize() {
     $(".cy-container").height(win.innerHeight() - 250);
     $(".cy").height(win.innerHeight() - 250);
