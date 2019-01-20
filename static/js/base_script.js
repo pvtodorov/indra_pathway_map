@@ -188,6 +188,10 @@ $(function(){
       temp_link.target = '_blank';
       par2.append(temp_link);
       modal_body.append(par2);
+      // edit url to contain ndex uuid
+      var url = new URL(location.href)
+      url.searchParams.set('uuid', network_id)
+      history.pushState(null, '', url);
     });
   });
 
