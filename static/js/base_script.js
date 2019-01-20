@@ -264,6 +264,17 @@ $("#loadButtonStatic").click(function(){
   preset_pos_promise = grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
   txt_input_promise = grabJSON('static/models/' + prebuilt_model + '/txt_input.json', dtype='text');
   var model_components_promise = Promise.all([model_promise, preset_pos_promise, txt_input_promise]);
+  stmts_promise = grabJSON('static/models/' + prebuilt_model + '/stmts.json');
+  sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
+  stmts_promise.then(function(res){
+    stmts_response = res;
+    stmts = stmts_response;
+  })
+  sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
+  sentences_promise.then(function(res){
+    sentences_response = res;
+    sentences = res;
+  })
   model_components_promise.then(function(promises){
     preset_pos = promises[1];
     model_elements = promises[0];
