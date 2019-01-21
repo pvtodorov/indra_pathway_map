@@ -8,6 +8,7 @@ var preset_pos_static = {};
 // {id : position} dict
 var id_pos = {};
 
+var layout_enabled = true;
 var scapes = {};
 var stmts;
 var sentences;

@@ -344,7 +344,7 @@ function drawCytoscape (div_id, model_elements) {
     });
     });
     cy.on(('mouseup'),function(){
-      if (dragged === true){
+      if ((dragged === true) && (layout_enabled === true)){
         layout.run();
         dragged = false;
       }
@@ -356,7 +356,7 @@ function drawCytoscape (div_id, model_elements) {
       });
     });
     cy.on(('touchend'),function(){
-      if (dragged === true){
+      if ((dragged === true) && (layout_enabled === true)){
         layout.run();
         dragged = false;
       }
