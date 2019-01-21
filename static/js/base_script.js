@@ -19,6 +19,8 @@ var mutations;
 var cell_line;
 var txt_input;
 var network_id;
+var url = new URL(location.href)
+network_id = url.searchParams.get("uuid")
 
 var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazonaws.com:8000";
 //var indra_server_addr = "http://0.0.0.0:8080";
@@ -30,17 +32,6 @@ var ras_preset_pos_promise = grabJSON('static/models/' + prebuilt_model + '/pres
 var mrna_promise = grabJSON('static/models/' + prebuilt_model + '/mrna.json');
 var mutations_promise = grabJSON('static/models/' + prebuilt_model + '/mutations.json');
 var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise, mrna_promise, mutations_promise]);
-model_components_promise.then(function(promises){
-  preset_pos = promises[1];
-  model_elements = promises[0];
-  mrna = promises[2];
-  mutations = promises[3];
-  drawCytoscape ('cy_1', model_elements);
-  clearUploadInfo();
-  qtipNodes(scapes['cy_1']);
-  scapes['cy_1'].fit();
-  contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
-})
 var ras_stmts_promise = grabJSON('static/models/' + prebuilt_model + '/stmts.json');
 var ras_stmts_response;
 ras_stmts_promise.then(function(res){
@@ -84,6 +75,27 @@ $(function(){
   var cy_height = String(container_fluid_height/1.2024);
   $('.cy')[0].setAttribute("style", "height:" + cy_height +  "px;");
   $('.cy-container')[0].setAttribute("style", "height:" + cy_height +  "px;");
+
+  if (network_id){
+    drawCytoscape('cy_1', {"nodes":[{"data":{"id":0, "name": "A"}}], "edges":[{"data":{"i":"Virtual","id":1,"polarity":"positive","source":0,"target":0,"uuid_list":["404"]}}]} )
+    scapes["cy_1"].remove(scapes["cy_1"].nodes())
+    // drawFromNDEX(network_id, "cy_1");
+  }
+  else {
+    drawCytoscape('cy_1', {"nodes":[{"data":{"id":0, "name": "A"}}], "edges":[{"data":{"i":"Virtual","id":1,"polarity":"positive","source":0,"target":0,"uuid_list":["404"]}}]} )
+    scapes["cy_1"].remove(scapes["cy_1"].nodes())
+    model_components_promise.then(function(promises){
+      preset_pos = promises[1];
+      model_elements = promises[0];
+      mrna = promises[2];
+      mutations = promises[3];
+      drawCytoscape ('cy_1', model_elements);
+      clearUploadInfo();
+      qtipNodes(scapes['cy_1']);
+      scapes['cy_1'].fit();
+      contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
+    })
+  }
 
   // build the dropdown pickers
   grabJSON('static/cell_dict.json').then(

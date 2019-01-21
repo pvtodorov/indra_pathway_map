@@ -364,9 +364,11 @@ function drawCytoscape (div_id, model_elements) {
 
     cy.on(('layoutstop'),function(){
       nds = (cy.json()).elements.nodes;
-      nds.forEach( function(n) {
-        preset_pos[n.data.name] = n.position;
-      });
+      if (nds){
+        nds.forEach( function(n) {
+          preset_pos[n.data.name] = n.position;
+        });
+      }
     });
 
 
