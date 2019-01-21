@@ -195,9 +195,7 @@ $(function(){
     });
   });
 
-
-  $("#loadNDEX").click(function(){
-    var network_id = $("#ndexUUID")[0].value
+  function drawFromNDEX(network_id, scape_id){
     getNDEX(network_id).then(function (res) {
       model_elements = JSON.parse(res.model_elements)
       preset_pos = JSON.parse(res.preset_pos)
@@ -220,13 +218,18 @@ $(function(){
       else {
         $("#parseReach").addClass("active");
       }
-      drawCytoscape ('cy_1', model_elements);
+      drawCytoscape (scape_id, model_elements);
       clearUploadInfo();
-      qtipNodes(scapes['cy_1']);
-      scapes['cy_1'].fit();
-      contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
+      qtipNodes(scapes[scape_id]);
+      scapes[scape_id].fit();
+      contextualizeNodesCCLEprebuilt(scape, mrna, mutations)
       $('#ndexModal').modal('hide');
     });
+  }
+
+  $("#loadNDEX").click(function(){
+    var network_id = $("#ndexUUID")[0].value
+    drawFromNDEX(network_id, "cy_1");
   });
 
 
