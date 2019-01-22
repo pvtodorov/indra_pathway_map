@@ -34,17 +34,6 @@ var mrna_promise = grabJSON('static/models/' + prebuilt_model + '/mrna.json');
 var mutations_promise = grabJSON('static/models/' + prebuilt_model + '/mutations.json');
 var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise, mrna_promise, mutations_promise]);
 var ras_stmts_promise = grabJSON('static/models/' + prebuilt_model + '/stmts.json');
-var ras_stmts_response;
-ras_stmts_promise.then(function(res){
-  ras_stmts_response = res;
-  stmts = ras_stmts_response;
-})
-var ras_sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
-var ras_sentences_response;
-ras_sentences_promise.then(function(res){
-  ras_sentences_response = res;
-  sentences = res;
-})
 
 var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7];
 var exp_colorscale = d3.scaleThreshold()
@@ -80,9 +69,20 @@ $(function(){
   if (network_id){
     drawCytoscape('cy_1', {"nodes":[{"data":{"id":0, "name": "A"}}], "edges":[{"data":{"i":"Virtual","id":1,"polarity":"positive","source":0,"target":0,"uuid_list":["404"]}}]} )
     scapes["cy_1"].remove(scapes["cy_1"].nodes())
-    // drawFromNDEX(network_id, "cy_1");
+    drawFromNDEX(network_id, "cy_1");
   }
   else {
+    var ras_stmts_response;
+    ras_stmts_promise.then(function(res){
+      ras_stmts_response = res;
+      stmts = ras_stmts_response;
+    })
+    var ras_sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
+    var ras_sentences_response;
+    ras_sentences_promise.then(function(res){
+      ras_sentences_response = res;
+      sentences = res;
+    })
     drawCytoscape('cy_1', {"nodes":[{"data":{"id":0, "name": "A"}}], "edges":[{"data":{"i":"Virtual","id":1,"polarity":"positive","source":0,"target":0,"uuid_list":["404"]}}]} )
     scapes["cy_1"].remove(scapes["cy_1"].nodes())
     model_components_promise.then(function(promises){
@@ -235,7 +235,7 @@ $(function(){
       clearUploadInfo();
       qtipNodes(scapes[scape_id]);
       scapes[scape_id].fit();
-      contextualizeNodesCCLEprebuilt(scape, mrna, mutations)
+      contextualizeNodesCCLEprebuilt(scapes[scape_id], mrna, mutations)
       $('#ndexModal').modal('hide');
     });
   }
