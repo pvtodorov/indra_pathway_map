@@ -150,43 +150,37 @@ $(function(){
   });
 
   $("#downloadPySB").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(assemblePySB).then(function (res) {
+    assemblePySB(stmts).then(function (res) {
       download('model.py', res['model']);
     });
   });
 
   $("#downloadSBML").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(assembleSBML).then(function (res) {
+    assembleSBML(stmts).then(function (res) {
       download('model.sbml', res['model']);
     });
   });
 
   $("#downloadSBGN").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(assembleSBGN).then(function (res) {
+    assembleSBGN(stmts).then(function (res) {
       download('model.sbgn', res['model']);
     });
   });
 
   $("#downloadKappa").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(assembleKappa).then(function (res) {
+    assembleKappa(stmts).then(function (res) {
       download('model.ka', res['model']);
     });
   });
 
   $("#downloadBNGL").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(assembleBNGL).then(function (res) {
+    assembleBNGL(stmts).then(function (res) {
       download('model.bngl', res['model']);
     });
   });
 
   $("#downloadCX").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(assembleCX).then(function (res) {
+    assembleCX(stmts).then(function (res) {
       download('model.cx', res['model']);
     });
   });
@@ -256,10 +250,7 @@ $(function(){
 
 
   $("#downloadINDRA").click(function(){
-    var txt = $('#textArea')[0].value;
-    rq.txtProcess(txt, parser).then(rq.groundingMapper).then(function (res) {
-      download('stmts.json', JSON.stringify(res['statements'], null, 2));
-    });
+    download('stmts.json', JSON.stringify(stmts, null, 2));
   });
 
 
