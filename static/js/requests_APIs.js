@@ -1,12 +1,48 @@
-// retrieve a JSON from a url
-//***************************************
-function grabJSON (url, dtype='json') {
-  return $.ajax({
-    url: url,
-    dataType: dtype
-  });
+class Requester {
+  constructor(modal_obj=$(), current_modal=$()){
+    this.counter = 0;
+    this.message = "Ready.";
+    this.modal_obj = modal_obj;
+    this.current_modal;
+    this.timeout = window.setTimeout(0);
+  }
+
+  update_state(message){
+    this.counter += 1;
+    if (this.message != message){
+      // do we have a different message? change it!
+      // will toggle modal to show here
+      this.message = message;
+      clearTimeout(this.timeout)
+      console.log('different ' + this.message)
+      if ((this.message == "Ready.") && (this.counter%2 == 0)){
+        // timeout here will hide modal. need even number of sent
+        // and completed ajax requests and a "Ready" message for 2s
+        this.timeout = window.setTimeout(console.log, 2000, this.message)
+        console.log('same ' + this.message)
+      }
+    }
+  }
+
+  grabJSON (url, dtype='json') {
+    var ajax_params = {
+      "url": url,
+      "dataType": dtype,
+    }
+    ajax_params["beforeSend"] = () => (this.update_state("working."))
+    ajax_params["complete"] = () => (this.update_state("Ready."))
+    return $.ajax(ajax_params);
+  }
+
+  make_request (ajax_params, message) {
+    var ajax_params = ajax_params;
+    ajax_params["beforeSend"] = () => (this.update_state(message))
+    ajax_params["complete"] = () => (this.update_state("Ready."))
+    return $.ajax(ajax_params);
+  }
 }
 //***************************************
+}
 
 //build bootstrap-select dropdown using json
 //***************************************
