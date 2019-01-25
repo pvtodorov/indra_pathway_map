@@ -97,6 +97,7 @@ $(function(){
       mrna = promises[2];
       mutations = promises[3];
       drawCytoscape ('cy_1', model_elements);
+      modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       qtipNodes(scapes['cy_1']);
       scapes['cy_1'].fit();
@@ -131,6 +132,7 @@ $(function(){
     cyjs_promise.then(function (model_response) {
       model_elements = model_response;
       drawCytoscape('cy_1', model_response);
+      modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       qtipNodes(scapes['cy_1']);
       $('#menu').modal('hide');
@@ -238,6 +240,7 @@ $(function(){
         $("#parseReach").addClass("active");
       }
       drawCytoscape (scape_id, model_elements);
+      modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       qtipNodes(scapes[scape_id]);
       scapes[scape_id].fit();
@@ -306,6 +309,7 @@ $("#loadButtonStatic").click(function(){
     model_elements = promises[0];
     txt_input = promises[2];
     drawCytoscape ('cy_1', model_elements);
+    modalEdges(scapes['cy_1'], rq);
     clearUploadInfo();
     qtipNodes(scapes['cy_1']);
     $('#textArea').val(txt_input);
@@ -394,6 +398,7 @@ $("#reset_filter").click(function(){
   rq.grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
     model_elements = model_response;
     drawCytoscape ('cy_1', model_response);
+    modalEdges(scapes['cy_1'], rq);
     clearUploadInfo();
     qtipNodes(scapes['cy_1']);
   });

@@ -65,6 +65,18 @@ class Requester {
     stmts = this.make_request(ajax_params, message)
     return stmts
   }
+
+  getEvidence(res) {
+    var ajax_params = {
+      "url": indra_server_addr + "/indra_db_rest/get_evidence",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res),
+      }
+    var message = ("Query INDRA DB for statement evidence.");
+    var stmts_db = this.make_request(ajax_params, message)
+    return stmts_db
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -104,21 +116,6 @@ function download(exportName, exportObj){
   }
   saveAs(blob, exportName);
 }
-//***************************************
-
-// query db for support to single statement
-//***************************************
-function getEvidence(res) {
-  stmts_db = $.ajax({
-    url: indra_server_addr + "/indra_db_rest/get_evidence",
-    type: "POST",
-    dataType: "json",
-    data: JSON.stringify(res),
-    });
-  return stmts_db
-}
-//***************************************
-
 
 function assembleCyJS(res) {
   var res_json = res;
