@@ -29,12 +29,12 @@ var indra_server_addr = "http://indra-api-72031e2dfde08e09.elb.us-east-1.amazona
 
 var ctxt = {};
 
-var ras_model_promise = grabJSON('static/models/' + prebuilt_model + '/model.json');
-var ras_preset_pos_promise = grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
-var mrna_promise = grabJSON('static/models/' + prebuilt_model + '/mrna.json');
-var mutations_promise = grabJSON('static/models/' + prebuilt_model + '/mutations.json');
-var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise, mrna_promise, mutations_promise]);
-var ras_stmts_promise = grabJSON('static/models/' + prebuilt_model + '/stmts.json');
+var ras_model_promise;
+var ras_preset_pos_promise;
+var mrna_promise;
+var mutations_promise;
+var model_components_promise;
+var ras_stmts_promise;
 
 var domain = [2.7, 3.7, 4.7, 5.7, 6.7, 7.7, 8.7, 9.7, 10.7];
 var exp_colorscale = d3.scaleThreshold()
@@ -60,25 +60,30 @@ var table;
 var path_id;
 
 $(function(){
-
   var win = $(window);
   var container_fluid_height = ($('body').height());
   var cy_height = String(container_fluid_height/1.2024);
   $('.cy')[0].setAttribute("style", "height:" + cy_height +  "px;");
   $('.cy-container')[0].setAttribute("style", "height:" + cy_height +  "px;");
-
+  
   if (network_id){
     drawCytoscape('cy_1', {"nodes":[{"data":{"id":0, "name": "A"}}], "edges":[{"data":{"i":"Virtual","id":1,"polarity":"positive","source":0,"target":0,"uuid_list":["404"]}}]} )
     scapes["cy_1"].remove(scapes["cy_1"].nodes())
     drawFromNDEX(network_id, "cy_1");
   }
   else {
+    var ras_model_promise = rq.grabJSON('static/models/' + prebuilt_model + '/model.json');
+    var ras_preset_pos_promise = rq.grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
+    var mrna_promise = rq.grabJSON('static/models/' + prebuilt_model + '/mrna.json');
+    var mutations_promise = rq.grabJSON('static/models/' + prebuilt_model + '/mutations.json');
+    var model_components_promise = Promise.all([ras_model_promise, ras_preset_pos_promise, mrna_promise, mutations_promise]);
+    var ras_stmts_promise = rq.grabJSON('static/models/' + prebuilt_model + '/stmts.json');
     var ras_stmts_response;
     ras_stmts_promise.then(function(res){
       ras_stmts_response = res;
       stmts = ras_stmts_response;
     })
-    var ras_sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
+    var ras_sentences_promise = rq.grabJSON('static/models/' + prebuilt_model + '/sentences.json');
     var ras_sentences_response;
     ras_sentences_promise.then(function(res){
       ras_sentences_response = res;
@@ -100,7 +105,7 @@ $(function(){
   }
 
   // build the dropdown pickers
-  grabJSON('static/cell_dict.json').then(
+  rq.grabJSON('static/cell_dict.json').then(
     function(ajax_response){
       var interesting_lines = {"LOXIMVI_SKIN":"model_LOXIMVI_SKIN.json", "A101D_SKIN":"model_A101D_SKIN.json"};
       for (var d of ['#cellSelectStatic', '#cellSelectDynamic']) {
@@ -281,17 +286,17 @@ $(function(){
 
 
 $("#loadButtonStatic").click(function(){
-  model_promise = grabJSON('static/models/' + prebuilt_model + '/model.json');
-  preset_pos_promise = grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
-  txt_input_promise = grabJSON('static/models/' + prebuilt_model + '/txt_input.json', dtype='text');
+  model_promise = rq.grabJSON('static/models/' + prebuilt_model + '/model.json');
+  preset_pos_promise = rq.grabJSON('static/models/' + prebuilt_model + '/preset_pos.json');
+  txt_input_promise = rq.grabJSON('static/models/' + prebuilt_model + '/txt_input.json', dtype='text');
   var model_components_promise = Promise.all([model_promise, preset_pos_promise, txt_input_promise]);
-  stmts_promise = grabJSON('static/models/' + prebuilt_model + '/stmts.json');
-  sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
+  stmts_promise = rq.grabJSON('static/models/' + prebuilt_model + '/stmts.json');
+  sentences_promise = rq.grabJSON('static/models/' + prebuilt_model + '/sentences.json');
   stmts_promise.then(function(res){
     stmts_response = res;
     stmts = stmts_response;
   })
-  sentences_promise = grabJSON('static/models/' + prebuilt_model + '/sentences.json');
+  sentences_promise = rq.grabJSON('static/models/' + prebuilt_model + '/sentences.json');
   sentences_promise.then(function(res){
     sentences_response = res;
     sentences = res;
@@ -386,7 +391,7 @@ $("#reset_filter").click(function(){
   current_ctx_selection = new Array(ctx_select_divs.length).fill("");
   clearCtxtSelects();
   build_ctx_dropdowns(sub_select_array, ctx_select_divs, current_ctx_selection);
-  grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
+  rq.grabJSON('static/models/' + prebuilt_model + '/model.json').then(function (model_response) {
     model_elements = model_response;
     drawCytoscape ('cy_1', model_response);
     clearUploadInfo();
