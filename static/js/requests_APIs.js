@@ -49,13 +49,22 @@ class Requester {
       "dataType": "json",
       "data": JSON.stringify(input_txt)
     };
-    console.log(this);
     var message = ("Processing text.");
     stmts = this.make_request(ajax_params, message)
     return stmts
   }
-}
-//***************************************
+
+  groundingMapper(res) {
+    var ajax_params = {
+      "url": indra_server_addr + "/preassembly/map_grounding",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res),
+    };
+    var message = ("Grounding INDRA statements.");
+    stmts = this.make_request(ajax_params, message)
+    return stmts
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -94,32 +103,6 @@ function download(exportName, exportObj){
     var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
   }
   saveAs(blob, exportName);
-}
-//***************************************
-
-//send text to a reading system, get back stmts
-//***************************************
-function txtProcess(txt, parser) {
-  var input_txt = {'text':txt};
-  stmts = $.ajax({
-    url: indra_server_addr + "/"+ parser + "/process_text",
-    type: "POST",
-    dataType: "json",
-    data: JSON.stringify(input_txt),
-    });
-  return stmts
-}
-
-// send stmts to grounding mapper, get grounded stmts
-//***************************************
-function groundingMapper(res) {
-  stmts = $.ajax({
-    url: indra_server_addr + "/preassembly/map_grounding",
-    type: "POST",
-    dataType: "json",
-    data: JSON.stringify(res),
-    });
-  return stmts
 }
 //***************************************
 
@@ -277,4 +260,23 @@ function get_ccle_mutations(gene_list, cell_line) {
             dataType: "json",
             data: JSON.stringify(input_txt),
            })
+}
+
+function bind_this (target) {
+// taken from https://ponyfoo.com/articles/binding-methods-to-class-instance-objects
+  const cache = new WeakMap();
+  const handler = {
+    get (target, key) {
+      const value = Reflect.get(target, key);
+      if (typeof value !== 'function') {
+        return value;
+      }
+      if (!cache.has(value)) {
+        cache.set(value, value.bind(target));
+      }
+      return cache.get(value);
+    }
+  };
+  const proxy = new Proxy(target, handler);
+  return proxy;
 }
