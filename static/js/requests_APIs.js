@@ -103,6 +103,22 @@ class Requester {
     var sentences = this.make_request(ajax_params, message)
     return sentences
   }
+
+  assemblePySB(res, export_format=null) {
+    var res_json = res;
+    var ajax_params = {
+      "url": indra_server_addr + "/assemblers/pysb",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    if (export_format){
+      res_json['export_format'] = export_format;
+    }
+    var message = ("Assembling PySB model.");
+    var pysb_model = this.make_request(ajax_params, message)
+    return pysb_model
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -141,20 +157,6 @@ function download(exportName, exportObj){
     var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
   }
   saveAs(blob, exportName);
-}
-
-function requestPySB(res, export_format=null) {
-  var res_json = res;
-  res_json['line'] = $('#cellSelectDynamic').val().slice(6,-5);
-  if (export_format){
-    res_json['export_format'] = export_format;
-    }
-  return $.ajax({
-      url: indra_server_addr + "/assemblers/pysb",
-      type: "POST",
-      dataType: "json",
-      data: JSON.stringify(res_json),
-  });
 }
 
 function assembleCX(res) {
@@ -198,11 +200,6 @@ function getNDEX(network_id) {
       data: JSON.stringify(res_json),
   });
 }
-
-
-function assemblePySB(res) {
-  return requestPySB(res);
-  }
 
 function assembleSBML(res) {
     return requestPySB(res, 'sbml');

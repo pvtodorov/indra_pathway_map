@@ -150,7 +150,7 @@ $(function(){
   });
 
   $("#downloadPySB").click(function(){
-    assemblePySB(stmts).then(function (res) {
+    rq.assemblePySB(stmts).then(function (res) {
       download('model.py', res['model']);
     });
   });
