@@ -90,6 +90,19 @@ class Requester {
     var cyjs_model = this.make_request(ajax_params, message)
     return cyjs_model
   }
+
+  assembleEnglish(res) {
+    var res_json = res;
+    var ajax_params = {
+      "url": indra_server_addr + "/assemblers/english",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    var message = ("Assembling English language sentences for each statement.");
+    var sentences = this.make_request(ajax_params, message)
+    return sentences
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -128,16 +141,6 @@ function download(exportName, exportObj){
     var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
   }
   saveAs(blob, exportName);
-}
-
-function assembleEnglish(res) {
-  var res_json = res;
-  return $.ajax({
-      url: indra_server_addr + "/assemblers/english",
-      type: "POST",
-      dataType: "json",
-      data: JSON.stringify(res_json),
-  });
 }
 
 function requestPySB(res, export_format=null) {
