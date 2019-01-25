@@ -1,4 +1,5 @@
 var cy = cytoscape();
+let rq = bind_this(new Requester());
 
 // {name : position} dict
 var prebuilt_model = 'McCormick';
@@ -115,7 +116,7 @@ $(function(){
 
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value;
-    var stmts_promise = txtProcess(txt, parser).then(groundingMapper);
+    var stmts_promise = rq.txtProcess(txt, parser).then(groundingMapper)
     var cyjs_promise = stmts_promise.then(assembleCyJS);
     var english_promise = stmts_promise.then(assembleEnglish)
     var english_promise;
@@ -143,42 +144,42 @@ $(function(){
 
   $("#downloadPySB").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(assemblePySB).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assemblePySB).then(function (res) {
       download('model.py', res['model']);
     });
   });
 
   $("#downloadSBML").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(assembleSBML).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assembleSBML).then(function (res) {
       download('model.sbml', res['model']);
     });
   });
 
   $("#downloadSBGN").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(assembleSBGN).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assembleSBGN).then(function (res) {
       download('model.sbgn', res['model']);
     });
   });
 
   $("#downloadKappa").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(assembleKappa).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assembleKappa).then(function (res) {
       download('model.ka', res['model']);
     });
   });
 
   $("#downloadBNGL").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(assembleBNGL).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assembleBNGL).then(function (res) {
       download('model.bngl', res['model']);
     });
   });
 
   $("#downloadCX").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(assembleCX).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assembleCX).then(function (res) {
       download('model.cx', res['model']);
     });
   });
@@ -248,7 +249,7 @@ $(function(){
 
   $("#downloadINDRA").click(function(){
     var txt = $('#textArea')[0].value;
-    txtProcess(txt, parser).then(groundingMapper).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(function (res) {
       download('stmts.json', JSON.stringify(res['statements'], null, 2));
     });
   });
@@ -269,7 +270,7 @@ $(function(){
   $("#loopy").click(function(){
     var txt = $('#textArea')[0].value;
 
-    txtProcess(txt, parser).then(groundingMapper).then(assembleLoopy).then(function (res) {
+    rq.txtProcess(txt, parser).then(groundingMapper).then(assembleLoopy).then(function (res) {
 
         window.open(
           res['loopy_url'].toString(),

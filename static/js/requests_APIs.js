@@ -40,6 +40,20 @@ class Requester {
     ajax_params["complete"] = () => (this.update_state("Ready."))
     return $.ajax(ajax_params);
   }
+
+  txtProcess(txt, parser) {
+    var input_txt = {'text':txt};
+    var ajax_params = {
+      "url": indra_server_addr + "/"+ parser + "/process_text",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(input_txt)
+    };
+    console.log(this);
+    var message = ("Processing text.");
+    stmts = this.make_request(ajax_params, message)
+    return stmts
+  }
 }
 //***************************************
 }
