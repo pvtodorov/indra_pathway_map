@@ -123,7 +123,7 @@ $(function(){
   $("#loadButtonDynamic").click(function(){
     var txt = $('#textArea')[0].value;
     var stmts_promise = rq.txtProcess(txt, parser).then(rq.groundingMapper)
-    var cyjs_promise = stmts_promise.then(assembleCyJS);
+    var cyjs_promise = stmts_promise.then(rq.assembleCyJS);
     var english_promise = stmts_promise.then(assembleEnglish)
     var english_promise;
     stmts_promise.then(function (model_response) {

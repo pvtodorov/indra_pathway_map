@@ -73,9 +73,22 @@ class Requester {
       "dataType": "json",
       "data": JSON.stringify(res),
       }
-    var message = ("Query INDRA DB for statement evidence.");
+    var message = ("Querying INDRA DB for statement evidence.");
     var stmts_db = this.make_request(ajax_params, message)
     return stmts_db
+  }
+
+  assembleCyJS(res) {
+    var res_json = res;
+    var ajax_params = {
+      "url": indra_server_addr + "/assemblers/cyjs",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    var message = ("Assembling CytoscapeJS model.");
+    var cyjs_model = this.make_request(ajax_params, message)
+    return cyjs_model
   }
 }
 
@@ -115,16 +128,6 @@ function download(exportName, exportObj){
     var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
   }
   saveAs(blob, exportName);
-}
-
-function assembleCyJS(res) {
-  var res_json = res;
-  return $.ajax({
-      url: indra_server_addr + "/assemblers/cyjs",
-      type: "POST",
-      dataType: "json",
-      data: JSON.stringify(res_json),
-  });
 }
 
 function assembleEnglish(res) {
