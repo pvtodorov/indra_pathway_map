@@ -205,6 +205,20 @@ class Requester {
      return mrna
   }
 
+  get_ccle_cna(gene_list, cell_line) {
+    var input_txt = {'gene_list': gene_list,
+                     'cell_lines': [cell_line]};
+    var ajax_params = {
+      "url": indra_server_addr + "/databases/cbio/get_ccle_cna",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(input_txt),
+    }
+    var message = ("Getting CCLE CNA.");
+    var cna = this.make_request(ajax_params, message);
+    return cna
+  }
+
 }
 
 //build bootstrap-select dropdown using json
@@ -253,17 +267,6 @@ function assembleLoopy(res) {
       dataType: "json",
       data: JSON.stringify(res_json),
   });
-}
-
-function get_ccle_cna(gene_list, cell_line) {
-  var input_txt = {'gene_list': gene_list,
-                   'cell_lines': [cell_line]};
-  return $.ajax({
-            url: indra_server_addr + "/databases/cbio/get_ccle_cna",
-            type: "POST",
-            dataType: "json",
-            data: JSON.stringify(input_txt),
-           })
 }
 
 function get_ccle_mutations(gene_list, cell_line) {
