@@ -157,6 +157,19 @@ class Requester {
     var ndex_push = this.make_request(ajax_params, message)
     return ndex_push;
   }
+
+  getNDEX(network_id) {
+    var res_json = {"network_id": network_id};
+    var ajax_params = {
+      "url": indra_server_addr + "/fetch_model_ndex",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    var message = ("Downloading model from NDEX.");
+    var ndex_pull = this.make_request(ajax_params, message)
+    return ndex_pull;
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -195,16 +208,6 @@ function download(exportName, exportObj){
     var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
   }
   saveAs(blob, exportName);
-}
-
-function getNDEX(network_id) {
-  var res_json = {"network_id": network_id};
-  return $.ajax({
-      url: indra_server_addr + "/fetch_model_ndex",
-      type: "POST",
-      dataType: "json",
-      data: JSON.stringify(res_json),
-  });
 }
 
 function assembleSBML(res) {

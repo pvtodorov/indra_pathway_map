@@ -214,7 +214,7 @@ $(function(){
   });
 
   function drawFromNDEX(network_id, scape_id){
-    getNDEX(network_id).then(function (res) {
+    rq.getNDEX(network_id).then(function (res) {
       model_elements = JSON.parse(res.model_elements)
       preset_pos = JSON.parse(res.preset_pos)
       stmts = JSON.parse(res.stmts)
@@ -236,13 +236,16 @@ $(function(){
       else {
         $("#parseReach").addClass("active");
       }
+      layout_enabled = false;
       drawCytoscape (scape_id, model_elements);
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       qtipNodes(scapes[scape_id]);
       scapes[scape_id].fit();
-      contextualizeNodesCCLEprebuilt(scapes[scape_id], mrna, mutations)
+      var gene_names = get_cy_gene_names(scapes[scape_id]);
+      set_context(scapes[scape_id], gene_names, mrna, mutations);
       $('#ndexModal').modal('hide');
+      layout_enabled = true;
     });
   }
 
