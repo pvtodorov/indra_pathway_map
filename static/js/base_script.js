@@ -452,12 +452,10 @@ function clearUploadInfo(){
 }
 
 function contextualizeNodesCCLE(cy, cell_line, new_cell_line, requester){
-  if (new_cell_line != cell_line){
-    // check if we cell line selection changed before req to API
-    mrna_promise = rq.get_ccle_mrna(gene_names, new_cell_line)
-    mutations_promise = rq.get_ccle_mutations(gene_names, new_cell_line)
-  }
+  // check if we cell line selection changed before req to API
   gene_names = get_cy_gene_names(cy);
+  mrna_promise = rq.get_ccle_mrna(gene_names, new_cell_line)
+  mutations_promise = rq.get_ccle_mutations(gene_names, new_cell_line)
   Promise.all([mrna_promise, mutations_promise]).then(function(pp){
     mrna = pp[0]
     mutations = pp[1]
