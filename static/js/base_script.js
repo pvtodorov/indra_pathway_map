@@ -168,7 +168,7 @@ $(function(){
   });
 
   $("#downloadKappa").click(function(){
-    assembleKappa(stmts).then(function (res) {
+    rq.assembleKappa(stmts).then(function (res) {
       download('model.ka', res['model']);
     });
   });

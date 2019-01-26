@@ -186,6 +186,10 @@ class Requester {
   assembleBNGL(res) {
     return this.requestPySB(res, 'bngl');
   }
+
+  assembleKappa(res) {
+    return this.requestPySB(res, 'kappa');
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -225,12 +229,6 @@ function download(exportName, exportObj){
   }
   saveAs(blob, exportName);
 }
-
-function assembleKappa(res) {
-    return requestPySB(res, 'kappa');
-    }
-
-
 
 function assembleLoopy(res) {
   var res_json = res;
