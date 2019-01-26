@@ -162,7 +162,7 @@ $(function(){
   });
 
   $("#downloadSBGN").click(function(){
-    assembleSBGN(stmts).then(function (res) {
+    rq.assembleSBGN(stmts).then(function (res) {
       download('model.sbgn', res['model']);
     });
   });
