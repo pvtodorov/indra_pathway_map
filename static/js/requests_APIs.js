@@ -219,6 +219,19 @@ class Requester {
     return cna
   }
 
+  get_ccle_mutations(gene_list, cell_line) {
+    var input_txt = {'gene_list': gene_list,
+                     'cell_lines': [cell_line]};
+    var ajax_params = {
+      "url": indra_server_addr + "/databases/cbio/get_ccle_mutations",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(input_txt),
+     }
+    var message = ("Getting CCLE mutation status.");
+    var mutations = this.make_request(ajax_params, message);
+    return mutations
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -239,7 +252,6 @@ function dropdownCtxtSelectFromJSON (div_id, ajax_response) {
     });
 }
 //***************************************
-
 
 //download a model
 //***************************************
@@ -267,17 +279,6 @@ function assembleLoopy(res) {
       dataType: "json",
       data: JSON.stringify(res_json),
   });
-}
-
-function get_ccle_mutations(gene_list, cell_line) {
-  var input_txt = {'gene_list': gene_list,
-                   'cell_lines': [cell_line]};
-  return $.ajax({
-            url: indra_server_addr + "/databases/cbio/get_ccle_mutations",
-            type: "POST",
-            dataType: "json",
-            data: JSON.stringify(input_txt),
-           })
 }
 
 function bind_this (target) {
