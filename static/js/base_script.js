@@ -18,7 +18,8 @@ var cyjs_elements; //this is set by drawCytoscape with a copy of model_elements
 var model_elements;
 var mrna;
 var mutations;
-var cell_line;
+var cell_line = "LOXIMVI_SKIN";
+var cell_line_index = 0;
 var txt_input;
 var network_id;
 var url = new URL(location.href)
@@ -101,7 +102,8 @@ $(function(){
       clearUploadInfo();
       qtipNodes(scapes['cy_1']);
       scapes['cy_1'].fit();
-      contextualizeNodesCCLEprebuilt(scapes['cy_1'], mrna, mutations)
+      var gene_names = get_cy_gene_names(scapes['cy_1']);
+      set_context(scapes['cy_1'], gene_names, mrna, mutations);
     })
   }
 
@@ -132,6 +134,8 @@ $(function(){
     cyjs_promise.then(function (model_response) {
       model_elements = model_response;
       drawCytoscape('cy_1', model_response);
+      var new_cell_line = $('#cellSelectDynamic').val().slice(6,-5);
+      contextualizeNodesCCLE(scapes['cy_1'], cell_line, new_cell_line, rq)
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       qtipNodes(scapes['cy_1']);
@@ -144,9 +148,9 @@ $(function(){
   });
 
   $("#loadContextButton").click(function(){
-    cell_line = $('#cellSelectDynamic').val().slice(6,-5);
-    contextualizeNodesCCLE(cy, cell_line);
     $('#menu').modal('hide');
+    var new_cell_line = $('#cellSelectDynamic').val().slice(6,-5);
+    contextualizeNodesCCLE(scapes['cy_1'], cell_line, new_cell_line, rq)
   });
 
   $("#downloadPySB").click(function(){
@@ -445,4 +449,30 @@ $('.cy').each(function(){
 function clearUploadInfo(){
   var modal_body = $('.ndex-upload-container')[0]
   modal_body.innerHTML = null
+}
+
+function contextualizeNodesCCLE(cy, cell_line, new_cell_line, requester){
+  if (new_cell_line != cell_line){
+    // check if we cell line selection changed before req to API
+    mrna_promise = rq.get_ccle_mrna(gene_names, new_cell_line)
+    mutations_promise = rq.get_ccle_mutations(gene_names, new_cell_line)
+  }
+  gene_names = get_cy_gene_names(cy);
+  Promise.all([mrna_promise, mutations_promise]).then(function(pp){
+    mrna = pp[0]
+    mutations = pp[1]
+    check_response = (mrna.mrna_amounts[new_cell_line] != null)
+    if (check_response){
+      cell_line = new_cell_line
+      set_context(cy, gene_names, mrna, mutations);
+      requester.update_state("Setting context to " + cell_line + ".");
+      window.setTimeout(requester.update_state, 2000, "Ready.")
+    }
+    else {
+      requester.update_state("Cell line data not found, restoring previous settings.")
+      window.setTimeout(requester.update_state, 2000, "Ready.")
+      // TODO add code to restore state of cell line picker
+    }
+  
+  })
 }
