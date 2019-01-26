@@ -156,7 +156,7 @@ $(function(){
   });
 
   $("#downloadSBML").click(function(){
-    assembleSBML(stmts).then(function (res) {
+    rq.assembleSBML(stmts).then(function (res) {
       download('model.sbml', res['model']);
     });
   });

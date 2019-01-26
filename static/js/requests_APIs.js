@@ -174,6 +174,10 @@ class Requester {
   assemblePySB(res) {
     return this.requestPySB(res, null);
   }
+
+  assembleSBML(res) {
+    return this.requestPySB(res, 'sbml');
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -213,10 +217,6 @@ function download(exportName, exportObj){
   }
   saveAs(blob, exportName);
 }
-
-function assembleSBML(res) {
-    return requestPySB(res, 'sbml');
-    }
 
 function assembleSBGN(res) {
     return requestPySB(res, 'sbgn');
