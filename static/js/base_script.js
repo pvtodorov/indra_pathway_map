@@ -174,7 +174,7 @@ $(function(){
   });
 
   $("#downloadBNGL").click(function(){
-    assembleBNGL(stmts).then(function (res) {
+    rq.assembleBNGL(stmts).then(function (res) {
       download('model.bngl', res['model']);
     });
   });
