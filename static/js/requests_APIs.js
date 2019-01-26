@@ -133,6 +133,30 @@ class Requester {
     var cx_model = this.make_request(ajax_params, message)
     return cx_model
   }
+
+  shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_line,
+            mrna, mutations, txt_input, parser) {
+    var res_json = {};
+    res_json['stmts'] = JSON.stringify(stmts);
+    res_json['model_elements'] = JSON.stringify(model_elements);
+    res_json['preset_pos'] = JSON.stringify(preset_pos);
+    res_json['sentences'] = JSON.stringify(sentences);
+    res_json['evidence'] = JSON.stringify(evidence);
+    res_json['cell_line'] = cell_line;
+    res_json['mrna'] = JSON.stringify(mrna);
+    res_json['mutations'] = JSON.stringify(mutations);
+    res_json['txt_input'] = txt_input;
+    res_json['parser'] = parser;
+    var ajax_params = {
+      "url": indra_server_addr + "/share_model_ndex",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    var message = ("Uploading model to NDEX.");
+    var ndex_push = this.make_request(ajax_params, message)
+    return ndex_push;
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -172,27 +196,6 @@ function download(exportName, exportObj){
   }
   saveAs(blob, exportName);
 }
-
-function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations, txt_input, parser) {
-  var res_json = {};
-  res_json['stmts'] = JSON.stringify(stmts);
-  res_json['model_elements'] = JSON.stringify(model_elements);
-  res_json['preset_pos'] = JSON.stringify(preset_pos);
-  res_json['sentences'] = JSON.stringify(sentences);
-  res_json['evidence'] = JSON.stringify(evidence);
-  res_json['cell_line'] = cell_line;
-  res_json['mrna'] = JSON.stringify(mrna);
-  res_json['mutations'] = JSON.stringify(mutations);
-  res_json['txt_input'] = txt_input;
-  res_json['parser'] = parser;
-  return $.ajax({
-      url: indra_server_addr + "/share_model_ndex",
-      type: "POST",
-      dataType: "json",
-      data: JSON.stringify(res_json),
-  });
-}
-
 
 function getNDEX(network_id) {
   var res_json = {"network_id": network_id};

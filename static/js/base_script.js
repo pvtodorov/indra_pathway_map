@@ -192,7 +192,10 @@ $(function(){
     par.textContent = 'Uploading model to NDEX...'
     modal_body.append(par)
     txt_input = $('#textArea')[0].value;
-    shareNDEX(cyjs_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations, txt_input, parser).then(function (res) {
+    preset_pos = updatePresetPos(scapes['cy_1'], preset_pos)
+    rq.shareNDEX(cyjs_elements, preset_pos, stmts,
+                 sentences, evidence, cell_line, mrna,
+                 mutations, txt_input, parser).then(function (res) {
       par.textContent = 'Network uploaded to NDEX.'
       var par2 = document.createElement("p");
       network_id = res['network_id']
