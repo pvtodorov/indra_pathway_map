@@ -190,6 +190,21 @@ class Requester {
   assembleKappa(res) {
     return this.requestPySB(res, 'kappa');
   }
+
+  get_ccle_mrna(gene_list, cell_line) {
+    var input_txt = {'gene_list': gene_list,
+                     'cell_lines': [cell_line]};
+    var ajax_params = {
+      "url": indra_server_addr + "/databases/cbio/get_ccle_mrna",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(input_txt),
+     }
+     var message = ("Retreiving CCLE mRNA expression.");
+     var mrna = this.make_request(ajax_params, message);
+     return mrna
+  }
+
 }
 
 //build bootstrap-select dropdown using json
@@ -238,17 +253,6 @@ function assembleLoopy(res) {
       dataType: "json",
       data: JSON.stringify(res_json),
   });
-}
-
-function get_ccle_mrna(gene_list, cell_line) {
-  var input_txt = {'gene_list': gene_list,
-                   'cell_lines': [cell_line]};
-  return $.ajax({
-            url: indra_server_addr + "/databases/cbio/get_ccle_mrna",
-            type: "POST",
-            dataType: "json",
-            data: JSON.stringify(input_txt),
-           })
 }
 
 function get_ccle_cna(gene_list, cell_line) {
