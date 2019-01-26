@@ -180,7 +180,7 @@ $(function(){
   });
 
   $("#downloadCX").click(function(){
-    assembleCX(stmts).then(function (res) {
+    rq.assembleCX(stmts).then(function (res) {
       download('model.cx', res['model']);
     });
   });

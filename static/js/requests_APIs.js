@@ -119,6 +119,20 @@ class Requester {
     var pysb_model = this.make_request(ajax_params, message)
     return pysb_model
   }
+
+  assembleCX(res) {
+    var res_json = res;
+    var ajax_params = {
+      "url": indra_server_addr + "/assemblers/cx",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    res_json['cyjs_model'] = JSON.stringify(cy.json())
+    var message = ("Assembling Cytoscape CX model.");
+    var cx_model = this.make_request(ajax_params, message)
+    return cx_model
+  }
 }
 
 //build bootstrap-select dropdown using json
@@ -157,17 +171,6 @@ function download(exportName, exportObj){
     var blob = new Blob([exportObj], {type: "text/plain;charset=utf-8"});
   }
   saveAs(blob, exportName);
-}
-
-function assembleCX(res) {
-  var res_json = res;
-  res_json['cyjs_model'] = JSON.stringify(cy.json())
-  return $.ajax({
-      url: indra_server_addr + "/assemblers/cx",
-      type: "POST",
-      dataType: "json",
-      data: JSON.stringify(res_json),
-  });
 }
 
 function shareNDEX(model_elements, preset_pos, stmts, sentences, evidence, cell_line, mrna, mutations, txt_input, parser) {
