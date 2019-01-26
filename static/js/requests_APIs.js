@@ -104,22 +104,6 @@ class Requester {
     return sentences
   }
 
-  assemblePySB(res, export_format=null) {
-    var res_json = res;
-    var ajax_params = {
-      "url": indra_server_addr + "/assemblers/pysb",
-      "type": "POST",
-      "dataType": "json",
-      "data": JSON.stringify(res_json),
-    }
-    if (export_format){
-      res_json['export_format'] = export_format;
-    }
-    var message = ("Assembling PySB model.");
-    var pysb_model = this.make_request(ajax_params, message)
-    return pysb_model
-  }
-
   assembleCX(res) {
     var res_json = res;
     var ajax_params = {
@@ -169,6 +153,26 @@ class Requester {
     var message = ("Downloading model from NDEX.");
     var ndex_pull = this.make_request(ajax_params, message)
     return ndex_pull;
+  }
+
+  requestPySB(res, export_format=null) {
+    var res_json = res;
+    var ajax_params = {
+      "url": indra_server_addr + "/assemblers/pysb",
+      "type": "POST",
+      "dataType": "json",
+      "data": JSON.stringify(res_json),
+    }
+    if (export_format){
+      res_json['export_format'] = export_format;
+    }
+    var message = ("Assembling PySB model.");
+    var pysb_model = this.make_request(ajax_params, message)
+    return pysb_model
+  }
+
+  assemblePySB(res) {
+    return this.requestPySB(res, null);
   }
 }
 
