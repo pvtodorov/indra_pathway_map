@@ -241,6 +241,7 @@ $(function(){
         $("#parseReach").addClass("active");
       }
       layout_enabled = false;
+      disable_layout()
       drawCytoscape (scape_id, model_elements);
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
@@ -250,6 +251,7 @@ $(function(){
       set_context(scapes[scape_id], gene_names, mrna, mutations);
       $('#ndexModal').modal('hide');
       layout_enabled = true;
+      activate_layout()
     });
   }
 
@@ -287,6 +289,10 @@ $(function(){
         );
     });
   });
+
+$("#layoutToggle").change(function() {
+  layout_enabled = $("#layoutToggle").prop('checked')
+});
 
 
 $("#loadButtonStatic").click(function(){
@@ -326,17 +332,6 @@ $(".cyjs2loopy").click(function(){
     'http://ncase.me/loopy/v1/?data=' + model,
     "_blank"
   );
-});
-
-$(".presetLayout").click(function(){
-  if (this.classList.contains("active")){
-    $(".presetLayout").removeClass("active");
-    preset_pos = {};
-  }
-  else {
-    $(".presetLayout").addClass("active");
-    preset_pos = preset_pos_static;
-  }
 });
 
 $('a[href="#byom"]').click(function(){
@@ -473,4 +468,18 @@ function contextualizeNodesCCLE(cy, cell_line, new_cell_line, requester){
     }
   
   })
+}
+
+function activate_layout(){
+  $("#layoutToggle").bootstrapToggle('on')
+}
+
+function disable_layout(){
+  $("#layoutToggle").bootstrapToggle('off')
+}
+
+function reset_url(){
+  var url = new URL(location.href)
+  history.pushState(null, '', url.origin);
+  network_id = null;
 }
