@@ -137,6 +137,7 @@ $(function(){
       contextualizeNodesCCLE(scapes['cy_1'], new_cell_line, rq)
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
+      reset_url();
       qtipNodes(scapes['cy_1']);
       $('#menu').modal('hide');
       document.getElementById("loadContextButton").click();
@@ -322,7 +323,7 @@ $("#loadButtonStatic").click(function(){
     scapes['cy_1'].fit();
     document.getElementById("loadContextButton").click();
   })
-
+  reset_url();
 });
 
 $(".cyjs2loopy").click(function(){
@@ -440,11 +441,6 @@ $('.cy').each(function(){
 
 });// dom ready
 
-function clearUploadInfo(){
-  var modal_body = $('.ndex-upload-container')[0]
-  modal_body.innerHTML = null
-}
-
 function contextualizeNodesCCLE(cy, new_cell_line, requester){
   // check if we cell line selection changed before req to API
   gene_names = get_cy_gene_names(cy);
@@ -475,6 +471,11 @@ function activate_layout(){
 
 function disable_layout(){
   $("#layoutToggle").bootstrapToggle('off')
+}
+
+function clearUploadInfo(){
+  var modal_body = $('.ndex-upload-container')[0]
+  modal_body.innerHTML = null
 }
 
 function reset_url(){
