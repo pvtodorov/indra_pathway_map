@@ -14,14 +14,14 @@ class Requester {
       clearTimeout(this.timeout)
       if (this.message != "Ready.") {
         $.notify(this.message,
-          { className: "success", globalPosition: 'top center' })
+          { className: 'info', globalPosition: 'top center' })
         console.log(this.message)
       }
       else if ((this.message == "Ready.") && (this.counter%2 == 0)){
         // timeout here will hide modal. need even number of sent
         // and completed ajax requests and a "Ready" message for 2s
         this.timeout = window.setTimeout(() => {$.notify(this.message,
-          { className: "success", globalPosition: 'top center' })}, 2000)
+          { className: 'success', globalPosition: 'top center' })}, 2000)
         console.log(this.message)
       }
     }
@@ -158,7 +158,7 @@ class Requester {
     return ndex_pull;
   }
 
-  requestPySB(res, export_format=null) {
+  requestPySB(res, export_format=null, message) {
     var res_json = res;
     var ajax_params = {
       "url": indra_server_addr + "/assemblers/pysb",
@@ -169,29 +169,33 @@ class Requester {
     if (export_format){
       res_json['export_format'] = export_format;
     }
-    var message = ("Assembling PySB model.");
     var pysb_model = this.make_request(ajax_params, message)
     return pysb_model
   }
 
   assemblePySB(res) {
-    return this.requestPySB(res, null);
+    var message = "Assembling PySB model."
+    return this.requestPySB(res, null, message);
   }
 
   assembleSBML(res) {
-    return this.requestPySB(res, 'sbml');
+    var message = "Assembling SBML model."
+    return this.requestPySB(res, 'sbml', message);
   }
 
   assembleSBGN(res) {
-    return this.requestPySB(res, 'sbgn');
+    var message = "Assembling SBGN model."
+    return this.requestPySB(res, 'sbgn', message);
   }
 
   assembleBNGL(res) {
-    return this.requestPySB(res, 'bngl');
+    var message = "Assembling BNGL model."
+    return this.requestPySB(res, 'bngl', message);
   }
 
   assembleKappa(res) {
-    return this.requestPySB(res, 'kappa');
+    var message = "Assembling Kappa model."
+    return this.requestPySB(res, 'kappa', message);
   }
 
   get_ccle_mrna(gene_list, cell_line) {
