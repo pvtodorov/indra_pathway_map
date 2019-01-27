@@ -115,7 +115,6 @@ class Requester {
       "dataType": "json",
       "data": JSON.stringify(res_json),
     }
-    res_json['cyjs_model'] = JSON.stringify(cy.json())
     var message = ("Assembling Cytoscape CX model.");
     var cx_model = this.make_request(ajax_params, message)
     return cx_model
@@ -158,8 +157,9 @@ class Requester {
     return ndex_pull;
   }
 
-  requestPySB(res, export_format, message) {
-    var res_json = res;
+  requestPySB(stmts, export_format, message) {
+    var res_json = {};
+    res_json['statements'] = stmts['statements']
     res_json['export_format'] = export_format;
     var ajax_params = {
       "url": indra_server_addr + "/assemblers/pysb",
