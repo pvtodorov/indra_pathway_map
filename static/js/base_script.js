@@ -443,7 +443,7 @@ $('.cy').each(function(){
 
 function contextualizeNodesCCLE(cy, new_cell_line, requester){
   // check if we cell line selection changed before req to API
-  requester.update_state("Setting context to " + cell_line + ".");
+  requester.update_state("Setting context to " + new_cell_line + ".");
   gene_names = get_cy_gene_names(cy);
   mrna_promise = rq.get_ccle_mrna(gene_names, new_cell_line)
   mutations_promise = rq.get_ccle_mutations(gene_names, new_cell_line)
