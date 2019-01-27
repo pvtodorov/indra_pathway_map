@@ -132,6 +132,7 @@ $(function(){
     });
     cyjs_promise.then(function (model_response) {
       model_elements = model_response;
+      activate_layout();
       drawCytoscape('cy_1', model_response);
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
@@ -313,6 +314,7 @@ $("#loadButtonStatic").click(function(){
     preset_pos = promises[1];
     model_elements = promises[0];
     txt_input = promises[2];
+    activate_layout();
     drawCytoscape ('cy_1', model_elements);
     modalEdges(scapes['cy_1'], rq);
     clearUploadInfo();
