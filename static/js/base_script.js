@@ -133,8 +133,6 @@ $(function(){
     cyjs_promise.then(function (model_response) {
       model_elements = model_response;
       drawCytoscape('cy_1', model_response);
-      var new_cell_line = $('#cellSelectDynamic').val().slice(6,-5);
-      contextualizeNodesCCLE(scapes['cy_1'], new_cell_line, rq)
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       reset_url();
@@ -443,6 +441,7 @@ $('.cy').each(function(){
 
 function contextualizeNodesCCLE(cy, new_cell_line, requester){
   // check if we cell line selection changed before req to API
+  requester.update_state("Setting context to " + cell_line + ".");
   gene_names = get_cy_gene_names(cy);
   mrna_promise = rq.get_ccle_mrna(gene_names, new_cell_line)
   mutations_promise = rq.get_ccle_mutations(gene_names, new_cell_line)
@@ -453,7 +452,6 @@ function contextualizeNodesCCLE(cy, new_cell_line, requester){
     if (check_response){
       cell_line = new_cell_line
       set_context(cy, gene_names, mrna, mutations);
-      requester.update_state("Setting context to " + cell_line + ".");
       window.setTimeout(requester.update_state, 2000, "Ready.")
     }
     else {
