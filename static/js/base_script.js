@@ -60,6 +60,8 @@ var table;
 var path_id;
 
 $(function(){
+  $('body').tooltip({ selector: '[data-toggle="tooltip"]' });
+  $('[rel="tooltip"]').tooltip({trigger: "hover"});
   var win = $(window);
   var container_fluid_height = ($('body').height());
   var cy_height = String(container_fluid_height/1.2024);
