@@ -19,7 +19,6 @@ var model_elements;
 var mrna;
 var mutations;
 var cell_line = "LOXIMVI_SKIN";
-var cell_line_index = 0;
 var txt_input;
 var network_id;
 var url = new URL(location.href)
@@ -135,7 +134,7 @@ $(function(){
       model_elements = model_response;
       drawCytoscape('cy_1', model_response);
       var new_cell_line = $('#cellSelectDynamic').val().slice(6,-5);
-      contextualizeNodesCCLE(scapes['cy_1'], cell_line, new_cell_line, rq)
+      contextualizeNodesCCLE(scapes['cy_1'], new_cell_line, rq)
       modalEdges(scapes['cy_1'], rq);
       clearUploadInfo();
       qtipNodes(scapes['cy_1']);
@@ -150,7 +149,7 @@ $(function(){
   $("#loadContextButton").click(function(){
     $('#menu').modal('hide');
     var new_cell_line = $('#cellSelectDynamic').val().slice(6,-5);
-    contextualizeNodesCCLE(scapes['cy_1'], cell_line, new_cell_line, rq)
+    contextualizeNodesCCLE(scapes['cy_1'], new_cell_line, rq)
   });
 
   $("#downloadPySB").click(function(){
@@ -446,7 +445,7 @@ function clearUploadInfo(){
   modal_body.innerHTML = null
 }
 
-function contextualizeNodesCCLE(cy, cell_line, new_cell_line, requester){
+function contextualizeNodesCCLE(cy, new_cell_line, requester){
   // check if we cell line selection changed before req to API
   gene_names = get_cy_gene_names(cy);
   mrna_promise = rq.get_ccle_mrna(gene_names, new_cell_line)
@@ -464,9 +463,9 @@ function contextualizeNodesCCLE(cy, cell_line, new_cell_line, requester){
     else {
       requester.update_state("Cell line data not found, restoring previous settings.")
       window.setTimeout(requester.update_state, 2000, "Ready.")
-      // TODO add code to restore state of cell line picker
+      $('#cellSelectDynamic').val("model_" + cell_line + ".json")
+      $('#cellSelectDynamic').selectpicker('render')
     }
-  
   })
 }
 
