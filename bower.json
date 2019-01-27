@@ -32,7 +32,8 @@
     "renderjson": "https://raw.githubusercontent.com/caldwell/renderjson/master/renderjson.js",
     "font-awesome": "^5.0.13",
     "FileSaver.min": "https://raw.githubusercontent.com/Teleborder/FileSaver.js/master/FileSaver.min.js",
-    "bootstrap-toggle": "^2.2.2"
+    "bootstrap-toggle": "^2.2.2",
+    "notifyjs": "^0.4.2"
   },
   "overrides": {
     "bootstrap": {

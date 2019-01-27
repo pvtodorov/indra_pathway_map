@@ -1,9 +1,7 @@
 class Requester {
-  constructor(modal_obj=$(), current_modal=$()){
+  constructor(){
     this.counter = 0;
     this.message = "Ready.";
-    this.modal_obj = modal_obj;
-    this.current_modal;
     this.timeout = window.setTimeout(0);
   }
 
@@ -14,12 +12,17 @@ class Requester {
       // will toggle modal to show here
       this.message = message;
       clearTimeout(this.timeout)
-      console.log('different ' + this.message)
-      if ((this.message == "Ready.") && (this.counter%2 == 0)){
+      if (this.message != "Ready.") {
+        $.notify(this.message,
+          { className: "success", globalPosition: 'top center' })
+        console.log(this.message)
+      }
+      else if ((this.message == "Ready.") && (this.counter%2 == 0)){
         // timeout here will hide modal. need even number of sent
         // and completed ajax requests and a "Ready" message for 2s
-        this.timeout = window.setTimeout(console.log, 2000, this.message)
-        console.log('same ' + this.message)
+        this.timeout = window.setTimeout(() => {$.notify(this.message,
+          { className: "success", globalPosition: 'top center' })}, 2000)
+        console.log(this.message)
       }
     }
   }
@@ -29,7 +32,7 @@ class Requester {
       "url": url,
       "dataType": dtype,
     }
-    ajax_params["beforeSend"] = () => (this.update_state("working."))
+    ajax_params["beforeSend"] = () => (this.update_state("Getting JSON."))
     ajax_params["complete"] = () => (this.update_state("Ready."))
     return $.ajax(ajax_params);
   }
