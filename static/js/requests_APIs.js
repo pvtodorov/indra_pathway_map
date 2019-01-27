@@ -44,8 +44,9 @@ class Requester {
     return $.ajax(ajax_params);
   }
 
-  txtProcess(txt, parser) {
+  txtProcess(txt, parser, reach_offline=false) {
     var input_txt = {'text':txt};
+    input_txt["offline"] = reach_offline;
     var ajax_params = {
       "url": indra_server_addr + "/"+ parser + "/process_text",
       "type": "POST",
