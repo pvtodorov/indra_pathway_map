@@ -158,16 +158,14 @@ class Requester {
     return ndex_pull;
   }
 
-  requestPySB(res, export_format=null, message) {
+  requestPySB(res, export_format, message) {
     var res_json = res;
+    res_json['export_format'] = export_format;
     var ajax_params = {
       "url": indra_server_addr + "/assemblers/pysb",
       "type": "POST",
       "dataType": "json",
       "data": JSON.stringify(res_json),
-    }
-    if (export_format){
-      res_json['export_format'] = export_format;
     }
     var pysb_model = this.make_request(ajax_params, message)
     return pysb_model
