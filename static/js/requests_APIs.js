@@ -44,7 +44,7 @@ class Requester {
     return $.ajax(ajax_params);
   }
 
-  txtProcess(txt, parser, reach_offline=false) {
+  txtProcess(txt, parser, reach_offline=true) {
     var input_txt = {'text':txt};
     input_txt["offline"] = reach_offline;
     var ajax_params = {
