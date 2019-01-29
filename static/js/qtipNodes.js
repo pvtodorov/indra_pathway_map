@@ -23,7 +23,7 @@ function qtipNodes(cy){
             }
             var list_lines = content.map(function( link ){
             var line = '<b style="font-size:13px">' + String(link[0].id) + '</b>' + ' ' +
-                       '<a  style="font-size:11px" target="_blank" href=https://www.citeab.com/search?q="' + link[0].id + '">' +  "CiteAb"  + '</a>&nbsp;' +
+                       '<a  style="font-size:11px" target="_blank" href=https://www.citeab.com/antibodies/search?q="' + link[0].id + '">' +  "CiteAb"  + '</a>&nbsp;' +
                        '<a  style="font-size:11px" target="_blank" href="' + link[0].url + '">' + link[0].name + '</a>&nbsp;' +
                        '<a style="font-size:11px" target="_blank" href="' + link[1].url + '">' + link[1].name  + '</a>';
             return line;
@@ -67,7 +67,7 @@ function qtipNodes(cy){
           else {
             var content_text = [];
             content_text.push(
-                {name : "CiteAb", url: "https://www.citeab.com/search?q=" + n.data().name});
+                {name : "CiteAb", url: "https://www.citeab.com/antibodies/search?q=" + n.data().name});
             if (data.hasOwnProperty("db_refs")){
               db_refs = data.db_refs;
               for (var namespace in db_refs) {

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="static/bower_components/cytoscape-panzoom/cytoscape.js-panzoom.css" />
     <link rel="stylesheet" href="static/bower_components/components-font-awesome/css/fontawesome-all.css" />
     <link rel="stylesheet" href="static/bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
-    <link rel="stylesheet" href="static/bower_components/datatables.net-dt/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="static/bower_components/bootstrap-toggle/css/bootstrap-toggle.min.css" />
     <!-- endbower -->
     <!-- bower:js -->
     <script src="static/bower_components/jquery/dist/jquery.js"></script>
@@ -31,10 +31,10 @@
     <script src="static/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>
     <script src="static/bower_components/cytoscape-panzoom/cytoscape-panzoom.js"></script>
     <script src="static/bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
-    <script src="static/bower_components/papaparse/papaparse.js"></script>
-    <script src="static/bower_components/datatables.net/js/jquery.dataTables.js"></script>
     <script src="static/bower_components/renderjson/index.js"></script>
     <script src="static/bower_components/FileSaver.min/index.js"></script>
+    <script src="static/bower_components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="static/bower_components/notifyjs/dist/notify.js"></script>
     <!-- endbower -->
     <!-- d3 -->
     <script src="https://d3js.org/d3-array.v1.min.js"></script>
@@ -59,19 +59,6 @@
     <script src="static/js/base_script.js"></script>
     <!-- js -->
 
-
-
-    <!-- google analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-96082280-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-    <!-- end google analytics -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -134,7 +121,7 @@
       <form>
           <div class="form-group">
             <label for="textArea">Describe your mechanism.</label>
-            <textarea class="form-control" id="textArea" rows="15">
+            <textarea class="form-control" id="textArea" rows="15" autocomplete="off">
 Growth-factor proteins activate EGFR, ERBB2, FGFR, PDGFR, MET, ROS1, and ALK.
 EGFR, ERBB2, PDGFR, MET, ROS1, ALK and FGFR activate GRB2 and SHC.
 GRB2 and SHC activate RASGRF and SOS.
@@ -270,7 +257,7 @@ TIAM activates RAC, which activates PAK.
                           <ul>
                               <li>Network models can be contextualized using the Context tab.</li>
                               <li>Users can load gene expression and mutation data from each of the 900+ cell lines available in the <a href="https://portals.broadinstitute.org/ccle">CCLE</a>.</li>
-                              <li>We access a publicly available version of the CCLE hosted on <a href="http://www.cbioportal.org/">cBio Portal</a>.</li>
+                              <li>We access a publicly available version of the CCLE hosted on <a href="http://www.indra.bio/rest_api/docs/">cBio Portal</a>.</li>
                           </ul>
                           <br>
                           <h4>How does this work?</h4>
@@ -288,7 +275,7 @@ TIAM activates RAC, which activates PAK.
                             </ul>
                             <h4>Privacy</h4>
                             <ul>
-                            <li>Our API backend receives requests such as those for reading, contextualization, and NDEX sharing. Our server logs the IP addresses which make reqeusts to the API. The data from some user requests is forwarded to external APIs such as TRIPS (reading) and cBioPortal (contextualization) in order to generate responses. Some of the plugins we use such as d3.js require cookies.</li>
+                            <li>Our API backend receives requests such as those for reading, contextualization, and NDEX sharing. Our server logs the IP addresses which make reqeusts to the API. The data from some user requests is forwarded to external APIs such as TRIPS (reading) and cBioPortal (contextualization) in order to generate responses.</li>
                             </ul>
                       </div>
                   </div>
@@ -316,16 +303,23 @@ TIAM activates RAC, which activates PAK.
   <div class="row" align="center">
     <div class="col-md-12">
               <b>Download</b>
-              <button id='downloadINDRA' type="submit" class="btn btn-default hidden-xs">INDRA JSON</button>
-              <button id='downloadPySB' type="submit" class="btn btn-default hidden-xs">PySB</button>
-              <button id='downloadSBML' type="submit" class="btn btn-default hidden-xs">SBML</button>
-              <button id='downloadSBGN' type="submit" class="btn btn-default hidden-xs">SBGN</button>
-              <button id='downloadBNGL' type="submit" class="btn btn-default hidden-xs">BNGL</button>
-              <button id='downloadKappa' type="submit" class="btn btn-default hidden-xs">Kappa</button>
-              <button id='downloadCX' type="submit" class="btn btn-default hidden-xs">CX</button>
-              <button id='downloadPNG' type="submit" class="btn btn-default">PNG</button>
+              <button id='downloadINDRA' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Download the model statements generated by INDRA in JSON format.">INDRA JSON</button>
+              <button id='downloadPySB' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Assemble and download the model statements generated by INDRA into an executable PySB model.">PySB</button>
+              <button id='downloadSBML' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Assemble and download the model statements generated by INDRA as a SBML model.">SBML</button>
+              <button id='downloadSBGN' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Assemble and download the model statements generated by INDRA as a SBGN model.">SBGN</button>
+              <button id='downloadBNGL' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Assemble and download the model statements generated by INDRA as a BNGL model.">BNGL</button>
+              <button id='downloadKappa' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Assemble and download the model statements generated by INDRA as a Kappa model.">Kappa</button>
+              <button id='downloadCX' type="submit" class="btn btn-default hidden-xs" data-placement="bottom" data-toggle="tooltip" title="Assemble and download the model statements generated by INDRA as a Cytoscale CX model.">CX</button>
+              <button id='downloadPNG' type="submit" class="btn btn-default" data-placement="bottom" data-toggle="tooltip" title="Download a high-resolution PNG image of the current model.">PNG</button>
               <span>|</span>
-              <button id='NDEX' type="submit" class="btn btn-default" data-toggle="modal" data-target="#ndexModal">NDEX</button>
+              <span rel="tooltip" data-placement="bottom" data-toggle="tooltip" title="Upload, download, and share the current model via NDEx.">
+                  <button id='NDEX' type="submit" class="btn btn-default" data-toggle="modal" data-target="#ndexModal">NDEX</button>
+              </span>
+              <span>|</span>
+              <span rel="tooltip" data-placement="bottom" data-toggle="tooltip" title="Toggle force-directed layout.">
+                <input id="layoutToggle" type="checkbox" checked data-toggle="toggle" data-onstyle="primary" data-on="Forces" data-off="Off" autocomplete="off">
+              </span>
+              
     <!-- graph : end -->
   </div>
   </div>
@@ -342,7 +336,7 @@ TIAM activates RAC, which activates PAK.
                     <h4>NDEX Download</h4>
                     <div class="form-group">
                         <label for="ndexUUID"></label>
-                        <input type="email" class="form-control" id="ndexUUID" placeholder="e.g. - ea778a86-91b9-11e8-a4bf-0ac135e8bacf">
+                        <input type="email" class="form-control" id="ndexUUID" placeholder="e.g. - ea778a86-91b9-11e8-a4bf-0ac135e8bacf" autocomplete="off">
                     </div>
                     <div class= 'btn-div'>
                         <button id='loadNDEX' type="submit" class="btn btn-primary">Load</button>
