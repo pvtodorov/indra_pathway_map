@@ -11,7 +11,7 @@ function qtipNodes(cy){
               for (var gene in members) {
                 var db_links = [];
                 for (var namespace in members[gene]['db_refs']){
-                  if (namespace !== 'BE'){
+                  if (namespace !== 'TEXT'){
                     var tip_content = {id: gene,
                                        name: namespace,
                                        url: members[gene]['db_refs'][namespace]
@@ -34,9 +34,13 @@ function qtipNodes(cy){
             }).join('');
             content_str = '<ul>' + content_str + '</ul>';
 
+            var qtip_title_str = n.data().name
+            if (n.data().name !=  n.data().db_refs.TEXT){
+              qtip_title_str += " (text mention: " + n.data().db_refs.TEXT +  ")"
+            }
             qtip_api_call = {
               content: {
-                title: '<b style="font-size:14px">' + n.data().name + '</b>',
+                title: '<b style="font-size:14px">' + qtip_title_str + '</b>',
                 text: content_str
               },
               position: {
@@ -75,10 +79,20 @@ function qtipNodes(cy){
                   {name : namespace, url: db_refs[namespace]});
               }
             }
+            var qtip_title_str = n.data().name
+            if (n.data().name !=  n.data().db_refs.TEXT){
+              qtip_title_str += " (text mention: " + n.data().db_refs.TEXT +  ")"
+            }
             n.qtip({
-              content: {title: '<b style="font-size:14px">' + n.data('name') + '</b>',
-                text: content_text.map(function( link ){
-                  return '<a target="_blank" href="' + link.url + '">' + link.name + '</a>';
+              content: {title: '<b style="font-size:14px">' + qtip_title_str + '</b>',
+                text: content_text.filter(function(link){
+                  if (link.name == "TEXT") {
+                    return false;
+                  }
+                  return true;
+                }).map(function( link ){
+                  var link_string = '<a target="_blank" href="' + link.url + '">' + link.name + '</a>'
+                  return link_string;
                 }).join('<br />')
             },
               position: {
