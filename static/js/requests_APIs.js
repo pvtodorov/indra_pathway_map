@@ -6,23 +6,34 @@ class Requester {
   }
 
   update_state(message){
-    this.counter += 1;
-    if (this.message != message){
-      // do we have a different message? change it!
-      // will toggle modal to show here
-      this.message = message;
-      clearTimeout(this.timeout)
-      if (this.message != "Ready.") {
+    if (location.protocol == 'https:'){
+      var https_warn = "Loading the site over HTTPS may cause API errors."
+      if (this.message != https_warn){
+        this.message = https_warn;
+        $('.notifyjs-wrapper').trigger('notify-hide')
         $.notify(this.message,
-          { className: 'info', globalPosition: 'top center' })
-        console.log(this.message)
+                { className: 'error', globalPosition: 'top center', autoHide: false})
       }
-      else if ((this.message == "Ready.") && (this.counter%2 == 0)){
-        // timeout here will hide modal. need even number of sent
-        // and completed ajax requests and a "Ready" message for 2s
-        this.timeout = window.setTimeout(() => {$.notify(this.message,
-          { className: 'success', globalPosition: 'top center' })}, 2000)
-        console.log(this.message)
+    }
+    else {
+      this.counter += 1;
+      if (this.message != message){
+        console.log(this.counter%2)
+        // do we have a different message? change it!
+        // will toggle modal to show here
+        this.message = message;
+        clearTimeout(this.timeout)
+        if (this.message != "Ready.") {
+          $.notify(this.message,
+            { className: 'info', globalPosition: 'top center', autoHide: false})
+          console.log(this.message)
+        }
+        else if ((this.message == "Ready.") && ((this.counter%2) == 0)) {
+          hide_current_notifications();
+          this.timeout = window.setTimeout(() => {$.notify(this.message,
+            { className: 'success', globalPosition: 'top center' })}, 100)
+          console.log(this.message)
+        }
       }
     }
   }
@@ -304,4 +315,13 @@ function bind_this (target) {
   };
   const proxy = new Proxy(target, handler);
   return proxy;
+}
+
+function hide_current_notifications(timeout_ms=0){
+  var current_notifs = $('.notifyjs-wrapper')
+  window.setTimeout(function(){
+    var next_notifs = $('.notifyjs-wrapper')
+    var filtered_notifs = current_notifs.filter(next_notifs)
+    filtered_notifs.trigger('notify-hide')
+  }, timeout_ms)
 }
